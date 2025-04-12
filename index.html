@@ -10,9 +10,29 @@
     <div class="container">
         <h1>Research Field Similarity Calculator</h1>
         
+        <!-- Field Selection Section -->
+        <div class="compare-section">
+            <h2>Compare Existing Research Fields</h2>
+            <div class="selection-container">
+                <div class="form-group">
+                    <label for="field1-select">Field 1:</label>
+                    <select id="field1-select">
+                        <option value="">Select a research field</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field2-select">Field 2:</label>
+                    <select id="field2-select">
+                        <option value="">Select a research field</option>
+                    </select>
+                </div>
+                <button id="compare-btn" disabled>Compare Fields</button>
+            </div>
+        </div>
+        
         <!-- Tag Input Form -->
         <div class="input-section">
-            <h2>Add Research Field</h2>
+            <h2>Add New Research Field</h2>
             <form id="tag-form">
                 <div class="form-group">
                     <label for="tag-input">Field Name:</label>
@@ -30,7 +50,7 @@
         <div class="tags-section">
             <h2>Your Research Fields</h2>
             <div id="tags-container"></div>
-            <button id="calculate-btn" disabled>Calculate Similarities</button>
+            <button id="calculate-btn" disabled>Calculate All Similarities</button>
         </div>
         
         <!-- Results Section -->

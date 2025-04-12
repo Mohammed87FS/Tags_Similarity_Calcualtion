@@ -1,5 +1,6 @@
-// Store our tags with descriptions
+// Store our fields and existing fields from JSON
 let fields = [];
+let existingFields = [];
 
 // DOM elements
 const tagForm = document.getElementById('tag-form');
@@ -8,10 +9,144 @@ const tagDescription = document.getElementById('tag-description');
 const tagsContainer = document.getElementById('tags-container');
 const calculateBtn = document.getElementById('calculate-btn');
 const similarityResults = document.getElementById('similarity-results');
+const field1Select = document.getElementById('field1-select');
+const field2Select = document.getElementById('field2-select');
+const compareBtn = document.getElementById('compare-btn');
 
 // Add event listeners
 tagForm.addEventListener('submit', addTag);
-calculateBtn.addEventListener('click', calculateSimilarity);
+calculateBtn.addEventListener('click', calculateAllSimilarities);
+compareBtn.addEventListener('click', compareSelectedFields);
+field1Select.addEventListener('change', checkCompareButtonState);
+field2Select.addEventListener('change', checkCompareButtonState);
+
+// Load existing fields when page loads
+document.addEventListener('DOMContentLoaded', loadExistingFields);
+
+// Function to load existing fields from the server
+async function loadExistingFields() {
+    try {
+        const response = await fetch('http://localhost:5000/get-fields');
+        if (!response.ok) {
+            throw new Error('Error loading existing fields');
+        }
+        
+        const data = await response.json();
+        existingFields = data.fields || [];
+        
+        // Populate select dropdowns
+        populateFieldSelects();
+        
+    } catch (error) {
+        console.error('Error loading fields:', error);
+    }
+}
+
+// Function to populate field select dropdowns
+function populateFieldSelects() {
+    // Clear existing options except the first "Select a field" option
+    while (field1Select.options.length > 1) {
+        field1Select.remove(1);
+    }
+    
+    while (field2Select.options.length > 1) {
+        field2Select.remove(1);
+    }
+    
+    // Add options for each field
+    existingFields.forEach(field => {
+        const option1 = document.createElement('option');
+        option1.value = field;
+        option1.textContent = field;
+        field1Select.appendChild(option1);
+        
+        const option2 = document.createElement('option');
+        option2.value = field;
+        option2.textContent = field;
+        field2Select.appendChild(option2);
+    });
+}
+
+// Check if compare button should be enabled
+function checkCompareButtonState() {
+    const field1 = field1Select.value;
+    const field2 = field2Select.value;
+    compareBtn.disabled = !field1 || !field2 || field1 === field2;
+}
+
+// Function to compare two selected fields
+async function compareSelectedFields() {
+    const field1 = field1Select.value;
+    const field2 = field2Select.value;
+    
+    if (!field1 || !field2 || field1 === field2) {
+        return;
+    }
+    
+    // Show loading state
+    similarityResults.innerHTML = '<p>Calculating similarity...</p>';
+    
+    try {
+        const response = await fetch('http://localhost:5000/compare-fields', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                field1: field1,
+                field2: field2
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error('Error comparing fields');
+        }
+        
+        const result = await response.json();
+        
+        // Display the single comparison result
+        displaySingleComparisonResult(result);
+        
+    } catch (error) {
+        console.error('Error comparing fields:', error);
+        similarityResults.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+    }
+}
+
+// Function to display a single comparison result
+function displaySingleComparisonResult(result) {
+    similarityResults.innerHTML = '';
+    
+    const resultCard = document.createElement('div');
+    resultCard.className = 'comparison-result';
+    
+    // Determine similarity class
+    let similarityClass = 'low-similarity';
+    if (result.similarity_score >= 0.7) {
+        similarityClass = 'high-similarity';
+    } else if (result.similarity_score >= 0.4) {
+        similarityClass = 'medium-similarity';
+    }
+    
+    resultCard.classList.add(similarityClass);
+    
+    resultCard.innerHTML = `
+        <h3>Similarity Result</h3>
+        <div class="comparison-fields">
+            <span class="field-name">${result.field1}</span>
+            <span class="similarity-arrow">↔</span>
+            <span class="field-name">${result.field2}</span>
+        </div>
+        <div class="similarity-score">
+            <span class="score-value">${(result.similarity_score * 100).toFixed(1)}%</span>
+            <div class="score-bar">
+                <div class="score-fill" style="width: ${result.similarity_score * 100}%"></div>
+            </div>
+        </div>
+    `;
+    
+    similarityResults.appendChild(resultCard);
+}
 
 // Function to add a new research field
 function addTag(event) {
@@ -26,9 +161,15 @@ function addTag(event) {
         return;
     }
     
-    // Check if field already exists
+    // Check if field already exists in our local array
     if (fields.some(field => field.name.toLowerCase() === name.toLowerCase())) {
-        alert('This research field already exists');
+        alert('This research field already exists in your current session');
+        return;
+    }
+    
+    // Check if field already exists in existing fields
+    if (existingFields.some(field => field.toLowerCase() === name.toLowerCase())) {
+        alert('This research field already exists in the database');
         return;
     }
     
@@ -45,13 +186,18 @@ function addTag(event) {
     tagInput.value = '';
     tagDescription.value = '';
     
-    // Enable calculate button if we have at least 2 fields
-    calculateBtn.disabled = fields.length < 2;
+    // Enable calculate button if we have at least 1 field (can combine with existing)
+    calculateBtn.disabled = fields.length < 1 && existingFields.length === 0;
 }
 
-// Function to display all research fields
+// Function to display all locally added research fields
 function displayTags() {
     tagsContainer.innerHTML = '';
+    
+    if (fields.length === 0) {
+        tagsContainer.innerHTML = '<p>No fields added in current session. You can add new fields above.</p>';
+        return;
+    }
     
     fields.forEach((field, index) => {
         const fieldElement = document.createElement('div');
@@ -104,18 +250,15 @@ function displayTags() {
 function removeTag(index) {
     fields.splice(index, 1);
     displayTags();
-    calculateBtn.disabled = fields.length < 2;
     
-    // Clear results if we now have fewer than 2 fields
-    if (fields.length < 2) {
-        similarityResults.innerHTML = '';
-    }
+    // Enable calculate button if we have at least 1 field (can combine with existing)
+    calculateBtn.disabled = fields.length < 1 && existingFields.length === 0;
 }
 
-// Function to calculate similarity between all research fields
-async function calculateSimilarity() {
+// Function to calculate similarity between all fields (existing + new)
+async function calculateAllSimilarities() {
     // Show loading state
-    similarityResults.innerHTML = '<p>Calculating similarities...</p>';
+    similarityResults.innerHTML = '<p>Calculating similarities for all fields...</p>';
     
     try {
         // Make API call to backend
@@ -136,9 +279,12 @@ async function calculateSimilarity() {
         const data = await response.json();
         displaySimilarityResults(data.pairs);
         
-        // Save the results as JSON
-        const jsonData = JSON.stringify(data.pairs, null, 2);
-        saveAsFile(jsonData, 'research_field_similarities.json');
+        // Update existing fields list and dropdowns
+        loadExistingFields();
+        
+        // Clear fields after successful calculation as they're now saved
+        fields = [];
+        displayTags();
         
     } catch (error) {
         console.error('Error calculating similarities:', error);
@@ -146,12 +292,12 @@ async function calculateSimilarity() {
     }
 }
 
-// Function to display similarity results
+// Function to display similarity results for all pairs
 function displaySimilarityResults(pairs) {
     similarityResults.innerHTML = '';
     
     const resultsTitle = document.createElement('h3');
-    resultsTitle.textContent = 'Similarity Results (sorted by highest similarity)';
+    resultsTitle.textContent = 'All Similarity Results (sorted by highest similarity)';
     similarityResults.appendChild(resultsTitle);
     
     // Create a table for the results
