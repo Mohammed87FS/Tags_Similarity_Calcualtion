@@ -27,7 +27,7 @@ def load_research_fields():
     try:
      
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(script_dir, 'research_fields.json')
+        json_path = os.path.join(script_dir, '../research_fields.json')
         print(f"Looking for file at: {json_path}")
         
         if os.path.exists(json_path):
