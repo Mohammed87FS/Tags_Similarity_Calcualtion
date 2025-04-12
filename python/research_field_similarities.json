@@ -1,0 +1,1892 @@
+[
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.6888263821601868
+  },
+  {
+    "field1": "Augmented Reality",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.6549039483070374
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.6482315063476562
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.6384776830673218
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.5956649780273438
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Immunology",
+    "similarity_score": 0.5757147669792175
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.5658790469169617
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Computer Vision",
+    "similarity_score": 0.5591706037521362
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Data Science",
+    "similarity_score": 0.5479097366333008
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.5441702604293823
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Data Visualization",
+    "similarity_score": 0.5420833826065063
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Computer Vision",
+    "similarity_score": 0.5410230159759521
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.53422611951828
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Data Science",
+    "similarity_score": 0.5263634920120239
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.5185796022415161
+  },
+  {
+    "field1": "Augmented Intelligence",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.5131146907806396
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.5035138726234436
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.5016018748283386
+  },
+  {
+    "field1": "Augmented Reality",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.4977989196777344
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.4933356046676636
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.49326080083847046
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.4927158057689667
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.48529696464538574
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Climate Science",
+    "similarity_score": 0.4803457260131836
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.4776056706905365
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.46901601552963257
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.46484965085983276
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.4592955410480499
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.45897749066352844
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.45604726672172546
+  },
+  {
+    "field1": "Augmented Reality",
+    "field2": "Computer Vision",
+    "similarity_score": 0.4560460150241852
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.45557498931884766
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.44329771399497986
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.44190555810928345
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Computer Vision",
+    "similarity_score": 0.43544965982437134
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Robotics",
+    "similarity_score": 0.43472903966903687
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.43012872338294983
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.42771169543266296
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.41522955894470215
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Data Science",
+    "similarity_score": 0.41427433490753174
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.41009193658828735
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.4080538749694824
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.4078068733215332
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.4061945974826813
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.4029351770877838
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Astrophysics",
+    "similarity_score": 0.40030765533447266
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.39437156915664673
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.39309555292129517
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Data Science",
+    "similarity_score": 0.38989973068237305
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.3850627541542053
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.3829629421234131
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Robotics",
+    "similarity_score": 0.3799176812171936
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Data Science",
+    "similarity_score": 0.37885552644729614
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.3769156038761139
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.3763422966003418
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.3757406175136566
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.37493711709976196
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.3724059462547302
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Data Visualization",
+    "similarity_score": 0.3716789186000824
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.3664618134498596
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Robotics",
+    "similarity_score": 0.366354763507843
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.36559349298477173
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Computer Vision",
+    "similarity_score": 0.3645630180835724
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.3641038239002228
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Data Visualization",
+    "similarity_score": 0.361400306224823
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.3613162636756897
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Data Visualization",
+    "similarity_score": 0.3608688712120056
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Immunology",
+    "similarity_score": 0.36069729924201965
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Climate Science",
+    "similarity_score": 0.3581911325454712
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.3569558262825012
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.35559332370758057
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.35504060983657837
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.35401201248168945
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.34826189279556274
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Data Science",
+    "similarity_score": 0.3471696376800537
+  },
+  {
+    "field1": "Cloud Computing",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.3455415964126587
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.34434837102890015
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.3416752815246582
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.34058159589767456
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Data Visualization",
+    "similarity_score": 0.33953961730003357
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Computer Vision",
+    "similarity_score": 0.33883440494537354
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.33460909128189087
+  },
+  {
+    "field1": "Augmented Reality",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.33234328031539917
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.33118149638175964
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Robotics",
+    "similarity_score": 0.3308796286582947
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.33077457547187805
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Genomics",
+    "similarity_score": 0.32889389991760254
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.32632339000701904
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.3260675072669983
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.3259984254837036
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.3257613182067871
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Robotics",
+    "similarity_score": 0.3249009847640991
+  },
+  {
+    "field1": "Cloud Computing",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.32481813430786133
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.3244518041610718
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Data Science",
+    "similarity_score": 0.32439619302749634
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.3236622214317322
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Neuroscience",
+    "similarity_score": 0.32301318645477295
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.3219449818134308
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.3177450895309448
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.3161505460739136
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Immunology",
+    "similarity_score": 0.3158157169818878
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.31567835807800293
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.31566858291625977
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.31485360860824585
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.314443975687027
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Immunology",
+    "similarity_score": 0.31269127130508423
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Immunology",
+    "similarity_score": 0.3110297918319702
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.30878663063049316
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Data Science",
+    "similarity_score": 0.30862781405448914
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.3053211569786072
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.30511412024497986
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.30308669805526733
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.30303117632865906
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.30260977149009705
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Renewable Energy",
+    "similarity_score": 0.30243635177612305
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.3011038303375244
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.300861656665802
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Data Science",
+    "similarity_score": 0.30033770203590393
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.29942208528518677
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.29892605543136597
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Computer Vision",
+    "similarity_score": 0.29859399795532227
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.2974624037742615
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Data Visualization",
+    "similarity_score": 0.2962067723274231
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.29198598861694336
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Computer Vision",
+    "similarity_score": 0.2909175753593445
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.2904578447341919
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.29031825065612793
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.28985774517059326
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.2891721725463867
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Robotics",
+    "similarity_score": 0.2883923053741455
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Immunology",
+    "similarity_score": 0.2878407835960388
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.2871723175048828
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Data Science",
+    "similarity_score": 0.28597891330718994
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.28591489791870117
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Astrophysics",
+    "similarity_score": 0.2852150499820709
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.2846515476703644
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Data Science",
+    "similarity_score": 0.2839996814727783
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Genomics",
+    "similarity_score": 0.28221333026885986
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.28069794178009033
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.2805960774421692
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.28057020902633667
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Immunology",
+    "similarity_score": 0.27977102994918823
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Computer Vision",
+    "similarity_score": 0.27944445610046387
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Quantum Computing",
+    "similarity_score": 0.2775063216686249
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.2774977684020996
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.277198851108551
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Astrophysics",
+    "similarity_score": 0.2771032452583313
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.2763419449329376
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Computer Vision",
+    "similarity_score": 0.27626729011535645
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.27405571937561035
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Astrophysics",
+    "similarity_score": 0.27403441071510315
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.27322566509246826
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.2723029851913452
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.2716234624385834
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Astrophysics",
+    "similarity_score": 0.27107757329940796
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.27026480436325073
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Data Visualization",
+    "similarity_score": 0.26773929595947266
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.26561614871025085
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.26479572057724
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.2635137140750885
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Astrophysics",
+    "similarity_score": 0.26277172565460205
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.26220235228538513
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.26196014881134033
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.260969877243042
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.2604530453681946
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.25975555181503296
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.2571898400783539
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Astrophysics",
+    "similarity_score": 0.25701838731765747
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.2556290030479431
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.25550606846809387
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Computer Vision",
+    "similarity_score": 0.25424760580062866
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Neuroscience",
+    "similarity_score": 0.2539598345756531
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.2522362768650055
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.25219595432281494
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Climate Science",
+    "similarity_score": 0.2515135109424591
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Data Visualization",
+    "similarity_score": 0.2508411407470703
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.25023436546325684
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.24988609552383423
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.24863651394844055
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.24825984239578247
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.24746160209178925
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.24699197709560394
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.24670743942260742
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Computer Vision",
+    "similarity_score": 0.24610036611557007
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.2435908019542694
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.24279388785362244
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.24063898622989655
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Data Science",
+    "similarity_score": 0.23879021406173706
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.2387750744819641
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Climate Science",
+    "similarity_score": 0.2384626567363739
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.23779231309890747
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Data Science",
+    "similarity_score": 0.2376990169286728
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Data Visualization",
+    "similarity_score": 0.2352258563041687
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Climate Science",
+    "similarity_score": 0.2346559762954712
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.23340702056884766
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Data Visualization",
+    "similarity_score": 0.2327038198709488
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.23222997784614563
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.23181596398353577
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.23174788057804108
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Climate Science",
+    "similarity_score": 0.23170825839042664
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.2306096851825714
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.23026883602142334
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.22949863970279694
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.22947025299072266
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.22916844487190247
+  },
+  {
+    "field1": "Augmented Reality",
+    "field2": "Data Visualization",
+    "similarity_score": 0.227382093667984
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Computer Vision",
+    "similarity_score": 0.22710037231445312
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.22708652913570404
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.22665531933307648
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.22601091861724854
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.22582104802131653
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Astrophysics",
+    "similarity_score": 0.22524592280387878
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.22341765463352203
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Data Visualization",
+    "similarity_score": 0.22316193580627441
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.22294701635837555
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.22193866968154907
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.22166316211223602
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Immunology",
+    "similarity_score": 0.22143621742725372
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.2212579995393753
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.22101721167564392
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.2209644764661789
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.22065739333629608
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.22061991691589355
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.22011643648147583
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Renewable Energy",
+    "similarity_score": 0.21988748013973236
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Data Science",
+    "similarity_score": 0.21987876296043396
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.21981850266456604
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.2186257690191269
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.21861955523490906
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.21809186041355133
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.21798239648342133
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.2179356813430786
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.21782219409942627
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Computer Vision",
+    "similarity_score": 0.21759313344955444
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.21724557876586914
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.21705332398414612
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.21615411341190338
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.21478882431983948
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Data Visualization",
+    "similarity_score": 0.21395008265972137
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.21387675404548645
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.2130242884159088
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.2105574607849121
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.21047693490982056
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.209773987531662
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.20964094996452332
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.20869198441505432
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Astrophysics",
+    "similarity_score": 0.20820674300193787
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.2072535753250122
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Computer Vision",
+    "similarity_score": 0.20680737495422363
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.20659185945987701
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Genomics",
+    "similarity_score": 0.20468513667583466
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.20422932505607605
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Data Visualization",
+    "similarity_score": 0.20404958724975586
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.20233267545700073
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.20024541020393372
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.19990837574005127
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.19963447749614716
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.1987721025943756
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.19821122288703918
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Computer Vision",
+    "similarity_score": 0.19799934327602386
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.19747084379196167
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Computer Vision",
+    "similarity_score": 0.1973280906677246
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.19698145985603333
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.19659671187400818
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.19583868980407715
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Data Visualization",
+    "similarity_score": 0.19439402222633362
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.19404318928718567
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.19381040334701538
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.1935381293296814
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Immunology",
+    "similarity_score": 0.19137805700302124
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.1912272870540619
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.19104081392288208
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.19058136641979218
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Computer Vision",
+    "similarity_score": 0.18956592679023743
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.18896958231925964
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.18825462460517883
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Computer Vision",
+    "similarity_score": 0.18796047568321228
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.18743474781513214
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Immunology",
+    "similarity_score": 0.18730491399765015
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.18723642826080322
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.185652494430542
+  },
+  {
+    "field1": "Cloud Computing",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.1847851574420929
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.18468165397644043
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.18452253937721252
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.1839897334575653
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.18359623849391937
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Computer Vision",
+    "similarity_score": 0.18297404050827026
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.18280695378780365
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.18237215280532837
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.18073686957359314
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.18047095835208893
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Renewable Energy",
+    "similarity_score": 0.18037298321723938
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.18007850646972656
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Data Visualization",
+    "similarity_score": 0.17950557172298431
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Astrophysics",
+    "similarity_score": 0.178977370262146
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.17812788486480713
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.1778644323348999
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.17740903794765472
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Data Visualization",
+    "similarity_score": 0.1773529052734375
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.1769118309020996
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.17674043774604797
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.17632389068603516
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.17567873001098633
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.17497487366199493
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.17476622760295868
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.17165181040763855
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Nanotechnology",
+    "similarity_score": 0.17158518731594086
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.1687244176864624
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.16713571548461914
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Astrophysics",
+    "similarity_score": 0.16631019115447998
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Data Visualization",
+    "similarity_score": 0.16375602781772614
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Climate Science",
+    "similarity_score": 0.16316470503807068
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.1604500710964203
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.1589878797531128
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.15691311657428741
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.15499061346054077
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.15437288582324982
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.15386390686035156
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Data Visualization",
+    "similarity_score": 0.15343640744686127
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Data Visualization",
+    "similarity_score": 0.15224149823188782
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.15132500231266022
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.15106293559074402
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.1499556303024292
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.14977556467056274
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.1488189399242401
+  },
+  {
+    "field1": "Blockchain Technology",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.14799350500106812
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.14744234085083008
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Computer Vision",
+    "similarity_score": 0.14661133289337158
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Data Visualization",
+    "similarity_score": 0.1459033191204071
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.14449161291122437
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.1440638154745102
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.14363113045692444
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.14336846768856049
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Computer Vision",
+    "similarity_score": 0.142078697681427
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.1415635049343109
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.140097513794899
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.14007605612277985
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.13812550902366638
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.1366955190896988
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Augmented Intelligence",
+    "similarity_score": 0.1340731680393219
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.1314355731010437
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Renewable Energy",
+    "similarity_score": 0.13063210248947144
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Astrophysics",
+    "similarity_score": 0.12922511994838715
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.12852436304092407
+  },
+  {
+    "field1": "Natural Language Processing",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.1279413402080536
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.12583991885185242
+  },
+  {
+    "field1": "Renewable Energy",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.1255522519350052
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Blockchain Technology",
+    "similarity_score": 0.12331829965114594
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.12226370722055435
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.12184721976518631
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Immunology",
+    "similarity_score": 0.12124603986740112
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.1211060881614685
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.1197827160358429
+  },
+  {
+    "field1": "Bioinformatics",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.11694644391536713
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.11563945561647415
+  },
+  {
+    "field1": "Immunology",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.11537118256092072
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Bioinformatics",
+    "similarity_score": 0.1083303689956665
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.10553828626871109
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.10370089113712311
+  },
+  {
+    "field1": "Climate Science",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.10319013893604279
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.09991809725761414
+  },
+  {
+    "field1": "Sustainable Agriculture",
+    "field2": "Data Visualization",
+    "similarity_score": 0.0985535979270935
+  },
+  {
+    "field1": "Genomics",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.09831619262695312
+  },
+  {
+    "field1": "Nanotechnology",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.09831257164478302
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.09805436432361603
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Natural Language Processing",
+    "similarity_score": 0.09054455161094666
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Sustainable Agriculture",
+    "similarity_score": 0.08940154314041138
+  },
+  {
+    "field1": "Social Network Analysis",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.0832144021987915
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.08209644258022308
+  },
+  {
+    "field1": "Augmented Reality",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.08136861026287079
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Behavioral Economics",
+    "similarity_score": 0.08014600723981857
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.07694093883037567
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Biomedical Engineering",
+    "similarity_score": 0.07645233720541
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Augmented Reality",
+    "similarity_score": 0.07468932867050171
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Computer Vision",
+    "similarity_score": 0.07286323606967926
+  },
+  {
+    "field1": "Astrophysics",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.0704365223646164
+  },
+  {
+    "field1": "Biomedical Engineering",
+    "field2": "Social Network Analysis",
+    "similarity_score": 0.06910958886146545
+  },
+  {
+    "field1": "Behavioral Economics",
+    "field2": "Cloud Computing",
+    "similarity_score": 0.033242128789424896
+  }
+]
