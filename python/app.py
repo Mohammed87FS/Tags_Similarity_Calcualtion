@@ -42,7 +42,7 @@ def load_research_fields():
         research_fields = []
 
 def precompute_embeddings():
-    global field_embeddings
+    global field_embeddings # this need be actually saved and not created every time
     if not research_fields:
         return
         
