@@ -35,3 +35,8 @@ function displayTags(){
 
 
  }
+
+ function removeTag(index){ // Function to remove a tag
+    tags.splice(index, 1); // Remove the tag from the array
+    displayTags(); // Update the displayed tags
+    }
