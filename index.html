@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tag Similarity Calculator</title>
+    <title>Research Field Similarity Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Tag Similarity Calculator</h1>
+        <h1>Research Field Similarity Calculator</h1>
         
-     
+        <!-- Tag Input Form -->
         <div class="input-section">
-            <h2>Add Tags</h2>
+            <h2>Add Research Field</h2>
             <form id="tag-form">
-                <input type="text" id="tag-input" placeholder="Enter a tag">
-                <button type="submit">Add Tag</button>
+                <div class="form-group">
+                    <label for="tag-input">Field Name:</label>
+                    <input type="text" id="tag-input" placeholder="e.g., Machine Learning" required>
+                </div>
+                <div class="form-group">
+                    <label for="tag-description">Field Description:</label>
+                    <textarea id="tag-description" placeholder="Enter a detailed description of this research field..." rows="4" required></textarea>
+                </div>
+                <button type="submit">Add Field</button>
             </form>
         </div>
         
-    
+        <!-- Tags Section -->
         <div class="tags-section">
-            <h2>Your Tags</h2>
+            <h2>Your Research Fields</h2>
             <div id="tags-container"></div>
-            <button id="calculate-btn" disabled>Calculate Similarity</button>
+            <button id="calculate-btn" disabled>Calculate Similarities</button>
         </div>
         
-
+        <!-- Results Section -->
         <div class="results-section">
             <h2>Similarity Results</h2>
             <div id="similarity-results"></div>
