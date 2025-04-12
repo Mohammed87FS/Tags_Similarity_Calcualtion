@@ -71,7 +71,7 @@ function populateFieldSelects() {
 function checkCompareButtonState() {
     const field1 = field1Select.value;
     const field2 = field2Select.value;
-    compareBtn.disabled = !field1 || !field2 || field1 === field2;
+    compareBtn.disabled = !field1 || !field2 ;
 }
 
 // Function to compare two selected fields
@@ -79,10 +79,29 @@ async function compareSelectedFields() {
     const field1 = field1Select.value;
     const field2 = field2Select.value;
     
-    if (!field1 || !field2 || field1 === field2) {
+    if (!field1 || !field2 ) { // this should be changed.. since we need to compare the same field
         return;
     }
-    
+    if (field1 === field2) {
+        similarityResults.innerHTML = `
+            <div class="comparison-result high-similarity">
+                <h3>Similarity Result</h3>
+                <div class="comparison-fields">
+                    <span class="field-name">${field1}</span>
+                    <span class="similarity-arrow">↔</span>
+                    <span class="field-name">${field2}</span>
+                </div>
+                <div class="similarity-score">
+                    <span class="score-value">100.0%</span>
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
     // Show loading state
     similarityResults.innerHTML = '<p>Calculating similarity...</p>';
     
@@ -353,25 +372,7 @@ function displaySimilarityResults(pairs) {
     downloadBtn.className = 'download-btn';
     downloadBtn.addEventListener('click', () => {
         const jsonData = JSON.stringify(pairs, null, 2);
-        saveAsFile(jsonData, 'research_field_similarities.json');
+    
     });
     similarityResults.appendChild(downloadBtn);
-}
-
-// Helper function to save data as a file
-function saveAsFile(data, filename) {
-    const blob = new Blob([data], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    
-    // Clean up
-    setTimeout(() => {
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }, 0);
 }
