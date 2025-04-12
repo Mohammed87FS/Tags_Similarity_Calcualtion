@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Similarity Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tag Similarity Calculator</h1>
+        
+     
+        <div class="input-section">
+            <h2>Add Tags</h2>
+            <form id="tag-form">
+                <input type="text" id="tag-input" placeholder="Enter a tag">
+                <button type="submit">Add Tag</button>
+            </form>
+        </div>
+        
+    
+        <div class="tags-section">
+            <h2>Your Tags</h2>
+            <div id="tags-container"></div>
+            <button id="calculate-btn" disabled>Calculate Similarity</button>
+        </div>
+        
+
+        <div class="results-section">
+            <h2>Similarity Results</h2>
+            <div id="similarity-results"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
