@@ -15,14 +15,32 @@ import networkx as nx
 import pandas as pd 
 import json
 
-def load_research_fields(json_file_path="../research_fields.json"):
-    """Load research fields from the JSON file."""
+def load_research_fields(json_file_path="../research_groups_fields.json"):
+    """Load research fields from the JSON file with group structure."""
     print(f"Loading research fields from {json_file_path}...")
     try:
         with open(json_file_path, 'r', encoding='utf-8') as file:
-            research_fields = json.load(file)
-        print(f"Successfully loaded {len(research_fields)} research fields.")
-        return research_fields
+            data = json.load(file)
+        
+        # Extract fields from grouped structure
+        research_fields = []
+        field_to_group = {}  # Dictionary to map field names to their group
+        
+        if "categories" in data:
+            # New grouped structure
+            for category in data["categories"]:
+                group_name = category["name"]
+                for field in category["fields"]:
+                    research_fields.append(field)
+                    field_to_group[field["name"]] = group_name
+            print(f"Successfully loaded {len(research_fields)} research fields from {len(data['categories'])} categories.")
+        else:
+            # Old flat structure
+            research_fields = data
+            print(f"Successfully loaded {len(research_fields)} research fields (flat structure).")
+            field_to_group = {field["name"]: "Ungrouped" for field in research_fields}
+        
+        return research_fields, field_to_group
     except FileNotFoundError:
         print(f"Error: File {json_file_path} not found.")
         exit(1)
@@ -267,6 +285,63 @@ def enhance_contrast(similarity_matrix, power=1.5):
     
     return result
 
+def apply_group_affinity(similarity_matrix, field_names, field_to_group, affinity_boost=0.15):
+    """
+    Apply a similarity boost to fields within the same category group.
+    
+    Parameters:
+    - similarity_matrix: Original similarity matrix
+    - field_names: List of field names in the same order as the matrix
+    - field_to_group: Dictionary mapping field names to their group names
+    - affinity_boost: Amount to boost similarity for same-group fields (0-1)
+    
+    Returns:
+    - Similarity matrix with group affinity boost applied
+    """
+    print(f"Applying group affinity boost of {affinity_boost} to same-group fields...")
+    
+    # Create a copy of the original matrix
+    result = similarity_matrix.copy()
+    n = len(field_names)
+    
+    # Track boosted pairs for reporting
+    boosted_pairs = []
+    
+    # For each pair of fields
+    for i in range(n):
+        for j in range(i+1, n):  # Only process each pair once
+            field1 = field_names[i]
+            field2 = field_names[j]
+            
+            # If fields belong to the same group, boost their similarity
+            if field_to_group.get(field1) == field_to_group.get(field2):
+                group_name = field_to_group.get(field1)
+                
+                # Store original similarity for reporting
+                original_sim = result[i, j]
+                
+                # Apply boost (weighted blend toward 1.0)
+                # This formula boosts similarity while preserving relative differences
+                result[i, j] = original_sim + affinity_boost * (1.0 - original_sim)
+                result[j, i] = result[i, j]  # Ensure symmetry
+                
+                boosted_pairs.append((field1, field2, group_name, original_sim, result[i, j]))
+    
+    # Report on the boosts
+    boost_count = len(boosted_pairs)
+    if boost_count > 0:
+        avg_boost = sum(new - orig for _, _, _, orig, new in boosted_pairs) / boost_count
+        print(f"Applied boosts to {boost_count} field pairs with an average increase of {avg_boost:.4f}")
+        
+        # Show some examples of boosted pairs
+        print("Example boosts (original → boosted):")
+        for field1, field2, group, orig, new in boosted_pairs[:5]:
+            print(f"  {field1} ↔ {field2} ({group}): {orig:.4f} → {new:.4f} (+{new-orig:.4f})")
+        if len(boosted_pairs) > 5:
+            print(f"  ...and {len(boosted_pairs)-5} more pairs")
+    
+    return result
+
 def balanced_similarity_enhancement(similarity_matrix, config=None):
     """
     Apply a balanced enhancement pipeline with both reinforcement and contrast.
@@ -310,36 +385,6 @@ def balanced_similarity_enhancement(similarity_matrix, config=None):
     print("Balanced enhancement pipeline complete!")
     return enhanced
 
-def visualize_similarity_matrix(field_names, similarity_matrix, title="Research Field Similarities"):
-    """
-    Visualize the similarity matrix as a heatmap.
-    
-    Parameters:
-    - field_names: List of research field names
-    - similarity_matrix: Matrix of similarity scores
-    - title: Title for the plot
-    """
-    plt.figure(figsize=(16, 14))
-    
-    # Create a mask for the upper triangle
-    mask = np.triu(np.ones_like(similarity_matrix, dtype=bool))
-    
-    # Create the heatmap
-    sns.heatmap(similarity_matrix, mask=mask, cmap="viridis",
-                xticklabels=field_names, yticklabels=field_names,
-                vmin=0, vmax=1, annot=False, square=True, linewidths=.5)
-    
-    plt.title(title, fontsize=16)
-    plt.xticks(rotation=45, ha="right", fontsize=8)
-    plt.yticks(fontsize=8)
-    plt.tight_layout()
-    
-    # Save the figure
-    filename = title.replace(" ", "_").lower() + ".png"
-    plt.savefig(filename, dpi=300, bbox_inches='tight')
-    plt.close()
-    
-    print(f"Similarity matrix visualization saved as '{filename}'")
 
 def create_similarity_network(field_names, similarity_matrix, threshold=0.65):
     """
@@ -384,11 +429,6 @@ def create_similarity_network(field_names, similarity_matrix, threshold=0.65):
     plt.title("Research Field Similarity Network", fontsize=16)
     plt.axis('off')
     
-    # Save the figure
-    plt.savefig("research_field_network.png", dpi=300, bbox_inches='tight')
-    plt.close()
-    
-    print("Network visualization saved as 'research_field_network.png'")
     return G
 
 def compare_similarity_matrices(field_names, original_sim, enhanced_sim, top_n=15):
@@ -449,7 +489,7 @@ def compare_similarity_matrices(field_names, original_sim, enhanced_sim, top_n=1
         lambda row: (row['Absolute Change'] / row['Original Similarity'] * 100) 
         if row['Original Similarity'] > 0 else float('inf'), axis=1
     )
-    comparison_df.to_excel("similarity_comparison.xlsx", index=False)
+    comparison_df.to_excel("json_sim/similarity_comparison.xlsx", index=False)
     print("Comparison exported to 'similarity_comparison.xlsx'")
     
     return changes
@@ -566,11 +606,11 @@ def main():
     """Main function to run the enhanced research field similarity analysis."""
     print("=" * 60)
     print("  ENHANCED RESEARCH FIELD SEMANTIC SIMILARITY ANALYZER")
-    print("  WITH CONTRAST MANAGEMENT")
+    print("  WITH GROUP AFFINITY AND CONTRAST MANAGEMENT")
     print("=" * 60)
     
-    # Load research fields from JSON file
-    research_fields = load_research_fields()
+    # Load research fields from JSON file with group structure
+    research_fields, field_to_group = load_research_fields()
     
     # Load model and prepare data
     model = load_model()
@@ -587,10 +627,9 @@ def main():
     # Save the original similarity matrix for comparison
     original_pairs = display_similarity_results(field_names, initial_similarity_matrix)
     export_to_json(original_pairs, "json_sim/original_research_field_similarities.json")
+    export_to_excel(original_pairs, "json_sim/original_research_field_similarities.xlsx")
     
-    # Visualize the original similarity matrix
-    visualize_similarity_matrix(field_names, initial_similarity_matrix, "Original Field Similarities")
-    
+   
     # Apply the balanced enhancement pipeline
     config = {
         'reinforcement_alpha': 0.3,     # Weight for network reinforcement
@@ -599,16 +638,23 @@ def main():
         'contrast_power': 1.5            # Power for contrast enhancement
     }
     
+    # First apply the network-based enhancement
     balanced_similarity = balanced_similarity_enhancement(initial_similarity_matrix, config)
     
-    # Calculate and display statistics for the balanced matrix
-    balanced_stats = calculate_similarity_stats(balanced_similarity)
-    print_similarity_stats(balanced_stats, "Balanced Similarity Statistics")
+    # Then apply group affinity boost based on the category structure
+    group_enhanced_similarity = apply_group_affinity(
+        balanced_similarity, 
+        field_names, 
+        field_to_group, 
+        affinity_boost=0.15  # Adjust this value to control the group impact (0.1-0.2 recommended)
+    )
     
-    # Visualize the balanced similarity matrix
-    visualize_similarity_matrix(field_names, balanced_similarity, "Balanced Field Similarities")
+    # Calculate and display statistics for the group-enhanced matrix
+    group_enhanced_stats = calculate_similarity_stats(group_enhanced_similarity)
+    print_similarity_stats(group_enhanced_stats, "Group-Enhanced Similarity Statistics")
     
-    # For comparison, also apply the original enhancement methods
+ 
+    # For comparison, also apply the original enhancement methods (without group factor)
     print("\nApplying original enhancement methods for comparison...")
     coherent_similarity = enhance_similarity_coherence(initial_similarity_matrix, alpha=0.3)
     refined_similarity = apply_graph_diffusion(coherent_similarity, alpha=0.2, iterations=2)
@@ -617,33 +663,23 @@ def main():
     refined_stats = calculate_similarity_stats(refined_similarity)
     print_similarity_stats(refined_stats, "Original Enhancement Statistics")
     
-    # Visualize the original enhanced similarity matrix
-    visualize_similarity_matrix(field_names, refined_similarity, "Original Enhanced Field Similarities")
-    
-    # Create network visualizations for both approaches
-    create_similarity_network(field_names, balanced_similarity, threshold=0.65)
-    create_similarity_network(field_names, refined_similarity, threshold=0.65)
+
+    # Create network visualization for the group-enhanced approach
+    create_similarity_network(field_names, group_enhanced_similarity, threshold=0.65)
     
     # Compare the matrices to see the difference
-    print("\nComparing initial vs. balanced enhancement:")
-    compare_similarity_matrices(field_names, initial_similarity_matrix, balanced_similarity)
+    print("\nComparing initial vs. group-enhanced approach:")
+    compare_similarity_matrices(field_names, initial_similarity_matrix, group_enhanced_similarity)
     
-    print("\nComparing initial vs. original enhancement:")
-    compare_similarity_matrices(field_names, initial_similarity_matrix, refined_similarity)
+    print("\nComparing original enhancement vs. group-enhanced approach:")
+    compare_similarity_matrices(field_names, refined_similarity, group_enhanced_similarity)
     
-    print("\nComparing original enhancement vs. balanced enhancement:")
-    compare_similarity_matrices(field_names, refined_similarity, balanced_similarity)
+    # Get similarity pairs and export using the group-enhanced approach
+    final_pairs = display_similarity_results(field_names, group_enhanced_similarity)
+    export_to_json(final_pairs, "json_sim/group_enhanced_research_field_similarities.json")
+    export_to_excel(final_pairs, "json_sim/group_enhanced_research_field_similarities.xlsx")
     
-    # Get similarity pairs and export using both enhancement methods
-    balanced_pairs = display_similarity_results(field_names, balanced_similarity)
-    export_to_json(balanced_pairs, "json_simbalanced_research_field_similarities.json")
-    export_to_excel(balanced_pairs, "json_simbalanced_research_field_similarities.xlsx")
-    
-    refined_pairs = display_similarity_results(field_names, refined_similarity)
-    export_to_json(refined_pairs, "json_simrefined_research_field_similarities.json")
-    export_to_excel(refined_pairs, "json_simrefined_research_field_similarities.xlsx")
-    
-    print("\nEnhanced similarity analysis complete!")
+    print("\nEnhanced similarity analysis with group affinity complete!")
 
 if __name__ == "__main__":
     main()
