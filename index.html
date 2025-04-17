@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Field Similarity Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -28,6 +29,26 @@
                 </div>
                 <button id="compare-btn" disabled>Compare Fields</button>
             </div>
+        </div>
+        
+        <!-- Network Visualization Section -->
+        <div class="network-section">
+            <h2>Field Network Visualization</h2>
+            <div class="selection-container">
+                <div class="form-group">
+                    <label for="network-field-select">Select Field:</label>
+                    <select id="network-field-select">
+                        <option value="">Select a research field</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="threshold-slider">Similarity Threshold:</label>
+                    <input type="range" id="threshold-slider" min="0" max="1" step="0.05" value="0.5">
+                    <span id="threshold-value">0.5</span>
+                </div>
+                <button id="show-network-btn" disabled>Show Network</button>
+            </div>
+            <div id="network-container"></div>
         </div>
         
         <!-- Tag Input Form -->
