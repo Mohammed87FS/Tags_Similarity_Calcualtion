@@ -1,0 +1,212 @@
+{
+    "categories": [
+      {
+        "name": "Computational Sciences & AI",
+        "fields": [
+          {
+            "name": "Artificial Intelligence",
+            "description": "Artificial Intelligence develops computational systems capable of performing complex tasks traditionally requiring human cognitive capabilities through algorithmic approaches and computational models that simulate intelligent behavior..."
+          },
+          {
+            "name": "Machine Learning",
+            "description": "Machine Learning constructs computational algorithms that enable systems to perform tasks through pattern recognition and statistical inference without explicit programming..."
+          },
+          {
+            "name": "Quantum Computing",
+            "description": "Quantum Computing leverages fundamental quantum mechanical phenomena to address computational problems fundamentally intractable for classical systems..."
+          },
+          {
+            "name": "Computer Vision",
+            "description": "Computer Vision enables machines to interpret visual information from images and videos..."
+          },
+          {
+            "name": "Robotics",
+            "description": "Robotics engineers autonomous and semi-autonomous mechanical systems that integrate environmental sensing, computational decision-making, and physical actuation..."
+          }
+        ]
+      },
+      {
+        "name": "Security & Information Protection",
+        "fields": [
+          {
+            "name": "Cybersecurity",
+            "description": "Cybersecurity implements defensive measures protecting digital information systems and sensitive data against unauthorized access..."
+          },
+          {
+            "name": "Information Security",
+            "description": "Information Security protects data confidentiality, integrity, and availability through technical safeguards..."
+          },
+          {
+            "name": "Ethical Hacking",
+            "description": "Ethical Hacking systematically probes computer systems with authorization to identify security vulnerabilities before malicious exploitation..."
+          },
+          {
+            "name": "Cryptography",
+            "description": "Cryptography develops mathematical techniques securing information from unauthorized access while enabling authenticated communication..."
+          }
+        ]
+      },
+      {
+        "name": "Human-Computer Interaction & Design",
+        "fields": [
+          {
+            "name": "Human-Computer Interaction",
+            "description": "Human-Computer Interaction designs and evaluates interactive computing systems for human use..."
+          },
+          {
+            "name": "Interface Design",
+            "description": "Interface Design creates user interaction systems mediating between humans and digital or physical products..."
+          },
+          {
+            "name": "Usability Evaluation",
+            "description": "Usability Evaluation systematically assesses how effectively users can interact with products, systems, or interfaces..."
+          },
+          {
+            "name": "User Research",
+            "description": "User Research investigates human behaviors, needs, motivations, and contexts to inform product design and development..."
+          },
+          {
+            "name": "Immersive Technologies",
+            "description": "Immersive Technologies create experiences blending digital content with physical reality or generating fully simulated environments..."
+          },
+          {
+            "name": "Data Visualization",
+            "description": "Data Visualization transforms abstract information into intuitive visual representations revealing patterns and relationships..."
+          }
+        ]
+      },
+      {
+        "name": "Media & Creative Technologies",
+        "fields": [
+          {
+            "name": "Game Development",
+            "description": "Game Development creates interactive software experiences through interdisciplinary collaboration..."
+          },
+          {
+            "name": "Game Design",
+            "description": "Game Design creates interactive experiences through rules, mechanics, and narratives that engage players..."
+          },
+          {
+            "name": "Animation & Digital Media",
+            "description": "Animation & Digital Media creates moving imagery and interactive content through CGI, motion capture, and procedural techniques..."
+          },
+          {
+            "name": "Computer Graphics",
+            "description": "Computer Graphics generates and manipulates visual content through computational methods..."
+          },
+          {
+            "name": "Sound Design",
+            "description": "Sound Design creates, manipulates, and arranges audio elements enhancing narrative experiences..."
+          },
+          {
+            "name": "Interactive Media",
+            "description": "Interactive Media creates user-responsive experiences combining computational systems with content that adapts to participant actions..."
+          },
+          {
+            "name": "Media Production",
+            "description": "Media Production creates audiovisual content through integrated creative and technical processes..."
+          },
+          {
+            "name": "Digital Arts & Culture",
+            "description": "Digital Arts & Culture explores creative expression and cultural practices emerging from computational technologies..."
+          },
+          {
+            "name": "Media Studies",
+            "description": "Media Studies examines communication channels, their content, and societal impact across traditional and digital platforms..."
+          }
+        ]
+      },
+      {
+        "name": "Healthcare & Life Sciences",
+        "fields": [
+          {
+            "name": "Health",
+            "description": "Health research investigates physical, mental, and social wellbeing determinants across individual and population levels..."
+          },
+          {
+            "name": "Digital Healthcare",
+            "description": "Digital Healthcare applies computing and information technology to medicine and healthcare delivery..."
+          },
+          {
+            "name": "Nutritional Science",
+            "description": "Nutritional Science examines how dietary components affect physiological function, metabolic processes, and health outcomes..."
+          },
+          {
+            "name": "Neuroscience",
+            "description": "Neuroscience examines the nervous system's organization and operations across hierarchical scales..."
+          },
+          {
+            "name": "Cognitive Neuroscience",
+            "description": "Cognitive Neuroscience investigates neural mechanisms underlying mental processes, linking brain activity to cognitive functions..."
+          },
+          {
+            "name": "Cognitive Psychology",
+            "description": "Cognitive Psychology systematically investigates mental processes underlying human perception, attentional selection, memory formation..."
+          }
+        ]
+      },
+      {
+        "name": "Physical Sciences & Engineering",
+        "fields": [
+          {
+            "name": "Nanotechnology",
+            "description": "Nanotechnology precisely manipulates and structures matter at the 1-100 nanometer dimensional scale..."
+          },
+          {
+            "name": "Astrophysics",
+            "description": "Astrophysics applies fundamental physical principles to celestial objects and cosmic phenomena..."
+          },
+          {
+            "name": "Physical Computing",
+            "description": "Physical Computing integrates digital systems with the physical world through sensors, actuators, and microcontrollers..."
+          },
+          {
+            "name": "Smart Engineering",
+            "description": "Smart Engineering integrates advanced technologies including robotics, IoT sensors, artificial intelligence, and data analytics..."
+          },
+          {
+            "name": "Industrial Data Lab",
+            "description": "Industrial Data Lab optimizes manufacturing and industrial processes through data collection, analysis, and application..."
+          }
+        ]
+      },
+      {
+        "name": "Environmental & Energy Systems",
+        "fields": [
+          {
+            "name": "Climate Science",
+            "description": "Climate Science investigates Earth's integrated climate system through interdisciplinary approaches..."
+          },
+          {
+            "name": "Renewable Energy",
+            "description": "Renewable Energy develops technologies that convert naturally replenishing environmental resources into usable power forms..."
+          }
+        ]
+      },
+      {
+        "name": "Data & Software Systems",
+        "fields": [
+          {
+            "name": "Data Science",
+            "description": "Data Science systematically extracts actionable knowledge and insights from structured, semi-structured, and unstructured data sources..."
+          },
+          {
+            "name": "Database Management Systems",
+            "description": "Database Management Systems organize, store, retrieve, and manipulate data while maintaining integrity, security, and performance..."
+          },
+          {
+            "name": "Web Technologies",
+            "description": "Web Technologies enable internet-based applications through browsers, servers, and network protocols..."
+          },
+          {
+            "name": "Mobile Development",
+            "description": "Mobile Development creates applications optimized for portable devices integrating hardware capabilities with software interfaces..."
+          },
+          {
+            "name": "Software Engineering",
+            "description": "Software Engineering applies systematic, disciplined approaches to software development, maintenance, and evolution..."
+          }
+        ]
+      }
+    ]
+  }

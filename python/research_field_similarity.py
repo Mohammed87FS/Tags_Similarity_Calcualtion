@@ -519,7 +519,7 @@ def print_similarity_stats(stats, title="Similarity Statistics"):
     print(f"90:10 percentile ratio: {stats['contrast_ratio_90_10']:.2f}x")
     print("=" * 40)
 
-def export_to_json(similarity_pairs, output_path="research_field_similarities.json"):
+def export_to_json(similarity_pairs, output_path="json_sim/research_field_similarities.json"):
     """
     Export the similarity pairs to a JSON file.
     
@@ -586,7 +586,7 @@ def main():
     
     # Save the original similarity matrix for comparison
     original_pairs = display_similarity_results(field_names, initial_similarity_matrix)
-    export_to_json(original_pairs, "original_research_field_similarities.json")
+    export_to_json(original_pairs, "json_sim/original_research_field_similarities.json")
     
     # Visualize the original similarity matrix
     visualize_similarity_matrix(field_names, initial_similarity_matrix, "Original Field Similarities")
@@ -636,12 +636,12 @@ def main():
     
     # Get similarity pairs and export using both enhancement methods
     balanced_pairs = display_similarity_results(field_names, balanced_similarity)
-    export_to_json(balanced_pairs, "balanced_research_field_similarities.json")
-    export_to_excel(balanced_pairs, "balanced_research_field_similarities.xlsx")
+    export_to_json(balanced_pairs, "json_simbalanced_research_field_similarities.json")
+    export_to_excel(balanced_pairs, "json_simbalanced_research_field_similarities.xlsx")
     
     refined_pairs = display_similarity_results(field_names, refined_similarity)
-    export_to_json(refined_pairs, "refined_research_field_similarities.json")
-    export_to_excel(refined_pairs, "refined_research_field_similarities.xlsx")
+    export_to_json(refined_pairs, "json_simrefined_research_field_similarities.json")
+    export_to_excel(refined_pairs, "json_simrefined_research_field_similarities.xlsx")
     
     print("\nEnhanced similarity analysis complete!")
 
