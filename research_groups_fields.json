@@ -20,6 +20,10 @@
             "description": "Computer Vision enables machines to interpret visual information from images and videos..."
           },
           {
+            "name": "Data Science",
+            "description": "Data Science systematically extracts actionable knowledge and insights from structured, semi-structured, and unstructured data sources..."
+          },
+          {
             "name": "Robotics",
             "description": "Robotics engineers autonomous and semi-autonomous mechanical systems that integrate environmental sensing, computational decision-making, and physical actuation..."
           }
@@ -149,24 +153,12 @@
         "name": "Physical Sciences & Engineering",
         "fields": [
           {
-            "name": "Nanotechnology",
-            "description": "Nanotechnology precisely manipulates and structures matter at the 1-100 nanometer dimensional scale..."
-          },
-          {
-            "name": "Astrophysics",
-            "description": "Astrophysics applies fundamental physical principles to celestial objects and cosmic phenomena..."
-          },
-          {
             "name": "Physical Computing",
             "description": "Physical Computing integrates digital systems with the physical world through sensors, actuators, and microcontrollers..."
           },
           {
             "name": "Smart Engineering",
             "description": "Smart Engineering integrates advanced technologies including robotics, IoT sensors, artificial intelligence, and data analytics..."
-          },
-          {
-            "name": "Industrial Data Lab",
-            "description": "Industrial Data Lab optimizes manufacturing and industrial processes through data collection, analysis, and application..."
           }
         ]
       },
@@ -186,14 +178,7 @@
       {
         "name": "Data & Software Systems",
         "fields": [
-          {
-            "name": "Data Science",
-            "description": "Data Science systematically extracts actionable knowledge and insights from structured, semi-structured, and unstructured data sources..."
-          },
-          {
-            "name": "Database Management Systems",
-            "description": "Database Management Systems organize, store, retrieve, and manipulate data while maintaining integrity, security, and performance..."
-          },
+         
           {
             "name": "Web Technologies",
             "description": "Web Technologies enable internet-based applications through browsers, servers, and network protocols..."

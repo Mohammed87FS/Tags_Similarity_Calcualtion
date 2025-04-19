@@ -5,6 +5,7 @@ import numpy as np
 import json
 import os
 
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
@@ -37,7 +38,7 @@ def load_enhanced_similarities():
     global similarity_data, similarity_lookup
     try:
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(script_dir, 'refined_research_field_similarities.json')
+        json_path = os.path.join(script_dir, 'field_similarity_comparisons.json')
         print(f"Looking for enhanced similarities at: {json_path}")
         
         if os.path.exists(json_path):
