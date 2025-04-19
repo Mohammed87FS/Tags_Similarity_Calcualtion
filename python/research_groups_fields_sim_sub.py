@@ -13,7 +13,7 @@ from typing import Dict, List, Tuple, Set
 #############################################################
 
 # File path for the JSON data
-JSON_FILE_PATH = "../research_sub_groups_fields.json"  # Use your existing JSON file
+JSON_FILE_PATH = "../test_research_sub_groups_fields.json"  # Use your existing JSON file
 
 # Sentence Transformer model to use
 # Options include: 'all-MiniLM-L6-v2', 'paraphrase-MiniLM-L3-v2', 'all-mpnet-base-v2'
@@ -25,6 +25,8 @@ SAME_SUBGROUP_BASELINE = 0.8    # Baseline similarity for fields in same subgrou
 SIMILARITY_WEIGHT_SUB = 0.2        # Weight of calculated similarity to add to baseline
 SIMILARITY_WEIGHT_GENERAL = 0.15        # Weight of calculated similarity to add to baseline
 MAX_CROSS_GROUP_SIMILARITY = 0.75  # Maximum similarity for fields not in same group/subgroup
+
+
 
 # Output configuration
 OUTPUT_CSV = "outputs_sub_groups/field_similarities.csv"
