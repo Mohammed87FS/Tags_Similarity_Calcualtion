@@ -12,10 +12,6 @@
             "description": "Machine Learning constructs computational algorithms that enable systems to perform tasks through pattern recognition and statistical inference without explicit programming..."
           },
           {
-            "name": "Quantum Computing",
-            "description": "Quantum Computing leverages fundamental quantum mechanical phenomena to address computational problems fundamentally intractable for classical systems..."
-          },
-          {
             "name": "Computer Vision",
             "description": "Computer Vision enables machines to interpret visual information from images and videos..."
           },
