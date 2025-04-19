@@ -24,7 +24,7 @@ SAME_GROUP_BASELINE = 0.7       # Baseline similarity for fields in same general
 SAME_SUBGROUP_BASELINE = 0.8    # Baseline similarity for fields in same subgroup
 SIMILARITY_WEIGHT_SUB = 0.2        # Weight of calculated similarity to add to baseline
 SIMILARITY_WEIGHT_GENERAL = 0.15        # Weight of calculated similarity to add to baseline
-MAX_CROSS_GROUP_SIMILARITY = 0.65  # Maximum similarity for fields not in same group/subgroup
+MAX_CROSS_GROUP_SIMILARITY = 0.75  # Maximum similarity for fields not in same group/subgroup
 
 # Output configuration
 OUTPUT_CSV = "outputs_sub_groups/field_similarities.csv"

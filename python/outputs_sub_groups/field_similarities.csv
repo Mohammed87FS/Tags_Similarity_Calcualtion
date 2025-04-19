@@ -3,665 +3,527 @@ Artificial Intelligence,Machine Learning,0.9364374637603761
 Artificial Intelligence,Computer Vision,0.7727266490459441
 Artificial Intelligence,Robotics,0.7606850415468216
 Artificial Intelligence,Data Science,0.7647037863731384
-Artificial Intelligence,Cybersecurity,0.3372459423721374
-Artificial Intelligence,Information Security,0.34923003042477846
-Artificial Intelligence,Ethical Hacking,0.33619255858391434
-Artificial Intelligence,Cryptography,0.31040228213763416
-Artificial Intelligence,Human-Computer Interaction,0.4417231596758133
-Artificial Intelligence,Interface Design,0.3948172165947727
-Artificial Intelligence,Usability Evaluation,0.39455391377911625
-Artificial Intelligence,User Research,0.37876601011276484
-Artificial Intelligence,Immersive Technologies,0.3401804302556149
-Artificial Intelligence,Data Visualization,0.37466706071070704
-Artificial Intelligence,Game Development,0.2888931277469656
-Artificial Intelligence,Game Design,0.33183453324333245
-Artificial Intelligence,Animation & Digital Media,0.37418027973809065
-Artificial Intelligence,Computer Graphics,0.40983269440800857
-Artificial Intelligence,Sound Design,0.27347319242526363
-Artificial Intelligence,Interactive Media,0.4490272321148879
-Artificial Intelligence,Media Production,0.23097898765407932
-Artificial Intelligence,Digital Arts & Culture,0.398027975467966
-Artificial Intelligence,Media Studies,0.18245189342142754
-Artificial Intelligence,Health,0.13112496034537857
-Artificial Intelligence,Digital Healthcare,0.34081057999953884
-Artificial Intelligence,Nutritional Science,0.14753158393483665
-Artificial Intelligence,Neuroscience,0.4136442161650623
-Artificial Intelligence,Cognitive Neuroscience,0.48519817246731456
-Artificial Intelligence,Cognitive Psychology,0.4858118460167019
-Artificial Intelligence,Physical Computing,0.3975560029424462
-Artificial Intelligence,Smart Engineering,0.4777996135094842
-Artificial Intelligence,Climate Science,0.25522334848627865
-Artificial Intelligence,Renewable Energy,0.22582909857642602
-Artificial Intelligence,Software Engineering,0.34800397726798304
-Artificial Intelligence,Web Technologies,0.28873207510194077
-Artificial Intelligence,Mobile Development,0.21122217575459074
+Artificial Intelligence,Cybersecurity,0.3891299335063124
+Artificial Intelligence,Information Security,0.40295772741320596
+Artificial Intelligence,Ethical Hacking,0.38791449067374734
+Artificial Intelligence,Cryptography,0.35815647938957795
+Artificial Intelligence,Human-Computer Interaction,0.5096807015687056
+Artificial Intelligence,Interface Design,0.45555832684012243
+Artificial Intelligence,Usability Evaluation,0.45525451589898036
+Artificial Intelligence,User Research,0.4370377039762672
+Artificial Intelligence,Immersive Technologies,0.3925158810641711
+Artificial Intelligence,Data Visualization,0.43230814697389275
+Artificial Intelligence,Game Development,0.3333382243234218
+Artificial Intelligence,Game Design,0.3828859998961529
+Artificial Intelligence,Animation & Digital Media,0.4317464766208739
+Artificial Intelligence,Computer Graphics,0.4728839113410863
+Artificial Intelligence,Sound Design,0.3155459912599196
+Artificial Intelligence,Interactive Media,0.5181083447479476
+Artificial Intelligence,Media Production,0.26651419993493797
+Artificial Intelligence,Digital Arts & Culture,0.4592630486168839
+Artificial Intelligence,Media Studies,0.21052141548626258
+Artificial Intelligence,Health,0.15129803116774448
+Artificial Intelligence,Digital Healthcare,0.39324297692254484
+Artificial Intelligence,Neuroscience,0.47728178788276426
+Artificial Intelligence,Cognitive Psychology,0.5605521300192715
+Artificial Intelligence,Physical Computing,0.4587184649335918
+Artificial Intelligence,Smart Engineering,0.5513072463570972
+Artificial Intelligence,Software Engineering,0.4015430506938267
+Artificial Intelligence,Web Technologies,0.3331523943483933
+Artificial Intelligence,Mobile Development,0.24371789510145087
 Machine Learning,Computer Vision,0.7765960395336151
 Machine Learning,Robotics,0.7602672159671783
 Machine Learning,Data Science,0.7770015001296997
-Machine Learning,Cybersecurity,0.2817151715194744
-Machine Learning,Information Security,0.2985040543238868
-Machine Learning,Ethical Hacking,0.3381768904948515
-Machine Learning,Cryptography,0.3093207191685284
-Machine Learning,Human-Computer Interaction,0.3030074899886769
-Machine Learning,Interface Design,0.30788415602883235
-Machine Learning,Usability Evaluation,0.3398936064502012
-Machine Learning,User Research,0.36686300909082714
-Machine Learning,Immersive Technologies,0.22151176052252697
-Machine Learning,Data Visualization,0.38950627487209466
-Machine Learning,Game Development,0.17573606138328038
-Machine Learning,Game Design,0.23909670518687703
-Machine Learning,Animation & Digital Media,0.2653131198583432
-Machine Learning,Computer Graphics,0.3840394275180429
-Machine Learning,Sound Design,0.19242699277985903
-Machine Learning,Interactive Media,0.32654001020665857
-Machine Learning,Media Production,0.13019449385662338
-Machine Learning,Digital Arts & Culture,0.3016776051766084
-Machine Learning,Media Studies,0.10242753413421707
-Machine Learning,Health,0.10662163499743672
-Machine Learning,Digital Healthcare,0.3128052761645436
-Machine Learning,Nutritional Science,0.16434137827934803
-Machine Learning,Neuroscience,0.32890599749295973
-Machine Learning,Cognitive Neuroscience,0.37303908042087175
-Machine Learning,Cognitive Psychology,0.3704718132711224
-Machine Learning,Physical Computing,0.4547497336497851
-Machine Learning,Smart Engineering,0.4950544735749123
-Machine Learning,Climate Science,0.22044402835546667
-Machine Learning,Renewable Energy,0.21080781240141644
-Machine Learning,Software Engineering,0.35625064330758555
-Machine Learning,Web Technologies,0.3066876335034314
-Machine Learning,Mobile Development,0.2644303063772594
-Computer Vision,Robotics,0.8692390739917756
+Machine Learning,Cybersecurity,0.3250559671378551
+Machine Learning,Information Security,0.3444277549891002
+Machine Learning,Ethical Hacking,0.39020410441713643
+Machine Learning,Cryptography,0.35690852211753277
+Machine Learning,Human-Computer Interaction,0.34962412644401025
+Machine Learning,Interface Design,0.3552509492640374
+Machine Learning,Usability Evaluation,0.392184930519463
+Machine Learning,User Research,0.42330347202787755
+Machine Learning,Immersive Technologies,0.25559049291060804
+Machine Learning,Data Visualization,0.4494303171601093
+Machine Learning,Game Development,0.20277237851916968
+Machine Learning,Game Design,0.2758808136771658
+Machine Learning,Animation & Digital Media,0.306130522913473
+Machine Learning,Computer Graphics,0.44312248272297156
+Machine Learning,Sound Design,0.22203114551522202
+Machine Learning,Interactive Media,0.37677693485383684
+Machine Learning,Media Production,0.1502243662214124
+Machine Learning,Digital Arts & Culture,0.3480895444345482
+Machine Learning,Media Studies,0.118185616308712
+Machine Learning,Health,0.12302496345858084
+Machine Learning,Digital Healthcare,0.3609291648052427
+Machine Learning,Neuroscience,0.3795069201841844
+Machine Learning,Cognitive Psychology,0.4274674768512951
+Machine Learning,Physical Computing,0.5247112311343675
+Machine Learning,Smart Engineering,0.571216700278745
+Machine Learning,Software Engineering,0.4110584345856757
+Machine Learning,Web Technologies,0.3538703463501132
+Machine Learning,Mobile Development,0.3051118919737609
+Computer Vision,Robotics,0.8692390620708466
 Computer Vision,Data Science,0.7600925594568252
-Computer Vision,Cybersecurity,0.30088669033032184
-Computer Vision,Information Security,0.3995724533687365
-Computer Vision,Ethical Hacking,0.2498475227619048
-Computer Vision,Cryptography,0.2554047879060441
-Computer Vision,Human-Computer Interaction,0.33469020568313695
-Computer Vision,Interface Design,0.4244720951735245
-Computer Vision,Usability Evaluation,0.3481306973191568
-Computer Vision,User Research,0.3246096788076579
-Computer Vision,Immersive Technologies,0.4100682781110416
-Computer Vision,Data Visualization,0.48454177007834376
-Computer Vision,Game Development,0.2271697231069228
-Computer Vision,Game Design,0.28930027377932194
-Computer Vision,Animation & Digital Media,0.46414346487691266
-Computer Vision,Computer Graphics,0.6189065167286515
-Computer Vision,Sound Design,0.33025345116168064
-Computer Vision,Interactive Media,0.4183323692359654
-Computer Vision,Media Production,0.327098791861857
-Computer Vision,Digital Arts & Culture,0.3845144192415144
-Computer Vision,Media Studies,0.25052155151606037
-Computer Vision,Health,0.12758479259851918
-Computer Vision,Digital Healthcare,0.3435536219786109
-Computer Vision,Nutritional Science,0.16422142266929945
-Computer Vision,Neuroscience,0.37257642427760296
-Computer Vision,Cognitive Neuroscience,0.37002454066027424
-Computer Vision,Cognitive Psychology,0.4261277945759832
-Computer Vision,Physical Computing,0.38613397453135107
-Computer Vision,Smart Engineering,0.3706160159161499
-Computer Vision,Climate Science,0.24232481725972616
-Computer Vision,Renewable Energy,0.2632723864542412
-Computer Vision,Software Engineering,0.3400834133614329
-Computer Vision,Web Technologies,0.32484782164038334
-Computer Vision,Mobile Development,0.21061607895434892
+Computer Vision,Cybersecurity,0.34717691720314114
+Computer Vision,Information Security,0.4610451053243888
+Computer Vision,Ethical Hacking,0.28828560318681323
+Computer Vision,Cryptography,0.29469781561028197
+Computer Vision,Human-Computer Interaction,0.3861809733794663
+Computer Vision,Interface Design,0.4897753948969915
+Computer Vision,Usability Evaluation,0.40168916660349024
+Computer Vision,User Research,0.374549596215452
+Computer Vision,Immersive Technologies,0.4731556723347409
+Computer Vision,Data Visualization,0.5590866909607038
+Computer Vision,Game Development,0.26211887809921913
+Computer Vision,Game Design,0.33380799161791025
+Computer Vision,Animation & Digital Media,0.5355501517810531
+Computer Vision,Computer Graphics,0.7141229702736738
+Computer Vision,Sound Design,0.38106167441732386
+Computer Vision,Interactive Media,0.48269126162826675
+Computer Vision,Media Production,0.3774216165615284
+Computer Vision,Digital Arts & Culture,0.443670483740209
+Computer Vision,Media Studies,0.2890632954943779
+Computer Vision,Health,0.14721318905106112
+Computer Vision,Digital Healthcare,0.39640799218193623
+Computer Vision,Neuroscience,0.4298959073444645
+Computer Vision,Cognitive Psychology,0.4916858504624433
+Computer Vision,Physical Computing,0.4455392345603277
+Computer Vision,Smart Engineering,0.427633897696634
+Computer Vision,Software Engineering,0.3924039053159616
+Computer Vision,Web Technologies,0.3748243764070583
+Computer Vision,Mobile Development,0.24301855263963335
 Robotics,Data Science,0.7359836310148239
-Robotics,Cybersecurity,0.2339525382081989
-Robotics,Information Security,0.20399287878478722
-Robotics,Ethical Hacking,0.1963374579669307
-Robotics,Cryptography,0.18285857938552463
-Robotics,Human-Computer Interaction,0.2545503405085734
-Robotics,Interface Design,0.3271285237731149
-Robotics,Usability Evaluation,0.2426948415344095
-Robotics,User Research,0.27835546554732943
-Robotics,Immersive Technologies,0.2825748234391286
-Robotics,Data Visualization,0.20476481581537725
-Robotics,Game Development,0.22868991802988153
-Robotics,Game Design,0.21704735877411274
-Robotics,Animation & Digital Media,0.35017995636318916
-Robotics,Computer Graphics,0.2717575547548967
-Robotics,Sound Design,0.23155226145944602
-Robotics,Interactive Media,0.2715791776644823
-Robotics,Media Production,0.17370643431450078
-Robotics,Digital Arts & Culture,0.2656554969060686
-Robotics,Media Studies,0.03413237430114
-Robotics,Health,0.07077502299926572
-Robotics,Digital Healthcare,0.19653383522799062
-Robotics,Nutritional Science,0.045570043235910004
-Robotics,Neuroscience,0.30226557241200686
-Robotics,Cognitive Neuroscience,0.27274576699876185
-Robotics,Cognitive Psychology,0.16657019333870926
-Robotics,Physical Computing,0.6007453221923823
-Robotics,Smart Engineering,0.5498042066717308
-Robotics,Climate Science,0.25766596589202123
-Robotics,Renewable Energy,0.24844015957954185
-Robotics,Software Engineering,0.29588209655981196
-Robotics,Web Technologies,0.20502594768393512
-Robotics,Mobile Development,0.19742579256572823
-Data Science,Cybersecurity,0.34021312385629215
-Data Science,Information Security,0.3800765145494099
-Data Science,Ethical Hacking,0.2457340955868118
-Data Science,Cryptography,0.1999164152189032
-Data Science,Human-Computer Interaction,0.24025632161160143
-Data Science,Interface Design,0.3234558563675742
-Data Science,Usability Evaluation,0.2803931653763466
-Data Science,User Research,0.4136369988442444
-Data Science,Immersive Technologies,0.26850337693973103
-Data Science,Data Visualization,0.5964655947186818
-Data Science,Game Development,0.3016415185725188
-Data Science,Game Design,0.3510605270115088
-Data Science,Animation & Digital Media,0.313506650225862
-Data Science,Computer Graphics,0.3196279734330487
-Data Science,Sound Design,0.25349254294048756
-Data Science,Interactive Media,0.366835893817794
-Data Science,Media Production,0.21508314047238725
-Data Science,Digital Arts & Culture,0.35587137453631673
-Data Science,Media Studies,0.25846254532875057
-Data Science,Health,0.23986312139835536
-Data Science,Digital Healthcare,0.3470667319609696
-Data Science,Nutritional Science,0.2917485989069066
-Data Science,Neuroscience,0.31990070764802103
-Data Science,Cognitive Neuroscience,0.30244563162699434
-Data Science,Cognitive Psychology,0.30515828034668574
-Data Science,Physical Computing,0.26687388705091986
-Data Science,Smart Engineering,0.4161842242704476
-Data Science,Climate Science,0.356501438017442
-Data Science,Renewable Energy,0.28731322459022823
-Data Science,Software Engineering,0.39823854295939903
-Data Science,Web Technologies,0.3352713294031781
-Data Science,Mobile Development,0.20035194171200577
+Robotics,Cybersecurity,0.2699452363940757
+Robotics,Information Security,0.23537639859783138
+Robotics,Ethical Hacking,0.2265432207310739
+Robotics,Cryptography,0.21099066852175924
+Robotics,Human-Computer Interaction,0.2937119977120452
+Robotics,Interface Design,0.3774559889689788
+Robotics,Usability Evaluation,0.2800325094627802
+Robotics,User Research,0.3211793833238417
+Robotics,Immersive Technologies,0.32604787319899453
+Robotics,Data Visualization,0.23626709517158917
+Robotics,Game Development,0.26387298234217105
+Robotics,Game Design,0.25043926012397627
+Robotics,Animation & Digital Media,0.40405379580367984
+Robotics,Computer Graphics,0.31356650886657156
+Robotics,Sound Design,0.2671757692443595
+Robotics,Interactive Media,0.3133605896128642
+Robotics,Media Production,0.2004304762486167
+Robotics,Digital Arts & Culture,0.3065255733531561
+Robotics,Media Studies,0.03938350880900769
+Robotics,Health,0.08166348807607583
+Robotics,Digital Healthcare,0.22676980987845075
+Robotics,Neuroscience,0.3487679681677002
+Robotics,Cognitive Psychology,0.19219637692927993
+Robotics,Physical Computing,0.6931676794527488
+Robotics,Smart Engineering,0.6343894692366124
+Robotics,Software Engineering,0.3414024191074754
+Robotics,Web Technologies,0.23656840117377126
+Robotics,Mobile Development,0.22779899142199417
+Data Science,Cybersecurity,0.3925536044495679
+Data Science,Information Security,0.43854982448008833
+Data Science,Ethical Hacking,0.283539341061706
+Data Science,Cryptography,0.23067278679104214
+Data Science,Human-Computer Interaction,0.27721894875176906
+Data Science,Interface Design,0.3732182958087395
+Data Science,Usability Evaluation,0.3235305754342461
+Data Science,User Research,0.4772734602048974
+Data Science,Immersive Technologies,0.30981158877661275
+Data Science,Data Visualization,0.6882295323677099
+Data Science,Game Development,0.348047906045214
+Data Science,Game Design,0.4050698388594333
+Data Science,Animation & Digital Media,0.36173844256830234
+Data Science,Computer Graphics,0.3688015409853634
+Data Science,Sound Design,0.2924914454675618
+Data Science,Interactive Media,0.4232721851743778
+Data Science,Media Production,0.24817285439121606
+Data Science,Digital Arts & Culture,0.4106208167726732
+Data Science,Media Studies,0.29822601384086606
+Data Science,Health,0.27676514007502545
+Data Science,Digital Healthcare,0.40046161380111883
+Data Science,Neuroscience,0.369116201132332
+Data Science,Cognitive Psychology,0.35210570809232977
+Data Science,Physical Computing,0.3079314081356768
+Data Science,Smart Engineering,0.4802125664659011
+Data Science,Software Engineering,0.45950601110699896
+Data Science,Web Technologies,0.38685153392674404
+Data Science,Mobile Development,0.23117531736000668
 Cybersecurity,Information Security,0.950317394733429
 Cybersecurity,Ethical Hacking,0.7727850943803787
 Cybersecurity,Cryptography,0.7827895998954773
-Cybersecurity,Human-Computer Interaction,0.2684005804380414
-Cybersecurity,Interface Design,0.2915523079086453
-Cybersecurity,Usability Evaluation,0.2981094020201973
-Cybersecurity,User Research,0.2806109645657307
-Cybersecurity,Immersive Technologies,0.2905285841460146
-Cybersecurity,Data Visualization,0.2508038465245465
-Cybersecurity,Game Development,0.2216154771607352
-Cybersecurity,Game Design,0.2380734414925057
-Cybersecurity,Animation & Digital Media,0.26683870620621575
-Cybersecurity,Computer Graphics,0.24101769144936047
-Cybersecurity,Sound Design,0.22435508300499557
-Cybersecurity,Interactive Media,0.23069230761999665
-Cybersecurity,Media Production,0.1957081996052592
-Cybersecurity,Digital Arts & Culture,0.3059474124284675
-Cybersecurity,Media Studies,0.22031076670873084
-Cybersecurity,Health,0.07739880903700137
-Cybersecurity,Digital Healthcare,0.37324749134233925
-Cybersecurity,Nutritional Science,0.09413652901612357
-Cybersecurity,Neuroscience,0.12420833726630869
-Cybersecurity,Cognitive Neuroscience,0.1474648812258032
-Cybersecurity,Cognitive Psychology,0.2051870722146254
-Cybersecurity,Physical Computing,0.3320274743695807
-Cybersecurity,Smart Engineering,0.31518552556688345
-Cybersecurity,Climate Science,0.22616586854224108
-Cybersecurity,Renewable Energy,0.20316984542314753
-Cybersecurity,Software Engineering,0.3652794541422815
-Cybersecurity,Web Technologies,0.38542526813214995
-Cybersecurity,Mobile Development,0.19913911551766555
+Cybersecurity,Human-Computer Interaction,0.3096930106065088
+Cybersecurity,Interface Design,0.33640650912535996
+Cybersecurity,Usability Evaluation,0.34397238694638155
+Cybersecurity,User Research,0.3237818821912277
+Cybersecurity,Immersive Technologies,0.3352252893992477
+Cybersecurity,Data Visualization,0.28938905368216905
+Cybersecurity,Game Development,0.2557101659546945
+Cybersecurity,Game Design,0.27470012479904504
+Cybersecurity,Animation & Digital Media,0.30789081485332587
+Cybersecurity,Computer Graphics,0.2780973694657231
+Cybersecurity,Sound Design,0.25887128279914823
+Cybersecurity,Interactive Media,0.26618343186922694
+Cybersecurity,Media Production,0.22581716997968349
+Cybersecurity,Digital Arts & Culture,0.35301624510977025
+Cybersecurity,Media Studies,0.2542047308177664
+Cybersecurity,Health,0.08930631811961698
+Cybersecurity,Digital Healthcare,0.43067018231808385
+Cybersecurity,Neuroscience,0.14331731223035618
+Cybersecurity,Cognitive Psychology,0.23675431409379855
+Cybersecurity,Physical Computing,0.3831086242725931
+Cybersecurity,Smart Engineering,0.3636756064233271
+Cybersecurity,Software Engineering,0.4214762932410941
+Cybersecurity,Web Technologies,0.44472146322940387
+Cybersecurity,Mobile Development,0.22977590252038332
 Information Security,Ethical Hacking,0.7625422969460487
 Information Security,Cryptography,0.7922230720520019
-Information Security,Human-Computer Interaction,0.3166023345256953
-Information Security,Interface Design,0.38986429424063657
-Information Security,Usability Evaluation,0.3605664861396419
-Information Security,User Research,0.3201456077333051
-Information Security,Immersive Technologies,0.33157341575190774
-Information Security,Data Visualization,0.3695551847729793
-Information Security,Game Development,0.2294584908113254
-Information Security,Game Design,0.2899498038986693
-Information Security,Animation & Digital Media,0.3085165773597866
-Information Security,Computer Graphics,0.308859932052563
-Information Security,Sound Design,0.308356387342748
-Information Security,Interactive Media,0.2588009686648725
-Information Security,Media Production,0.2762769346602985
-Information Security,Digital Arts & Culture,0.2690474076563653
-Information Security,Media Studies,0.26799842327087187
-Information Security,Health,0.07841152171281643
-Information Security,Digital Healthcare,0.40715273928899437
-Information Security,Nutritional Science,0.13419549185084742
-Information Security,Neuroscience,0.16053719604874356
-Information Security,Cognitive Neuroscience,0.14761464063277524
-Information Security,Cognitive Psychology,0.22608460898594046
-Information Security,Physical Computing,0.31152208828079514
-Information Security,Smart Engineering,0.29325811161996945
-Information Security,Climate Science,0.21284925028504048
-Information Security,Renewable Energy,0.2594335193900247
-Information Security,Software Engineering,0.41794539432135314
-Information Security,Web Technologies,0.44820497511843577
-Information Security,Mobile Development,0.24428975441810685
+Information Security,Human-Computer Interaction,0.365310385991187
+Information Security,Interface Design,0.44984341643150383
+Information Security,Usability Evaluation,0.4160382532380484
+Information Security,User Research,0.36939877815381356
+Information Security,Immersive Technologies,0.38258471048297055
+Information Security,Data Visualization,0.4264098285842069
+Information Security,Game Development,0.26475979708999087
+Information Security,Game Design,0.33455746603692615
+Information Security,Animation & Digital Media,0.3559806661843692
+Information Security,Computer Graphics,0.35637687785403377
+Information Security,Sound Design,0.35579586472732416
+Information Security,Interactive Media,0.29861650230562214
+Information Security,Media Production,0.3187810452761911
+Information Security,Digital Arts & Culture,0.31043931652657536
+Information Security,Media Studies,0.3092289499279291
+Information Security,Health,0.09047483274555743
+Information Security,Digital Healthcare,0.469791622256532
+Information Security,Neuroscience,0.18523522621008875
+Information Security,Cognitive Psychology,0.260866856522239
+Information Security,Physical Computing,0.3594485634009175
+Information Security,Smart Engineering,0.3383747441768879
+Information Security,Software Engineering,0.4822446857554075
+Information Security,Web Technologies,0.5171595866751182
+Information Security,Mobile Development,0.2818727935593541
 Ethical Hacking,Cryptography,0.7670553863048553
-Ethical Hacking,Human-Computer Interaction,0.28030309263745357
-Ethical Hacking,Interface Design,0.19057201193545353
-Ethical Hacking,Usability Evaluation,0.3102933322229763
-Ethical Hacking,User Research,0.26027554494449406
-Ethical Hacking,Immersive Technologies,0.15936765221361124
-Ethical Hacking,Data Visualization,0.18455124239719228
-Ethical Hacking,Game Development,0.2643762196025243
-Ethical Hacking,Game Design,0.22624951470263693
-Ethical Hacking,Animation & Digital Media,0.1464175070792174
-Ethical Hacking,Computer Graphics,0.15949926049004015
-Ethical Hacking,Sound Design,0.14342002578704713
-Ethical Hacking,Interactive Media,0.17138113431488233
-Ethical Hacking,Media Production,0.06384742926906711
-Ethical Hacking,Digital Arts & Culture,0.2519579996386916
-Ethical Hacking,Media Studies,0.1616770367268842
-Ethical Hacking,Health,0.12558134628912093
-Ethical Hacking,Digital Healthcare,0.22679726909674502
-Ethical Hacking,Nutritional Science,0.1035633204608225
-Ethical Hacking,Neuroscience,0.18362958190246298
-Ethical Hacking,Cognitive Neuroscience,0.19358019700321932
-Ethical Hacking,Cognitive Psychology,0.2175292083900746
-Ethical Hacking,Physical Computing,0.22191768449856958
-Ethical Hacking,Smart Engineering,0.17891869858412335
-Ethical Hacking,Climate Science,0.16945848749352543
-Ethical Hacking,Renewable Energy,0.18809084943586063
-Ethical Hacking,Software Engineering,0.3286042502233847
-Ethical Hacking,Web Technologies,0.3021423316270441
-Ethical Hacking,Mobile Development,0.2315959823212136
-Cryptography,Human-Computer Interaction,0.2785700155046321
-Cryptography,Interface Design,0.24761777318889183
-Cryptography,Usability Evaluation,0.298074609358087
-Cryptography,User Research,0.21030111909945176
-Cryptography,Immersive Technologies,0.24636477728466055
-Cryptography,Data Visualization,0.27317545637582447
-Cryptography,Game Development,0.1998641687172053
-Cryptography,Game Design,0.21763268061702012
-Cryptography,Animation & Digital Media,0.22969466397681565
-Cryptography,Computer Graphics,0.28359994178367026
-Cryptography,Sound Design,0.1983985637686403
-Cryptography,Interactive Media,0.1775947659051597
-Cryptography,Media Production,0.14816294135794122
-Cryptography,Digital Arts & Culture,0.2711987874768314
-Cryptography,Media Studies,0.2320759054013396
+Ethical Hacking,Human-Computer Interaction,0.323426645350908
+Ethical Hacking,Interface Design,0.2198907830024464
+Ethical Hacking,Usability Evaluation,0.35803076794958805
+Ethical Hacking,User Research,0.30031793647441624
+Ethical Hacking,Immersive Technologies,0.18388575255416684
+Ethical Hacking,Data Visualization,0.21294374122752957
+Ethical Hacking,Game Development,0.30504948415675875
+Ethical Hacking,Game Design,0.2610571323491965
+Ethical Hacking,Animation & Digital Media,0.168943277399097
+Ethical Hacking,Computer Graphics,0.18403765802473787
+Ethical Hacking,Sound Design,0.16548462854990081
+Ethical Hacking,Interactive Media,0.19774746267101806
+Ethical Hacking,Media Production,0.07367010551101502
+Ethical Hacking,Digital Arts & Culture,0.29072076881387493
+Ethical Hacking,Media Studies,0.1865504269925587
+Ethical Hacking,Health,0.1449015534105242
+Ethical Hacking,Digital Healthcare,0.2616891566500904
+Ethical Hacking,Neuroscience,0.21188028681053422
+Ethical Hacking,Cognitive Psychology,0.25099524045008614
+Ethical Hacking,Physical Computing,0.25605886672911876
+Ethical Hacking,Smart Engineering,0.20644465221245
+Ethical Hacking,Software Engineering,0.37915875025775164
+Ethical Hacking,Web Technologies,0.34862576726197403
+Ethical Hacking,Mobile Development,0.26722613344755414
+Cryptography,Human-Computer Interaction,0.32142689119988405
+Cryptography,Interface Design,0.2857128152179521
+Cryptography,Usability Evaluation,0.3439322415670235
+Cryptography,User Research,0.24265513742244438
+Cryptography,Immersive Technologies,0.2842670507130699
+Cryptography,Data Visualization,0.31520244966441285
+Cryptography,Game Development,0.2306125023660061
+Cryptography,Game Design,0.2511146314811771
+Cryptography,Animation & Digital Media,0.26503230458863347
+Cryptography,Computer Graphics,0.3272307352360806
+Cryptography,Sound Design,0.2289214031440468
+Cryptography,Interactive Media,0.2049170375828766
+Cryptography,Media Production,0.170957223439394
+Cryptography,Digital Arts & Culture,0.3129216778578824
+Cryptography,Media Studies,0.26777989084769954
 Cryptography,Health,0.0
-Cryptography,Digital Healthcare,0.2753361957099409
-Cryptography,Nutritional Science,0.07174776365076993
-Cryptography,Neuroscience,0.11633621710975056
-Cryptography,Cognitive Neuroscience,0.17413968203200647
-Cryptography,Cognitive Psychology,0.1875055563472195
-Cryptography,Physical Computing,0.3441619184802176
-Cryptography,Smart Engineering,0.25079244545799545
-Cryptography,Climate Science,0.16924045827001175
-Cryptography,Renewable Energy,0.21559094081360086
-Cryptography,Software Engineering,0.3012776620879368
-Cryptography,Web Technologies,0.3417462150676447
-Cryptography,Mobile Development,0.19305176547600228
+Cryptography,Digital Healthcare,0.31769561043454725
+Cryptography,Neuroscience,0.1342340966650968
+Cryptography,Cognitive Psychology,0.2163525650160225
+Cryptography,Physical Computing,0.39710990593871265
+Cryptography,Smart Engineering,0.2893758986053794
+Cryptography,Software Engineering,0.34762807163992715
+Cryptography,Web Technologies,0.3943225558472824
+Cryptography,Mobile Development,0.22275203708769492
 Human-Computer Interaction,Interface Design,0.9230700731277466
-Human-Computer Interaction,Usability Evaluation,0.9387875556945802
+Human-Computer Interaction,Usability Evaluation,0.9387875437736511
 Human-Computer Interaction,User Research,0.7837586998939514
 Human-Computer Interaction,Immersive Technologies,0.7638015538454055
-Human-Computer Interaction,Data Visualization,0.7389331310987473
-Human-Computer Interaction,Game Development,0.43439205822650434
-Human-Computer Interaction,Game Design,0.44121757341309764
-Human-Computer Interaction,Animation & Digital Media,0.40949454423741555
-Human-Computer Interaction,Computer Graphics,0.43598889764603754
-Human-Computer Interaction,Sound Design,0.36771571685519233
-Human-Computer Interaction,Interactive Media,0.5919983894293124
-Human-Computer Interaction,Media Production,0.3738422158302963
-Human-Computer Interaction,Digital Arts & Culture,0.4354434579703591
-Human-Computer Interaction,Media Studies,0.31676223700007183
-Human-Computer Interaction,Health,0.292834000570551
-Human-Computer Interaction,Digital Healthcare,0.40772282137081206
-Human-Computer Interaction,Nutritional Science,0.2161828473834696
-Human-Computer Interaction,Neuroscience,0.28200475573444395
-Human-Computer Interaction,Cognitive Neuroscience,0.32172528085591273
-Human-Computer Interaction,Cognitive Psychology,0.42032992810935776
-Human-Computer Interaction,Physical Computing,0.30345824186573606
-Human-Computer Interaction,Smart Engineering,0.2549513475050946
-Human-Computer Interaction,Climate Science,0.21713357844133407
-Human-Computer Interaction,Renewable Energy,0.21941563202457737
-Human-Computer Interaction,Software Engineering,0.3555222977445651
-Human-Computer Interaction,Web Technologies,0.4645988461908311
-Human-Computer Interaction,Mobile Development,0.4766425993458515
+Human-Computer Interaction,Data Visualization,0.7389331445097923
+Human-Computer Interaction,Game Development,0.5012216720019654
+Human-Computer Interaction,Game Design,0.5090972664480348
+Human-Computer Interaction,Animation & Digital Media,0.47249377124532466
+Human-Computer Interaction,Computer Graphics,0.5030641790245038
+Human-Computer Interaction,Sound Design,0.4242873324241456
+Human-Computer Interaction,Interactive Media,0.6830751310821287
+Human-Computer Interaction,Media Production,0.4313563697031117
+Human-Computer Interaction,Digital Arts & Culture,0.5024347923745677
+Human-Computer Interaction,Media Studies,0.36549478931223833
+Human-Computer Interaction,Health,0.33788535209571324
+Human-Computer Interaction,Digital Healthcare,0.470449409274014
+Human-Computer Interaction,Neuroscience,0.32539013594851174
+Human-Computer Interaction,Cognitive Psychology,0.4849961704294113
+Human-Computer Interaction,Physical Computing,0.35014412522969546
+Human-Computer Interaction,Smart Engineering,0.2941746980926466
+Human-Computer Interaction,Software Engineering,0.41021810221511257
+Human-Computer Interaction,Web Technologies,0.5360755585806518
+Human-Computer Interaction,Mobile Development,0.5499721968364446
 Interface Design,Usability Evaluation,0.9103026390075684
 Interface Design,User Research,0.7910944074392319
 Interface Design,Immersive Technologies,0.7844358325004577
 Interface Design,Data Visualization,0.7573460891842841
-Interface Design,Game Development,0.4865238016479844
-Interface Design,Game Design,0.6020384590522384
-Interface Design,Animation & Digital Media,0.4933589495137571
-Interface Design,Computer Graphics,0.509433504459925
-Interface Design,Sound Design,0.5135746076162421
-Interface Design,Interactive Media,0.6150781162173342
-Interface Design,Media Production,0.4812984613758043
-Interface Design,Digital Arts & Culture,0.5032804365428458
-Interface Design,Media Studies,0.3898376102815966
-Interface Design,Health,0.24946736260838354
-Interface Design,Digital Healthcare,0.3960669920211888
-Interface Design,Nutritional Science,0.187205419316552
-Interface Design,Neuroscience,0.3385100949316569
-Interface Design,Cognitive Neuroscience,0.322893077869373
-Interface Design,Cognitive Psychology,0.4133630569500914
-Interface Design,Physical Computing,0.33682492240633616
-Interface Design,Smart Engineering,0.3190875369996903
-Interface Design,Climate Science,0.23160534183486392
-Interface Design,Renewable Energy,0.2550829270272573
-Interface Design,Software Engineering,0.4278961531934405
-Interface Design,Web Technologies,0.4601765838195431
-Interface Design,Mobile Development,0.5539762781727526
+Interface Design,Game Development,0.5613736172861359
+Interface Design,Game Design,0.6946597604448905
+Interface Design,Animation & Digital Media,0.5692603263620274
+Interface Design,Computer Graphics,0.5878078897614519
+Interface Design,Sound Design,0.5925860525330491
+Interface Design,Interactive Media,0.7097055187123088
+Interface Design,Media Production,0.5553444116885429
+Interface Design,Digital Arts & Culture,0.580708196010976
+Interface Design,Media Studies,0.44981262724799614
+Interface Design,Health,0.2878469568558272
+Interface Design,Digital Healthcare,0.457000375409064
+Interface Design,Neuroscience,0.3905885710749888
+Interface Design,Cognitive Psychology,0.47695737340395167
+Interface Design,Physical Computing,0.3886441412380802
+Interface Design,Smart Engineering,0.368177927307335
+Interface Design,Software Engineering,0.493726330607816
+Interface Design,Web Technologies,0.5309729813302421
+Interface Design,Mobile Development,0.6392033978916377
 Usability Evaluation,User Research,0.7868925482034683
 Usability Evaluation,Immersive Technologies,0.762101413309574
 Usability Evaluation,Data Visualization,0.7433134958148002
-Usability Evaluation,Game Development,0.37893275610249855
-Usability Evaluation,Game Design,0.4279855214528115
-Usability Evaluation,Animation & Digital Media,0.3891886552475734
-Usability Evaluation,Computer Graphics,0.3837660032006816
-Usability Evaluation,Sound Design,0.3436904347772233
-Usability Evaluation,Interactive Media,0.532423057869122
-Usability Evaluation,Media Production,0.3203336606342981
-Usability Evaluation,Digital Arts & Culture,0.3643026429649674
-Usability Evaluation,Media Studies,0.27821284438694327
-Usability Evaluation,Health,0.24037205753308416
-Usability Evaluation,Digital Healthcare,0.3619700106274662
-Usability Evaluation,Nutritional Science,0.23000594328563828
-Usability Evaluation,Neuroscience,0.22710816022297386
-Usability Evaluation,Cognitive Neuroscience,0.2865465064589547
-Usability Evaluation,Cognitive Psychology,0.381763124788041
-Usability Evaluation,Physical Computing,0.30726619809378014
-Usability Evaluation,Smart Engineering,0.2620000101745865
-Usability Evaluation,Climate Science,0.18503145301998042
-Usability Evaluation,Renewable Energy,0.22312429977140913
-Usability Evaluation,Software Engineering,0.4486080811763901
-Usability Evaluation,Web Technologies,0.47294643970481975
-Usability Evaluation,Mobile Development,0.47730998586451334
+Usability Evaluation,Game Development,0.4372301031951907
+Usability Evaluation,Game Design,0.4938294478301672
+Usability Evaluation,Animation & Digital Media,0.44906383297796937
+Usability Evaluation,Computer Graphics,0.4428069599480168
+Usability Evaluation,Sound Design,0.39656581992541257
+Usability Evaluation,Interactive Media,0.6143342975412946
+Usability Evaluation,Media Production,0.3696157290923445
+Usability Evaluation,Digital Arts & Culture,0.42034920342111626
+Usability Evaluation,Media Studies,0.32101482044647306
+Usability Evaluation,Health,0.27735237407663554
+Usability Evaluation,Digital Healthcare,0.41765770457015333
+Usability Evaluation,Neuroscience,0.26204787718035444
+Usability Evaluation,Cognitive Psychology,0.4404959132169704
+Usability Evaluation,Physical Computing,0.3545379208774387
+Usability Evaluation,Smart Engineering,0.3023077040475998
+Usability Evaluation,Software Engineering,0.5176247090496809
+Usability Evaluation,Web Technologies,0.5457074304286382
+Usability Evaluation,Mobile Development,0.5507422913821308
 User Research,Immersive Technologies,0.7647776544094085
 User Research,Data Visualization,0.7474087551236153
-User Research,Game Development,0.4488675884289072
-User Research,Game Design,0.5142756653806322
-User Research,Animation & Digital Media,0.38815332913852824
-User Research,Computer Graphics,0.3393773236004566
-User Research,Sound Design,0.3633589567023236
-User Research,Interactive Media,0.543390855136947
-User Research,Media Production,0.36893622043860985
-User Research,Digital Arts & Culture,0.435883196963461
-User Research,Media Studies,0.34572896847996043
-User Research,Health,0.4033668088288647
-User Research,Digital Healthcare,0.35873739851195563
-User Research,Nutritional Science,0.2679565570592747
-User Research,Neuroscience,0.19839793117478377
-User Research,Cognitive Neuroscience,0.24068783688456818
-User Research,Cognitive Psychology,0.3751426562737689
-User Research,Physical Computing,0.27243011704147574
-User Research,Smart Engineering,0.3595747802524326
-User Research,Climate Science,0.17588795579451827
-User Research,Renewable Energy,0.287993809317079
-User Research,Software Engineering,0.4098573368141478
-User Research,Web Technologies,0.41563967597702156
-User Research,Mobile Development,0.49517492519605294
+User Research,Game Development,0.517924140494893
+User Research,Game Design,0.593394998516114
+User Research,Animation & Digital Media,0.44786922592907114
+User Research,Computer Graphics,0.3915892527169879
+User Research,Sound Design,0.41926030147852783
+User Research,Interactive Media,0.6269894482349387
+User Research,Media Production,0.42569567214562626
+User Research,Digital Arts & Culture,0.502942150342455
+User Research,Media Studies,0.3989180405538006
+User Research,Health,0.46542324095638243
+User Research,Digital Healthcare,0.41392776751379506
+User Research,Neuroscience,0.2289206898170582
+User Research,Cognitive Psychology,0.43285691108511803
+User Research,Physical Computing,0.3143424427401644
+User Research,Smart Engineering,0.41489397721434534
+User Research,Software Engineering,0.4729123117086322
+User Research,Web Technologies,0.479584241511948
+User Research,Mobile Development,0.5713556829185227
 Immersive Technologies,Data Visualization,0.8556363761425019
-Immersive Technologies,Game Development,0.5102787073608102
-Immersive Technologies,Game Design,0.5875132414778299
-Immersive Technologies,Animation & Digital Media,0.65
-Immersive Technologies,Computer Graphics,0.5287174380745082
-Immersive Technologies,Sound Design,0.49432460403578293
-Immersive Technologies,Interactive Media,0.6493655083618789
-Immersive Technologies,Media Production,0.5461516672525348
-Immersive Technologies,Digital Arts & Culture,0.5700484752690915
-Immersive Technologies,Media Studies,0.39883510772039327
-Immersive Technologies,Health,0.1586024293041805
-Immersive Technologies,Digital Healthcare,0.4246666752929465
-Immersive Technologies,Nutritional Science,0.10774790006764441
-Immersive Technologies,Neuroscience,0.23392342451366444
-Immersive Technologies,Cognitive Neuroscience,0.23970633876186231
-Immersive Technologies,Cognitive Psychology,0.2946995486077876
-Immersive Technologies,Physical Computing,0.3899551002133179
-Immersive Technologies,Smart Engineering,0.3062800417799488
-Immersive Technologies,Climate Science,0.2314295238741419
-Immersive Technologies,Renewable Energy,0.277768044642989
-Immersive Technologies,Software Engineering,0.28165102075156684
-Immersive Technologies,Web Technologies,0.4964053490013118
-Immersive Technologies,Mobile Development,0.3998785137782426
-Data Visualization,Game Development,0.3189903763341772
-Data Visualization,Game Design,0.38967201446251115
-Data Visualization,Animation & Digital Media,0.3807535625015172
-Data Visualization,Computer Graphics,0.4867197619721843
-Data Visualization,Sound Design,0.37374528519891287
-Data Visualization,Interactive Media,0.35392054134551054
-Data Visualization,Media Production,0.24054070130438754
-Data Visualization,Digital Arts & Culture,0.39503284483705814
-Data Visualization,Media Studies,0.22940663249222126
-Data Visualization,Health,0.18116779977829356
-Data Visualization,Digital Healthcare,0.3367003014165955
-Data Visualization,Nutritional Science,0.21170165314359057
-Data Visualization,Neuroscience,0.35544466122580654
-Data Visualization,Cognitive Neuroscience,0.32124011012220394
-Data Visualization,Cognitive Psychology,0.3828085436445247
-Data Visualization,Physical Computing,0.27630032625585776
-Data Visualization,Smart Engineering,0.33176808213412834
-Data Visualization,Climate Science,0.2844241540702244
-Data Visualization,Renewable Energy,0.2343003354351043
-Data Visualization,Software Engineering,0.30126848947701684
-Data Visualization,Web Technologies,0.2802578621767101
-Data Visualization,Mobile Development,0.21949584205016148
+Immersive Technologies,Game Development,0.5887831238778579
+Immersive Technologies,Game Design,0.6778998940128808
+Immersive Technologies,Animation & Digital Media,0.7500000000000001
+Immersive Technologies,Computer Graphics,0.6100585823936633
+Immersive Technologies,Sound Design,0.5703744767622122
+Immersive Technologies,Interactive Media,0.7492678942637064
+Immersive Technologies,Media Production,0.6301750006760019
+Immersive Technologies,Digital Arts & Culture,0.6577482406951057
+Immersive Technologies,Media Studies,0.4601943550619923
+Immersive Technologies,Health,0.1830028030432852
+Immersive Technologies,Digital Healthcare,0.4900000099533999
+Immersive Technologies,Neuroscience,0.26991164366961284
+Immersive Technologies,Cognitive Psychology,0.34003794070129334
+Immersive Technologies,Physical Computing,0.44994819255382845
+Immersive Technologies,Smart Engineering,0.35340004820763327
+Immersive Technologies,Software Engineering,0.3249819470210387
+Immersive Technologies,Web Technologies,0.5727754026938213
+Immersive Technologies,Mobile Development,0.4613982851287415
+Data Visualization,Game Development,0.3680658188471276
+Data Visualization,Game Design,0.4496215551490514
+Data Visualization,Animation & Digital Media,0.43933103365559684
+Data Visualization,Computer Graphics,0.5615997917085194
+Data Visualization,Sound Design,0.4312445598448995
+Data Visualization,Interactive Media,0.40836985539866605
+Data Visualization,Media Production,0.2775469630435241
+Data Visualization,Digital Arts & Culture,0.45580712865814405
+Data Visualization,Media Studies,0.26469996056794765
+Data Visualization,Health,0.20903976897495413
+Data Visualization,Digital Healthcare,0.3885003477883795
+Data Visualization,Neuroscience,0.41012845526054603
+Data Visualization,Cognitive Psychology,0.44170216574368243
+Data Visualization,Physical Computing,0.31880806875675904
+Data Visualization,Smart Engineering,0.3828093255393789
+Data Visualization,Software Engineering,0.34761748785809643
+Data Visualization,Web Technologies,0.3233744563577425
+Data Visualization,Mobile Development,0.25326443313480174
 Game Development,Game Design,0.9421619415283203
 Game Development,Animation & Digital Media,0.7599342241883278
-Game Development,Computer Graphics,0.7434874102473259
-Game Development,Sound Design,0.7657319530844688
+Game Development,Computer Graphics,0.7434874147176742
+Game Development,Sound Design,0.7657319575548172
 Game Development,Interactive Media,0.7728444918990135
-Game Development,Media Production,0.7595655232667923
+Game Development,Media Production,0.759565532207489
 Game Development,Digital Arts & Culture,0.7646860927343369
 Game Development,Media Studies,0.7380759418010712
-Game Development,Health,0.22076054094073894
-Game Development,Digital Healthcare,0.2758996068019986
-Game Development,Nutritional Science,0.14923642437824292
-Game Development,Neuroscience,0.15602748476535386
-Game Development,Cognitive Neuroscience,0.20133793987737303
-Game Development,Cognitive Psychology,0.2515174842804021
-Game Development,Physical Computing,0.25383312284657505
-Game Development,Smart Engineering,0.2532576637169766
-Game Development,Climate Science,0.2801416086784357
-Game Development,Renewable Energy,0.23153571337924395
-Game Development,Software Engineering,0.4893157258796082
-Game Development,Web Technologies,0.33235725704870744
-Game Development,Mobile Development,0.46789480395479544
+Game Development,Health,0.25472370108546805
+Game Development,Digital Healthcare,0.31834570015615227
+Game Development,Neuroscience,0.18003171319079292
+Game Development,Cognitive Psychology,0.29021248186200244
+Game Development,Physical Computing,0.2928843725152789
+Game Development,Smart Engineering,0.29222038121189614
+Game Development,Software Engineering,0.564595068322625
+Game Development,Web Technologies,0.38348914274850865
+Game Development,Mobile Development,0.5398786199478409
 Game Design,Animation & Digital Media,0.7808547168970108
-Game Design,Computer Graphics,0.761953668296337
-Game Design,Sound Design,0.7862785100936889
+Game Design,Computer Graphics,0.7619536727666855
+Game Design,Sound Design,0.7862785011529922
 Game Design,Interactive Media,0.7821807563304901
-Game Design,Media Production,0.7655113726854323
+Game Design,Media Production,0.7655113771557808
 Game Design,Digital Arts & Culture,0.7668119758367538
 Game Design,Media Studies,0.7382272630929947
-Game Design,Health,0.2468347226344128
-Game Design,Digital Healthcare,0.2896270085062308
-Game Design,Nutritional Science,0.19110898347973404
-Game Design,Neuroscience,0.2476752817213056
-Game Design,Cognitive Neuroscience,0.2521251050567529
-Game Design,Cognitive Psychology,0.32188311302312234
-Game Design,Physical Computing,0.25617072967213006
-Game Design,Smart Engineering,0.2464287842812371
-Game Design,Climate Science,0.16680008369703334
-Game Design,Renewable Energy,0.2509611179835651
-Game Design,Software Engineering,0.39170433724374765
-Game Design,Web Technologies,0.347283740408033
-Game Design,Mobile Development,0.3838851608798429
-Animation & Digital Media,Computer Graphics,0.9343053817749024
-Animation & Digital Media,Sound Design,0.7809181958436966
+Game Design,Health,0.2848092953473994
+Game Design,Digital Healthcare,0.33418500981488175
+Game Design,Neuroscience,0.28577917121689106
+Game Design,Cognitive Psychology,0.3714035919497566
+Game Design,Physical Computing,0.2955816111601501
+Game Design,Smart Engineering,0.28434090493988895
+Game Design,Software Engineering,0.45196654297355504
+Game Design,Web Technologies,0.40071200816311503
+Game Design,Mobile Development,0.44294441639981885
+Animation & Digital Media,Computer Graphics,0.9343053936958313
+Animation & Digital Media,Sound Design,0.7809182047843932
 Animation & Digital Media,Interactive Media,0.7912681609392166
-Animation & Digital Media,Media Production,0.7906508237123488
+Animation & Digital Media,Media Production,0.7906508147716522
 Animation & Digital Media,Digital Arts & Culture,0.7830858319997787
 Animation & Digital Media,Media Studies,0.7438065126538276
-Animation & Digital Media,Health,0.13239227587418084
-Animation & Digital Media,Digital Healthcare,0.33860788819102655
-Animation & Digital Media,Nutritional Science,0.12790926292696422
-Animation & Digital Media,Neuroscience,0.2581700713100272
-Animation & Digital Media,Cognitive Neuroscience,0.283256055136969
-Animation & Digital Media,Cognitive Psychology,0.32266813324483656
-Animation & Digital Media,Physical Computing,0.3183218108906009
-Animation & Digital Media,Smart Engineering,0.2422062921744214
-Animation & Digital Media,Climate Science,0.1934381509281573
-Animation & Digital Media,Renewable Energy,0.2819794232259157
-Animation & Digital Media,Software Engineering,0.3160222747135038
-Animation & Digital Media,Web Technologies,0.4150250247825832
-Animation & Digital Media,Mobile Development,0.2803915695145721
-Computer Graphics,Sound Design,0.761456860601902
-Computer Graphics,Interactive Media,0.7756867080926895
-Computer Graphics,Media Production,0.7599259227514267
-Computer Graphics,Digital Arts & Culture,0.7718986064195632
+Animation & Digital Media,Health,0.15276031831636253
+Animation & Digital Media,Digital Healthcare,0.39070140945118453
+Animation & Digital Media,Neuroscience,0.2978885438192622
+Animation & Digital Media,Cognitive Psychology,0.372309384513273
+Animation & Digital Media,Physical Computing,0.3672943971814626
+Animation & Digital Media,Smart Engineering,0.27946879866279395
+Animation & Digital Media,Software Engineering,0.3646410862078891
+Animation & Digital Media,Web Technologies,0.47887502859528835
+Animation & Digital Media,Mobile Development,0.3235287340552756
+Computer Graphics,Sound Design,0.761456874012947
+Computer Graphics,Interactive Media,0.7756867170333862
+Computer Graphics,Media Production,0.7599259048700332
+Computer Graphics,Digital Arts & Culture,0.7718986153602599
 Computer Graphics,Media Studies,0.7312635511159896
-Computer Graphics,Health,0.09458064944053875
-Computer Graphics,Digital Healthcare,0.33447978196303496
-Computer Graphics,Nutritional Science,0.16456202414108656
-Computer Graphics,Neuroscience,0.3079979654144792
-Computer Graphics,Cognitive Neuroscience,0.29864610039894884
-Computer Graphics,Cognitive Psychology,0.4048796282825414
-Computer Graphics,Physical Computing,0.31034342215470867
-Computer Graphics,Smart Engineering,0.19359720515168072
-Computer Graphics,Climate Science,0.22277714951549338
-Computer Graphics,Renewable Energy,0.1992016560466655
-Computer Graphics,Software Engineering,0.27334168478876647
-Computer Graphics,Web Technologies,0.35638860627684615
-Computer Graphics,Mobile Development,0.26660224549806344
+Computer Graphics,Health,0.10913156005773636
+Computer Graphics,Digital Healthcare,0.3859382431353475
+Computer Graphics,Neuroscience,0.355382367319936
+Computer Graphics,Cognitive Psychology,0.4671688018644709
+Computer Graphics,Physical Computing,0.35808869673666177
+Computer Graphics,Smart Engineering,0.22338144032663076
+Computer Graphics,Software Engineering,0.31539430144634517
+Computer Graphics,Web Technologies,0.41121762262713024
+Computer Graphics,Mobile Development,0.3076180253416878
 Sound Design,Interactive Media,0.8927954554557801
-Sound Design,Media Production,0.9410704493522645
+Sound Design,Media Production,0.9410704612731934
 Sound Design,Digital Arts & Culture,0.7583326369524002
-Sound Design,Media Studies,0.7412743374705314
-Sound Design,Health,0.19659867609828718
-Sound Design,Digital Healthcare,0.24763268227592006
-Sound Design,Nutritional Science,0.1494817917203528
-Sound Design,Neuroscience,0.282319844983539
-Sound Design,Cognitive Neuroscience,0.29138221204689846
-Sound Design,Cognitive Psychology,0.338189053549457
-Sound Design,Physical Computing,0.21792319934564136
-Sound Design,Smart Engineering,0.20298471108017446
-Sound Design,Climate Science,0.18924240028891404
-Sound Design,Renewable Energy,0.20018523885367134
-Sound Design,Software Engineering,0.3006728448525412
-Sound Design,Web Technologies,0.2517726065073227
-Sound Design,Mobile Development,0.3210611148150661
-Interactive Media,Media Production,0.9164791464805604
+Sound Design,Media Studies,0.7412743330001831
+Sound Design,Health,0.2268445433222558
+Sound Design,Digital Healthcare,0.2857300345996768
+Sound Design,Neuroscience,0.3257536175216997
+Sound Design,Cognitive Psychology,0.39021807235491307
+Sound Design,Physical Computing,0.2514498951658162
+Sound Design,Smart Engineering,0.23421317793643132
+Sound Design,Software Engineering,0.34693033831108394
+Sound Design,Web Technologies,0.2905068702512952
+Sound Design,Mobile Development,0.370455099300923
+Interactive Media,Media Production,0.9164791703224182
 Interactive Media,Digital Arts & Culture,0.7830038100481033
 Interactive Media,Media Studies,0.768439419567585
-Interactive Media,Health,0.21323129384299827
-Interactive Media,Digital Healthcare,0.3453012775243992
-Interactive Media,Nutritional Science,0.17689268736431926
-Interactive Media,Neuroscience,0.2825639830807686
-Interactive Media,Cognitive Neuroscience,0.29579498551033817
-Interactive Media,Cognitive Psychology,0.37086718443146705
-Interactive Media,Physical Computing,0.34796538904273344
-Interactive Media,Smart Engineering,0.26163697318659146
-Interactive Media,Climate Science,0.22291736969465126
-Interactive Media,Renewable Energy,0.2670103979297371
-Interactive Media,Software Engineering,0.3241691634493684
-Interactive Media,Web Technologies,0.4136832644585713
-Interactive Media,Mobile Development,0.47556543577947535
+Interactive Media,Health,0.24603610828038264
+Interactive Media,Digital Healthcare,0.3984245509896915
+Interactive Media,Neuroscience,0.32603536509319453
+Interactive Media,Cognitive Psychology,0.42792367434400047
+Interactive Media,Physical Computing,0.4014985258185386
+Interactive Media,Smart Engineering,0.30188881521529787
+Interactive Media,Software Engineering,0.374041342441579
+Interactive Media,Web Technologies,0.4773268436060438
+Interactive Media,Mobile Development,0.5487293489763178
 Media Production,Digital Arts & Culture,0.7695719420909881
-Media Production,Media Studies,0.7688653364777565
-Media Production,Health,0.17333642441695057
-Media Production,Digital Healthcare,0.2426824915770736
-Media Production,Nutritional Science,0.1360066583821202
-Media Production,Neuroscience,0.22963357553825914
-Media Production,Cognitive Neuroscience,0.2556577391858661
-Media Production,Cognitive Psychology,0.3075595491176228
-Media Production,Physical Computing,0.175393619638456
-Media Production,Smart Engineering,0.1726317939349843
-Media Production,Climate Science,0.18088068843021782
-Media Production,Renewable Energy,0.22417224900331906
-Media Production,Software Engineering,0.2877773184468074
-Media Production,Web Technologies,0.2653306455835963
-Media Production,Mobile Development,0.3118097172056626
+Media Production,Media Studies,0.7688653409481048
+Media Production,Health,0.20000358322394274
+Media Production,Digital Healthcare,0.28001827610100777
+Media Production,Neuroscience,0.2649617847507611
+Media Production,Cognitive Psychology,0.3548764691840253
+Media Production,Physical Computing,0.2023772783124873
+Media Production,Smart Engineering,0.1991905314634434
+Media Production,Software Engineering,0.33205071887600907
+Media Production,Web Technologies,0.3061507780821491
+Media Production,Mobile Development,0.3597804761076102
 Digital Arts & Culture,Media Studies,0.8881513357162476
-Digital Arts & Culture,Health,0.1827417795561923
-Digital Arts & Culture,Digital Healthcare,0.4735818802337257
-Digital Arts & Culture,Nutritional Science,0.11648455318054532
-Digital Arts & Culture,Neuroscience,0.23071610177528284
-Digital Arts & Culture,Cognitive Neuroscience,0.2871898975424669
-Digital Arts & Culture,Cognitive Psychology,0.30895151439043195
-Digital Arts & Culture,Physical Computing,0.38764808792700706
-Digital Arts & Culture,Smart Engineering,0.30079579809484186
-Digital Arts & Culture,Climate Science,0.21363954691460363
-Digital Arts & Culture,Renewable Energy,0.2139162348411794
-Digital Arts & Culture,Software Engineering,0.3268655372543867
-Digital Arts & Culture,Web Technologies,0.35270409211362824
-Digital Arts & Culture,Mobile Development,0.32004652053195615
-Media Studies,Health,0.2970586061159329
-Media Studies,Digital Healthcare,0.306797934868601
-Media Studies,Nutritional Science,0.16710968806984944
-Media Studies,Neuroscience,0.2423878178569855
-Media Studies,Cognitive Neuroscience,0.22837035749239132
-Media Studies,Cognitive Psychology,0.2708696230144281
-Media Studies,Physical Computing,0.11764736132881869
-Media Studies,Smart Engineering,0.09944980342864765
-Media Studies,Climate Science,0.1766455588234042
-Media Studies,Renewable Energy,0.18551497038338227
-Media Studies,Software Engineering,0.15974947292600594
-Media Studies,Web Technologies,0.3518341605438051
-Media Studies,Mobile Development,0.28005382190370604
+Digital Arts & Culture,Health,0.21085589948791417
+Digital Arts & Culture,Digital Healthcare,0.5464406310389144
+Digital Arts & Culture,Neuroscience,0.26621088666378795
+Digital Arts & Culture,Cognitive Psychology,0.3564825166043446
+Digital Arts & Culture,Physical Computing,0.44728625530039284
+Digital Arts & Culture,Smart Engineering,0.34707207472481755
+Digital Arts & Culture,Software Engineering,0.3771525429858309
+Digital Arts & Culture,Web Technologies,0.40696626013110954
+Digital Arts & Culture,Mobile Development,0.3692844467676417
+Media Studies,Health,0.34275993013376876
+Media Studies,Digital Healthcare,0.35399761715607814
+Media Studies,Neuroscience,0.27967825137344476
+Media Studies,Cognitive Psychology,0.3125418727089555
+Media Studies,Physical Computing,0.13574695537940618
+Media Studies,Smart Engineering,0.11474977318690113
+Media Studies,Software Engineering,0.18432631491462226
+Media Studies,Web Technologies,0.4059624929351598
+Media Studies,Mobile Development,0.323139025273507
 Health,Digital Healthcare,0.8517526268959046
-Health,Nutritional Science,0.8807466268539429
 Health,Neuroscience,0.7311337679624557
-Health,Cognitive Neuroscience,0.7340400598943233
 Health,Cognitive Psychology,0.7372051112353801
-Health,Physical Computing,0.0702766792173509
-Health,Smart Engineering,0.09940832899392749
-Health,Climate Science,0.14829869024870396
-Health,Renewable Energy,0.1494449718824749
-Health,Software Engineering,0.11165632010753211
-Health,Web Technologies,0.13489716783196096
-Health,Mobile Development,0.2066908196973138
-Digital Healthcare,Nutritional Science,0.849225676059723
+Health,Physical Computing,0.08108847602002027
+Health,Smart Engineering,0.11470191806991634
+Health,Software Engineering,0.1288342155086909
+Health,Web Technologies,0.15565057826764728
+Health,Mobile Development,0.2384894073430544
 Digital Healthcare,Neuroscience,0.725299098342657
-Digital Healthcare,Cognitive Neuroscience,0.7287144109606742
 Digital Healthcare,Cognitive Psychology,0.7328146569430828
-Digital Healthcare,Physical Computing,0.35301653597023225
-Digital Healthcare,Smart Engineering,0.33605272658735025
-Digital Healthcare,Climate Science,0.15373449018381885
-Digital Healthcare,Renewable Energy,0.17592290660509274
-Digital Healthcare,Software Engineering,0.33510754510286367
-Digital Healthcare,Web Technologies,0.3783714153176077
-Digital Healthcare,Mobile Development,0.33155138998399325
-Nutritional Science,Neuroscience,0.7301665656268597
-Nutritional Science,Cognitive Neuroscience,0.7381021156907082
-Nutritional Science,Cognitive Psychology,0.7362519793212413
-Nutritional Science,Physical Computing,0.05633277406285561
-Nutritional Science,Smart Engineering,0.12672693782050293
-Nutritional Science,Climate Science,0.20924126560133216
-Nutritional Science,Renewable Energy,0.14940922314101318
-Nutritional Science,Software Engineering,0.12966983632684598
-Nutritional Science,Web Technologies,0.1213550514305994
-Nutritional Science,Mobile Development,0.12453699134048685
-Neuroscience,Cognitive Neuroscience,0.936082661151886
+Digital Healthcare,Physical Computing,0.40732677227334496
+Digital Healthcare,Smart Engineering,0.38775314606232725
+Digital Healthcare,Software Engineering,0.38666255204176586
+Digital Healthcare,Web Technologies,0.4365824022895474
+Digital Healthcare,Mobile Development,0.38255929613537687
 Neuroscience,Cognitive Psychology,0.8846722602844239
-Neuroscience,Physical Computing,0.2514313796302456
-Neuroscience,Smart Engineering,0.21709317869731343
-Neuroscience,Climate Science,0.27403870257875446
-Neuroscience,Renewable Energy,0.20597120105408717
-Neuroscience,Software Engineering,0.2068900867621275
-Neuroscience,Web Technologies,0.205036773665162
-Neuroscience,Mobile Development,0.1479790578255482
-Cognitive Neuroscience,Cognitive Psychology,0.9273680210113526
-Cognitive Neuroscience,Physical Computing,0.269450427451521
-Cognitive Neuroscience,Smart Engineering,0.25641174793147614
-Cognitive Neuroscience,Climate Science,0.2509077644426182
-Cognitive Neuroscience,Renewable Energy,0.18797686752461656
-Cognitive Neuroscience,Software Engineering,0.15379246597305846
-Cognitive Neuroscience,Web Technologies,0.1905814720890356
-Cognitive Neuroscience,Mobile Development,0.13102662794351755
-Cognitive Psychology,Physical Computing,0.17705583907077715
-Cognitive Psychology,Smart Engineering,0.191623785484769
-Cognitive Psychology,Climate Science,0.21988142238286273
-Cognitive Psychology,Renewable Energy,0.14935015468965768
-Cognitive Psychology,Software Engineering,0.24631983436657917
-Cognitive Psychology,Web Technologies,0.253374319774978
-Cognitive Psychology,Mobile Development,0.20653446837481387
+Neuroscience,Physical Computing,0.29011313034259106
+Neuroscience,Smart Engineering,0.25049212926613085
+Neuroscience,Software Engineering,0.2387193308793779
+Neuroscience,Web Technologies,0.23658089269057153
+Neuroscience,Mobile Development,0.1707450667217864
+Cognitive Psychology,Physical Computing,0.20429519892781978
+Cognitive Psychology,Smart Engineering,0.22110436786704118
+Cognitive Psychology,Software Engineering,0.2842151934998991
+Cognitive Psychology,Web Technologies,0.2923549843557438
+Cognitive Psychology,Mobile Development,0.23830900197093907
 Physical Computing,Smart Engineering,0.8970529794692994
-Physical Computing,Climate Science,0.27287943120522457
-Physical Computing,Renewable Energy,0.30435362096115226
-Physical Computing,Software Engineering,0.2864993350852423
-Physical Computing,Web Technologies,0.27873769600801757
-Physical Computing,Mobile Development,0.35400953579942085
-Smart Engineering,Climate Science,0.26927719737475764
-Smart Engineering,Renewable Energy,0.2877074887113239
-Smart Engineering,Software Engineering,0.3991970664234056
-Smart Engineering,Web Technologies,0.2911082989070116
-Smart Engineering,Mobile Development,0.24298110463163214
-Climate Science,Renewable Energy,0.8739976286888123
-Climate Science,Software Engineering,0.25561628991112884
-Climate Science,Web Technologies,0.23159405578537773
-Climate Science,Mobile Development,0.10294644081075308
-Renewable Energy,Software Engineering,0.2651869892696267
-Renewable Energy,Web Technologies,0.28079069310665683
-Renewable Energy,Mobile Development,0.2659603208821278
+Physical Computing,Software Engineering,0.3305761558675873
+Physical Computing,Web Technologies,0.32162041847078954
+Physical Computing,Mobile Development,0.4084725413070241
+Smart Engineering,Software Engineering,0.46061199971931416
+Smart Engineering,Web Technologies,0.33589419104655194
+Smart Engineering,Mobile Development,0.2803628130364986
 Software Engineering,Web Technologies,0.8684107780456544
 Software Engineering,Mobile Development,0.8850909233093263
 Web Technologies,Mobile Development,0.8784480512142182
