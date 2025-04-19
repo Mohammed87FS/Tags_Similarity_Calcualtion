@@ -253,7 +253,7 @@ function displayTags() {
         const header = document.createElement('div');
         header.className = 'field-header';
         
-        const title = document.createElement('h3');
+        const title = document.createElement('h2');
         title.textContent = field.name;
         header.appendChild(title);
         
@@ -343,7 +343,7 @@ async function calculateAllSimilarities() {
 function displaySimilarityResults(pairs) {
     similarityResults.innerHTML = '';
     
-    const resultsTitle = document.createElement('h3');
+    const resultsTitle = document.createElement('h2');
     resultsTitle.textContent = 'All Similarity Results (sorted by highest similarity)';
     similarityResults.appendChild(resultsTitle);
     
@@ -497,7 +497,7 @@ function renderNetworkGraph(data) {
         .join('line')
         .attr('stroke', '#999')
         .attr('stroke-opacity', 0.6)
-        .attr('stroke-width', d => Math.sqrt(d.value) * 5)
+        .attr('stroke-width', d => Math.sqrt(d.value) * 10)
         .on("mouseover", function(event, d) {
             tooltip.transition()
                 .duration(200)
