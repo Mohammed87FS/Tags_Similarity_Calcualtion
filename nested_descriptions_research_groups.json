@@ -1,0 +1,487 @@
+{
+    "categories": [
+      {
+        "name": "Computational Sciences & AI",
+        "subgroups": [
+          {
+            "name": "Intelligence Systems",
+            "fields": [
+              {
+                "name": "Artificial Intelligence",
+                "description": {
+                  "definition": "Artificial Intelligence develops computational systems capable of performing complex tasks traditionally requiring human cognitive capabilities through algorithmic approaches and computational models that simulate intelligent behavior",
+                  "methodologies": "Deep learning, reinforcement learning, symbolic reasoning, knowledge representation, neural networks, bayesian methods, evolutionary computation, expert systems, natural language processing algorithms, computer vision techniques",
+                  "applications": "Autonomous vehicles, virtual assistants, recommendation systems, fraud detection, medical diagnosis, drug discovery, smart manufacturing, predictive maintenance, content generation, intelligent tutoring systems",
+                  "technologies": "TensorFlow, PyTorch, Keras, BERT, GPT, DALL-E, AlphaFold, knowledge graphs, expert systems, cloud computing platforms for AI deployment",
+                  "challenges": "Explainability, algorithmic bias, data privacy, computational efficiency, safety and alignment, generalizability, adversarial attacks, ethical frameworks, regulatory compliance",
+                  "future_directions": "Human-AI collaboration, multimodal learning, sustainable AI, edge AI, quantum AI, neuromorphic computing, foundation models, federated learning, AI ethics standardization"
+                }
+              },
+              {
+                "name": "Machine Learning",
+                "description": {
+                  "definition": "Machine Learning constructs computational algorithms that enable systems to perform tasks through pattern recognition and statistical inference without explicit programming, allowing systems to improve automatically through experience",
+                  "methodologies": "Supervised learning, unsupervised learning, semi-supervised learning, reinforcement learning, transfer learning, federated learning, self-supervised learning, ensemble methods, dimensionality reduction, feature engineering",
+                  "applications": "Predictive analytics, image and speech recognition, natural language processing, anomaly detection, recommender systems, time series forecasting, sentiment analysis, credit scoring, medical diagnosis",
+                  "technologies": "Scikit-learn, TensorFlow, PyTorch, XGBoost, Random Forests, Support Vector Machines, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, AutoML platforms",
+                  "challenges": "Overfitting, underfitting, interpretability, data quality and bias, hyperparameter optimization, deployment challenges, computational efficiency, concept drift, imbalanced data",
+                  "future_directions": "Few-shot learning, causal machine learning, automated machine learning, continual learning, edge ML, privacy-preserving ML, sustainable ML, AutoML, ML democratization"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Perceptual Computing",
+            "fields": [
+              {
+                "name": "Computer Vision",
+                "description": {
+                  "definition": "Computer Vision enables machines to interpret visual information from images and videos, developing algorithms and systems that can extract meaningful data, recognize patterns, and make decisions based on visual inputs",
+                  "methodologies": "Image processing, object detection, image segmentation, feature extraction, pattern recognition, optical flow analysis, 3D reconstruction, scene understanding, deep learning approaches such as CNNs, transformers",
+                  "applications": "Facial recognition, autonomous vehicles, medical imaging, surveillance systems, augmented reality, industrial inspection, robotics, retail analytics, agricultural monitoring, document analysis",
+                  "technologies": "OpenCV, PyTorch Vision, TensorFlow Vision, YOLO, Mask R-CNN, U-Net, GAN architectures, NeRF, SLAM algorithms, depth sensors",
+                  "challenges": "Variable lighting conditions, occlusion, viewpoint variations, real-time performance, domain adaptation, data annotation, adversarial attacks, privacy concerns, ethical use",
+                  "future_directions": "3D scene understanding, video understanding, cross-modal vision systems, explainable vision systems, neuromorphic vision, energy-efficient vision, foundation models for vision"
+                }
+              },
+              {
+                "name": "Robotics",
+                "description": {
+                  "definition": "Robotics engineers autonomous and semi-autonomous mechanical systems that integrate environmental sensing, computational decision-making, and physical actuation to perform tasks in real-world environments",
+                  "methodologies": "Motion planning, control theory, robot kinematics and dynamics, simultaneous localization and mapping (SLAM), reinforcement learning, computer vision integration, path planning, manipulation algorithms",
+                  "applications": "Manufacturing automation, warehouse logistics, healthcare assistance, exploration of hazardous environments, precision agriculture, search and rescue, domestic service, educational platforms, surgical systems",
+                  "technologies": "ROS (Robot Operating System), actuators, various sensors (LiDAR, cameras, IMUs), microcontrollers, simulation environments, digital twins, manipulators, soft robotics materials",
+                  "challenges": "Dexterity and manipulation, human-robot interaction, adaptability to unstructured environments, power and energy constraints, safety certifications, ethical considerations, cost-effectiveness",
+                  "future_directions": "Collaborative robotics, swarm robotics, bio-inspired robotics, soft robotics, self-reconfigurable robots, embodied AI, micro and nano robotics, human augmentation"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Data Analytics",
+            "fields": [
+              {
+                "name": "Data Science",
+                "description": {
+                  "definition": "Data Science systematically extracts actionable knowledge and insights from structured, semi-structured, and unstructured data sources through statistical analysis, machine learning, and domain expertise",
+                  "methodologies": "Statistical analysis, exploratory data analysis, predictive modeling, descriptive analytics, prescriptive analytics, text mining, time series analysis, hypothesis testing, A/B testing, data visualization",
+                  "applications": "Business intelligence, marketing optimization, financial forecasting, healthcare analytics, supply chain optimization, fraud detection, customer segmentation, product development, risk assessment",
+                  "technologies": "Python, R, SQL, Tableau, Power BI, Hadoop, Spark, pandas, NumPy, Jupyter, data warehouses, data lakes, ETL tools, cloud analytics platforms",
+                  "challenges": "Data quality and integration, scalability, reproducibility, ethical considerations, privacy compliance, interpretability of results, effectively communicating insights, talent gaps",
+                  "future_directions": "Automated data science, real-time analytics, embedded analytics, edge analytics, synthetic data generation, data democratization, causal inference, privacy-preserving analytics"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Security & Information Protection",
+        "subgroups": [
+          {
+            "name": "Defensive Security",
+            "fields": [
+              {
+                "name": "Cybersecurity",
+                "description": {
+                  "definition": "Cybersecurity implements defensive measures protecting digital information systems and sensitive data against unauthorized access, disruption, modification, or destruction through the application of various technologies, processes, and practices",
+                  "methodologies": "Risk assessment, threat modeling, security architecture design, vulnerability management, penetration testing, incident response, security monitoring, access control implementation, security awareness training",
+                  "applications": "Enterprise network defense, cloud security, IoT security, critical infrastructure protection, application security, endpoint protection, data loss prevention, identity and access management",
+                  "technologies": "Firewalls, intrusion detection/prevention systems, SIEM tools, encryption, VPNs, multi-factor authentication, endpoint detection and response, security orchestration and automated response tools",
+                  "challenges": "Advanced persistent threats, zero-day vulnerabilities, insider threats, skills shortage, user awareness, supply chain security, regulatory compliance, securing legacy systems, cloud security",
+                  "future_directions": "Zero trust architecture, AI-driven security automation, quantum-resistant cryptography, security mesh architecture, DevSecOps integration, cyber resilience, security by design"
+                }
+              },
+              {
+                "name": "Information Security",
+                "description": {
+                  "definition": "Information Security protects data confidentiality, integrity, and availability through technical safeguards, policies, and procedures across all forms of data whether digital, physical, or intellectual",
+                  "methodologies": "Security governance, information classification, data protection strategies, compliance management, security policy development, risk management, privacy by design, data lifecycle management",
+                  "applications": "Data protection programs, regulatory compliance, intellectual property protection, personal data privacy, business continuity, disaster recovery, security operations, vendor risk management",
+                  "technologies": "Data encryption, data loss prevention tools, digital rights management, secure file sharing solutions, database activity monitoring, data masking, tokenization, secure email gateways",
+                  "challenges": "Data sovereignty, privacy regulations, unauthorized data exfiltration, shadow IT, growing data volumes, balancing security with usability, cross-border data transfers, retention requirements",
+                  "future_directions": "Privacy-enhancing technologies, zero-knowledge proofs, homomorphic encryption, automated compliance, confidential computing, data-centric security approaches, self-sovereign identity"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Offensive Security",
+            "fields": [
+              {
+                "name": "Ethical Hacking",
+                "description": {
+                  "definition": "Ethical Hacking systematically probes computer systems with authorization to identify security vulnerabilities before malicious exploitation, employing the same methods and tools as adversaries but with defensive intent",
+                  "methodologies": "Reconnaissance, scanning, vulnerability assessment, exploitation, post-exploitation, privilege escalation, lateral movement, persistence testing, reporting, remediation guidance",
+                  "applications": "Penetration testing, red teaming, vulnerability assessment, bug bounty programs, compliance verification, secure development lifecycle, security training, breach simulation",
+                  "technologies": "Vulnerability scanners, exploitation frameworks (Metasploit), password crackers, network analyzers, web application scanners, fuzzing tools, social engineering toolkits, wireless assessment tools",
+                  "challenges": "Scope limitations, false positives/negatives, legal boundaries, safe exploitation, reporting actionable findings, keeping skills updated, evolving attack surfaces, ethical considerations",
+                  "future_directions": "Adversarial machine learning, continuous automated penetration testing, purple teaming, AI-powered attack simulation, breach and attack simulation, offensive security at scale"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Security Fundamentals",
+            "fields": [
+              {
+                "name": "Cryptography",
+                "description": {
+                  "definition": "Cryptography develops mathematical techniques securing information from unauthorized access while enabling authenticated communication through encryption, decryption, and verification mechanisms",
+                  "methodologies": "Symmetric encryption, asymmetric encryption, hash functions, digital signatures, key exchange protocols, random number generation, cryptographic protocol design, formal verification",
+                  "applications": "Secure communications, data protection, blockchain, digital identity, secure transactions, digital rights management, secure messaging, password protection, certificate management",
+                  "technologies": "AES, RSA, ECC, SHA, TLS/SSL, PGP, HSMs (Hardware Security Modules), PKI (Public Key Infrastructure), secure enclaves, cryptographic libraries",
+                  "challenges": "Quantum computing threats, implementation vulnerabilities, key management, side-channel attacks, cryptographic agility, maintaining forward secrecy, balancing security with performance",
+                  "future_directions": "Post-quantum cryptography, homomorphic encryption, secure multi-party computation, lattice-based cryptography, quantum key distribution, lightweight cryptography, blockchain innovations"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Human-Computer Interaction & Design",
+        "subgroups": [
+          {
+            "name": "User Experience",
+            "fields": [
+              {
+                "name": "Human-Computer Interaction",
+                "description": {
+                  "definition": "Human-Computer Interaction designs and evaluates interactive computing systems for human use through understanding user behaviors, needs, and psychology in relation to computer technology",
+                  "methodologies": "User-centered design, participatory design, cognitive models, task analysis, interaction design, prototyping, heuristic evaluation, usability testing, empirical studies, ethnographic research",
+                  "applications": "Software interfaces, mobile applications, web platforms, wearable technology, kiosks, assistive technologies, collaboration tools, control systems, educational technology",
+                  "technologies": "Prototyping tools, eye-tracking systems, biometric sensors, multimodal interfaces, gesture recognition, voice interfaces, haptic feedback, accessibility tools, usability testing equipment",
+                  "challenges": "Inclusive design, cross-cultural usability, technology accessibility, cognitive load, attention management, changing user expectations, balancing complexity with usability",
+                  "future_directions": "Brain-computer interfaces, adaptive interfaces, context-aware computing, affective computing, natural user interfaces, ambient intelligence, multimodal interaction, AI-driven personalization"
+                }
+              },
+              {
+                "name": "Interface Design",
+                "description": {
+                  "definition": "Interface Design creates user interaction systems mediating between humans and digital or physical products by defining information architecture, visual design elements, and interaction patterns",
+                  "methodologies": "Information architecture, wireframing, visual design principles, interaction design patterns, responsive design, micro-interactions, design systems development, cognitive psychology application",
+                  "applications": "Consumer applications, enterprise software, dashboard design, control panels, website interfaces, mobile applications, kiosks, embedded device interfaces, operating systems",
+                  "technologies": "Design software (Figma, Sketch, Adobe XD), prototyping tools, design system platforms, color management systems, typography engines, animation frameworks, pattern libraries",
+                  "challenges": "Cross-platform consistency, accessibility compliance, internationalization, dark mode implementation, minimizing cognitive load, accommodating diverse input methods, technical constraints",
+                  "future_directions": "Adaptive interfaces, spatial computing interfaces, zero UI paradigms, voice-first interfaces, neuroscience-informed design, co-creative AI interfaces, generative design systems"
+                }
+              },
+              {
+                "name": "Usability Evaluation",
+                "description": {
+                  "definition": "Usability Evaluation systematically assesses how effectively users can interact with products, systems, or interfaces to achieve their goals with efficiency, satisfaction, and minimal errors",
+                  "methodologies": "Heuristic evaluation, cognitive walkthroughs, user testing, A/B testing, think-aloud protocols, SUS (System Usability Scale), HEART framework, accessibility evaluation, expert reviews, analytics analysis",
+                  "applications": "Software quality assurance, compliance verification, competitive analysis, iterative product improvement, user satisfaction measurement, accessibility compliance, ROI justification",
+                  "technologies": "Usability testing platforms, eye-tracking systems, remote user testing tools, analytics platforms, heat mapping software, screen recording tools, survey platforms, biometric sensors",
+                  "challenges": "Recruiting representative users, controlling testing environments, measuring subjective experiences, balancing qualitative and quantitative data, testing accessibility, international testing",
+                  "future_directions": "Automated usability evaluation, predictive usability models, continuous evaluation methods, remote asynchronous testing, AI-assisted evaluation, emotional response measurement, immersive environment testing"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Research Methods",
+            "fields": [
+              {
+                "name": "User Research",
+                "description": {
+                  "definition": "User Research investigates human behaviors, needs, motivations, and contexts to inform product design and development through systematic inquiry and methodical data collection",
+                  "methodologies": "Contextual inquiry, interviews, surveys, diary studies, ethnographic research, focus groups, card sorting, persona development, journey mapping, participatory design workshops, longitudinal studies",
+                  "applications": "Product development, service design, feature prioritization, market validation, design strategy, information architecture, content strategy, user segmentation, experience mapping",
+                  "technologies": "Research planning software, remote research platforms, survey tools, recording equipment, transcription services, data analysis software, research repositories, recruitment tools",
+                  "challenges": "Recruitment bias, unspoken user needs, scaling research, research synthesis, stakeholder alignment, ensuring actionable insights, balancing qualitative with quantitative methods",
+                  "future_directions": "Behavioral biometrics, passive data collection, AI-assisted research, mixed-method automation, democratized research tools, predictive user modeling, cross-cultural research methodologies"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Visualization & Immersion",
+            "fields": [
+              {
+                "name": "Immersive Technologies",
+                "description": {
+                  "definition": "Immersive Technologies create experiences blending digital content with physical reality or generating fully simulated environments that engage multiple senses for enhanced presence and interaction",
+                  "methodologies": "3D modeling, spatial mapping, sensory design, interaction design for 3D spaces, motion tracking, environmental design, narrative design, immersive audio design, haptic feedback systems",
+                  "applications": "Virtual reality training, augmented reality for industrial maintenance, mixed reality medical visualization, architectural visualization, immersive entertainment, therapeutic applications, remote collaboration",
+                  "technologies": "VR headsets, AR glasses, spatial tracking systems, motion controllers, haptic devices, spatial audio systems, 3D engines (Unity, Unreal), 3D scanning tools, photogrammetry",
+                  "challenges": "Motion sickness, hardware limitations, content creation complexity, accessibility issues, user fatigue, spatial design principles, interaction paradigms, interoperability standards",
+                  "future_directions": "Lightweight wearables, shared persistent virtual worlds (metaverse), advanced haptics, brain-computer interfaces, olfactory and gustatory simulation, holographic displays, ambient mixed reality"
+                }
+              },
+              {
+                "name": "Data Visualization",
+                "description": {
+                  "definition": "Data Visualization transforms abstract information into intuitive visual representations revealing patterns and relationships through graphics, charts, and interactive displays",
+                  "methodologies": "Visual encoding principles, exploratory visualization, explanatory visualization, interaction design, perception principles, information design, visualization grammar, dashboard design",
+                  "applications": "Business intelligence, scientific research, financial analysis, healthcare monitoring, network analysis, geographic information systems, public data communication, process monitoring",
+                  "technologies": "D3.js, Tableau, Power BI, Processing, WebGL, Plotly, specialized visualization libraries, R graphics packages, Python visualization tools, geospatial mapping platforms",
+                  "challenges": "Visual complexity management, effective storytelling, avoiding misleading representations, accessibility, performance with large datasets, multivariate data representation",
+                  "future_directions": "Immersive data visualization, AI-assisted visual exploration, automated insight generation, personalized visualizations, collaborative visualization environments, sonification"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Media & Creative Technologies",
+        "subgroups": [
+          {
+            "name": "Interactive Entertainment",
+            "fields": [
+              {
+                "name": "Game Development",
+                "description": {
+                  "definition": "Game Development creates interactive software experiences through interdisciplinary collaboration combining programming, art, design, and audio to produce engaging entertainment applications",
+                  "methodologies": "Game engine programming, asset pipeline development, rendering optimization, physics simulation, networking implementation, procedural generation, platform-specific development, testing methodologies",
+                  "applications": "Entertainment games, serious games, simulation games, educational games, training simulators, health and rehabilitation games, advertising games, location-based experiences",
+                  "technologies": "Unity, Unreal Engine, custom game engines, version control systems, asset management tools, build automation, performance profiling tools, cross-platform development frameworks",
+                  "challenges": "Technical performance optimization, cross-platform compatibility, development scalability, pipeline efficiency, QA processes, live service operations, security, accessibility implementation",
+                  "future_directions": "Cloud gaming infrastructure, procedural content generation, AI-assisted development, real-time ray tracing, cross-reality development, blockchain integration, machine learning for gameplay"
+                }
+              },
+              {
+                "name": "Game Design",
+                "description": {
+                  "definition": "Game Design creates interactive experiences through rules, mechanics, and narratives that engage players in meaningful choices and actions while balancing challenge, reward, and progression",
+                  "methodologies": "Systems design, mechanics design, level design, narrative design, player psychology, balance tuning, economy design, user research, iterative prototyping, playtesting methodologies",
+                  "applications": "Entertainment games, educational games, health games, simulation training, gamification of non-game contexts, therapeutic applications, social impact games, organizational training",
+                  "technologies": "Prototyping tools, analytics platforms, balancing tools, level editors, narrative design software, player behavior modeling tools, A/B testing frameworks for gameplay",
+                  "challenges": "Player engagement, accessibility design, cultural relevance, ethical design considerations, retention mechanics, monetization balance, design documentation, communicating design intent",
+                  "future_directions": "Procedural narrative generation, AI-driven adaptive difficulty, emotion-aware game design, player-created content ecosystems, dynamic world simulation, personalized game experiences"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Visual Media",
+            "fields": [
+              {
+                "name": "Animation & Digital Media",
+                "description": {
+                  "definition": "Animation & Digital Media creates moving imagery and interactive content through CGI, motion capture, and procedural techniques, combining artistic expression with technical implementation",
+                  "methodologies": "Keyframe animation, motion capture, procedural animation, character rigging, visual effects composition, texture mapping, rendering pipelines, motion design, color grading",
+                  "applications": "Film and television, game cinematics, advertising, educational content, architectural visualization, medical visualization, data storytelling, virtual production, interactive installations",
+                  "technologies": "Maya, Blender, Cinema 4D, After Effects, Houdini, motion capture systems, virtual production stages, rendering farms, compositing software, animation management systems",
+                  "challenges": "Production pipeline efficiency, render optimization, realistic simulation, character believability, technical constraints, animation style consistency, archiving and preserving work",
+                  "future_directions": "Real-time animation, AI-assisted animation, virtual production techniques, cloud-based rendering, volumetric capture, neural rendering, interactive narrative animation"
+                }
+              },
+              {
+                "name": "Computer Graphics",
+                "description": {
+                  "definition": "Computer Graphics generates and manipulates visual content through computational methods, encompassing algorithms, data structures, and rendering techniques for creating synthetic imagery",
+                  "methodologies": "Rendering algorithms, geometric modeling, ray tracing, rasterization, shader programming, texture mapping, physically-based rendering, computational geometry, lighting simulation",
+                  "applications": "Video games, visual effects, scientific visualization, medical imaging, architectural visualization, industrial design, digital twins, simulation environments, virtual prototyping",
+                  "technologies": "Graphics APIs (OpenGL, DirectX, Vulkan), shader languages, rendering engines, modeling tools, graphics processing units (GPUs), computation libraries, real-time rendering frameworks",
+                  "challenges": "Real-time performance, photorealism, uncanny valley effects, computational efficiency, hardware limitations, cross-platform compatibility, standardization, accessibility",
+                  "future_directions": "Real-time ray tracing, path tracing, neural rendering, differentiable rendering, procedural generation, machine learning for graphics, quantum rendering, holographic displays"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Audio & Multimedia",
+            "fields": [
+              {
+                "name": "Sound Design",
+                "description": {
+                  "definition": "Sound Design creates, manipulates, and arranges audio elements enhancing narrative experiences through carefully crafted soundscapes, effects, and music that complement visual elements",
+                  "methodologies": "Field recording, Foley artistry, synthesis, audio processing, spatial audio design, adaptive audio, sound layering, audio restoration, psychoacoustic principles application",
+                  "applications": "Film soundtracks, game audio, virtual reality experiences, installations, product sound design, brand sonic identities, theatrical sound design, podcast production, interface sonification",
+                  "technologies": "Digital audio workstations, synthesis software, spatial audio tools, audio middleware for interactive media, sound libraries, microphones, field recorders, audio processing plugins",
+                  "challenges": "Creating believable soundscapes, technical implementation in interactive media, platform audio limitations, consistency across playback systems, balancing artistic and technical goals",
+                  "future_directions": "Generative audio, AI-assisted sound design, advanced spatial audio, physical modeling synthesis, binaural experiences, cross-modal design, emotional response modeling"
+                }
+              },
+              {
+                "name": "Interactive Media",
+                "description": {
+                  "definition": "Interactive Media creates user-responsive experiences combining computational systems with content that adapts to participant actions, enabling dynamic storytelling and personalized engagement",
+                  "methodologies": "Interaction design, narrative branching, procedural content generation, experience mapping, participatory design, responsive storytelling, interactive architecture, multisensory design",
+                  "applications": "Interactive installations, digital exhibitions, transmedia storytelling, interactive documentaries, location-based experiences, interactive art, participatory performances, education",
+                  "technologies": "Motion sensors, touch interfaces, projection mapping, interactive programming environments, real-time rendering, content management systems, IoT integration, mobile technologies",
+                  "challenges": "Designing intuitive interactions, technical reliability in public spaces, scaling experiences, documentation of ephemeral works, balancing structure with agency, accessibility design",
+                  "future_directions": "AI-driven narrative systems, biometric interaction, collective experiences, distributed interaction, mixed reality storytelling, brain-computer interfaces, generative experiences"
+                }
+              },
+              {
+                "name": "Media Production",
+                "description": {
+                  "definition": "Media Production creates audiovisual content through integrated creative and technical processes including pre-production planning, production execution, and post-production refinement",
+                  "methodologies": "Production planning, cinematography, directing, lighting design, audio recording, scheduling, budgeting, editing, color grading, compositing, visual effects integration",
+                  "applications": "Film and television, commercials, educational content, corporate communications, social media content, streaming media, documentaries, promotional materials, institutional media",
+                  "technologies": "Digital cameras, lighting equipment, audio recording systems, editing software, color grading tools, project management platforms, media asset management, production tracking",
+                  "challenges": "Workflow optimization, technical quality control, creative consistency, managing production complexity, multi-platform delivery, archiving and preservation, rights management",
+                  "future_directions": "Virtual production techniques, cloud-based collaboration, remote production workflows, AI-assisted editing, automated localization, sustainable production practices"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Cultural Studies",
+            "fields": [
+              {
+                "name": "Digital Arts & Culture",
+                "description": {
+                  "definition": "Digital Arts & Culture explores creative expression and cultural practices emerging from computational technologies, examining how digital tools reshape aesthetic experiences and cultural production",
+                  "methodologies": "Practice-based research, critical analysis, cultural theory application, ethnographic studies, comparative analysis, historical contextualization, participatory research, artifact analysis",
+                  "applications": "New media art, digital humanities, cultural heritage digitization, posthumanist studies, internet cultures, algorithmic art, digital preservation, media archaeology, platform studies",
+                  "technologies": "Digital archives, computational analysis tools, creative coding environments, documentation technologies, digital conservation methods, cultural analytics platforms",
+                  "challenges": "Ephemerality of digital works, technological obsolescence, documenting interactive experiences, interdisciplinary methodologies, balancing practice and theory, institutional frameworks",
+                  "future_directions": "Post-digital aesthetics, algorithmic criticism, AI and creative practice, blockchain for cultural heritage, immaterial labor studies, platform governance, virtual cultural spaces"
+                }
+              },
+              {
+                "name": "Media Studies",
+                "description": {
+                  "definition": "Media Studies examines communication channels, their content, and societal impact across traditional and digital platforms, analyzing production, distribution, reception, and cultural contexts",
+                  "methodologies": "Textual analysis, discourse analysis, audience research, political economy analysis, historical research, ethnographic approaches, comparative analysis, reception studies",
+                  "applications": "Media literacy education, platform governance, public policy development, cultural criticism, journalism studies, audience engagement strategies, media industry analysis",
+                  "technologies": "Content analysis software, media monitoring tools, audience measurement platforms, social media analytics, corpus linguistics tools, digital archives, network analysis tools",
+                  "challenges": "Rapidly evolving media landscape, methodological innovation, interdisciplinary integration, balancing critical and empirical approaches, addressing technological determinism",
+                  "future_directions": "Algorithmic culture studies, platform studies, attention economics, post-truth media environments, deep fake analysis, environmental media studies, decolonizing media studies"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Healthcare & Life Sciences",
+        "subgroups": [
+          {
+            "name": "Clinical Applications",
+            "fields": [
+              {
+                "name": "Health",
+                "description": {
+                  "definition": "Health research investigates physical, mental, and social wellbeing determinants across individual and population levels, developing interventions, policies, and systems to improve health outcomes",
+                  "methodologies": "Epidemiological studies, clinical trials, community-based participatory research, health services research, systematic reviews, health impact assessments, cohort studies",
+                  "applications": "Disease prevention, health promotion, healthcare delivery, public health policy, community health initiatives, personalized medicine, global health programs, health equity advancement",
+                  "technologies": "Health information systems, electronic health records, biometric monitoring devices, diagnostic technologies, telemedicine platforms, population health dashboards, health analytics",
+                  "challenges": "Healthcare disparities, measuring outcomes, implementation science, behavior change, interdisciplinary collaboration, translating research to practice, ethical considerations",
+                  "future_directions": "Precision public health, digital health ecosystems, preventive health systems, integrated care models, global health security, health systems resilience, AI in population health"
+                }
+              },
+              {
+                "name": "Digital Healthcare",
+                "description": {
+                  "definition": "Digital Healthcare applies computing and information technology to medicine and healthcare delivery, creating systems and tools that enhance diagnosis, treatment, monitoring, and healthcare management",
+                  "methodologies": "User-centered design for healthcare, clinical validation studies, healthcare workflow analysis, interoperability engineering, health data analytics, privacy by design, remote monitoring",
+                  "applications": "Telemedicine, electronic health records, remote patient monitoring, clinical decision support, healthcare analytics, patient engagement platforms, predictive healthcare, virtual care",
+                  "technologies": "Health information exchange systems, telehealth platforms, wearable health devices, medical imaging software, health data security systems, healthcare AI, blockchain for health records",
+                  "challenges": "Clinical validation, regulatory compliance, privacy and security, healthcare integration, user adoption, evidence generation, reimbursement models, ethical implementation",
+                  "future_directions": "Ambient clinical intelligence, AR/VR in healthcare, digital therapeutics, healthcare IoT ecosystems, voice interfaces for healthcare, federated health data networks"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Neural Sciences",
+            "fields": [
+              {
+                "name": "Neuroscience",
+                "description": {
+                  "definition": "Neuroscience examines the nervous system's organization and operations across hierarchical scales, from molecular and cellular components to neural circuits, brain regions, and whole-brain function",
+                  "methodologies": "Neuroimaging, electrophysiology, optogenetics, brain connectivity analysis, computational modeling, molecular and cellular techniques, behavioral assessment, cognitive testing",
+                  "applications": "Neurological disorders treatment, brain-computer interfaces, cognitive enhancement, neural prosthetics, neuropharmacology, neurorehabilitation, educational neuroscience",
+                  "technologies": "fMRI, EEG, MEG, neural probes, two-photon microscopy, neuroinformatics platforms, brain organoids, calcium imaging, high-throughput screening, connectomics tools",
+                  "challenges": "Brain complexity, multi-scale integration, causal inference, ethical considerations, translating findings to clinical applications, individual variation, replication",
+                  "future_directions": "Whole-brain simulations, neuromodulation therapies, precision neurology, integrative multi-modal approaches, neuromorphic computing, neural decoding, personalized brain health"
+                }
+              },
+              {
+                "name": "Cognitive Psychology",
+                "description": {
+                  "definition": "Cognitive Psychology systematically investigates mental processes underlying human perception, attentional selection, memory formation, reasoning, decision-making, and language comprehension",
+                  "methodologies": "Experimental design, psychometric assessment, computational modeling, eye-tracking, reaction time studies, verbal protocols, behavioral analysis, longitudinal studies, neuropsychological testing",
+                  "applications": "Learning optimization, user experience design, clinical assessment, cognitive rehabilitation, educational interventions, human factors engineering, decision support systems",
+                  "technologies": "Cognitive testing platforms, eye-tracking systems, behavioral measurement tools, virtual reality for cognitive assessment, response time measurement equipment, cognitive modeling software",
+                  "challenges": "Ecological validity, individual differences, construct validity, measurement precision, cognitive biases in research, interdisciplinary integration, translational applications",
+                  "future_directions": "Computational psychiatry, personalized cognitive interventions, technology-mediated cognition, ecological momentary assessment, mobile cognitive assessment, collective cognition"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Physical Sciences & Engineering",
+        "subgroups": [
+          {
+            "name": "Smart Physical Systems",
+            "fields": [
+              {
+                "name": "Physical Computing",
+                "description": {
+                  "definition": "Physical Computing integrates digital systems with the physical world through sensors, actuators, and microcontrollers, creating interactive objects and environments that respond to human actions",
+                  "methodologies": "Embedded systems design, sensor integration, circuit design, microcontroller programming, rapid prototyping, iterative testing, interaction design, hardware-software co-design",
+                  "applications": "Interactive art installations, tangible interfaces, smart objects, wearable technology, environmental monitoring, interactive architecture, educational tools, adaptive environments",
+                  "technologies": "Arduino, Raspberry Pi, microcontrollers, electronic components, sensors (proximity, light, temperature, motion), actuators (motors, solenoids, displays), prototyping materials",
+                  "challenges": "Power management, robust physical design, sensor calibration, fabrication limitations, maintenance considerations, environmental conditions, cross-disciplinary integration",
+                  "future_directions": "Programmable matter, embedded AI, energy harvesting systems, bio-inspired sensors, human-machine symbiosis, soft robotics integration, decentralized sensing networks"
+                }
+              },
+              {
+                "name": "Smart Engineering",
+                "description": {
+                  "definition": "Smart Engineering integrates advanced technologies including robotics, IoT sensors, artificial intelligence, and data analytics to create intelligent systems and infrastructure that optimize performance, efficiency, and adaptability",
+                  "methodologies": "Systems engineering, sensor networks design, data-driven modeling, digital twin creation, machine learning integration, predictive analytics, feedback control systems, resilience engineering",
+                  "applications": "Smart buildings, intelligent transportation systems, industrial automation, energy management, smart cities, precision agriculture, environmental monitoring, infrastructure management",
+                  "technologies": "IoT platforms, distributed sensor networks, edge computing devices, machine learning frameworks, digital twin software, SCADA systems, industrial control systems, cloud integration",
+                  "challenges": "System complexity, interoperability, security vulnerabilities, legacy system integration, reliability in critical applications, data management, privacy considerations, standardization",
+                  "future_directions": "Self-healing systems, cognitive buildings, edge intelligence, sustainable smart infrastructure, biomimetic engineering, human-autonomous system collaboration, circular systems"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Data & Software Systems",
+        "subgroups": [
+          {
+            "name": "Software Development",
+            "fields": [
+              {
+                "name": "Software Engineering",
+                "description": {
+                  "definition": "Software Engineering applies systematic, disciplined approaches to software development, maintenance, and evolution through engineering principles, methodologies, and tools",
+                  "methodologies": "Requirements engineering, software architecture, design patterns, test-driven development, continuous integration/delivery, agile methodologies, DevOps practices, quality assurance",
+                  "applications": "Enterprise applications, embedded systems, operating systems, scientific computing, financial systems, healthcare systems, telecommunications, aerospace, automotive software",
+                  "technologies": "Programming languages, version control systems, automated testing frameworks, continuous integration tools, containerization, orchestration platforms, development environments",
+                  "challenges": "Complexity management, maintainability, scalability, security integration, technical debt, legacy system evolution, distributed team coordination, requirements volatility",
+                  "future_directions": "Low-code/no-code platforms, AI-assisted programming, formal verification, self-healing systems, quantum software engineering, sustainable software design, adaptive systems"
+                }
+              },
+              {
+                "name": "Web Technologies",
+                "description": {
+                  "definition": "Web Technologies enable internet-based applications through browsers, servers, and network protocols, providing the foundation for distributing information and services globally",
+                  "methodologies": "Responsive design, progressive enhancement, single-page application architecture, API-first development, JAMstack, microservices, serverless architecture, web accessibility implementation",
+                  "applications": "E-commerce platforms, content management systems, social media, online collaboration tools, streaming services, web applications, progressive web apps, interactive data visualization",
+                  "technologies": "HTML/CSS, JavaScript frameworks (React, Angular, Vue), backend frameworks, RESTful APIs, GraphQL, WebSockets, WebAssembly, content delivery networks, web performance optimization tools",
+                  "challenges": "Cross-browser compatibility, mobile responsiveness, performance optimization, security threats, accessibility compliance, internationalization, search engine optimization, offline capabilities",
+                  "future_directions": "Web3 technologies, progressive web applications, edge computing for web, real-time web capabilities, WebAssembly expansion, AI-enhanced web experiences, decentralized applications"
+                }
+              },
+              {
+                "name": "Mobile Development",
+                "description": {
+                  "definition": "Mobile Development creates applications optimized for portable devices integrating hardware capabilities with software interfaces to deliver context-aware, user-centered experiences",
+                  "methodologies": "Platform-native development, cross-platform frameworks, responsive design, offline-first architecture, mobile-specific UX design, progressive enhancement, behavior-driven development",
+                  "applications": "Consumer applications, enterprise mobility, location-based services, mobile commerce, health and fitness tracking, augmented reality experiences, mobile gaming, field service tools",
+                  "technologies": "Native SDKs (iOS, Android), cross-platform frameworks (React Native, Flutter), mobile-optimized databases, location services, push notification systems, mobile analytics platforms",
+                  "challenges": "Device fragmentation, performance optimization, battery efficiency, limited network connectivity, multi-platform testing, security in BYOD environments, rapid platform evolution",
+                  "future_directions": "Super apps, 5G-optimized applications, AR/VR mobile experiences, on-device AI, foldable device interfaces, ambient computing integration, contactless interactions"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

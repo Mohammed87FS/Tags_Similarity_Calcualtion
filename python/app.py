@@ -15,24 +15,28 @@ similarity_data = []
 similarity_lookup = {}  
 
 def load_research_fields():
-    """Load the research fields data from nested research_groups_fields.json"""
+    """Load the research fields data from nested rnested_descriptions_research_groups.json'"""
     global research_fields
     try:
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(script_dir, '../research_groups_fields.json')
+        json_path = os.path.join(script_dir, '../nested_descriptions_research_groups.json')
         print(f"Looking for research fields at: {json_path}")
         
         if os.path.exists(json_path):
             with open(json_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
-            
-      
-            research_fields = []
-            for category in data.get('categories', []):
-                for field in category.get('fields', []):
-                    research_fields.append(field)
-                    
-            print(f"Loaded {len(research_fields)} research fields from nested categories.")
+                
+                research_fields = []
+                for category in data.get('categories', []):
+                    for subgroup in category.get('subgroups', []):
+                        for field in subgroup.get('fields', []):
+                            # Extract field with its name and granular description
+                            research_fields.append({
+                                'name': field.get('name', ''),
+                                'description': field.get('description', {})
+                            })
+                
+                print(f"Loaded {len(research_fields)} research fields from nested categories.")
         else:
             print("No research_groups_fields.json file found. Starting with empty list.")
             research_fields = []
