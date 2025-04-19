@@ -22,15 +22,16 @@ MODEL_NAME = 'all-mpnet-base-v2'
 # Similarity calculation parameters
 SAME_GROUP_BASELINE = 0.7       # Baseline similarity for fields in same general group
 SAME_SUBGROUP_BASELINE = 0.8    # Baseline similarity for fields in same subgroup
-SIMILARITY_WEIGHT = 0.15        # Weight of calculated similarity to add to baseline
-MAX_CROSS_GROUP_SIMILARITY = 0.7  # Maximum similarity for fields not in same group/subgroup
+SIMILARITY_WEIGHT_SUB = 0.2        # Weight of calculated similarity to add to baseline
+SIMILARITY_WEIGHT_GENERAL = 0.15        # Weight of calculated similarity to add to baseline
+MAX_CROSS_GROUP_SIMILARITY = 0.65  # Maximum similarity for fields not in same group/subgroup
 
 # Output configuration
-OUTPUT_CSV = "field_similarities.csv"
-OUTPUT_JSON = "field_similarities.json"  
+OUTPUT_CSV = "outputs_sub_groups/field_similarities.csv"
+OUTPUT_JSON = "outputs_sub_groups/field_similarities.json"  
 
 GENERATE_HEATMAP = False
-HEATMAP_FILENAME = "field_similarities_heatmap.png"
+HEATMAP_FILENAME = "outputs_sub_groups/field_similarities_heatmap.png"
 TOP_N_SIMILAR = 5  # Number of most similar fields to display for each field
 
 #############################################################
@@ -149,10 +150,10 @@ def adjust_similarities(
             if group1 == group2:
                 if subgroup1 == subgroup2:
                     # Same subgroup
-                    adjusted_similarity = SAME_SUBGROUP_BASELINE + (raw_similarity * SIMILARITY_WEIGHT)
+                    adjusted_similarity = SAME_SUBGROUP_BASELINE + (raw_similarity * SIMILARITY_WEIGHT_SUB)
                 else:
                     # Same group, different subgroup
-                    adjusted_similarity = SAME_GROUP_BASELINE + (raw_similarity * SIMILARITY_WEIGHT)
+                    adjusted_similarity = SAME_GROUP_BASELINE + (raw_similarity * SIMILARITY_WEIGHT_GENERAL)
                 adjusted_df.loc[field1, field2] = adjusted_similarity
             else:
                 # Different groups - mark for scaling later
@@ -230,6 +231,23 @@ def create_similarity_json(similarity_df: pd.DataFrame) -> List[Dict]:
     
     return result
 
+def create_similarity_table(similarity_df: pd.DataFrame) -> pd.DataFrame:
+    """Convert similarity DataFrame to a tabular format with field1, field2, similarity_score columns."""
+    rows = []
+    field_names = similarity_df.index.tolist()
+    
+    # Only include each pair once (avoid duplicates like A-B and B-A)
+    for i, field1 in enumerate(field_names):
+        for j, field2 in enumerate(field_names[i+1:], i+1):
+            similarity = similarity_df.loc[field1, field2]
+            rows.append({
+                "field1": field1,
+                "field2": field2,
+                "similarity_score": float(similarity)  # Convert numpy float to Python float
+            })
+    
+    return pd.DataFrame(rows)
+
 #############################################################
 #                      MAIN EXECUTION                       #
 #############################################################
@@ -259,9 +277,11 @@ def main():
     print("Adjusting similarities based on group and subgroup relationships...")
     adjusted_similarity_df = adjust_similarities(similarity_df, field_to_group, field_to_subgroup)
     
-    # Step 5: Save to CSV
-    print(f"Saving similarity matrix to {OUTPUT_CSV}...")
-    adjusted_similarity_df.to_csv(OUTPUT_CSV)
+    print(f"Saving similarity data to {OUTPUT_CSV}...")
+    similarity_table = create_similarity_table(adjusted_similarity_df)
+    similarity_table.to_csv(OUTPUT_CSV, index=False)
+    print(f"Exported {len(similarity_table)} field pairs to CSV file.")
+
 
     print(f"Saving similarity data to {OUTPUT_JSON}...")
     similarity_pairs = create_similarity_json(adjusted_similarity_df)
