@@ -138,41 +138,7 @@ def main():
         json_file_path=json_file_path
     )
     
-    # Example: Print top similar fields for selected fields
-    example_fields = ["Artificial Intelligence", "Machine Learning", "Cybersecurity", "Game Design", "Health"]
-    
-    print("\n=== Example Field Similarity Analysis ===")
-    for field in example_fields:
-        similar_fields = find_most_similar_fields(
-            adjusted_similarities, field, field_names, field_categories
-        )
-        
-        field_idx = field_names.index(field)
-        field_category = field_categories[field_idx]
-        
-        print(f"\nTop 5 fields most similar to '{field}' (Category: {field_category}):")
-        for item in similar_fields:
-            category_info = "(Same category)" if item['same_category'] else f"(Category: {item['category']})"
-            print(f"- {item['field']}: {item['score']:.4f} {category_info}")
-    
-    # Example: Compare specific field pairs
-    print("\n=== Field Pair Comparisons ===")
-    field_pairs = [
-        ("Artificial Intelligence", "Machine Learning"),
-        ("Artificial Intelligence", "Cybersecurity"),
-        ("Game Design", "Game Development"),
-        ("Cybersecurity", "Information Security")
-    ]
-    
-    for field1, field2 in field_pairs:
-        if field1 in field_names and field2 in field_names:
-            similarity = adjusted_similarities.loc[field1, field2]
-            idx1 = field_names.index(field1)
-            idx2 = field_names.index(field2)
-            same_category = field_categories[idx1] == field_categories[idx2]
-            
-            category_info = "same category" if same_category else "different categories"
-            print(f"Similarity between '{field1}' and '{field2}': {similarity:.4f} ({category_info})")
+   
 
 if __name__ == "__main__":
     main()

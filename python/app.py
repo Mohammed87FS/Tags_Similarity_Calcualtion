@@ -7,27 +7,34 @@ import os
 
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app) 
 
-# Global variables to store our data
+
 research_fields = []
 similarity_data = []
-similarity_lookup = {}  # For quick lookups
+similarity_lookup = {}  
 
 def load_research_fields():
-    """Load the original research fields data"""
+    """Load the research fields data from nested research_groups_fields.json"""
     global research_fields
     try:
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(script_dir, '../research_fields.json')
+        json_path = os.path.join(script_dir, '../research_groups_fields.json')
         print(f"Looking for research fields at: {json_path}")
         
         if os.path.exists(json_path):
             with open(json_path, 'r', encoding='utf-8') as file:
-                research_fields = json.load(file)
-            print(f"Loaded {len(research_fields)} research fields from file.")
+                data = json.load(file)
+            
+      
+            research_fields = []
+            for category in data.get('categories', []):
+                for field in category.get('fields', []):
+                    research_fields.append(field)
+                    
+            print(f"Loaded {len(research_fields)} research fields from nested categories.")
         else:
-            print("No research_fields.json file found. Starting with empty list.")
+            print("No research_groups_fields.json file found. Starting with empty list.")
             research_fields = []
     except Exception as e:
         print(f"Error loading research fields: {e}")
