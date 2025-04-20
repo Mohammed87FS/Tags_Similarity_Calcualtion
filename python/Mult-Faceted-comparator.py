@@ -53,7 +53,7 @@ MAX_BOOST_FACTOR = 0.15          # Maximum boost to apply (0.15 = up to 15% boos
 DOMAIN_BOOST_THRESHOLD = 0.7     # Minimum domain similarity to trigger boost
 
 # Output configuration
-OUTPUT_DIR = "outputs_enhanced_multi"
+OUTPUT_DIR = "final_outputs_enhanced_multi"
 OUTPUT_CSV = f"{OUTPUT_DIR}/field_similarities.csv"
 OUTPUT_JSON = f"{OUTPUT_DIR}/field_similarities.json"  
 
@@ -76,6 +76,7 @@ np.random.seed(RANDOM_SEED)
 #                DOMAIN KNOWLEDGE SECTION                   #
 #############################################################
 
+
 # ENHANCED: Extended domain-specific term groups with more technical terminology
 DOMAIN_TERM_GROUPS = {
     'ai_ml': [
@@ -92,7 +93,6 @@ DOMAIN_TERM_GROUPS = {
         'inference', 'prediction', 'algorithm', 'pytorch', 'tensorflow', 'keras', 'scikit-learn'
     ],
     
-    # Other domain term groups remain the same...
     'security': [
         'cybersecurity', 'encryption', 'authentication', 'firewall', 'vulnerability',
         'penetration testing', 'intrusion detection', 'security audit', 'threat',
@@ -107,23 +107,180 @@ DOMAIN_TERM_GROUPS = {
         'waf', 'antivirus', 'patch management', 'vulnerability scanning', 'penetration testing'
     ],
     
-    # Other domain term groups remain unchanged...
+    'data_analytics': [
+        'analytics', 'big data', 'data science', 'statistics', 'data visualization',
+        'business intelligence', 'predictive analytics', 'data mining', 'data warehouse',
+        'exploratory analysis', 'regression', 'classification', 'data cleaning', 'etl',
+        'dashboard', 'kpi', 'metric', 'database', 'data modeling', 'data engineering',
+        'data pipeline', 'data governance', 'data lake', 'data mart', 'olap', 'oltp',
+        'sql', 'nosql', 'hadoop', 'spark', 'data streaming', 'real-time analytics',
+        'descriptive analytics', 'prescriptive analytics', 'diagnostic analytics',
+        'statistical analysis', 'hypothesis testing', 'correlation', 'causation',
+        'data quality', 'master data', 'metadata', 'data catalog', 'data dictionary',
+        'tableau', 'power bi', 'looker', 'data studio', 'jupyter', 'r studio',
+        'pandas', 'numpy', 'scipy', 'matplotlib', 'data preprocessing', 'feature selection',
+        'cross-validation', 'time series', 'anomaly detection', 'segmentation'
+    ],
+    
+    'hci': [
+        'human-computer interaction', 'user interface', 'user experience', 'usability',
+        'interaction design', 'human factors', 'accessibility', 'cognitive load',
+        'user research', 'user testing', 'information architecture', 'wireframe',
+        'prototype', 'user-centered', 'responsive design', 'affordance', 'mental model',
+        'usability testing', 'heuristic evaluation', 'cognitive walkthrough', 'personas',
+        'user journey', 'user flow', 'card sorting', 'a/b testing', 'eye tracking',
+        'gesture recognition', 'touch interface', 'voice interface', 'multimodal interface',
+        'design thinking', 'interaction patterns', 'design system', 'design principles',
+        'user needs', 'user goals', 'user feedback', 'user behavior', 'user satisfaction',
+        'ui components', 'navigation', 'information hierarchy', 'visual hierarchy',
+        'interaction model', 'design critique', 'contextual inquiry', 'ethnography',
+        'participatory design', 'accessibility guidelines', 'wcag', 'inclusive design'
+    ],
+    
+    'graphics_media': [
+        'rendering', 'visualization', 'animation', 'modeling', '3d graphics',
+        'computer graphics', 'virtual reality', 'augmented reality', 'game development',
+        'digital media', 'image processing', 'visual effects', 'shader', 'texture',
+        'polygon', 'mesh', 'lighting', 'animation', 'ray tracing', 'path tracing',
+        'global illumination', 'physically based rendering', 'pbr', 'graphics pipeline',
+        'rasterization', 'vertex shader', 'fragment shader', 'geometry shader',
+        'tessellation', 'level of detail', 'lod', 'motion capture', 'rigging',
+        'skinning', 'inverse kinematics', 'forward kinematics', 'keyframe animation',
+        'procedural animation', 'particle system', 'vfx', 'compositing', 'modeling',
+        'sculpting', 'texturing', 'uv mapping', 'normal mapping', 'bump mapping',
+        'displacement mapping', 'volumetric rendering', 'subsurface scattering',
+        'opengl', 'directx', 'vulkan', 'unity', 'unreal engine', 'blender', 'maya'
+    ],
+    
+    'software_development': [
+        'software engineering', 'programming', 'code', 'algorithm', 'data structure',
+        'framework', 'api', 'software development', 'version control', 'devops',
+        'agile', 'testing', 'debugging', 'deployment', 'microservice',
+        'full-stack', 'frontend', 'backend', 'web development', 'object-oriented',
+        'functional programming', 'declarative programming', 'imperative programming',
+        'software architecture', 'design patterns', 'continuous integration',
+        'continuous deployment', 'continuous delivery', 'test-driven development',
+        'behavior-driven development', 'unit testing', 'integration testing',
+        'system testing', 'acceptance testing', 'regression testing', 'code review',
+        'pair programming', 'scrum', 'kanban', 'waterfall', 'git', 'github',
+        'bitbucket', 'jira', 'jenkins', 'docker', 'kubernetes', 'terraform',
+        'infrastructure as code', 'technical debt', 'refactoring', 'code quality',
+        'scalability', 'performance optimization', 'caching', 'load balancing'
+    ],
+    
+    'hardware_systems': [
+        'hardware', 'cpu', 'gpu', 'processor', 'memory', 'storage', 'network',
+        'architecture', 'embedded system', 'circuit', 'sensor', 'actuator',
+        'robotics', 'iot', 'edge computing', 'fpga', 'asic', 'microcontroller',
+        'microprocessor', 'soc', 'system on chip', 'ram', 'dram', 'sram', 'cache',
+        'memory hierarchy', 'virtual memory', 'paging', 'direct memory access',
+        'dma', 'pcie', 'usb', 'sata', 'nvme', 'instruction set', 'isa', 'risc',
+        'cisc', 'pipelining', 'superscalar', 'branch prediction', 'out-of-order',
+        'speculative execution', 'register', 'alu', 'interrupt', 'dma', 'i/o',
+        'peripheral', 'bus', 'motherboard', 'firmware', 'bios', 'uefi',
+        'hardware acceleration', 'parallel computing', 'distributed systems',
+        'fault tolerance', 'redundancy', 'high availability', 'raid'
+    ],
+    
+    'healthcare': [
+        'health', 'medical', 'clinical', 'patient', 'diagnosis', 'therapy', 'treatment',
+        'healthcare', 'biomedical', 'disease', 'drug', 'hospital', 'physician',
+        'telemedicine', 'electronic health record', 'wellness', 'public health',
+        'epidemiology', 'preventive medicine', 'health informatics', 'health policy',
+        'clinical trial', 'evidence-based medicine', 'personalized medicine',
+        'precision medicine', 'genomics', 'proteomics', 'bioinformatics',
+        'medical device', 'medical imaging', 'radiology', 'pathology', 'surgery',
+        'anesthesia', 'mental health', 'psychiatry', 'psychology', 'chronic disease',
+        'acute care', 'primary care', 'secondary care', 'tertiary care',
+        'patient-centered', 'health equity', 'health disparities', 'health literacy',
+        'health promotion', 'health education', 'health screening', 'vaccination'
+    ]
 }
 
-# Domain group similarity matrix remains unchanged...
+# UPDATED: Enhanced domain group similarity matrix with more precise relationships
 DOMAIN_GROUP_SIMILARITY = {
     'ai_ml': {
         'ai_ml': 1.0, 
-        'data_analytics': 0.85,
-        'security': 0.35,
-        'hci': 0.45,
-        'graphics_media': 0.45,
+        'data_analytics': 0.85,   # Increased from 0.7
+        'security': 0.35,         # Slightly increased
+        'hci': 0.45,              # Slightly increased
+        'graphics_media': 0.45,   # Slightly increased
         'software_development': 0.55, 
         'hardware_systems': 0.35, 
         'healthcare': 0.35
     },
-    # Other domain similarities remain unchanged...
+    'security': {
+        'ai_ml': 0.35, 
+        'security': 1.0, 
+        'data_analytics': 0.35, 
+        'hci': 0.25, 
+        'graphics_media': 0.15, 
+        'software_development': 0.60,  # Increased from 0.5
+        'hardware_systems': 0.45, 
+        'healthcare': 0.35
+    },
+    'data_analytics': {
+        'ai_ml': 0.85,            # Increased from 0.7
+        'security': 0.35, 
+        'data_analytics': 1.0, 
+        'hci': 0.35, 
+        'graphics_media': 0.30, 
+        'software_development': 0.45, 
+        'hardware_systems': 0.25, 
+        'healthcare': 0.55
+    },
+    'hci': {
+        'ai_ml': 0.45, 
+        'security': 0.25, 
+        'data_analytics': 0.35, 
+        'hci': 1.0, 
+        'graphics_media': 0.65,   # Increased from 0.6
+        'software_development': 0.55, 
+        'hardware_systems': 0.35, 
+        'healthcare': 0.45
+    },
+    'graphics_media': {
+        'ai_ml': 0.45, 
+        'security': 0.15, 
+        'data_analytics': 0.30, 
+        'hci': 0.65,              # Increased from 0.6
+        'graphics_media': 1.0, 
+        'software_development': 0.35, 
+        'hardware_systems': 0.35, 
+        'healthcare': 0.20
+    },
+    'software_development': {
+        'ai_ml': 0.55, 
+        'security': 0.60,         # Increased from 0.5
+        'data_analytics': 0.45, 
+        'hci': 0.55, 
+        'graphics_media': 0.35, 
+        'software_development': 1.0, 
+        'hardware_systems': 0.65, 
+        'healthcare': 0.30
+    },
+    'hardware_systems': {
+        'ai_ml': 0.35, 
+        'security': 0.45, 
+        'data_analytics': 0.25, 
+        'hci': 0.35, 
+        'graphics_media': 0.35, 
+        'software_development': 0.65, 
+        'hardware_systems': 1.0, 
+        'healthcare': 0.35
+    },
+    'healthcare': {
+        'ai_ml': 0.35, 
+        'security': 0.35, 
+        'data_analytics': 0.55, 
+        'hci': 0.45, 
+        'graphics_media': 0.20, 
+        'software_development': 0.30, 
+        'hardware_systems': 0.35, 
+        'healthcare': 1.0
+    }
 }
+
 
 #############################################################
 #                     UTILITY FUNCTIONS                     #
