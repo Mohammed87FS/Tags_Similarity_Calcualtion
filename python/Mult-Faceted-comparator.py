@@ -38,16 +38,21 @@ DESCRIPTION_WEIGHTS = {
     "future_directions": 0.05
 }
 
-# Component weights for different similarity measures
+# UPDATED: Adjusted component weights to emphasize embedding more and reduce TF-IDF
 COMPONENT_WEIGHTS = {
-    "embedding": 0.35,   # General semantic similarity from embeddings
-    "tfidf": 0.25,      # Term-based similarity for technical terms
-    "domain": 0.30,     # Domain-specific concept matching
-    "facet": 0.10       # Additional weight for facet-specific matching
+    "embedding": 0.45,   # Increased from 0.35
+    "tfidf": 0.15,      # Decreased from 0.25
+    "domain": 0.30,     # Same
+    "facet": 0.10       # Same
 }
 
+# Domain boosting configuration
+ENABLE_DOMAIN_BOOSTING = True    # Whether to apply domain-based score boosting
+MAX_BOOST_FACTOR = 0.15          # Maximum boost to apply (0.15 = up to 15% boost)
+DOMAIN_BOOST_THRESHOLD = 0.7     # Minimum domain similarity to trigger boost
+
 # Output configuration
-OUTPUT_DIR = "outputs_multi_faceted"
+OUTPUT_DIR = "outputs_enhanced_multi"
 OUTPUT_CSV = f"{OUTPUT_DIR}/field_similarities.csv"
 OUTPUT_JSON = f"{OUTPUT_DIR}/field_similarities.json"  
 
@@ -70,96 +75,207 @@ np.random.seed(RANDOM_SEED)
 #                DOMAIN KNOWLEDGE SECTION                   #
 #############################################################
 
-# Domain-specific term groups - these help identify the domain of each field
+# ENHANCED: Extended domain-specific term groups with more technical terminology
 DOMAIN_TERM_GROUPS = {
     'ai_ml': [
         'artificial intelligence', 'machine learning', 'neural networks', 'deep learning', 
         'supervised learning', 'unsupervised learning', 'reinforcement learning', 
         'natural language processing', 'computer vision', 'data mining', 'knowledge representation',
-        'transformer', 'classification', 'clustering', 'regression', 'bayesian'
+        'transformer', 'classification', 'clustering', 'regression', 'bayesian', 'generative models',
+        'feature engineering', 'backpropagation', 'gradient descent', 'convolutional networks',
+        'recurrent neural networks', 'lstm', 'gru', 'attention mechanism', 'transfer learning',
+        'fine-tuning', 'hyperparameter', 'overfitting', 'regularization', 'dimensionality reduction',
+        'ensemble methods', 'decision trees', 'random forest', 'boosting', 'bagging', 'support vector',
+        'nlp', 'tokenization', 'embedding', 'word2vec', 'bert', 'gpt', 'transformer', 'autoencoder',
+        'gan', 'generative adversarial', 'self-supervised', 'semi-supervised', 'federated learning',
+        'inference', 'prediction', 'algorithm', 'pytorch', 'tensorflow', 'keras', 'scikit-learn'
     ],
     
     'security': [
         'cybersecurity', 'encryption', 'authentication', 'firewall', 'vulnerability',
         'penetration testing', 'intrusion detection', 'security audit', 'threat',
         'malware', 'phishing', 'cryptography', 'zero-day', 'exploit', 'security breach',
-        'ransomware', 'access control', 'secure', 'privacy'
+        'ransomware', 'access control', 'secure', 'privacy', 'confidentiality', 'integrity',
+        'availability', 'threat model', 'risk assessment', 'security policy', 'compliance',
+        'data protection', 'identity management', 'multi-factor', 'symmetric encryption',
+        'asymmetric encryption', 'public key', 'private key', 'digital signature', 'certificate',
+        'pki', 'hash function', 'sha', 'aes', 'rsa', 'elliptic curve', 'key management',
+        'network security', 'endpoint security', 'security operations', 'siem', 'incident response',
+        'forensics', 'threat intelligence', 'security framework', 'vpn', 'ips', 'ids', 'dlp',
+        'waf', 'antivirus', 'patch management', 'vulnerability scanning', 'penetration testing'
     ],
     
     'data_analytics': [
         'analytics', 'big data', 'data science', 'statistics', 'data visualization',
         'business intelligence', 'predictive analytics', 'data mining', 'data warehouse',
         'exploratory analysis', 'regression', 'classification', 'data cleaning', 'etl',
-        'dashboard', 'kpi', 'metric', 'database'
+        'dashboard', 'kpi', 'metric', 'database', 'data modeling', 'data engineering',
+        'data pipeline', 'data governance', 'data lake', 'data mart', 'olap', 'oltp',
+        'sql', 'nosql', 'hadoop', 'spark', 'data streaming', 'real-time analytics',
+        'descriptive analytics', 'prescriptive analytics', 'diagnostic analytics',
+        'statistical analysis', 'hypothesis testing', 'correlation', 'causation',
+        'data quality', 'master data', 'metadata', 'data catalog', 'data dictionary',
+        'tableau', 'power bi', 'looker', 'data studio', 'jupyter', 'r studio',
+        'pandas', 'numpy', 'scipy', 'matplotlib', 'data preprocessing', 'feature selection',
+        'cross-validation', 'time series', 'anomaly detection', 'segmentation'
     ],
     
     'hci': [
         'human-computer interaction', 'user interface', 'user experience', 'usability',
         'interaction design', 'human factors', 'accessibility', 'cognitive load',
         'user research', 'user testing', 'information architecture', 'wireframe',
-        'prototype', 'user-centered', 'responsive design', 'affordance'
+        'prototype', 'user-centered', 'responsive design', 'affordance', 'mental model',
+        'usability testing', 'heuristic evaluation', 'cognitive walkthrough', 'personas',
+        'user journey', 'user flow', 'card sorting', 'a/b testing', 'eye tracking',
+        'gesture recognition', 'touch interface', 'voice interface', 'multimodal interface',
+        'design thinking', 'interaction patterns', 'design system', 'design principles',
+        'user needs', 'user goals', 'user feedback', 'user behavior', 'user satisfaction',
+        'ui components', 'navigation', 'information hierarchy', 'visual hierarchy',
+        'interaction model', 'design critique', 'contextual inquiry', 'ethnography',
+        'participatory design', 'accessibility guidelines', 'wcag', 'inclusive design'
     ],
     
     'graphics_media': [
         'rendering', 'visualization', 'animation', 'modeling', '3d graphics',
         'computer graphics', 'virtual reality', 'augmented reality', 'game development',
         'digital media', 'image processing', 'visual effects', 'shader', 'texture',
-        'polygon', 'mesh', 'lighting', 'animation'
+        'polygon', 'mesh', 'lighting', 'animation', 'ray tracing', 'path tracing',
+        'global illumination', 'physically based rendering', 'pbr', 'graphics pipeline',
+        'rasterization', 'vertex shader', 'fragment shader', 'geometry shader',
+        'tessellation', 'level of detail', 'lod', 'motion capture', 'rigging',
+        'skinning', 'inverse kinematics', 'forward kinematics', 'keyframe animation',
+        'procedural animation', 'particle system', 'vfx', 'compositing', 'modeling',
+        'sculpting', 'texturing', 'uv mapping', 'normal mapping', 'bump mapping',
+        'displacement mapping', 'volumetric rendering', 'subsurface scattering',
+        'opengl', 'directx', 'vulkan', 'unity', 'unreal engine', 'blender', 'maya'
     ],
     
     'software_development': [
         'software engineering', 'programming', 'code', 'algorithm', 'data structure',
         'framework', 'api', 'software development', 'version control', 'devops',
         'agile', 'testing', 'debugging', 'deployment', 'microservice',
-        'full-stack', 'frontend', 'backend', 'web development'
+        'full-stack', 'frontend', 'backend', 'web development', 'object-oriented',
+        'functional programming', 'declarative programming', 'imperative programming',
+        'software architecture', 'design patterns', 'continuous integration',
+        'continuous deployment', 'continuous delivery', 'test-driven development',
+        'behavior-driven development', 'unit testing', 'integration testing',
+        'system testing', 'acceptance testing', 'regression testing', 'code review',
+        'pair programming', 'scrum', 'kanban', 'waterfall', 'git', 'github',
+        'bitbucket', 'jira', 'jenkins', 'docker', 'kubernetes', 'terraform',
+        'infrastructure as code', 'technical debt', 'refactoring', 'code quality',
+        'scalability', 'performance optimization', 'caching', 'load balancing'
     ],
     
     'hardware_systems': [
         'hardware', 'cpu', 'gpu', 'processor', 'memory', 'storage', 'network',
         'architecture', 'embedded system', 'circuit', 'sensor', 'actuator',
-        'robotics', 'iot', 'edge computing', 'fpga', 'asic'
+        'robotics', 'iot', 'edge computing', 'fpga', 'asic', 'microcontroller',
+        'microprocessor', 'soc', 'system on chip', 'ram', 'dram', 'sram', 'cache',
+        'memory hierarchy', 'virtual memory', 'paging', 'direct memory access',
+        'dma', 'pcie', 'usb', 'sata', 'nvme', 'instruction set', 'isa', 'risc',
+        'cisc', 'pipelining', 'superscalar', 'branch prediction', 'out-of-order',
+        'speculative execution', 'register', 'alu', 'interrupt', 'dma', 'i/o',
+        'peripheral', 'bus', 'motherboard', 'firmware', 'bios', 'uefi',
+        'hardware acceleration', 'parallel computing', 'distributed systems',
+        'fault tolerance', 'redundancy', 'high availability', 'raid'
     ],
     
     'healthcare': [
         'health', 'medical', 'clinical', 'patient', 'diagnosis', 'therapy', 'treatment',
         'healthcare', 'biomedical', 'disease', 'drug', 'hospital', 'physician',
-        'telemedicine', 'electronic health record', 'wellness'
+        'telemedicine', 'electronic health record', 'wellness', 'public health',
+        'epidemiology', 'preventive medicine', 'health informatics', 'health policy',
+        'clinical trial', 'evidence-based medicine', 'personalized medicine',
+        'precision medicine', 'genomics', 'proteomics', 'bioinformatics',
+        'medical device', 'medical imaging', 'radiology', 'pathology', 'surgery',
+        'anesthesia', 'mental health', 'psychiatry', 'psychology', 'chronic disease',
+        'acute care', 'primary care', 'secondary care', 'tertiary care',
+        'patient-centered', 'health equity', 'health disparities', 'health literacy',
+        'health promotion', 'health education', 'health screening', 'vaccination'
     ]
 }
 
-# Domain group similarity matrix - defines how similar different domains are to each other
+# UPDATED: Enhanced domain group similarity matrix with more precise relationships
 DOMAIN_GROUP_SIMILARITY = {
     'ai_ml': {
-        'ai_ml': 1.0, 'security': 0.3, 'data_analytics': 0.7, 'hci': 0.4, 
-        'graphics_media': 0.4, 'software_development': 0.5, 'hardware_systems': 0.3, 'healthcare': 0.3
+        'ai_ml': 1.0, 
+        'data_analytics': 0.85,   # Increased from 0.7
+        'security': 0.35,         # Slightly increased
+        'hci': 0.45,              # Slightly increased
+        'graphics_media': 0.45,   # Slightly increased
+        'software_development': 0.55, 
+        'hardware_systems': 0.35, 
+        'healthcare': 0.35
     },
     'security': {
-        'ai_ml': 0.3, 'security': 1.0, 'data_analytics': 0.3, 'hci': 0.2, 
-        'graphics_media': 0.1, 'software_development': 0.5, 'hardware_systems': 0.4, 'healthcare': 0.3
+        'ai_ml': 0.35, 
+        'security': 1.0, 
+        'data_analytics': 0.35, 
+        'hci': 0.25, 
+        'graphics_media': 0.15, 
+        'software_development': 0.60,  # Increased from 0.5
+        'hardware_systems': 0.45, 
+        'healthcare': 0.35
     },
     'data_analytics': {
-        'ai_ml': 0.7, 'security': 0.3, 'data_analytics': 1.0, 'hci': 0.3, 
-        'graphics_media': 0.3, 'software_development': 0.4, 'hardware_systems': 0.2, 'healthcare': 0.5
+        'ai_ml': 0.85,            # Increased from 0.7
+        'security': 0.35, 
+        'data_analytics': 1.0, 
+        'hci': 0.35, 
+        'graphics_media': 0.30, 
+        'software_development': 0.45, 
+        'hardware_systems': 0.25, 
+        'healthcare': 0.55
     },
     'hci': {
-        'ai_ml': 0.4, 'security': 0.2, 'data_analytics': 0.3, 'hci': 1.0, 
-        'graphics_media': 0.6, 'software_development': 0.5, 'hardware_systems': 0.3, 'healthcare': 0.4
+        'ai_ml': 0.45, 
+        'security': 0.25, 
+        'data_analytics': 0.35, 
+        'hci': 1.0, 
+        'graphics_media': 0.65,   # Increased from 0.6
+        'software_development': 0.55, 
+        'hardware_systems': 0.35, 
+        'healthcare': 0.45
     },
     'graphics_media': {
-        'ai_ml': 0.4, 'security': 0.1, 'data_analytics': 0.3, 'hci': 0.6, 
-        'graphics_media': 1.0, 'software_development': 0.3, 'hardware_systems': 0.3, 'healthcare': 0.2
+        'ai_ml': 0.45, 
+        'security': 0.15, 
+        'data_analytics': 0.30, 
+        'hci': 0.65,              # Increased from 0.6
+        'graphics_media': 1.0, 
+        'software_development': 0.35, 
+        'hardware_systems': 0.35, 
+        'healthcare': 0.20
     },
     'software_development': {
-        'ai_ml': 0.5, 'security': 0.5, 'data_analytics': 0.4, 'hci': 0.5, 
-        'graphics_media': 0.3, 'software_development': 1.0, 'hardware_systems': 0.6, 'healthcare': 0.3
+        'ai_ml': 0.55, 
+        'security': 0.60,         # Increased from 0.5
+        'data_analytics': 0.45, 
+        'hci': 0.55, 
+        'graphics_media': 0.35, 
+        'software_development': 1.0, 
+        'hardware_systems': 0.65, 
+        'healthcare': 0.30
     },
     'hardware_systems': {
-        'ai_ml': 0.3, 'security': 0.4, 'data_analytics': 0.2, 'hci': 0.3, 
-        'graphics_media': 0.3, 'software_development': 0.6, 'hardware_systems': 1.0, 'healthcare': 0.3
+        'ai_ml': 0.35, 
+        'security': 0.45, 
+        'data_analytics': 0.25, 
+        'hci': 0.35, 
+        'graphics_media': 0.35, 
+        'software_development': 0.65, 
+        'hardware_systems': 1.0, 
+        'healthcare': 0.35
     },
     'healthcare': {
-        'ai_ml': 0.3, 'security': 0.3, 'data_analytics': 0.5, 'hci': 0.4, 
-        'graphics_media': 0.2, 'software_development': 0.3, 'hardware_systems': 0.3, 'healthcare': 1.0
+        'ai_ml': 0.35, 
+        'security': 0.35, 
+        'data_analytics': 0.55, 
+        'hci': 0.45, 
+        'graphics_media': 0.20, 
+        'software_development': 0.30, 
+        'hardware_systems': 0.35, 
+        'healthcare': 1.0
     }
 }
 
@@ -217,9 +333,10 @@ def extract_fields_info(data: Dict) -> Tuple[List[Dict], Dict, Dict]:
 #               MULTI-FACETED SIMILARITY CLASS              #
 #############################################################
 
-class MultiFacetedFieldComparator:
+class EnhancedFieldComparator:
     """
-    A comprehensive approach to compare research fields using multiple similarity measures.
+    An enhanced approach to compare research fields using multiple similarity measures
+    with improved calibration, technical term extraction, and domain boosting.
     """
     
     def __init__(self, 
@@ -228,6 +345,9 @@ class MultiFacetedFieldComparator:
                  component_weights: Dict[str, float] = COMPONENT_WEIGHTS,
                  domain_terms: Dict[str, List[str]] = DOMAIN_TERM_GROUPS,
                  domain_similarities: Dict[str, Dict[str, float]] = DOMAIN_GROUP_SIMILARITY,
+                 enable_domain_boost: bool = ENABLE_DOMAIN_BOOSTING,
+                 max_boost_factor: float = MAX_BOOST_FACTOR,
+                 domain_boost_threshold: float = DOMAIN_BOOST_THRESHOLD,
                  random_seed: int = RANDOM_SEED):
         """
         Initialize the comparator with various sub-components
@@ -247,28 +367,34 @@ class MultiFacetedFieldComparator:
             print("To install: python -m spacy download en_core_web_sm")
             self.use_spacy = False
         
-        # Load TF-IDF vectorizer for term importance
-        self.tfidf = TfidfVectorizer(
-            stop_words='english', 
-            ngram_range=(1, 3),
-            max_features=5000
-        )
-        
         # Configuration
         self.facet_weights = facet_weights
         self.component_weights = component_weights
         self.domain_terms = domain_terms
         self.domain_similarities = domain_similarities
+        self.enable_domain_boost = enable_domain_boost
+        self.max_boost_factor = max_boost_factor
+        self.domain_boost_threshold = domain_boost_threshold
         
         # Cache for embeddings and domain concepts to avoid recalculation
         self.embedding_cache = {}
         self.domain_concept_cache = {}
+        self.tfidf_similarity_cache = {}
         
         # Preprocess domain terms for faster lookup
         self.domain_term_lookup = {}
         for domain, terms in self.domain_terms.items():
             for term in terms:
                 self.domain_term_lookup[term] = domain
+        
+        # Technical patterns for term extraction
+        self.technical_patterns = [
+            r'\b[A-Z][A-Za-z]*(?:\s[A-Z][A-Za-z]*)+\b',   # CamelCase terms (e.g., "Machine Learning")
+            r'\b[a-z]+(?:-[a-z]+)+\b',                    # hyphenated terms (e.g., "client-server")
+            r'\b[A-Za-z]+\d+[A-Za-z]*\b',                # terms with numbers (e.g., "IPv6")
+            r'\b[A-Za-z]+\.[A-Za-z]+\b',                 # software libraries (e.g., "TensorFlow.js")
+            r'\b[A-Z][A-Z0-9]+\b',                       # acronyms (e.g., "API", "GPU")
+        ]
     
     def get_embedding(self, text: str) -> np.ndarray:
         """Get embedding for text with caching for efficiency"""
@@ -281,7 +407,10 @@ class MultiFacetedFieldComparator:
         return self.embedding_cache[text]
     
     def extract_domain_concepts(self, text: str) -> Dict[str, List[str]]:
-        """Extract domain-specific concepts from text, organized by domain"""
+        """
+        Enhanced method to extract domain-specific concepts from text, organized by domain.
+        Now with better technical term extraction.
+        """
         if not text.strip():
             return {domain: [] for domain in self.domain_terms}
             
@@ -300,10 +429,10 @@ class MultiFacetedFieldComparator:
         
         # Process with spaCy if available for better NLP
         if self.use_spacy:
-            doc = self.nlp(text_lower)
+            doc = self.nlp(text)
             
             # Extract noun phrases and other potentially relevant terms
-            noun_phrases = [chunk.text for chunk in doc.noun_chunks if len(chunk.text.split()) > 1]
+            noun_phrases = [chunk.text.lower() for chunk in doc.noun_chunks if len(chunk.text.split()) > 1]
             domain_concepts['general'].extend(noun_phrases)
             
             # Extract technical terms (nouns with compound modifiers)
@@ -312,6 +441,19 @@ class MultiFacetedFieldComparator:
                     head = token.head.text
                     compound_term = f"{token.text} {head}".lower()
                     domain_concepts['general'].append(compound_term)
+                
+                # Extract specialized technical terms
+                if token.pos_ == "NOUN" and any(mod.pos_ == "ADJ" for mod in token.children):
+                    adj_mods = [mod.text for mod in token.children if mod.pos_ == "ADJ"]
+                    if adj_mods:
+                        tech_term = f"{' '.join(adj_mods)} {token.text}".lower()
+                        domain_concepts['general'].append(tech_term)
+        
+        # Extract technical terms using regex patterns
+        for pattern in self.technical_patterns:
+            tech_terms = re.findall(pattern, text)
+            if tech_terms:
+                domain_concepts['general'].extend([t.lower() for t in tech_terms])
         
         # Match with domain-specific terminology
         for term, domain in self.domain_term_lookup.items():
@@ -337,10 +479,13 @@ class MultiFacetedFieldComparator:
         return self._scale_similarity(similarity)
     
     def _scale_similarity(self, raw_similarity: float) -> float:
-        """Apply sigmoid-like scaling to improve similarity score distribution"""
+        """
+        ENHANCED: Improved sigmoid-like scaling to provide better contrast
+        between similar and dissimilar fields
+        """
         # Parameters for scaling
-        midpoint = 0.5  # Similarity value at the inflection point
-        steepness = 5.0  # How quickly it rises (higher = more contrast)
+        midpoint = 0.45  # Lowered from 0.5 to boost scores above this threshold
+        steepness = 7.0  # Increased from 5.0 for sharper contrast
         
         # Handle extreme values directly
         if raw_similarity >= 0.95: return 1.0
@@ -357,26 +502,78 @@ class MultiFacetedFieldComparator:
         return scaled_normalized
     
     def calculate_tfidf_similarity(self, text1: str, text2: str) -> float:
-        """Calculate TF-IDF based cosine similarity"""
+        """
+        ENHANCED: Improved TF-IDF similarity with better handling of technical terms,
+        now with preprocessing to emphasize technical terminology
+        """
         if not text1.strip() or not text2.strip():
             return 0.0
+        
+        # Check cache for this pair
+        cache_key = f"{hash(text1)}_{hash(text2)}"
+        if cache_key in self.tfidf_similarity_cache:
+            return self.tfidf_similarity_cache[cache_key]
             
-        # Create corpus with both texts
-        corpus = [text1, text2]
-        tfidf_matrix = self.tfidf.fit_transform(corpus)
+        # Pre-process to emphasize technical terms
+        def preprocess(text):
+            # Extract potential technical terms using regex patterns
+            technical_terms = []
+            for pattern in self.technical_patterns:
+                terms = re.findall(pattern, text)
+                technical_terms.extend(terms)
+            
+            # Add domain-specific terms found in the text
+            if self.use_spacy:
+                doc = self.nlp(text.lower())
+                for chunk in doc.noun_chunks:
+                    if len(chunk.text.split()) > 1:  # Multi-word terms
+                        technical_terms.append(chunk.text)
+            
+            # Add these terms back to the text with repetition to increase weight
+            enhanced = text + " "
+            if technical_terms:
+                enhanced += " ".join(technical_terms) + " " + " ".join(technical_terms)
+            
+            return enhanced
         
-        # Calculate cosine similarity
-        dot_product = tfidf_matrix[0].dot(tfidf_matrix[1].T).toarray()[0][0]
-        norm1 = np.sqrt(tfidf_matrix[0].dot(tfidf_matrix[0].T).toarray()[0][0])
-        norm2 = np.sqrt(tfidf_matrix[1].dot(tfidf_matrix[1].T).toarray()[0][0])
+        # Create corpus with enhanced texts
+        corpus = [preprocess(text1), preprocess(text2)]
         
-        if norm1 * norm2 == 0:
+        # Use TF-IDF vectorizer with ngrams
+        vectorizer = TfidfVectorizer(
+            analyzer='word',
+            ngram_range=(1, 3),  # Use unigrams, bigrams, and trigrams
+            stop_words='english',
+            max_features=10000   # Increased from 5000
+        )
+        
+        # Calculate TF-IDF matrix
+        try:
+            tfidf_matrix = vectorizer.fit_transform(corpus)
+            
+            # Calculate cosine similarity
+            dot_product = tfidf_matrix[0].dot(tfidf_matrix[1].T).toarray()[0][0]
+            norm1 = np.sqrt(tfidf_matrix[0].dot(tfidf_matrix[0].T).toarray()[0][0])
+            norm2 = np.sqrt(tfidf_matrix[1].dot(tfidf_matrix[1].T).toarray()[0][0])
+            
+            if norm1 * norm2 == 0:
+                return 0.0
+                
+            similarity = dot_product / (norm1 * norm2)
+            
+            # Cache the result
+            self.tfidf_similarity_cache[cache_key] = similarity
+            
+            return similarity
+        except:
+            # If vectorization fails (e.g., with very short texts)
             return 0.0
-            
-        return dot_product / (norm1 * norm2)
     
     def calculate_domain_similarity(self, text1: str, text2: str) -> float:
-        """Calculate similarity based on domain-specific concepts"""
+        """
+        Calculate similarity based on domain-specific concepts with improved
+        weighting and more comprehensive domain knowledge
+        """
         # Extract domain concepts
         domain_concepts1 = self.extract_domain_concepts(text1)
         domain_concepts2 = self.extract_domain_concepts(text2)
@@ -397,13 +594,17 @@ class MultiFacetedFieldComparator:
                 # Look up similarity between these domain groups
                 group_similarity = self.domain_similarities.get(domain1, {}).get(domain2, 0.1)
                 
-                # Weight by number of concepts in each domain
+                # Calculate the weight based on number and quality of concepts
                 weight = len(concepts1) * len(concepts2)
+                
+                # Apply higher weight for exact same domain
+                if domain1 == domain2 and len(concepts1) >= 2 and len(concepts2) >= 2:
+                    weight *= 2.0  # Double the weight for same-domain matches
                 
                 domain_similarities.append(group_similarity)
                 domain_weights.append(weight)
         
-        # Calculate general concept overlap (Jaccard similarity)
+        # Calculate general concept overlap using Jaccard similarity
         general_concepts1 = set(domain_concepts1.get('general', []))
         general_concepts2 = set(domain_concepts2.get('general', []))
         
@@ -413,8 +614,12 @@ class MultiFacetedFieldComparator:
             
             if union:
                 jaccard = len(intersection) / len(union)
+                
+                # Give more weight to general concept overlap if there are many matching terms
+                general_weight = min(20, len(general_concepts1) + len(general_concepts2))
+                
                 domain_similarities.append(jaccard)
-                domain_weights.append(len(general_concepts1) + len(general_concepts2))
+                domain_weights.append(general_weight)
         
         # Calculate weighted average
         if domain_similarities and sum(domain_weights) > 0:
@@ -423,6 +628,32 @@ class MultiFacetedFieldComparator:
         
         return 0.0
     
+    def _detect_primary_domains(self, field: Dict) -> List[str]:
+        """
+        Detect the primary domains of a field based on its terminology.
+        Used for domain boosting.
+        """
+        full_text = self._get_full_text(field)
+        domain_concepts = self.extract_domain_concepts(full_text)
+        
+        # Count concepts in each domain
+        domain_counts = {domain: len(concepts) for domain, concepts in domain_concepts.items() 
+                        if domain != 'general'}
+        
+        # Find domains with significant concept counts
+        if not domain_counts:
+            return []
+            
+        max_count = max(domain_counts.values())
+        if max_count == 0:
+            return []
+            
+        # Consider domains with at least 50% as many concepts as the top domain
+        primary_domains = [domain for domain, count in domain_counts.items() 
+                          if count >= max_count * 0.5]
+        
+        return primary_domains
+        
     def calculate_faceted_similarity(self, field1: Dict, field2: Dict) -> Dict[str, float]:
         """Calculate similarities for each facet between two fields"""
         facet_similarities = {}
@@ -464,7 +695,8 @@ class MultiFacetedFieldComparator:
     
     def compare_fields(self, field1: Dict, field2: Dict, detailed: bool = False) -> Union[float, Dict]:
         """
-        Calculate similarity between two research fields using multiple methods
+        ENHANCED: Calculate similarity between two research fields using multiple methods,
+        now with domain boosting and improved calibration
         
         Args:
             field1: First field dictionary with name and description
@@ -517,13 +749,36 @@ class MultiFacetedFieldComparator:
             for comp, weight in self.component_weights.items()
         )
         
+        # Apply domain boosting if enabled
+        boosted_similarity = overall_similarity
+        boost_applied = 0.0
+        
+        if self.enable_domain_boost:
+            field1_domains = self._detect_primary_domains(field1)
+            field2_domains = self._detect_primary_domains(field2)
+            
+            # Calculate max domain relatedness
+            max_domain_sim = 0.0
+            for d1 in field1_domains:
+                for d2 in field2_domains:
+                    domain_sim = self.domain_similarities.get(d1, {}).get(d2, 0.0)
+                    max_domain_sim = max(max_domain_sim, domain_sim)
+            
+            # Apply boosting for highly related domains
+            if max_domain_sim > self.domain_boost_threshold:
+                boost_factor = self.max_boost_factor * (max_domain_sim - self.domain_boost_threshold) / (1.0 - self.domain_boost_threshold)
+                boost_applied = boost_factor
+                boosted_similarity = min(1.0, overall_similarity + boost_factor)
+        
         # Apply final calibration for more intuitive scores
-        calibrated_similarity = self._calibrate_final_score(overall_similarity)
+        calibrated_similarity = self._calibrate_final_score(boosted_similarity)
         
         if detailed:
             return {
                 'overall_similarity': calibrated_similarity,
                 'raw_similarity': overall_similarity,
+                'boosted_similarity': boosted_similarity if self.enable_domain_boost else overall_similarity,
+                'boost_applied': boost_applied,
                 'facet_similarities': facet_similarities,
                 'component_similarities': component_similarities
             }
@@ -540,10 +795,13 @@ class MultiFacetedFieldComparator:
         return ' '.join(str(text) for text in desc.values() if text)
     
     def _calibrate_final_score(self, score: float) -> float:
-        """Apply final calibration to get more intuitive similarity scores"""
-        # Parameters for final calibration
-        midpoint = 0.5
-        steepness = 6.0  # Steeper for final calibration
+        """
+        ENHANCED: Apply stronger calibration to get more intuitive similarity scores
+        with better separation between related and unrelated fields
+        """
+        # Parameters for final calibration (more aggressive than before)
+        midpoint = 0.40  # Lowered from 0.5 to boost scores above this threshold
+        steepness = 8.0  # Increased from 6.0 for even sharper contrast
         
         # Special cases
         if score >= 0.95: return 1.0
@@ -567,7 +825,7 @@ class MultiFacetedFieldComparator:
         similarities = np.zeros((n, n))
         
         # Calculate similarities
-        print(f"Calculating similarities for {n} fields using multi-faceted approach...")
+        print(f"Calculating similarities for {n} fields using enhanced multi-faceted approach...")
         for i in range(n):
             similarities[i, i] = 1.0  # Self-similarity
             
@@ -612,7 +870,7 @@ def generate_heatmap(similarity_df: pd.DataFrame, field_to_group: Dict[str, str]
     # Create heatmap
     sns.heatmap(sorted_df, cmap="viridis", vmin=0, vmax=1, annot=False)
     
-    plt.title("Field Similarity Heatmap (Multi-Faceted Approach)", fontsize=16)
+    plt.title("Field Similarity Heatmap (Enhanced Multi-Faceted Approach)", fontsize=16)
     plt.tight_layout()
     plt.savefig(filename, dpi=300, bbox_inches='tight')
     plt.close()
@@ -653,7 +911,7 @@ def create_similarity_table(similarity_df: pd.DataFrame) -> pd.DataFrame:
     
     return pd.DataFrame(rows)
 
-def print_similarity_analysis(comparator: MultiFacetedFieldComparator, fields: List[Dict]) -> None:
+def print_similarity_analysis(comparator: EnhancedFieldComparator, fields: List[Dict]) -> None:
     """Print detailed analysis of similarities between a few example fields"""
     # Select a few interesting fields to compare
     example_fields = []
@@ -684,6 +942,8 @@ def print_similarity_analysis(comparator: MultiFacetedFieldComparator, fields: L
             detailed = comparator.compare_fields(field1, field2, detailed=True)
             
             print(f"  Overall similarity: {detailed['overall_similarity']:.4f}")
+            if comparator.enable_domain_boost and detailed['boost_applied'] > 0:
+                print(f"  Domain boost applied: +{detailed['boost_applied']:.4f}")
             
             print("\n  Component similarities:")
             for comp, score in detailed['component_similarities'].items():
@@ -716,14 +976,17 @@ def main():
     fields, field_to_group, field_to_subgroup = extract_fields_info(data)
     print(f"Found {len(fields)} fields across {len(set(field_to_group.values()))} groups and {len(set(field_to_subgroup.values()))} subgroups.")
     
-    # Step 3: Calculate similarities using multi-faceted approach
-    print(f"Creating multi-faceted field comparator using {MODEL_NAME}...")
-    comparator = MultiFacetedFieldComparator(
+    # Step 3: Calculate similarities using enhanced multi-faceted approach
+    print(f"Creating enhanced field comparator using {MODEL_NAME}...")
+    comparator = EnhancedFieldComparator(
         model_name=MODEL_NAME,
         facet_weights=DESCRIPTION_WEIGHTS,
         component_weights=COMPONENT_WEIGHTS,
         domain_terms=DOMAIN_TERM_GROUPS,
         domain_similarities=DOMAIN_GROUP_SIMILARITY,
+        enable_domain_boost=ENABLE_DOMAIN_BOOSTING,
+        max_boost_factor=MAX_BOOST_FACTOR,
+        domain_boost_threshold=DOMAIN_BOOST_THRESHOLD,
         random_seed=RANDOM_SEED
     )
     
