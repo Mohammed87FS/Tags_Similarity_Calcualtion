@@ -29,8 +29,8 @@ def calculate_text_similarity(text1: str, text2: str, model_name: str = 'all-mpn
 
 # Example usage
 if __name__ == "__main__":
-    text1 = "respect the father"
-    text2 = "hate the father"
+    text1 = "man"
+    text2 = "woman"
     
     similarity = calculate_text_similarity(text1, text2)
     print(f"Similarity score: {similarity:.4f}")

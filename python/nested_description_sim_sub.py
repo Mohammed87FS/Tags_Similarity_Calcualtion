@@ -41,11 +41,11 @@ if abs(sum(DESCRIPTION_WEIGHTS.values()) - 1.0) > 0.001:
     raise ValueError(f"Description weights must sum to 1.0, got {sum(DESCRIPTION_WEIGHTS.values())}")
 
 # Output configuration
-OUTPUT_CSV = "outputs_sub_groups/field_similarities.csv"
-OUTPUT_JSON = "outputs_sub_groups/field_similarities.json"  
+OUTPUT_CSV = "nested_outputs_sub_groups/field_similarities.csv"
+OUTPUT_JSON = "nested_outputs_sub_groups/field_similarities.json"  
 
 GENERATE_HEATMAP = False
-HEATMAP_FILENAME = "outputs_sub_groups/field_similarities_heatmap.png"
+HEATMAP_FILENAME = "nested_outputs_sub_groups/field_similarities_heatmap.png"
 TOP_N_SIMILAR = 5  # Number of most similar fields to display for each field
 
 #############################################################

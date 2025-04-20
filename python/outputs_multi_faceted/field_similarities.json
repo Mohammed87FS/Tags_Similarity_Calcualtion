@@ -1,0 +1,2642 @@
+[
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Machine Learning",
+    "similarity_score": 0.44407016951277345
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Computer Vision",
+    "similarity_score": 0.3050938363382165
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Robotics",
+    "similarity_score": 0.20198580496213286
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Data Science",
+    "similarity_score": 0.2492123252825697
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.16682239760465595
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Information Security",
+    "similarity_score": 0.15598853149787148
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.16869028028781474
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Cryptography",
+    "similarity_score": 0.1161817803544114
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.13138076960747425
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Interface Design",
+    "similarity_score": 0.11440851932787378
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.08965949642634057
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "User Research",
+    "similarity_score": 0.07583024252400412
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.09074688706025892
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Data Visualization",
+    "similarity_score": 0.13837048414348865
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Game Development",
+    "similarity_score": 0.13186711635568318
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Game Design",
+    "similarity_score": 0.09207441964484232
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.10416583995068941
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.15169101677138505
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Sound Design",
+    "similarity_score": 0.04282033891456711
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Interactive Media",
+    "similarity_score": 0.10972860024924519
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Media Production",
+    "similarity_score": 0.04078752288771748
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.08292262187105026
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Media Studies",
+    "similarity_score": 0.046118262327986735
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Health",
+    "similarity_score": 0.08624797614586184
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.17770515070853704
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Neuroscience",
+    "similarity_score": 0.1388838870419913
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.11248476980750356
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Physical Computing",
+    "similarity_score": 0.16205140397378173
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.27969055271223137
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Software Engineering",
+    "similarity_score": 0.17414463588894166
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Web Technologies",
+    "similarity_score": 0.1443820214435744
+  },
+  {
+    "field1": "Artificial Intelligence",
+    "field2": "Mobile Development",
+    "similarity_score": 0.08084927711803358
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Computer Vision",
+    "similarity_score": 0.2778089811383155
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Robotics",
+    "similarity_score": 0.14877578350452283
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Data Science",
+    "similarity_score": 0.3224066867641329
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.12635481760641057
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Information Security",
+    "similarity_score": 0.10380395008625105
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.1267117171125875
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Cryptography",
+    "similarity_score": 0.08465583606718373
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.09264272792385228
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Interface Design",
+    "similarity_score": 0.07353431824874483
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.08707066517334451
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "User Research",
+    "similarity_score": 0.08504731663832868
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.07234481278463117
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Data Visualization",
+    "similarity_score": 0.14717939372734598
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Game Development",
+    "similarity_score": 0.11474210608698975
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Game Design",
+    "similarity_score": 0.07097566745799075
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.07801889358796442
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.1376646786913969
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Sound Design",
+    "similarity_score": 0.03606813723523269
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Interactive Media",
+    "similarity_score": 0.07393557208810186
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Media Production",
+    "similarity_score": 0.033575067171222016
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.062490146780555735
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Media Studies",
+    "similarity_score": 0.04301273932489223
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Health",
+    "similarity_score": 0.07646460768747732
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.14884398005820146
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Neuroscience",
+    "similarity_score": 0.08420372984303762
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.08779928877933751
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Physical Computing",
+    "similarity_score": 0.1420250019148575
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.28490069824492026
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Software Engineering",
+    "similarity_score": 0.17297571018289573
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Web Technologies",
+    "similarity_score": 0.11284575962452766
+  },
+  {
+    "field1": "Machine Learning",
+    "field2": "Mobile Development",
+    "similarity_score": 0.10158928046162682
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Robotics",
+    "similarity_score": 0.18759502545865156
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Data Science",
+    "similarity_score": 0.1404605010601493
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.11855084127120408
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Information Security",
+    "similarity_score": 0.08984052329227865
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.07837118396854169
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Cryptography",
+    "similarity_score": 0.06531331130319402
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.08501406680760538
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Interface Design",
+    "similarity_score": 0.08430267700962377
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.06513829077029813
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "User Research",
+    "similarity_score": 0.05144960802403545
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.12304431312186129
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Data Visualization",
+    "similarity_score": 0.11655633500055279
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Game Development",
+    "similarity_score": 0.0938149664294244
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Game Design",
+    "similarity_score": 0.04368539878717952
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.13877719789747547
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.26394439096170536
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Sound Design",
+    "similarity_score": 0.03463993203059486
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Interactive Media",
+    "similarity_score": 0.07514572113706275
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Media Production",
+    "similarity_score": 0.046284789015597176
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.05578898385050097
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Media Studies",
+    "similarity_score": 0.03188777050305832
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Health",
+    "similarity_score": 0.04894393755387827
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.09265109426653467
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Neuroscience",
+    "similarity_score": 0.09150150914682771
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.07843998348923167
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Physical Computing",
+    "similarity_score": 0.15678184781071655
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.1683541485032919
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Software Engineering",
+    "similarity_score": 0.09953445137691576
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Web Technologies",
+    "similarity_score": 0.09842621940472707
+  },
+  {
+    "field1": "Computer Vision",
+    "field2": "Mobile Development",
+    "similarity_score": 0.06881231352226842
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Data Science",
+    "similarity_score": 0.08303921284968918
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.09577525271155192
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Information Security",
+    "similarity_score": 0.04207733491791877
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.06117396016333388
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Cryptography",
+    "similarity_score": 0.04570350609854536
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.08112141776407174
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Interface Design",
+    "similarity_score": 0.06767859884529318
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.05233792828396485
+  },
+  {
+    "field1": "Robotics",
+    "field2": "User Research",
+    "similarity_score": 0.059719676680730506
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.10661719327756403
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Data Visualization",
+    "similarity_score": 0.05000286968839858
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Game Development",
+    "similarity_score": 0.08183563536532153
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Game Design",
+    "similarity_score": 0.040748769558881716
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.0801821976349397
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.1042074387892168
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Sound Design",
+    "similarity_score": 0.021692427642516922
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Interactive Media",
+    "similarity_score": 0.06031997103320691
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Media Production",
+    "similarity_score": 0.029116640138832653
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.03925175190695105
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Media Studies",
+    "similarity_score": 0.020145214943487175
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Health",
+    "similarity_score": 0.051537678081518636
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.0854513880544884
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Neuroscience",
+    "similarity_score": 0.0590346795290177
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.04876720233634458
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Physical Computing",
+    "similarity_score": 0.28658887673558164
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.25752467543149665
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Software Engineering",
+    "similarity_score": 0.13264929476650242
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Web Technologies",
+    "similarity_score": 0.07304659413289703
+  },
+  {
+    "field1": "Robotics",
+    "field2": "Mobile Development",
+    "similarity_score": 0.06973777450496267
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.13817296985152003
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Information Security",
+    "similarity_score": 0.21514996344151008
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.08221382535212861
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Cryptography",
+    "similarity_score": 0.08645639439099027
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.06533874346163554
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Interface Design",
+    "similarity_score": 0.054680575306916376
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.08304542367004358
+  },
+  {
+    "field1": "Data Science",
+    "field2": "User Research",
+    "similarity_score": 0.10296274256031558
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.05367137838348454
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Data Visualization",
+    "similarity_score": 0.3070092482733971
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Game Development",
+    "similarity_score": 0.09513797486644873
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Game Design",
+    "similarity_score": 0.065270914158792
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.07786556608846967
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.10554165567093002
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Sound Design",
+    "similarity_score": 0.03060359194039536
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Interactive Media",
+    "similarity_score": 0.060193281803070466
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Media Production",
+    "similarity_score": 0.03485224695999136
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.06091990219806336
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Media Studies",
+    "similarity_score": 0.05357447793890438
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Health",
+    "similarity_score": 0.12520581161723052
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.1799838973498729
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Neuroscience",
+    "similarity_score": 0.07103999181205606
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.07100606404677541
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Physical Computing",
+    "similarity_score": 0.08789744979783552
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.18048203131725465
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Software Engineering",
+    "similarity_score": 0.13549738236980444
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Web Technologies",
+    "similarity_score": 0.09613969169151787
+  },
+  {
+    "field1": "Data Science",
+    "field2": "Mobile Development",
+    "similarity_score": 0.07718897538845886
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Information Security",
+    "similarity_score": 0.33844028783311136
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.25420467660956586
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Cryptography",
+    "similarity_score": 0.2525694482614999
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.08585364532506674
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Interface Design",
+    "similarity_score": 0.06214122082844624
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.07579581732178499
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "User Research",
+    "similarity_score": 0.05273150763006354
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.06494582300815613
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Data Visualization",
+    "similarity_score": 0.06876911557861536
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Game Development",
+    "similarity_score": 0.09411750698015509
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Game Design",
+    "similarity_score": 0.058417542478203355
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.05353573782205594
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.07464572960016799
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Sound Design",
+    "similarity_score": 0.03259306060730873
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Interactive Media",
+    "similarity_score": 0.06540024989578323
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Media Production",
+    "similarity_score": 0.03647765750836464
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.053370915165039556
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Media Studies",
+    "similarity_score": 0.04307691002870661
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Health",
+    "similarity_score": 0.06223864472403678
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.13461927582190364
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Neuroscience",
+    "similarity_score": 0.04357864043925895
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.068973590487797
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Physical Computing",
+    "similarity_score": 0.13248684531440658
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.20596419332070554
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Software Engineering",
+    "similarity_score": 0.1971902987013661
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Web Technologies",
+    "similarity_score": 0.13596372888457256
+  },
+  {
+    "field1": "Cybersecurity",
+    "field2": "Mobile Development",
+    "similarity_score": 0.07201341954859361
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.11497587370825657
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Cryptography",
+    "similarity_score": 0.23070511368973529
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.06021013858122451
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Interface Design",
+    "similarity_score": 0.051392031485411216
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.05270306579185451
+  },
+  {
+    "field1": "Information Security",
+    "field2": "User Research",
+    "similarity_score": 0.048881551411969024
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.03909717502611118
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Data Visualization",
+    "similarity_score": 0.12343115576377192
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Game Development",
+    "similarity_score": 0.046068770375535244
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Game Design",
+    "similarity_score": 0.03677836348498769
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.0397686594535572
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.05095680758189479
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Sound Design",
+    "similarity_score": 0.023085456420803466
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Interactive Media",
+    "similarity_score": 0.04784836730453036
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Media Production",
+    "similarity_score": 0.02735883790725804
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.04565174852317989
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Media Studies",
+    "similarity_score": 0.032411482600765255
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Health",
+    "similarity_score": 0.05367103507436239
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.13244748506032178
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Neuroscience",
+    "similarity_score": 0.02548343016578483
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.030330999119748056
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Physical Computing",
+    "similarity_score": 0.06492510055178398
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.1088077155799368
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Software Engineering",
+    "similarity_score": 0.09732911365019523
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Web Technologies",
+    "similarity_score": 0.08603879964411208
+  },
+  {
+    "field1": "Information Security",
+    "field2": "Mobile Development",
+    "similarity_score": 0.044589719884174026
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Cryptography",
+    "similarity_score": 0.11112625261030709
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.05914067291055278
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Interface Design",
+    "similarity_score": 0.036697860551709156
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.07416721591012791
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "User Research",
+    "similarity_score": 0.03527824747923744
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.03064454781003457
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Data Visualization",
+    "similarity_score": 0.03384046459285478
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Game Development",
+    "similarity_score": 0.07093704289153235
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Game Design",
+    "similarity_score": 0.05307116447169519
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.02515920932395487
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.05104709116506095
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Sound Design",
+    "similarity_score": 0.0
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Interactive Media",
+    "similarity_score": 0.040020365693878415
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Media Production",
+    "similarity_score": 0.0
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.03173214824659011
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Media Studies",
+    "similarity_score": 0.03395552061826402
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Health",
+    "similarity_score": 0.03710075781284845
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.05830493718695682
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Neuroscience",
+    "similarity_score": 0.04066943432227731
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.044551403930536554
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Physical Computing",
+    "similarity_score": 0.07015277907292748
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.08229499701733768
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Software Engineering",
+    "similarity_score": 0.1353743293873265
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Web Technologies",
+    "similarity_score": 0.07530913591122101
+  },
+  {
+    "field1": "Ethical Hacking",
+    "field2": "Mobile Development",
+    "similarity_score": 0.052915800815729976
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.05722333335974578
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Interface Design",
+    "similarity_score": 0.03925656737320466
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.04491616849619604
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "User Research",
+    "similarity_score": 0.029025285206055188
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.04440392140882953
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Data Visualization",
+    "similarity_score": 0.04474403114864992
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Game Development",
+    "similarity_score": 0.048319636288602585
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Game Design",
+    "similarity_score": 0.02941619362176548
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.031293508798685934
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.06013357989153335
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Sound Design",
+    "similarity_score": 0.020371656647329466
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Interactive Media",
+    "similarity_score": 0.03799879393275534
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Media Production",
+    "similarity_score": 0.018785767852061753
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.04074429779552633
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Media Studies",
+    "similarity_score": 0.0324694248737234
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Health",
+    "similarity_score": 0.043334731814404094
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.10600507012245418
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Neuroscience",
+    "similarity_score": 0.04150629125929668
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.03508777373551842
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Physical Computing",
+    "similarity_score": 0.10410673091452112
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.10233646352796959
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Software Engineering",
+    "similarity_score": 0.10386686016067619
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Web Technologies",
+    "similarity_score": 0.0853706673357029
+  },
+  {
+    "field1": "Cryptography",
+    "field2": "Mobile Development",
+    "similarity_score": 0.06276583735471788
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Interface Design",
+    "similarity_score": 0.39665005333704245
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.3971400377593629
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "User Research",
+    "similarity_score": 0.27730898542142685
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.24307746689657161
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Data Visualization",
+    "similarity_score": 0.10126587130291574
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Game Development",
+    "similarity_score": 0.15459467967418922
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Game Design",
+    "similarity_score": 0.21795502150154003
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.08841712719291368
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.1285219767560621
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Sound Design",
+    "similarity_score": 0.07536009585688895
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Interactive Media",
+    "similarity_score": 0.23681980293831248
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Media Production",
+    "similarity_score": 0.05224543329524684
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.08627095110521572
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Media Studies",
+    "similarity_score": 0.05331197145098154
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Health",
+    "similarity_score": 0.09679629573246791
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.15453288298191753
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Neuroscience",
+    "similarity_score": 0.059621037359865396
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.2368944102866113
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Physical Computing",
+    "similarity_score": 0.1832005302613595
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.09999572429212804
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Software Engineering",
+    "similarity_score": 0.14720032533715052
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Web Technologies",
+    "similarity_score": 0.19715594390894478
+  },
+  {
+    "field1": "Human-Computer Interaction",
+    "field2": "Mobile Development",
+    "similarity_score": 0.1968511981467264
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.1782524194808891
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "User Research",
+    "similarity_score": 0.18619858028363478
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.22547889857622636
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Data Visualization",
+    "similarity_score": 0.14247095816078958
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Game Development",
+    "similarity_score": 0.1565369979443347
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Game Design",
+    "similarity_score": 0.21601264594517328
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.13457988256465528
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.18738538807249802
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Sound Design",
+    "similarity_score": 0.11710891087975758
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Interactive Media",
+    "similarity_score": 0.21822685391227414
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Media Production",
+    "similarity_score": 0.05885851834759724
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.08594794939428717
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Media Studies",
+    "similarity_score": 0.037121113444057045
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Health",
+    "similarity_score": 0.04584586426110834
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.08991221212310496
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Neuroscience",
+    "similarity_score": 0.055166502419362946
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.10776905164972501
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Physical Computing",
+    "similarity_score": 0.171265732380905
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.08953510498045214
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Software Engineering",
+    "similarity_score": 0.13532370269520114
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Web Technologies",
+    "similarity_score": 0.133285150999211
+  },
+  {
+    "field1": "Interface Design",
+    "field2": "Mobile Development",
+    "similarity_score": 0.16950162240472239
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "User Research",
+    "similarity_score": 0.18393056354754556
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.14210510308351143
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Data Visualization",
+    "similarity_score": 0.09484215536282926
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Game Development",
+    "similarity_score": 0.116993203168575
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Game Design",
+    "similarity_score": 0.12932163606605065
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.07075607962230854
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.09800453637979914
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Sound Design",
+    "similarity_score": 0.06107135248593926
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Interactive Media",
+    "similarity_score": 0.12013592839438089
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Media Production",
+    "similarity_score": 0.042196296261680984
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.053239532892779474
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Media Studies",
+    "similarity_score": 0.04363646584416447
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Health",
+    "similarity_score": 0.0681599363789241
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.09187409641685373
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Neuroscience",
+    "similarity_score": 0.03572189727422061
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.14376345752347683
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Physical Computing",
+    "similarity_score": 0.09585779010810519
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.06638912093176036
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Software Engineering",
+    "similarity_score": 0.13463355536499402
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Web Technologies",
+    "similarity_score": 0.15709128328843097
+  },
+  {
+    "field1": "Usability Evaluation",
+    "field2": "Mobile Development",
+    "similarity_score": 0.1349679006159383
+  },
+  {
+    "field1": "User Research",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.13636759843460725
+  },
+  {
+    "field1": "User Research",
+    "field2": "Data Visualization",
+    "similarity_score": 0.08701067605768159
+  },
+  {
+    "field1": "User Research",
+    "field2": "Game Development",
+    "similarity_score": 0.11720125931812249
+  },
+  {
+    "field1": "User Research",
+    "field2": "Game Design",
+    "similarity_score": 0.16324729147225653
+  },
+  {
+    "field1": "User Research",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.06312126182689809
+  },
+  {
+    "field1": "User Research",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.06688165216472838
+  },
+  {
+    "field1": "User Research",
+    "field2": "Sound Design",
+    "similarity_score": 0.06953690838653478
+  },
+  {
+    "field1": "User Research",
+    "field2": "Interactive Media",
+    "similarity_score": 0.12406091756496988
+  },
+  {
+    "field1": "User Research",
+    "field2": "Media Production",
+    "similarity_score": 0.04682603350480871
+  },
+  {
+    "field1": "User Research",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.09025974240272082
+  },
+  {
+    "field1": "User Research",
+    "field2": "Media Studies",
+    "similarity_score": 0.0697349688673513
+  },
+  {
+    "field1": "User Research",
+    "field2": "Health",
+    "similarity_score": 0.10972279396490105
+  },
+  {
+    "field1": "User Research",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.10593950851714391
+  },
+  {
+    "field1": "User Research",
+    "field2": "Neuroscience",
+    "similarity_score": 0.024209166015360058
+  },
+  {
+    "field1": "User Research",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.08601422896770437
+  },
+  {
+    "field1": "User Research",
+    "field2": "Physical Computing",
+    "similarity_score": 0.0930044798996317
+  },
+  {
+    "field1": "User Research",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.07282104822447659
+  },
+  {
+    "field1": "User Research",
+    "field2": "Software Engineering",
+    "similarity_score": 0.09295960508823611
+  },
+  {
+    "field1": "User Research",
+    "field2": "Web Technologies",
+    "similarity_score": 0.08079822829048366
+  },
+  {
+    "field1": "User Research",
+    "field2": "Mobile Development",
+    "similarity_score": 0.13557331363188618
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Data Visualization",
+    "similarity_score": 0.12677134841588278
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Game Development",
+    "similarity_score": 0.20396677901257693
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Game Design",
+    "similarity_score": 0.18936264193750849
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.212187057923938
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.2259945905520068
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Sound Design",
+    "similarity_score": 0.15455534266553408
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Interactive Media",
+    "similarity_score": 0.2756335895590814
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Media Production",
+    "similarity_score": 0.09300483486411273
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.09607514377550773
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Media Studies",
+    "similarity_score": 0.04027764363364743
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Health",
+    "similarity_score": 0.06698978654570983
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.14842029150643327
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Neuroscience",
+    "similarity_score": 0.08196914241849695
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.11356567174772268
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Physical Computing",
+    "similarity_score": 0.2169516909014829
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.11185626041993998
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Software Engineering",
+    "similarity_score": 0.07254948455640714
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Web Technologies",
+    "similarity_score": 0.1610660486332071
+  },
+  {
+    "field1": "Immersive Technologies",
+    "field2": "Mobile Development",
+    "similarity_score": 0.1444372881455303
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Game Development",
+    "similarity_score": 0.12806436638689325
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Game Design",
+    "similarity_score": 0.1152873777280171
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.14524374261796227
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.19763147123521832
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Sound Design",
+    "similarity_score": 0.07311974879422624
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Interactive Media",
+    "similarity_score": 0.12793200135725766
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Media Production",
+    "similarity_score": 0.04140703041469367
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.07046785393233407
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Media Studies",
+    "similarity_score": 0.037985693462573696
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Health",
+    "similarity_score": 0.08291237130291625
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.15276173682895838
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Neuroscience",
+    "similarity_score": 0.05172438013853252
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.06588128505779778
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Physical Computing",
+    "similarity_score": 0.08483852227605718
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.09191460449384313
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Software Engineering",
+    "similarity_score": 0.08033779242123268
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Web Technologies",
+    "similarity_score": 0.10895552745941602
+  },
+  {
+    "field1": "Data Visualization",
+    "field2": "Mobile Development",
+    "similarity_score": 0.06871777982848384
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Game Design",
+    "similarity_score": 0.3748719536609645
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.20078168668779045
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.2457093744951514
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Sound Design",
+    "similarity_score": 0.14074663961320552
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Interactive Media",
+    "similarity_score": 0.21195963893140346
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Media Production",
+    "similarity_score": 0.08819310777852006
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.0944000098354835
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Media Studies",
+    "similarity_score": 0.04693757208496536
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Health",
+    "similarity_score": 0.06877700515144126
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.09832006441394288
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Neuroscience",
+    "similarity_score": 0.048948543917215884
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.07504188499415118
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Physical Computing",
+    "similarity_score": 0.13472781934515962
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.10005114961935359
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Software Engineering",
+    "similarity_score": 0.19049506614955608
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Web Technologies",
+    "similarity_score": 0.14112325597530173
+  },
+  {
+    "field1": "Game Development",
+    "field2": "Mobile Development",
+    "similarity_score": 0.19998928998787044
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Animation & Digital Media",
+    "similarity_score": 0.12139200266328967
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.12190997163349232
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Sound Design",
+    "similarity_score": 0.14249307709626013
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Interactive Media",
+    "similarity_score": 0.2406370911747074
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Media Production",
+    "similarity_score": 0.05030610015174974
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.08083395851480261
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Media Studies",
+    "similarity_score": 0.04876923604665184
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Health",
+    "similarity_score": 0.09247558846561543
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.10538915064504853
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Neuroscience",
+    "similarity_score": 0.04710119256691428
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.1068943177960587
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Physical Computing",
+    "similarity_score": 0.08630521668090196
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.05173411129992509
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Software Engineering",
+    "similarity_score": 0.0997663545648857
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Web Technologies",
+    "similarity_score": 0.07498071440852859
+  },
+  {
+    "field1": "Game Design",
+    "field2": "Mobile Development",
+    "similarity_score": 0.10247205123652839
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.37208950847439526
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Sound Design",
+    "similarity_score": 0.15475357933206615
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Interactive Media",
+    "similarity_score": 0.2627074546021785
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Media Production",
+    "similarity_score": 0.2615572550425038
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.10818036131641834
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Media Studies",
+    "similarity_score": 0.05263200252164434
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Health",
+    "similarity_score": 0.03702085381149107
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.07502803753677581
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Neuroscience",
+    "similarity_score": 0.0401006508292827
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.06883590034505829
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Physical Computing",
+    "similarity_score": 0.0927879316152239
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.055868670118451105
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Software Engineering",
+    "similarity_score": 0.062256487473922935
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Web Technologies",
+    "similarity_score": 0.09930951176105415
+  },
+  {
+    "field1": "Animation & Digital Media",
+    "field2": "Mobile Development",
+    "similarity_score": 0.05818001301730932
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Sound Design",
+    "similarity_score": 0.08520396917644543
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Interactive Media",
+    "similarity_score": 0.15546608148047622
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Media Production",
+    "similarity_score": 0.08547373361363422
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.11908968109160212
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Media Studies",
+    "similarity_score": 0.041541542555965975
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Health",
+    "similarity_score": 0.03874412795945921
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.08929041629291272
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Neuroscience",
+    "similarity_score": 0.0775874608125333
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.1059125760385229
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Physical Computing",
+    "similarity_score": 0.17111575763565626
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.07815375565926651
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Software Engineering",
+    "similarity_score": 0.09230736378738046
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Web Technologies",
+    "similarity_score": 0.1302514478129223
+  },
+  {
+    "field1": "Computer Graphics",
+    "field2": "Mobile Development",
+    "similarity_score": 0.08623464485009033
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Interactive Media",
+    "similarity_score": 0.15091325039877934
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Media Production",
+    "similarity_score": 0.1911701069255073
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.07080758094489421
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Media Studies",
+    "similarity_score": 0.03267787709380709
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Health",
+    "similarity_score": 0.021193265351493393
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.032357810106607585
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Neuroscience",
+    "similarity_score": 0.020680029315712868
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.036169919197095855
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Physical Computing",
+    "similarity_score": 0.04261158111163075
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.02684247302798937
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Software Engineering",
+    "similarity_score": 0.03910569236743784
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Web Technologies",
+    "similarity_score": 0.03959003195998366
+  },
+  {
+    "field1": "Sound Design",
+    "field2": "Mobile Development",
+    "similarity_score": 0.04438864399888302
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Media Production",
+    "similarity_score": 0.18222859247869003
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.17602384725344977
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Media Studies",
+    "similarity_score": 0.143977513689219
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Health",
+    "similarity_score": 0.05473649079744573
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.0868511763968142
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Neuroscience",
+    "similarity_score": 0.05406706551414295
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.08457694000437267
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Physical Computing",
+    "similarity_score": 0.16749901681243062
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.08234237103154099
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Software Engineering",
+    "similarity_score": 0.08347277156444301
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Web Technologies",
+    "similarity_score": 0.1463823943592008
+  },
+  {
+    "field1": "Interactive Media",
+    "field2": "Mobile Development",
+    "similarity_score": 0.11980625866618425
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Digital Arts & Culture",
+    "similarity_score": 0.08230205771054316
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Media Studies",
+    "similarity_score": 0.11215665105277148
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Health",
+    "similarity_score": 0.017882146706213894
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.02807408739234789
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Neuroscience",
+    "similarity_score": 0.0
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.034558173438274366
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Physical Computing",
+    "similarity_score": 0.0367254734481231
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.03394467158724844
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Software Engineering",
+    "similarity_score": 0.047105412695216224
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Web Technologies",
+    "similarity_score": 0.049762381255470285
+  },
+  {
+    "field1": "Media Production",
+    "field2": "Mobile Development",
+    "similarity_score": 0.035647370849700245
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Media Studies",
+    "similarity_score": 0.20691474454354866
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Health",
+    "similarity_score": 0.04252437778380801
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.10570773653278327
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Neuroscience",
+    "similarity_score": 0.030997074463937194
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.04287141411943185
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Physical Computing",
+    "similarity_score": 0.08864569767818742
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.054862119632699886
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Software Engineering",
+    "similarity_score": 0.05819548829044549
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Web Technologies",
+    "similarity_score": 0.07837496875706051
+  },
+  {
+    "field1": "Digital Arts & Culture",
+    "field2": "Mobile Development",
+    "similarity_score": 0.058373113847782224
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Health",
+    "similarity_score": 0.05231121910081165
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.04939655125885717
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Neuroscience",
+    "similarity_score": 0.028627800918430223
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.051346639288333114
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Physical Computing",
+    "similarity_score": 0.041486057290409425
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.03233304597776756
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Software Engineering",
+    "similarity_score": 0.04794451622798218
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Web Technologies",
+    "similarity_score": 0.06597646044297478
+  },
+  {
+    "field1": "Media Studies",
+    "field2": "Mobile Development",
+    "similarity_score": 0.057203659083408964
+  },
+  {
+    "field1": "Health",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.35431521805411814
+  },
+  {
+    "field1": "Health",
+    "field2": "Neuroscience",
+    "similarity_score": 0.0677587462351955
+  },
+  {
+    "field1": "Health",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.1224987034392702
+  },
+  {
+    "field1": "Health",
+    "field2": "Physical Computing",
+    "similarity_score": 0.046863486348960266
+  },
+  {
+    "field1": "Health",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.05692731125542954
+  },
+  {
+    "field1": "Health",
+    "field2": "Software Engineering",
+    "similarity_score": 0.057164107329524025
+  },
+  {
+    "field1": "Health",
+    "field2": "Web Technologies",
+    "similarity_score": 0.05507047703166403
+  },
+  {
+    "field1": "Health",
+    "field2": "Mobile Development",
+    "similarity_score": 0.0813093904890435
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Neuroscience",
+    "similarity_score": 0.09951781990993991
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.12049264616427341
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Physical Computing",
+    "similarity_score": 0.14783224986480448
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.16232688614486074
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Software Engineering",
+    "similarity_score": 0.1076803179047349
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Web Technologies",
+    "similarity_score": 0.10141964831898734
+  },
+  {
+    "field1": "Digital Healthcare",
+    "field2": "Mobile Development",
+    "similarity_score": 0.1182431051402512
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.14280346270774547
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Physical Computing",
+    "similarity_score": 0.09595733696426008
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.07151674470932111
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Software Engineering",
+    "similarity_score": 0.061080366574482375
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Web Technologies",
+    "similarity_score": 0.04616313509671724
+  },
+  {
+    "field1": "Neuroscience",
+    "field2": "Mobile Development",
+    "similarity_score": 0.04380990481230549
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Physical Computing",
+    "similarity_score": 0.08025926479731399
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.05757855010150447
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Software Engineering",
+    "similarity_score": 0.07366322098117116
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Web Technologies",
+    "similarity_score": 0.07451681791517444
+  },
+  {
+    "field1": "Cognitive Psychology",
+    "field2": "Mobile Development",
+    "similarity_score": 0.06690247736073575
+  },
+  {
+    "field1": "Physical Computing",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.33406976292803847
+  },
+  {
+    "field1": "Physical Computing",
+    "field2": "Software Engineering",
+    "similarity_score": 0.18431126640537449
+  },
+  {
+    "field1": "Physical Computing",
+    "field2": "Web Technologies",
+    "similarity_score": 0.13414850483393462
+  },
+  {
+    "field1": "Physical Computing",
+    "field2": "Mobile Development",
+    "similarity_score": 0.1600460136763926
+  },
+  {
+    "field1": "Smart Engineering",
+    "field2": "Software Engineering",
+    "similarity_score": 0.2626759868071414
+  },
+  {
+    "field1": "Smart Engineering",
+    "field2": "Web Technologies",
+    "similarity_score": 0.11879824366612525
+  },
+  {
+    "field1": "Smart Engineering",
+    "field2": "Mobile Development",
+    "similarity_score": 0.10695883604417185
+  },
+  {
+    "field1": "Software Engineering",
+    "field2": "Web Technologies",
+    "similarity_score": 0.13805952337335523
+  },
+  {
+    "field1": "Software Engineering",
+    "field2": "Mobile Development",
+    "similarity_score": 0.14664505123288044
+  },
+  {
+    "field1": "Web Technologies",
+    "field2": "Mobile Development",
+    "similarity_score": 0.1871401503704449
+  }
+]
