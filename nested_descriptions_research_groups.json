@@ -259,14 +259,36 @@
             "name": "Visual Media",
             "fields": [
               {
-                "name": "Animation & Digital Media",
+                "name": "Digital Animation",
                 "description": {
-                  "definition": "Animation & Digital Media creates moving imagery and interactive content through CGI, motion capture, and procedural techniques, combining artistic expression with technical implementation",
-                  "methodologies": "Keyframe animation, motion capture, procedural animation, character rigging, visual effects composition, texture mapping, rendering pipelines, motion design, color grading",
-                  "applications": "Film and television, game cinematics, advertising, educational content, architectural visualization, medical visualization, data storytelling, virtual production, interactive installations",
-                  "technologies": "Maya, Blender, Cinema 4D, After Effects, Houdini, motion capture systems, virtual production stages, rendering farms, compositing software, animation management systems",
-                  "challenges": "Production pipeline efficiency, render optimization, realistic simulation, character believability, technical constraints, animation style consistency, archiving and preserving work",
-                  "future_directions": "Real-time animation, AI-assisted animation, virtual production techniques, cloud-based rendering, volumetric capture, neural rendering, interactive narrative animation"
+                  "definition": "Digital Animation creates computer-generated moving imagery through 2D and 3D techniques, employing digital tools to simulate movement and visual storytelling through frame-by-frame manipulation or procedural methods",
+                  "methodologies": "Keyframe animation, character rigging, procedural animation, pose-to-pose techniques, squash and stretch principles, anticipation, follow-through, secondary motion, timing control, motion curves",
+                  "applications": "Animated films, television series, game cinematics, explainer videos, medical visualizations, architectural walkthroughs, educational content, scientific simulations, motion graphics",
+                  "technologies": "Maya, Blender, Cinema 4D, Toon Boom Harmony, TVPaint, Spine, After Effects, Unreal Engine, Unity's animation system, character animation plugins",
+                  "challenges": "Character believability, uncanny valley effects, animation style consistency, performance optimization, animation reuse, rig limitations, animator training, facial animation subtlety, art direction",
+                  "future_directions": "AI-assisted keyframing, machine learning pose prediction, real-time animation systems, automated lip-sync, neural animation transfer, style transfer animation, procedural character behaviors"
+                }
+              },
+              {
+                "name": "3D Modeling",
+                "description": {
+                  "definition": "3D Modeling creates digital three-dimensional representations of objects, environments, and characters through specialized software tools and techniques that define geometry, surfaces, textures, and material properties",
+                  "methodologies": "Polygon modeling, NURBS modeling, digital sculpting, procedural modeling, photogrammetry, parametric modeling, UV mapping, texturing, material development, hard-surface modeling, organic modeling",
+                  "applications": "Product design, architectural visualization, character creation, game assets, film and television production, medical visualization, industrial prototyping, engineering simulations, virtual reality environments",
+                  "technologies": "Autodesk Maya, Blender, ZBrush, Cinema 4D, 3ds Max, Houdini, Substance Painter, Marvelous Designer, MeshLab, CAD software, photogrammetry solutions, 3D scanning hardware",
+                  "challenges": "Optimization for real-time applications, maintaining topology for animation, balancing detail with performance, UV unwrapping complexity, large scene management, version control for 3D assets, interoperability between software",
+                  "future_directions": "AI-assisted modeling, real-time collaborative modeling, neural networks for texture generation, procedural content systems, VR-based modeling interfaces, cloud-based modeling ecosystems, physics-informed modeling"
+                }
+              },
+              {
+                "name": "3D Animation",
+                "description": {
+                  "definition": "3D Animation creates motion in three-dimensional digital objects and characters through specialized techniques that simulate movement, physics, and organic behavior within virtual environments",
+                  "methodologies": "Character rigging, skeletal animation, motion capture, physics simulation, procedural animation, dynamics, particle systems, cloth simulation, muscle systems, facial animation, motion editing, keyframe animation in 3D space",
+                  "applications": "Feature films, television production, game development, architectural visualization, product demonstrations, scientific simulations, virtual reality experiences, medical animations, educational content",
+                  "technologies": "Maya Animation, Blender Animation Toolkit, Motion Builder, iClone, Mixamo, Unreal Engine Sequencer, Unity Animation System, specialized rigging frameworks, mocap hardware, physics simulation engines",
+                  "challenges": "Realistic motion, avoiding the uncanny valley, animation retargeting, complex physics interactions, performance capture integration, managing animation complexity, efficient animation pipelines, animation data management",
+                  "future_directions": "AI-driven character animation, deep learning for motion synthesis, real-time physics-based animation, crowd simulation advancements, virtual production animation workflows, motion style transfer, neural network animation models"
                 }
               },
               {
@@ -278,6 +300,17 @@
                   "technologies": "Graphics APIs (OpenGL, DirectX, Vulkan), shader languages, rendering engines, modeling tools, graphics processing units (GPUs), computation libraries, real-time rendering frameworks",
                   "challenges": "Real-time performance, photorealism, uncanny valley effects, computational efficiency, hardware limitations, cross-platform compatibility, standardization, accessibility",
                   "future_directions": "Real-time ray tracing, path tracing, neural rendering, differentiable rendering, procedural generation, machine learning for graphics, quantum rendering, holographic displays"
+                }
+              },
+              {
+                "name": "Digital Art",
+                "description": {
+                  "definition": "Digital Art creates static or interactive visual works through computational tools and techniques, spanning from digitally-created paintings and illustrations to generative and algorithmic compositions that explore the creative possibilities of digital media",
+                  "methodologies": "Digital painting, vector illustration, photo manipulation, digital sculpting, generative algorithms, parametric design, pixel art, glitch techniques, 3D modeling for still imagery, digital collage",
+                  "applications": "Fine art, commercial illustration, concept art, graphic design, editorial illustration, digital photography, album artwork, book covers, gallery exhibitions, NFTs, web design, brand identity",
+                  "technologies": "Adobe Photoshop, Illustrator, Procreate, ZBrush, Substance Painter, Corel Painter, Processing, custom code frameworks, drawing tablets, stylus interfaces, printing technologies, display systems",
+                  "challenges": "Digital preservation, artwork reproducibility, tool obsolescence, medium legitimacy, distinguishing artistic voice, technical mastery balance, platform dependency, copyright protection, digital authenticity",
+                  "future_directions": "AI art collaboration, blockchain provenance, haptic feedback creation tools, neuroadaptive interfaces, immersive digital canvases, bioresponsive art, democratized creation platforms, brain-computer interfaces for visual expression"
                 }
               }
             ]
@@ -316,33 +349,6 @@
                   "technologies": "Digital cameras, lighting equipment, audio recording systems, editing software, color grading tools, project management platforms, media asset management, production tracking",
                   "challenges": "Workflow optimization, technical quality control, creative consistency, managing production complexity, multi-platform delivery, archiving and preservation, rights management",
                   "future_directions": "Virtual production techniques, cloud-based collaboration, remote production workflows, AI-assisted editing, automated localization, sustainable production practices"
-                }
-              }
-            ]
-          },
-          {
-            "name": "Cultural Studies",
-            "fields": [
-              {
-                "name": "Digital Arts & Culture",
-                "description": {
-                  "definition": "Digital Arts & Culture explores creative expression and cultural practices emerging from computational technologies, examining how digital tools reshape aesthetic experiences and cultural production",
-                  "methodologies": "Practice-based research, critical analysis, cultural theory application, ethnographic studies, comparative analysis, historical contextualization, participatory research, artifact analysis",
-                  "applications": "New media art, digital humanities, cultural heritage digitization, posthumanist studies, internet cultures, algorithmic art, digital preservation, media archaeology, platform studies",
-                  "technologies": "Digital archives, computational analysis tools, creative coding environments, documentation technologies, digital conservation methods, cultural analytics platforms",
-                  "challenges": "Ephemerality of digital works, technological obsolescence, documenting interactive experiences, interdisciplinary methodologies, balancing practice and theory, institutional frameworks",
-                  "future_directions": "Post-digital aesthetics, algorithmic criticism, AI and creative practice, blockchain for cultural heritage, immaterial labor studies, platform governance, virtual cultural spaces"
-                }
-              },
-              {
-                "name": "Media Studies",
-                "description": {
-                  "definition": "Media Studies examines communication channels, their content, and societal impact across traditional and digital platforms, analyzing production, distribution, reception, and cultural contexts",
-                  "methodologies": "Textual analysis, discourse analysis, audience research, political economy analysis, historical research, ethnographic approaches, comparative analysis, reception studies",
-                  "applications": "Media literacy education, platform governance, public policy development, cultural criticism, journalism studies, audience engagement strategies, media industry analysis",
-                  "technologies": "Content analysis software, media monitoring tools, audience measurement platforms, social media analytics, corpus linguistics tools, digital archives, network analysis tools",
-                  "challenges": "Rapidly evolving media landscape, methodological innovation, interdisciplinary integration, balancing critical and empirical approaches, addressing technological determinism",
-                  "future_directions": "Algorithmic culture studies, platform studies, attention economics, post-truth media environments, deep fake analysis, environmental media studies, decolonizing media studies"
                 }
               }
             ]

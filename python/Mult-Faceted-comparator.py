@@ -40,9 +40,9 @@ DESCRIPTION_WEIGHTS = {
 
 # UPDATED: Adjusted component weights to emphasize embedding more and reduce TF-IDF
 COMPONENT_WEIGHTS = {
-    "embedding": 0.45,   # Increased from 0.35
-    "tfidf": 0.15,      # Decreased from 0.25
-    "domain": 0.30,     # Same
+    "embedding": 0.4,   # Increased from 0.35
+    "tfidf": 0.10,      # Decreased from 0.25
+    "domain": 0.4,     # Same
     "facet": 0.10       # Same
 }
 
