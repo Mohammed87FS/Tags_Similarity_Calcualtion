@@ -24,7 +24,7 @@ python/
 │   └── field.py            # Field entity with hierarchical relationships
 ├── data/                   # Data persistence
 │   ├── nested_descriptions_research_groups.json    # Field hierarchies
-│   └── final_outputs_enhanced_multi/               # Calculated similarities
+│   └── final_outputs_enhanced_multi/field_similarities.json               # Calculated similarities
 ├── services/               # Core business logic
 │   ├── __init__.py
 │   ├── data_service.py     # Data access layer

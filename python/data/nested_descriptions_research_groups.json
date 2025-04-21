@@ -131,22 +131,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "Security Fundamentals",
-          "fields": [
-            {
-              "name": "Cryptography",
-              "description": {
-                "definition": "Cryptography develops mathematical techniques securing information from unauthorized access while enabling authenticated communication through encryption, decryption, and verification mechanisms",
-                "methodologies": "Symmetric encryption, asymmetric encryption, hash functions, digital signatures, key exchange protocols, random number generation, cryptographic protocol design, formal verification",
-                "applications": "Secure communications, data protection, blockchain, digital identity, secure transactions, digital rights management, secure messaging, password protection, certificate management",
-                "technologies": "AES, RSA, ECC, SHA, TLS/SSL, PGP, HSMs (Hardware Security Modules), PKI (Public Key Infrastructure), secure enclaves, cryptographic libraries",
-                "challenges": "Quantum computing threats, implementation vulnerabilities, key management, side-channel attacks, cryptographic agility, maintaining forward secrecy, balancing security with performance",
-                "future_directions": "Post-quantum cryptography, homomorphic encryption, secure multi-party computation, lattice-based cryptography, quantum key distribution, lightweight cryptography, blockchain innovations"
-              }
-            }
-          ]
         }
       ]
     },
@@ -505,27 +489,6 @@
                 "technologies": "Native SDKs (iOS, Android), cross-platform frameworks (React Native, Flutter), mobile-optimized databases, location services, push notification systems, mobile analytics platforms",
                 "challenges": "Device fragmentation, performance optimization, battery efficiency, limited network connectivity, multi-platform testing, security in BYOD environments, rapid platform evolution",
                 "future_directions": "Super apps, 5G-optimized applications, AR/VR mobile experiences, on-device AI, foldable device interfaces, ambient computing integration, contactless interactions"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Computer Science",
-      "subgroups": [
-        {
-          "name": "Theoretical Computing",
-          "fields": [
-            {
-              "name": "Quantum Computing",
-              "description": {
-                "definition": "Quantum computing is a rapidly-emerging technology that harnesses the laws of quantum mechanics to solve problems too complex for classical computers. Unlike traditional binary computing which uses bits (0s and 1s), quantum computing uses quantum bits or qubits which can exist in multiple states simultaneously due to superposition, enabling exponentially more powerful computation for certain problems.",
-                "methodologies": "Quantum circuit design and quantum gate operations\r\nQuantum error correction and fault-tolerant computing\r\nQuantum algorithm development (Shor's algorithm, Grover's algorithm)\r\nQuantum annealing and adiabatic quantum computation\r\nTopological quantum computing\r\nMeasurement-based quantum computing\r\nVariational quantum eigensolvers and quantum approximate optimization",
-                "applications": "Cryptography and security (breaking RSA encryption, quantum key distribution)\r\nDrug discovery and protein folding simulation\r\nMaterials science and quantum chemistry\r\nFinancial modeling and optimization problems\r\nMachine learning acceleration\r\nWeather forecasting and climate modeling\r\nQuantum simulation of physical systems",
-                "technologies": "Superconducting qubits (transmon, flux qubits)\r\nTrapped ion quantum computers\r\nPhotonic quantum computers\r\nQuantum annealing devices\r\nTopological qubits\r\nNuclear magnetic resonance (NMR) quantum computers\r\nQuantum programming languages (Qiskit, Cirq, Q#)\r\nQuantum cloud services",
-                "challenges": "Quantum decoherence and maintaining qubit stability\r\nScaling up qubit counts while maintaining fidelity\r\nError correction at scale\r\nDeveloping practical quantum algorithms with quantum advantage\r\nHardware limitations (operating temperatures, control systems)\r\nLimited gate fidelity and quantum circuit depth\r\nBridging the gap between theoretical algorithms and hardware implementation",
-                "future_directions": "Development of fault-tolerant universal quantum computers\r\nQuantum internet and distributed quantum computing\r\nHybrid classical-quantum algorithms\r\nScalable quantum memory\r\nRoom-temperature quantum computing\r\nQuantum machine learning applications\r\nIntegration of quantum computing with classical computing infrastructure"
               }
             }
           ]

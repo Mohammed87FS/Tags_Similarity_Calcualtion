@@ -203,6 +203,30 @@ def test():
         "field_count": len(field_names),
         "group_count": len(groups),
         "similarity_count": len(similarities),
-        "fields": field_names[:5] if field_names else [],
+        "fields": field_names if field_names else [],
         "groups": groups if groups else []
     })
+
+
+# @app.route('/api/recalculate_similarities', methods=['POST'])
+# def recalculate_similarities():
+#     try:
+#         # Get all fields from the data service
+#         fields = get_all_fields()  # You'll need to implement this function
+        
+#         # Calculate similarities between all field pairs
+#         similarities = calculate_all_field_similarities(fields)
+        
+#         # Save the recalculated similarities to the JSON file
+#         save_similarity_data(similarities)
+        
+#         return jsonify({
+#             'success': True,
+#             'message': 'All field similarities have been recalculated',
+#             'count': len(similarities)
+#         })
+#     except Exception as e:
+#         return jsonify({
+#             'success': False,
+#             'message': f'Error recalculating similarities: {str(e)}'
+#         }), 500
