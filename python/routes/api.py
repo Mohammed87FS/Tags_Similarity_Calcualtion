@@ -7,7 +7,7 @@ from flask import Blueprint, request, jsonify, send_file
 from typing import Dict, List, Any
 
 from services.data_service import DataService
-from services.similarity.field import FieldSimilarityService
+from services.similarity.final_calculation import FieldSimilarityService
 from config import SIMILARITY_FILE
 
 logger = logging.getLogger(__name__)
@@ -208,25 +208,24 @@ def test():
     })
 
 
-# @app.route('/api/recalculate_similarities', methods=['POST'])
+# @api_bp.route('/recalculate_similarities', methods=['POST'])
 # def recalculate_similarities():
+#     """Recalculate similarities for all fields."""
+#     nested_data, _ = data_service.load_data()
+    
+#     # Recalculate similarities
 #     try:
-#         # Get all fields from the data service
-#         fields = get_all_fields()  # You'll need to implement this function
-        
-#         # Calculate similarities between all field pairs
-#         similarities = calculate_all_field_similarities(fields)
-        
-#         # Save the recalculated similarities to the JSON file
-#         save_similarity_data(similarities)
-        
-#         return jsonify({
-#             'success': True,
-#             'message': 'All field similarities have been recalculated',
-#             'count': len(similarities)
-#         })
+#         updated_similarities = field_similarity_service.calculate_all_similarities(nested_data)
 #     except Exception as e:
+#         logger.error(f"Error recalculating similarities: {e}")
+#         return jsonify({"error": "Error recalculating similarities"}), 500
+    
+#     # Save updated data
+#     if data_service.save_data(nested_data, updated_similarities):
 #         return jsonify({
-#             'success': False,
-#             'message': f'Error recalculating similarities: {str(e)}'
-#         }), 500
+#             "success": True,
+#             "message": "Similarities recalculated and saved",
+#             "download_ready": True
+#         })
+#     else:
+#         return jsonify({"error": "Error saving data"}), 500

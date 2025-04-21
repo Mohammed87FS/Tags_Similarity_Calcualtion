@@ -274,3 +274,42 @@ class FieldSimilarityService:
         logger.info(f"Calculated {len(new_similarities)} new similarity scores for {new_field['name']}")
         
         return updated_similarities
+    
+    
+    
+    # def calculate_all_similarities(self, nested_data: Dict[str, Any]):
+    #     """
+    #     Calculate all pairwise similarities between fields in the nested data.
+        
+    #     Returns:
+    #         List of all similarity records
+    #     """
+    #     # Load nested data and existing similarities
+    #     nested_data, existing_similarities = self.load_data()
+        
+    #     # Update field mappings for efficient group lookup
+    #     self.update_field_mappings(nested_data)
+        
+    #     # Extract all fields from nested data
+    #     all_fields = []
+    #     for category in nested_data.get("categories", []):
+    #         for subgroup in category.get("subgroups", []):
+    #             for field in subgroup.get("fields", []):
+    #                 all_fields.append(field)
+        
+    #     # Calculate pairwise similarities
+    #     all_similarities = []
+    #     for i, field1 in enumerate(all_fields):
+    #         for j in range(i + 1, len(all_fields)):
+    #             field2 = all_fields[j]
+                
+    #             # Skip if pair already exists in existing similarities
+    #             pair_exists = False
+    #             for sim in existing_similarities:
+    #                 if ((sim.get("field1") == field1["name"] and sim.get("field2") == field2["name"]) or
+    #                     (sim.get("field1") == field2["name"] and sim.get("field2") == field1["name"])):
+    #                     pair_exists = True
+    #                     break
+                
+    #             if pair_exists:
+    #                 continue

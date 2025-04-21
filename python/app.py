@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 # Import from routes module
 from routes.api import (
     api_bp, add_field, get_subgroups, get_similarity, 
-    get_all_similarities_for_field, download_similarities, test
+    get_all_similarities_for_field, download_similarities, test 
 )
 
 def create_app():
@@ -35,6 +35,7 @@ def create_app():
     app.add_url_rule('/get_all_similarities_for_field', view_func=get_all_similarities_for_field)
     app.add_url_rule('/download_similarities', view_func=download_similarities)
     app.add_url_rule('/test', view_func=test)
+   ## app.add_url_rule('/recalculate_similarities', view_func=recalculate_similarities)
     
     # Home route
     @app.route('/')
