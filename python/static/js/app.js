@@ -785,10 +785,7 @@ function populateSimilarityTable(similarities) {
                     <td><small>${groupText}</small></td>
                     <td class="text-end ${colorClass} fw-bold">${formattedScore}</td>
                     <td>
-                        <button class="btn btn-sm btn-outline-primary view-details-btn me-1" 
-                                data-field="${item.field}" data-similarity="${similarityScore}" title="View Details">
-                            <i class="fas fa-eye" aria-hidden="true"></i>
-                        </button>
+                     
                         <button class="btn btn-sm btn-outline-danger delete-field-btn" 
                                 data-field="${item.field}" title="Delete Field">
                             <i class="fas fa-trash" aria-hidden="true"></i>
