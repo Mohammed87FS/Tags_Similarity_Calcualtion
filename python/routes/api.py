@@ -229,3 +229,64 @@ def recalculate_similarities():
         })
     else:
         return jsonify({"error": "Error saving data"}), 500
+    
+    """
+API route for deleting a field and recalculating similarities.
+This should be added to the api.py file.
+"""
+
+@api_bp.route('/delete_field', methods=['POST'])
+def delete_field():
+    """Delete a field and recalculate all similarities."""
+    try:
+        # Get field name from request
+        request_data = request.get_json()
+        field_name = request_data.get('fieldName')
+        
+        if not field_name:
+            return jsonify({"error": "Field name is required"}), 400
+        
+        # Load current data
+        nested_data, similarities = data_service.load_data()
+        
+        # Check if field exists
+        field_exists = False
+        for category in nested_data.get("categories", []):
+            for subgroup in category.get("subgroups", []):
+                for i, field in enumerate(subgroup.get("fields", [])):
+                    if field["name"] == field_name:
+                        # Remove the field
+                        subgroup["fields"].pop(i)
+                        field_exists = True
+                        break
+                if field_exists:
+                    break
+            if field_exists:
+                break
+        
+        if not field_exists:
+            return jsonify({"error": f"Field '{field_name}' not found"}), 404
+        
+        # Filter out similarities involving this field
+        updated_similarities = [
+            sim for sim in similarities 
+            if sim.get("field1") != field_name and sim.get("field2") != field_name
+        ]
+        
+        # Calculate how many were removed
+        removed_count = len(similarities) - len(updated_similarities)
+        
+        # Save updated data
+        if data_service.save_data(nested_data, updated_similarities):
+            return jsonify({
+                "success": True,
+                "message": f"Field '{field_name}' deleted successfully",
+                "updatedCount": len(updated_similarities),
+                "removedCount": removed_count
+            })
+        else:
+            return jsonify({"error": "Error saving data"}), 500
+            
+    except Exception as e:
+        logger.error(f"Error deleting field: {e}")
+        return jsonify({"error": f"Error deleting field: {str(e)}"}), 500

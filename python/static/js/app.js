@@ -85,6 +85,9 @@
 
         // Initialize Recalculate Modal
         initRecalculateModal();
+
+        initDeleteFieldModal();
+
     }
 
     /**
@@ -741,67 +744,77 @@
     }
 
     /**
-     * Populate the similarity table with data
-     * @param {Array} similarities - Array of similarity data
-     */
-    function populateSimilarityTable(similarities) {
-        let tableHtml = '';
-
-        if (similarities.length === 0) {
-            tableHtml = '<tr><td colspan="4" class="text-center">No other fields available for comparison</td></tr>';
-        } else {
-            similarities.forEach(function (item) {
-                // Get group/subgroup if available
-                let groupText = '';
-                if (item.group) {
-                    groupText = item.group + (item.subgroup ? ' › ' + item.subgroup : '');
-                } else {
-                    groupText = 'N/A';
-                }
-
-                // Format similarity score
-                const similarityScore = item.similarity;
-                const formattedScore = similarityScore.toFixed(4);
-
-                // Determine color class based on similarity
-                let colorClass = '';
-                if (similarityScore >= 0.7) {
-                    colorClass = 'text-success';
-                } else if (similarityScore >= 0.5) {
-                    colorClass = 'text-primary';
-                } else if (similarityScore >= 0.3) {
-                    colorClass = 'text-secondary';
-                } else {
-                    colorClass = 'text-muted';
-                }
-
-                // Add table row
-                tableHtml += `
-                    <tr>
-                        <td>${item.field}</td>
-                        <td><small>${groupText}</small></td>
-                        <td class="text-end ${colorClass} fw-bold">${formattedScore}</td>
-                        <td>
-                            <button class="btn btn-sm btn-outline-primary view-details-btn" 
-                                    data-field="${item.field}" data-similarity="${similarityScore}">
-                                <i class="fas fa-eye" aria-hidden="true"></i>
-                            </button>
-                        </td>
-                    </tr>
-                `;
-            });
-        }
-
-        // Update table
-        $('#similarity-table-body').html(tableHtml);
-
-        // Attach click handlers to view details buttons
-        $('.view-details-btn').click(function () {
-            const comparedField = $(this).data('field');
-            const similarityScore = $(this).data('similarity');
-            openComparisonModal($('#field1').val(), comparedField, similarityScore, similarities);
+ * Populate the similarity table with data
+ * @param {Array} similarities - Array of similarity data
+ */
+function populateSimilarityTable(similarities) {
+    let tableHtml = '';
+    
+    if (similarities.length === 0) {
+        tableHtml = '<tr><td colspan="4" class="text-center">No other fields available for comparison</td></tr>';
+    } else {
+        similarities.forEach(function(item) {
+            // Get group/subgroup if available
+            let groupText = '';
+            if (item.group) {
+                groupText = item.group + (item.subgroup ? ' › ' + item.subgroup : '');
+            } else {
+                groupText = 'N/A';
+            }
+            
+            // Format similarity score
+            const similarityScore = item.similarity;
+            const formattedScore = similarityScore.toFixed(4);
+            
+            // Determine color class based on similarity
+            let colorClass = '';
+            if (similarityScore >= 0.7) {
+                colorClass = 'text-success';
+            } else if (similarityScore >= 0.5) {
+                colorClass = 'text-primary';
+            } else if (similarityScore >= 0.3) {
+                colorClass = 'text-secondary';
+            } else {
+                colorClass = 'text-muted';
+            }
+            
+            // Add table row
+            tableHtml += `
+                <tr>
+                    <td>${item.field}</td>
+                    <td><small>${groupText}</small></td>
+                    <td class="text-end ${colorClass} fw-bold">${formattedScore}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary view-details-btn me-1" 
+                                data-field="${item.field}" data-similarity="${similarityScore}" title="View Details">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger delete-field-btn" 
+                                data-field="${item.field}" title="Delete Field">
+                            <i class="fas fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
         });
     }
+    
+    // Update table
+    $('#similarity-table-body').html(tableHtml);
+    
+    // Attach click handlers to view details buttons
+    $('.view-details-btn').click(function() {
+        const comparedField = $(this).data('field');
+        const similarityScore = $(this).data('similarity');
+        openComparisonModal($('#field1').val(), comparedField, similarityScore, similarities);
+    });
+    
+    // Attach click handlers to delete buttons
+    $('.delete-field-btn').click(function() {
+        const fieldToDelete = $(this).data('field');
+        openDeleteFieldModal(fieldToDelete);
+    });
+}
 
     /**
      * Open the comparison modal to show details between two fields
@@ -939,3 +952,165 @@
         }, 5000);
     }
 })();
+
+/**
+ * Initialize Delete Field Modal
+ */
+function initDeleteFieldModal() {
+    const modal = document.getElementById('deleteFieldModal');
+    if (!modal) return;
+    
+    const modalInstance = new bootstrap.Modal(modal);
+    const confirmationSection = document.getElementById('delete-modal-confirmation');
+    const confirmationButtons = document.getElementById('delete-modal-confirmation-buttons');
+    const progressSection = document.getElementById('delete-modal-progress');
+    const progressButtons = document.getElementById('delete-modal-progress-buttons');
+    const resultSection = document.getElementById('delete-modal-result');
+    const resultContent = document.getElementById('delete-result-content');
+    const resultButtons = document.getElementById('delete-modal-result-buttons');
+    
+    // Store the field name to delete
+    let fieldToDelete = '';
+    
+    // Expose the function to open the modal
+    window.openDeleteFieldModal = function(fieldName) {
+        fieldToDelete = fieldName;
+        document.getElementById('delete-field-name').textContent = fieldName;
+        modalInstance.show();
+    };
+    
+    // Reset modal when hidden
+    modal.addEventListener('hidden.bs.modal', function () {
+        // Reset to confirmation view
+        resultSection.classList.add('d-none');
+        resultButtons.classList.add('d-none');
+        progressSection.classList.add('d-none');
+        progressButtons.classList.add('d-none');
+        confirmationSection.classList.remove('d-none');
+        confirmationButtons.classList.remove('d-none');
+        
+        // Reset field name
+        fieldToDelete = '';
+    });
+    
+    // Confirm Delete button click handler
+    const confirmDeleteBtn = document.getElementById('confirm-delete-field');
+    if (confirmDeleteBtn) {
+        confirmDeleteBtn.addEventListener('click', function() {
+            if (!fieldToDelete) {
+                showAlert('error', 'No field selected for deletion');
+                return;
+            }
+            
+            // Show progress UI
+            confirmationSection.classList.add('d-none');
+            confirmationButtons.classList.add('d-none');
+            progressSection.classList.remove('d-none');
+            progressButtons.classList.remove('d-none');
+            
+            // Submit the delete request
+            deleteField(fieldToDelete, resultSection, resultButtons, progressSection, progressButtons, resultContent);
+        });
+    }
+    
+    // Add close button event handler
+    const closeBtn = document.getElementById('delete-modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            location.reload();
+        });
+    }
+}
+
+/**
+ * Delete a field and update similarities
+ * @param {string} fieldName - Name of the field to delete
+ * @param {HTMLElement} resultSection - Result section element
+ * @param {HTMLElement} resultButtons - Result buttons element
+ * @param {HTMLElement} progressSection - Progress section element
+ * @param {HTMLElement} progressButtons - Progress buttons element
+ * @param {HTMLElement} resultContent - Result content element
+ */
+function deleteField(fieldName, resultSection, resultButtons, progressSection, progressButtons, resultContent) {
+    // Send deletion request to the server
+    fetch('/api/delete_field', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fieldName: fieldName })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Hide progress UI
+        progressSection.classList.add('d-none');
+        progressButtons.classList.add('d-none');
+        
+        // Show result UI
+        resultSection.classList.remove('d-none');
+        resultButtons.classList.remove('d-none');
+        
+        if (data.success) {
+            const timestamp = new Date().toLocaleString();
+            resultContent.innerHTML = `
+                <div class="text-center mb-3">
+                    <div class="bg-success text-white p-3 rounded-circle d-inline-block">
+                        <i class="fas fa-check fa-3x"></i>
+                    </div>
+                </div>
+                <div class="alert alert-success">
+                    <h6 class="alert-heading"><strong>Success!</strong></h6>
+                    <p>The field has been deleted and similarities updated.</p>
+                </div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <p class="mb-1"><strong>Deletion Summary:</strong></p>
+                        <ul class="mb-0">
+                            <li>Field deleted: ${fieldName}</li>
+                            <li>Updated similarity pairs: ${data.updatedCount || 'N/A'}</li>
+                            <li>Completed at: ${timestamp}</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        } else {
+            resultContent.innerHTML = `
+                <div class="text-center mb-3">
+                    <div class="bg-danger text-white p-3 rounded-circle d-inline-block">
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                    </div>
+                </div>
+                <div class="alert alert-danger">
+                    <h6 class="alert-heading"><strong>Error Occurred</strong></h6>
+                    <p class="mb-0">${data.error || 'An unknown error occurred while deleting the field.'}</p>
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        // Hide progress UI
+        progressSection.classList.add('d-none');
+        progressButtons.classList.add('d-none');
+        
+        // Show error result
+        resultSection.classList.remove('d-none');
+        resultButtons.classList.remove('d-none');
+        
+        resultContent.innerHTML = `
+            <div class="text-center mb-3">
+                <div class="bg-danger text-white p-3 rounded-circle d-inline-block">
+                    <i class="fas fa-times fa-3x"></i>
+                </div>
+            </div>
+            <div class="alert alert-danger">
+                <h6 class="alert-heading"><strong>Communication Error</strong></h6>
+                <p class="mb-0">Failed to delete field: ${error.message}</p>
+            </div>
+        `;
+    });
+}

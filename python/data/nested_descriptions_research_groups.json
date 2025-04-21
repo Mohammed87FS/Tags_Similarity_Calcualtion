@@ -325,17 +325,6 @@
           "name": "Audio & Multimedia",
           "fields": [
             {
-              "name": "Sound Design",
-              "description": {
-                "definition": "Sound Design creates, manipulates, and arranges audio elements enhancing narrative experiences through carefully crafted soundscapes, effects, and music that complement visual elements",
-                "methodologies": "Field recording, Foley artistry, synthesis, audio processing, spatial audio design, adaptive audio, sound layering, audio restoration, psychoacoustic principles application",
-                "applications": "Film soundtracks, game audio, virtual reality experiences, installations, product sound design, brand sonic identities, theatrical sound design, podcast production, interface sonification",
-                "technologies": "Digital audio workstations, synthesis software, spatial audio tools, audio middleware for interactive media, sound libraries, microphones, field recorders, audio processing plugins",
-                "challenges": "Creating believable soundscapes, technical implementation in interactive media, platform audio limitations, consistency across playback systems, balancing artistic and technical goals",
-                "future_directions": "Generative audio, AI-assisted sound design, advanced spatial audio, physical modeling synthesis, binaural experiences, cross-modal design, emotional response modeling"
-              }
-            },
-            {
               "name": "Interactive Media",
               "description": {
                 "definition": "Interactive Media creates user-responsive experiences combining computational systems with content that adapts to participant actions, enabling dynamic storytelling and personalized engagement",
@@ -344,17 +333,6 @@
                 "technologies": "Motion sensors, touch interfaces, projection mapping, interactive programming environments, real-time rendering, content management systems, IoT integration, mobile technologies",
                 "challenges": "Designing intuitive interactions, technical reliability in public spaces, scaling experiences, documentation of ephemeral works, balancing structure with agency, accessibility design",
                 "future_directions": "AI-driven narrative systems, biometric interaction, collective experiences, distributed interaction, mixed reality storytelling, brain-computer interfaces, generative experiences"
-              }
-            },
-            {
-              "name": "Media Production",
-              "description": {
-                "definition": "Media Production creates audiovisual content through integrated creative and technical processes including pre-production planning, production execution, and post-production refinement",
-                "methodologies": "Production planning, cinematography, directing, lighting design, audio recording, scheduling, budgeting, editing, color grading, compositing, visual effects integration",
-                "applications": "Film and television, commercials, educational content, corporate communications, social media content, streaming media, documentaries, promotional materials, institutional media",
-                "technologies": "Digital cameras, lighting equipment, audio recording systems, editing software, color grading tools, project management platforms, media asset management, production tracking",
-                "challenges": "Workflow optimization, technical quality control, creative consistency, managing production complexity, multi-platform delivery, archiving and preservation, rights management",
-                "future_directions": "Virtual production techniques, cloud-based collaboration, remote production workflows, AI-assisted editing, automated localization, sustainable production practices"
               }
             }
           ]
