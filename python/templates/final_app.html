@@ -217,6 +217,58 @@
                 </div>
             </div>
         </div>
+
+        <!-- Field Deletion Section -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card" id="delete-field-section">
+            <div class="card-header bg-danger text-white">
+                <h2 class="h5 mb-0">
+                    <i class="fas fa-trash me-2" aria-hidden="true"></i>
+                    Delete Fields
+                </h2>
+            </div>
+            <div class="card-body">
+               
+                
+                <form id="delete-field-form">
+                    <div class="row align-items-end">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                              
+                                <select class="form-select" id="field-to-delete" name="field-to-delete" required>
+                                    <option value="">Select a field to Delete</option>
+                                    {% for field in field_names %}
+                                    <option value="{{ field }}">{{ field }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">Please select a field</div>
+                                <div class="help-text mt-2">
+                                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                                    This will delete the selected field and all its associated similarities.
+                                </div>
+        
+                            </div>
+                            
+                        </div>
+                     
+                        <div class="d-flex justify-content-center mt-3">
+                            <button type="submit" class="btn btn-danger w-10" id="submit-delete-btn" disabled>
+                                <i class="fas fa-trash me-2" aria-hidden="true"></i>
+                                Delete Field
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Status section - shows after deletion attempt -->
+                <div id="delete-status" class="mt-4" style="display: none;">
+                    <!-- Will be populated by JS with status of delete operation -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
           
         <!-- View Field Similarities Section -->
         <div class="row mb-4">
@@ -232,7 +284,7 @@
                         <!-- Field Selection Form -->
                         <form id="view-similarity-form">
                             <div class="form-group">
-                                <label for="field1" class="form-label">Select a Field:</label>
+                             
                                 <select class="form-select" id="field1" name="field1" required>
                                     <option value="">Select a field</option>
                                     {% for field in field_names %}
@@ -356,6 +408,90 @@
             </div>
         </div>
     </div>
+
+    <!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteConfirmModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex mb-3">
+                    <div class="me-3">
+                        <i class="fas fa-exclamation-triangle fa-3x text-warning"></i>
+                    </div>
+                    <div>
+                        <h5 class="mt-1">Permanently Delete Field</h5>
+                        <p class="mb-0">You are about to delete: <strong id="confirm-field-name">Field Name</strong></p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <p class="mb-0"><strong>Warning:</strong> This action cannot be undone. The field will be permanently removed from the database, and all similarities will be recalculated.</p>
+                </div>
+                
+                <div class="mt-3">
+                    <p class="text-muted small mb-0">After deletion, the updated similarity scores will be saved to <code>final_outputs_enhanced_multi/field_similarities.json</code>.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete-btn">
+                    <i class="fas fa-trash me-2"></i>Delete Field
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Progress Modal -->
+<div class="modal fade" id="deleteProgressModal" tabindex="-1" aria-labelledby="deleteProgressModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="deleteProgressModalLabel">Deleting Field</h5>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <h5 class="text-center mb-3">Processing Deletion</h5>
+                <div class="progress mb-4">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="text-center text-muted">
+                    Deleting field and recalculating all similarities.<br>
+                    This may take a few moments. Please do not close this window.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Result Modal -->
+<div class="modal fade" id="deleteResultModal" tabindex="-1" aria-labelledby="deleteResultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="delete-result-header">
+                <h5 class="modal-title" id="deleteResultModalLabel">Deletion Complete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="delete-result-content">
+                <!-- Will be populated dynamically -->
+            </div>
+            <div class="modal-footer" id="delete-result-footer">
+                <a href="/api/download_similarities" class="btn btn-success" download>
+                    <i class="fas fa-download me-2"></i>Download Updated Data
+                </a>
+                <button type="button" class="btn btn-primary" id="delete-result-close" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- MODALS -->
      <!-- Delete Field Modal -->
@@ -635,136 +771,164 @@
             </div>
         </div>
     </div>
-    
     <!-- Help Modal -->
-    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="helpModalLabel">
-                        <i class="fas fa-question-circle me-2" aria-hidden="true"></i>
-                        Help & Information
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="helpModalLabel">
+                    <i class="fas fa-question-circle me-2" aria-hidden="true"></i>
+                    Help & Information
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="mb-3">About This Tool</h5>
+                <p>
+                    The Research Field Similarity Tool allows you to compare research fields and calculate 
+                    similarity scores based on comprehensive analysis of their descriptions, methodologies, 
+                    applications, and other characteristics.
+                </p>
+                
+                <h5 class="mb-3 mt-4">Page Layout</h5>
+                <p>
+                    This tool has three main sections:
+                </p>
+                <ul>
+                    <li><strong>Add New Field</strong> (top section) - Add new research fields to the database</li>
+                    <li><strong>Delete Fields</strong> (middle section) - Remove fields and recalculate similarities</li>
+                    <li><strong>View Field Similarities</strong> (bottom section) - Compare and analyze similarities between fields</li>
+                </ul>
+                <p>Use the navigation links in the top menu bar to quickly jump between sections without scrolling.</p>
+                
+                <h5 class="mb-3 mt-4">How to Use</h5>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6><i class="fas fa-plus-circle me-2 text-primary" aria-hidden="true"></i> Add a New Field</h6>
+                        <ol>
+                            <li>Enter a unique name for the field</li>
+                            <li>Select or create a group and subgroup for organizational purposes</li>
+                            <li>Fill in the description sections with detailed information</li>
+                            <li>Click "Add Field & Calculate Similarities" to save the field and compute similarities with existing fields</li>
+                            <li>Download the updated similarities file if needed</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <h5 class="mb-3">About This Tool</h5>
-                    <p>
-                        The Research Field Similarity Tool allows you to compare research fields and calculate 
-                        similarity scores based on comprehensive analysis of their descriptions, methodologies, 
-                        applications, and other characteristics.
-                    </p>
-                    
-                    <h5 class="mb-3 mt-4">Page Layout</h5>
-                    <p>
-                        This tool has two main sections:
-                    </p>
-                    <ul>
-                        <li><strong>Add New Field</strong> (top section) - Add new research fields to the database</li>
-                        <li><strong>View Field Similarities</strong> (bottom section) - Compare and analyze similarities between fields</li>
-                    </ul>
-                    <p>Use the navigation links in the top menu bar to quickly jump between sections without scrolling.</p>
-                    
-                    <h5 class="mb-3 mt-4">How to Use</h5>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h6><i class="fas fa-plus-circle me-2 text-primary" aria-hidden="true"></i> Add a New Field</h6>
-                            <ol>
-                                <li>Enter a unique name for the field</li>
-                                <li>Select or create a group and subgroup for organizational purposes</li>
-                                <li>Fill in the description sections with detailed information</li>
-                                <li>Click "Add Field & Calculate Similarities" to save the field and compute similarities with existing fields</li>
-                                <li>Download the updated similarities file if needed</li>
-                            </ol>
-                        </div>
+                
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6><i class="fas fa-trash me-2 text-danger" aria-hidden="true"></i> Delete Fields</h6>
+                        <ol>
+                            <li>Select a field from the dropdown menu</li>
+                            <li>Click the "Delete Field" button</li>
+                            <li>Confirm the deletion in the modal that appears</li>
+                            <li>Wait for the system to delete the field and recalculate all similarities</li>
+                            <li>Review the results and download the updated data if needed</li>
+                        </ol>
+                        <p class="small text-danger mb-0"><strong>Note:</strong> Field deletion is permanent and will trigger a complete recalculation of all similarity scores between remaining fields.</p>
                     </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h6><i class="fas fa-chart-bar me-2 text-primary" aria-hidden="true"></i> View Field Similarities</h6>
-                            <ol>
-                                <li>Select a field from the dropdown menu</li>
-                                <li>Click "View Similarities" to see how similar this field is to all other fields</li>
-                                <li>Sort the results by similarity score or alphabetically</li>
-                                <li>Click the "Eye" icon to view detailed comparison with any specific field</li>
-                            </ol>
-                        </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6><i class="fas fa-chart-bar me-2 text-primary" aria-hidden="true"></i> View Field Similarities</h6>
+                        <ol>
+                            <li>Select a field from the dropdown menu</li>
+                            <li>Click "View Similarities" to see how similar this field is to all other fields</li>
+                            <li>Sort the results by similarity score or alphabetically</li>
+                            <li>Click the "Eye" icon to view detailed comparison with any specific field</li>
+                        </ol>
                     </div>
-                    
-                    <h5 class="mb-3 mt-4">Navigation Tips</h5>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <p>The fixed navigation bar at the top of the page gives you quick access to both sections:</p>
-                            <ul>
-                                <li>Click <strong>Add New Field</strong> to jump to the top section</li>
-                                <li>Click <strong>View Similarities</strong> to jump to the bottom section</li>
-                            </ul>
-                            <p>This eliminates the need for excessive scrolling, especially on larger screens.</p>
-                        </div>
+                </div>
+                
+                <h5 class="mb-3 mt-4">Navigation Tips</h5>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p>The fixed navigation bar at the top of the page gives you quick access to all sections:</p>
+                        <ul>
+                            <li>Click <strong>Add New Field</strong> to jump to the top section</li>
+                            <li>Click <strong>Delete Fields</strong> to jump to the field deletion section</li>
+                            <li>Click <strong>View Similarities</strong> to jump to the comparison section</li>
+                        </ul>
+                        <p>This eliminates the need for excessive scrolling, especially on larger screens.</p>
                     </div>
-                    
-                    <h5 class="mb-3 mt-4">Similarity Calculation</h5>
-                    <p>
-                        Similarities are calculated using a sophisticated algorithm that considers multiple factors:
-                    </p>
-                    <ul>
-                        <li><strong>Semantic Similarity:</strong> Analyzes the meaning and context of descriptions</li>
-                        <li><strong>Term-Based Analysis:</strong> Examines key terminology and technical concepts</li>
-                        <li><strong>Domain Relationships:</strong> Considers connections between different research domains</li>
-                        <li><strong>Organizational Structure:</strong> Takes into account group and subgroup relationships</li>
-                    </ul>
-                    
-                    <h5 class="mb-3 mt-4">Interpreting Similarity Scores</h5>
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h6 class="text-success">High Similarity (0.7-1.0)</h6>
-                                    <p class="small mb-0">Fields are closely related with substantial overlap in concepts, methodologies, and applications.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h6 class="text-primary">Medium Similarity (0.4-0.7)</h6>
-                                    <p class="small mb-0">Fields have notable connections with some shared characteristics or approaches.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card bg-light">
-                                <div class="card-body">
-                                    <h6 class="text-secondary">Low Similarity (0.0-0.4)</h6>
-                                    <p class="small mb-0">Fields are mostly distinct with limited conceptual or methodological overlap.</p>
-                                </div>
+                </div>
+                
+                <h5 class="mb-3 mt-4">Similarity Calculation</h5>
+                <p>
+                    Similarities are calculated using a sophisticated algorithm that considers multiple factors:
+                </p>
+                <ul>
+                    <li><strong>Semantic Similarity:</strong> Analyzes the meaning and context of descriptions</li>
+                    <li><strong>Term-Based Analysis:</strong> Examines key terminology and technical concepts</li>
+                    <li><strong>Domain Relationships:</strong> Considers connections between different research domains</li>
+                    <li><strong>Organizational Structure:</strong> Takes into account group and subgroup relationships</li>
+                </ul>
+                
+                <h5 class="mb-3 mt-4">Interpreting Similarity Scores</h5>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-success">High Similarity (0.7-1.0)</h6>
+                                <p class="small mb-0">Fields are closely related with substantial overlap in concepts, methodologies, and applications.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <h5 class="mb-3 mt-4">Keyboard Shortcuts</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                                <li><strong>Alt + A:</strong> Jump to Add Field section</li>
-                                <li><strong>Alt + V:</strong> Jump to View Similarities section</li>
-                                <li><strong>Alt + H:</strong> Open this help dialog</li>
-                            </ul>
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-primary">Medium Similarity (0.4-0.7)</h6>
+                                <p class="small mb-0">Fields have notable connections with some shared characteristics or approaches.</p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li><strong>Alt + D:</strong> Toggle dark/light mode</li>
-                                <li><strong>Alt + S:</strong> Submit current form</li>
-                                <li><strong>Esc:</strong> Close dialogs or clear selections</li>
-                            </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-secondary">Low Similarity (0.0-0.4)</h6>
+                                <p class="small mb-0">Fields are mostly distinct with limited conceptual or methodological overlap.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+                <h5 class="mb-3 mt-4">Data Management</h5>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p>The system maintains two key data files:</p>
+                        <ul>
+                            <li><strong>Field Descriptions:</strong> Contains all field data, including descriptions, grouped by category and subcategory</li>
+                            <li><strong>Field Similarities:</strong> Contains all calculated similarity scores between field pairs</li>
+                        </ul>
+                        <p class="mb-0">When you add or delete fields, these files are automatically updated to maintain consistency.</p>
+                    </div>
                 </div>
+                
+                <h5 class="mb-3 mt-4">Keyboard Shortcuts</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li><strong>Alt + A:</strong> Jump to Add Field section</li>
+                            <li><strong>Alt + V:</strong> Jump to View Similarities section</li>
+                            <li><strong>Alt + H:</strong> Open this help dialog</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li><strong>Alt + D:</strong> Toggle dark/light mode</li>
+                            <li><strong>Alt + S:</strong> Submit current form</li>
+                            <li><strong>Esc:</strong> Close dialogs or clear selections</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

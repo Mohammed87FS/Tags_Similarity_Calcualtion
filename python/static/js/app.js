@@ -22,6 +22,7 @@
         initTooltips();
         initThemeToggle();
         initModals();
+        initFieldDeletion();
         setupEventHandlers();
     });
 
@@ -1112,5 +1113,339 @@ function deleteField(fieldName, resultSection, resultButtons, progressSection, p
                 <p class="mb-0">Failed to delete field: ${error.message}</p>
             </div>
         `;
+    });
+}
+/**
+ * Initialize the field deletion functionality
+ */
+function initFieldDeletion() {
+    const deleteForm = document.getElementById('delete-field-form');
+    const fieldSelect = document.getElementById('field-to-delete');
+    const deleteBtn = document.getElementById('submit-delete-btn');
+    const statusDiv = document.getElementById('delete-status');
+    
+    if (!deleteForm || !fieldSelect || !deleteBtn) return;
+    
+    // Enable/disable delete button based on selection
+    fieldSelect.addEventListener('change', function() {
+        deleteBtn.disabled = !this.value;
+    });
+    
+    // Handle form submission
+    deleteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const selectedField = fieldSelect.value;
+        if (!selectedField) return;
+        
+        // Confirm deletion
+        if (confirm(`Are you sure you want to delete "${selectedField}"? This action cannot be undone.`)) {
+            // Show loading indicator
+            statusDiv.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <div class="spinner-border text-danger me-3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div>
+                        <h6 class="mb-0">Deleting field and recalculating similarities...</h6>
+                        <p class="small text-muted mb-0">This may take a few moments.</p>
+                    </div>
+                </div>
+            `;
+            statusDiv.style.display = 'block';
+            
+            // Disable form while processing
+            fieldSelect.disabled = true;
+            deleteBtn.disabled = true;
+            
+            // Send delete request
+            deleteFieldAndRecalculate(selectedField);
+        }
+    });
+}
+
+/**
+ * Delete a field and recalculate all similarities
+ * @param {string} fieldName - The name of the field to delete
+ */
+function deleteFieldAndRecalculate(fieldName) {
+    const statusDiv = document.getElementById('delete-status');
+    const fieldSelect = document.getElementById('field-to-delete');
+    const deleteBtn = document.getElementById('submit-delete-btn');
+    
+    // Send deletion request to the server
+    fetch('/api/delete_field_all', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fieldName: fieldName })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Re-enable form elements
+        fieldSelect.disabled = false;
+        deleteBtn.disabled = true;
+        
+        if (data.success) {
+            // Show success message
+            const timestamp = new Date().toLocaleString();
+            statusDiv.innerHTML = `
+                <div class="alert alert-success">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-check-circle fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="alert-heading">Field Deleted Successfully</h6>
+                            <p class="mb-0">The field "${fieldName}" has been deleted and all similarities recalculated.</p>
+                            <hr>
+                            <p class="mb-0"><strong>Fields remaining:</strong> ${data.fieldCount || 'N/A'}</p>
+                            <p class="mb-0"><strong>Similarities calculated:</strong> ${data.comparisonCount || 'N/A'}</p>
+                            <p class="mb-0"><strong>Completed at:</strong> ${timestamp}</p>
+                            <div class="mt-2">
+                                <a href="/api/download_similarities" class="btn btn-sm btn-outline-success" download>
+                                    <i class="fas fa-download me-1"></i> Download Updated Data
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-primary ms-2" onclick="location.reload()">
+                                    <i class="fas fa-sync me-1"></i> Refresh Page
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Reset the select (remove the deleted option)
+            fieldSelect.querySelector(`option[value="${fieldName}"]`).remove();
+            fieldSelect.value = '';
+        } else {
+            // Show error message
+            statusDiv.innerHTML = `
+                <div class="alert alert-danger">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-exclamation-circle fa-2x"></i>
+                        </div>
+                        <div>
+                            <h6 class="alert-heading">Error Deleting Field</h6>
+                            <p class="mb-0">${data.error || 'An unknown error occurred while deleting the field.'}</p>
+                            <button type="button" class="btn btn-sm btn-outline-danger mt-2" onclick="document.getElementById('delete-status').style.display='none';">
+                                <i class="fas fa-times me-1"></i> Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        // Re-enable form elements
+        fieldSelect.disabled = false;
+        deleteBtn.disabled = false;
+        
+        // Show error message
+        statusDiv.innerHTML = `
+            <div class="alert alert-danger">
+                <div class="d-flex">
+                    <div class="me-3">
+                        <i class="fas fa-exclamation-circle fa-2x"></i>
+                    </div>
+                    <div>
+                        <h6 class="alert-heading">Communication Error</h6>
+                        <p class="mb-0">Failed to communicate with the server: ${error.message}</p>
+                        <button type="button" class="btn btn-sm btn-outline-danger mt-2" onclick="document.getElementById('delete-status').style.display='none';">
+                            <i class="fas fa-times me-1"></i> Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+/**
+ * Initialize the field deletion functionality
+ */
+function initFieldDeletion() {
+    const deleteForm = document.getElementById('delete-field-form');
+    const fieldSelect = document.getElementById('field-to-delete');
+    const deleteBtn = document.getElementById('submit-delete-btn');
+    const statusDiv = document.getElementById('delete-status');
+    
+    // Initialize modals
+    const confirmModal = new bootstrap.Modal(document.getElementById('deleteConfirmModal'));
+    const progressModal = new bootstrap.Modal(document.getElementById('deleteProgressModal'));
+    const resultModal = new bootstrap.Modal(document.getElementById('deleteResultModal'));
+    
+    // References to elements in modals
+    const confirmFieldName = document.getElementById('confirm-field-name');
+    const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+    const resultContent = document.getElementById('delete-result-content');
+    const resultHeader = document.getElementById('delete-result-header');
+    const resultClose = document.getElementById('delete-result-close');
+    
+    if (!deleteForm || !fieldSelect || !deleteBtn) return;
+    
+    // Enable/disable delete button based on selection
+    fieldSelect.addEventListener('change', function() {
+        deleteBtn.disabled = !this.value;
+    });
+    
+    // Handle form submission
+    deleteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const selectedField = fieldSelect.value;
+        if (!selectedField) return;
+        
+        // Show confirmation modal
+        confirmFieldName.textContent = selectedField;
+        confirmModal.show();
+    });
+    
+    // Handle confirmation modal button
+    if (confirmDeleteBtn) {
+        confirmDeleteBtn.addEventListener('click', function() {
+            // Get the field name from the confirmation modal
+            const fieldName = confirmFieldName.textContent;
+            
+            // Hide confirmation modal
+            confirmModal.hide();
+            
+            // Show progress modal
+            progressModal.show();
+            
+            // Execute deletion
+            deleteFieldAndRecalculate(fieldName, resultModal, progressModal, resultContent, resultHeader, fieldSelect);
+        });
+    }
+    
+    // Reset UI on result modal close
+    if (resultClose) {
+        resultClose.addEventListener('click', function() {
+            // Refresh the page to update all field lists
+            location.reload();
+        });
+    }
+}
+
+/**
+ * Delete a field and recalculate all similarities
+ * @param {string} fieldName - The name of the field to delete
+ * @param {bootstrap.Modal} resultModal - The result modal
+ * @param {bootstrap.Modal} progressModal - The progress modal
+ * @param {HTMLElement} resultContent - The result content element
+ * @param {HTMLElement} resultHeader - The result header element
+ * @param {HTMLElement} fieldSelect - The field select element
+ */
+function deleteFieldAndRecalculate(fieldName, resultModal, progressModal, resultContent, resultHeader, fieldSelect) {
+    // Send deletion request to the server
+    fetch('/api/delete_field', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fieldName: fieldName })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Hide progress modal
+        progressModal.hide();
+        
+        if (data.success) {
+            // Update header for success
+            resultHeader.className = 'modal-header bg-success text-white';
+            document.getElementById('deleteResultModalLabel').textContent = 'Deletion Successful';
+            
+            // Show success message
+            const timestamp = new Date().toLocaleString();
+            resultContent.innerHTML = `
+                <div class="text-center mb-4">
+                    <div class="bg-success text-white p-3 rounded-circle d-inline-block">
+                        <i class="fas fa-check fa-3x"></i>
+                    </div>
+                </div>
+                <div class="alert alert-success">
+                    <h6 class="alert-heading">Field Deleted Successfully</h6>
+                    <p>The field "${fieldName}" has been deleted and all similarities recalculated.</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">Deletion Summary</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Fields remaining:</strong> ${data.fieldCount || 'N/A'}</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Similarities calculated:</strong> ${data.comparisonCount || 'N/A'}</li>
+                            <li><i class="fas fa-clock text-muted me-2"></i> <strong>Completed at:</strong> ${timestamp}</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // Remove the option from the select
+            const option = fieldSelect.querySelector(`option[value="${fieldName}"]`);
+            if (option) option.remove();
+            
+            // Reset select value
+            fieldSelect.value = '';
+            
+            // Disable delete button until new selection
+            document.getElementById('submit-delete-btn').disabled = true;
+        } else {
+            // Update header for error
+            resultHeader.className = 'modal-header bg-danger text-white';
+            document.getElementById('deleteResultModalLabel').textContent = 'Deletion Failed';
+            
+            // Show error message
+            resultContent.innerHTML = `
+                <div class="text-center mb-4">
+                    <div class="bg-danger text-white p-3 rounded-circle d-inline-block">
+                        <i class="fas fa-exclamation-circle fa-3x"></i>
+                    </div>
+                </div>
+                <div class="alert alert-danger">
+                    <h6 class="alert-heading">Error Deleting Field</h6>
+                    <p class="mb-0">${data.error || 'An unknown error occurred while deleting the field.'}</p>
+                </div>
+            `;
+        }
+        
+        // Show result modal
+        resultModal.show();
+    })
+    .catch(error => {
+        // Hide progress modal
+        progressModal.hide();
+        
+        // Update header for error
+        resultHeader.className = 'modal-header bg-danger text-white';
+        document.getElementById('deleteResultModalLabel').textContent = 'Deletion Error';
+        
+        // Show error message
+        resultContent.innerHTML = `
+            <div class="text-center mb-4">
+                <div class="bg-danger text-white p-3 rounded-circle d-inline-block">
+                    <i class="fas fa-times fa-3x"></i>
+                </div>
+            </div>
+            <div class="alert alert-danger">
+                <h6 class="alert-heading">Communication Error</h6>
+                <p class="mb-0">Failed to communicate with the server: ${error.message}</p>
+            </div>
+        `;
+        
+        // Show result modal
+        resultModal.show();
     });
 }

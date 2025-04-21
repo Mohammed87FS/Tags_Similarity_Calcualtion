@@ -290,3 +290,97 @@ def delete_field():
     except Exception as e:
         logger.error(f"Error deleting field: {e}")
         return jsonify({"error": f"Error deleting field: {str(e)}"}), 500
+    
+    """
+API route for deleting a field and recalculating similarities.
+This should be added to the api.py file.
+"""
+
+@api_bp.route('/delete_field_all', methods=['POST'])
+def delete_field_all():
+    """Delete a field and recalculate all similarities from scratch."""
+    try:
+        # Get field name from request
+        request_data = request.get_json()
+        field_name = request_data.get('fieldName')
+        
+        if not field_name:
+            return jsonify({"error": "Field name is required"}), 400
+        
+        # Load current data
+        nested_data, _ = data_service.load_data()
+        
+        # Check if field exists and remove it
+        field_exists = False
+        for category in nested_data.get("categories", []):
+            for subgroup in category.get("subgroups", []):
+                field_indexes_to_remove = []
+                
+                # Find all matching fields (should be just one)
+                for i, field in enumerate(subgroup.get("fields", [])):
+                    if field["name"] == field_name:
+                        field_indexes_to_remove.append(i)
+                        field_exists = True
+                
+                # Remove fields in reverse order to not mess up indexing
+                for index in sorted(field_indexes_to_remove, reverse=True):
+                    subgroup["fields"].pop(index)
+        
+        if not field_exists:
+            return jsonify({"error": f"Field '{field_name}' not found"}), 404
+        
+        # Count remaining fields
+        field_count = 0
+        for category in nested_data.get("categories", []):
+            for subgroup in category.get("subgroups", []):
+                field_count += len(subgroup.get("fields", []))
+        
+        logger.info(f"Deleted field '{field_name}'. {field_count} fields remaining.")
+        
+        # Rebuild field mappings
+        field_similarity_service.update_field_mappings(nested_data)
+        
+        # Collect all remaining fields
+        all_fields = []
+        for category in nested_data.get("categories", []):
+            for subgroup in category.get("subgroups", []):
+                for field in subgroup.get("fields", []):
+                    all_fields.append(field)
+        
+        # Calculate all pairwise similarities
+        new_similarities = []
+        comparison_count = 0
+        
+        for i in range(len(all_fields)):
+            for j in range(i + 1, len(all_fields)):
+                field1 = all_fields[i]
+                field2 = all_fields[j]
+                
+                try:
+                    similarity = field_similarity_service.compare_fields(field1, field2)
+                    
+                    new_similarities.append({
+                        "field1": field1["name"],
+                        "field2": field2["name"],
+                        "similarity_score": float(similarity)  # Convert any numpy type to Python float
+                    })
+                    comparison_count += 1
+                except Exception as e:
+                    logger.error(f"Error calculating similarity between {field1['name']} and {field2['name']}: {e}")
+        
+        logger.info(f"Completed {comparison_count} similarity calculations")
+        
+        # Save updated data
+        if data_service.save_data(nested_data, new_similarities):
+            return jsonify({
+                "success": True,
+                "message": f"Field '{field_name}' deleted successfully and similarities recalculated",
+                "fieldCount": field_count,
+                "comparisonCount": comparison_count
+            })
+        else:
+            return jsonify({"error": "Error saving updated data"}), 500
+            
+    except Exception as e:
+        logger.error(f"Error deleting field: {e}")
+        return jsonify({"error": f"Error deleting field: {str(e)}"}), 500
