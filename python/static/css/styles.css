@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #3050e0;
-    --primary-hover: #2040c0;
+    --primary-color: #004fa4;
+    --primary-hover: #003772;
     --secondary-color: #6c757d;
     --success-color: #28a745;
     --info-color: #17a2b8;
@@ -19,8 +19,8 @@
 
 /* Dark mode variables */
 [data-bs-theme="dark"] {
-    --primary-color: #4d6ef5;
-    --primary-hover: #3a5be5;
+    --primary-color: #004fa4;
+    --primary-hover: #003772;
     --body-bg: #1e2337;
     --card-bg: #2a3042;
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
