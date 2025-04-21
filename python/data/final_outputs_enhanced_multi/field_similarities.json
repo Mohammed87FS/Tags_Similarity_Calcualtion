@@ -3513,5 +3513,185 @@
     "field1": "sheeeesh",
     "field2": "Mobile Development",
     "similarity_score": 0.0
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.24048313376409625
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Machine Learning",
+    "similarity_score": 0.17190852796064154
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Reinforcement Learning",
+    "similarity_score": 0.1675109520024992
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Computer Vision",
+    "similarity_score": 0.34267003085560555
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Robotics",
+    "similarity_score": 0.36566655175484636
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Data Science",
+    "similarity_score": 0.12022666920269982
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.4263356658020898
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Information Security",
+    "similarity_score": 0.4147697520092656
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.389151165509943
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Cryptography",
+    "similarity_score": 0.6351881710973564
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.09383214948134237
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Interface Design",
+    "similarity_score": 0.09701706189212318
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.11155688055267968
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "User Research",
+    "similarity_score": 0.06640020274235296
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.2901734924711271
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Data Visualization",
+    "similarity_score": 0.2592357071344994
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Game Development",
+    "similarity_score": 0.3123385687544809
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Game Design",
+    "similarity_score": 0.2576675247968726
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Digital Animation",
+    "similarity_score": 0.07144698398671674
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "3D Modeling",
+    "similarity_score": 0.09214324438304185
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "3D Animation",
+    "similarity_score": 0.08177595221011778
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.1299293149723599
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Digital Art",
+    "similarity_score": 0.31653336038552105
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Film Production",
+    "similarity_score": 0.06178136008245708
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Sound Design",
+    "similarity_score": 0.16608007449299153
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Interactive Media",
+    "similarity_score": 0.30834025655371217
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Media Production",
+    "similarity_score": 0.0569966582605834
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Health",
+    "similarity_score": 0.07952178215484146
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.1493043814379563
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Neuroscience",
+    "similarity_score": 0.4321930946377998
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.2494902570234133
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Physical Computing",
+    "similarity_score": 0.5568193817060774
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.43844665484601303
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Software Engineering",
+    "similarity_score": 0.4457514297332659
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Web Technologies",
+    "similarity_score": 0.3869163480311207
+  },
+  {
+    "field1": "Quantum Computing",
+    "field2": "Mobile Development",
+    "similarity_score": 0.3338191617489359
   }
 ]
