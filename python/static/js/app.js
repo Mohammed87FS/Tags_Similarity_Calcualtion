@@ -1445,3 +1445,66 @@ function deleteFieldAndRecalculate(fieldName, resultModal, progressModal, result
         resultModal.show();
     });
 }
+
+// Navigation tab functionality - Show only the clicked section
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the nav links that point to content sections
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+    
+    // Get all content sections
+    const contentSections = [
+        document.getElementById('add-field-section'),
+        document.getElementById('delete-field-section'),
+        document.getElementById('view-similarity-section'),
+        document.getElementById('recalculate-similarity-section')
+    ].filter(section => section); // Filter out any null values
+    
+    // Function to show only the target section
+    function showOnlySection(sectionId) {
+        // Hide all sections
+        contentSections.forEach(section => {
+            section.closest('.row').style.display = 'none';
+        });
+        
+        // Show only the target section
+        const targetSection = document.getElementById(sectionId.substring(1)); // Remove the # from the ID
+        if (targetSection) {
+            targetSection.closest('.row').style.display = '';
+        }
+        
+        // Add active class to current nav item and remove from others
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === sectionId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+    
+    // Add click event to each nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Skip links that open modals
+            if(this.getAttribute('data-bs-toggle')) return;
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            e.preventDefault();
+            showOnlySection(targetId);
+            
+            // Update URL fragment without scrolling
+            history.pushState(null, null, targetId);
+        });
+    });
+    
+    // Show default section or section from URL fragment on page load
+    const hash = window.location.hash;
+    if (hash && document.querySelector(hash)) {
+        showOnlySection(hash);
+    } else {
+        // Default to showing the add field section
+        showOnlySection('#add-field-section');
+    }
+});
