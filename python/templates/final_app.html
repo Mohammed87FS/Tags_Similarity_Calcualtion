@@ -188,7 +188,7 @@
         }
 
         .similarity-score {
-            font-size: 3rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
             animation: fadeIn 0.5s ease-out;
@@ -626,10 +626,12 @@
                                 </div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary mt-3">
-                                <i class="fas fa-search me-2" aria-hidden="true"></i>
-                                View Similarity
-                            </button>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search me-2" aria-hidden="true"></i>
+                                    View Similarity
+                                </button>
+                            </div>
                         </form>
                         
                         <div class="loading" id="view-similarity-loading">
@@ -650,8 +652,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-4 text-center mb-3 mb-md-0">
                                             <div class="field-card">
-                                                <h4 class="field-name" id="result-field1"></h4>
-                                                <p class="field-group" id="result-field1-group"></p>
+                                              
                                             </div>
                                         </div>
                                         
@@ -668,8 +669,7 @@
                                         
                                         <div class="col-md-4 text-center mb-3 mb-md-0">
                                             <div class="field-card">
-                                                <h4 class="field-name" id="result-field2"></h4>
-                                                <p class="field-group" id="result-field2-group"></p>
+                                        
                                             </div>
                                         </div>
                                     </div>

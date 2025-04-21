@@ -2803,5 +2803,175 @@
     "field1": "Web Technologies",
     "field2": "Mobile Development",
     "similarity_score": 0.918882378944671
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.15561937534207212
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Machine Learning",
+    "similarity_score": 0.1633427176532323
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Computer Vision",
+    "similarity_score": 0.46791106874476257
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Robotics",
+    "similarity_score": 0.15029295387366468
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Data Science",
+    "similarity_score": 0.13943279130185976
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.11709002235132203
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Information Security",
+    "similarity_score": 0.08083727065699463
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.06299747775006079
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Cryptography",
+    "similarity_score": 0.0582090835450825
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.20819544777949534
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Interface Design",
+    "similarity_score": 0.22575573687878642
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.17816715828105809
+  },
+  {
+    "field1": "Film Production",
+    "field2": "User Research",
+    "similarity_score": 0.18192950178990963
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.5755030132753544
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Data Visualization",
+    "similarity_score": 0.15492900601271647
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Game Development",
+    "similarity_score": 0.5544802261613705
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Game Design",
+    "similarity_score": 0.1646684946359294
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Digital Animation",
+    "similarity_score": 0.6442367098972717
+  },
+  {
+    "field1": "Film Production",
+    "field2": "3D Modeling",
+    "similarity_score": 0.5967918482456679
+  },
+  {
+    "field1": "Film Production",
+    "field2": "3D Animation",
+    "similarity_score": 0.6431317044524151
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.6124507265775968
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Digital Art",
+    "similarity_score": 0.5573116397789185
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Sound Design",
+    "similarity_score": 0.6370274840572202
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Interactive Media",
+    "similarity_score": 0.4165242056620642
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Media Production",
+    "similarity_score": 0.6865921068580683
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Health",
+    "similarity_score": 0.07534501342566804
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.08869386601526669
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Neuroscience",
+    "similarity_score": 0.08444276988272238
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.34565514452274587
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Physical Computing",
+    "similarity_score": 0.15000607945033667
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.1287814785807552
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Software Engineering",
+    "similarity_score": 0.13948762320435998
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Web Technologies",
+    "similarity_score": 0.15955433051006135
+  },
+  {
+    "field1": "Film Production",
+    "field2": "Mobile Development",
+    "similarity_score": 0.12328553635581666
   }
 ]
