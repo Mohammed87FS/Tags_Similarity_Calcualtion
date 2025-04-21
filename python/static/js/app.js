@@ -565,3 +565,152 @@
         }, 5000);
     }
 })();
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get modal elements
+    const modal = document.getElementById('recalculateModal');
+    const modalInstance = new bootstrap.Modal(modal);
+    const confirmationSection = document.getElementById('modal-confirmation');
+    const confirmationButtons = document.getElementById('modal-confirmation-buttons');
+    const progressSection = document.getElementById('modal-progress');
+    const progressButtons = document.getElementById('modal-progress-buttons');
+    const resultSection = document.getElementById('modal-result');
+    const resultContent = document.getElementById('result-content');
+    const resultButtons = document.getElementById('modal-result-buttons');
+    const calculationStatus = document.getElementById('calculation-status');
+    const statusElement = document.getElementById('recalculate-status');
+    
+    // Button event handlers
+    document.getElementById('confirm-recalculate').addEventListener('click', function() {
+      // Show progress UI
+      confirmationSection.classList.add('d-none');
+      confirmationButtons.classList.add('d-none');
+      progressSection.classList.remove('d-none');
+      progressButtons.classList.remove('d-none');
+      
+      // Start recalculation
+      fetch('/api/recalculate_similarities', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Hide progress UI
+        progressSection.classList.add('d-none');
+        progressButtons.classList.add('d-none');
+        
+        // Show result UI
+        resultSection.classList.remove('d-none');
+        resultButtons.classList.remove('d-none');
+        
+        if (data.success) {
+          const timestamp = new Date().toLocaleString();
+          resultContent.innerHTML = `
+            <div class="text-center mb-3">
+              <div class="bg-success text-white p-3 rounded-circle d-inline-block">
+                <i class="fas fa-check fa-3x"></i>
+              </div>
+            </div>
+            <div class="alert alert-success">
+              <h6 class="alert-heading"><strong>Success!</strong></h6>
+              <p>All field similarities have been recalculated and saved.</p>
+            </div>
+            <div class="card bg-light">
+              <div class="card-body">
+                <p class="mb-1"><strong>Recalculation Summary:</strong></p>
+                <ul class="mb-0">
+                  <li>${data.count} similarity pairs calculated</li>
+                  <li>Completed at: ${timestamp}</li>
+                </ul>
+              </div>
+            </div>
+          `;
+          
+          // Also update the status outside the modal
+          statusElement.innerHTML = `
+            <div class="alert alert-success d-flex align-items-center">
+              <i class="fas fa-check-circle me-3"></i>
+              <div>
+                <strong>Similarities Updated:</strong> Successfully recalculated ${data.count} field similarity pairs.
+                <a href="/api/download_similarities" class="btn btn-sm btn-outline-success ms-2" download>
+                  <i class="fas fa-download me-1"></i>Download
+                </a>
+              </div>
+            </div>
+          `;
+        } else {
+          resultContent.innerHTML = `
+            <div class="text-center mb-3">
+              <div class="bg-danger text-white p-3 rounded-circle d-inline-block">
+                <i class="fas fa-exclamation-triangle fa-3x"></i>
+              </div>
+            </div>
+            <div class="alert alert-danger">
+              <h6 class="alert-heading"><strong>Error Occurred</strong></h6>
+              <p class="mb-0">${data.error || 'An unknown error occurred during the recalculation process.'}</p>
+            </div>
+          `;
+          
+          // Update status outside modal
+          statusElement.innerHTML = `
+            <div class="alert alert-danger d-flex align-items-center">
+              <i class="fas fa-exclamation-triangle me-3"></i>
+              <div>
+                <strong>Recalculation Failed:</strong> ${data.error || 'An unknown error occurred.'}
+              </div>
+            </div>
+          `;
+        }
+      })
+      .catch(error => {
+        // Hide progress UI
+        progressSection.classList.add('d-none');
+        progressButtons.classList.add('d-none');
+        
+        // Show error result
+        resultSection.classList.remove('d-none');
+        resultButtons.classList.remove('d-none');
+        
+        resultContent.innerHTML = `
+          <div class="text-center mb-3">
+            <div class="bg-danger text-white p-3 rounded-circle d-inline-block">
+              <i class="fas fa-times fa-3x"></i>
+            </div>
+          </div>
+          <div class="alert alert-danger">
+            <h6 class="alert-heading"><strong>Communication Error</strong></h6>
+            <p class="mb-0">Failed to communicate with the server: ${error.message}</p>
+          </div>
+        `;
+        
+        // Update status outside modal
+        statusElement.innerHTML = `
+          <div class="alert alert-danger d-flex align-items-center">
+            <i class="fas fa-times-circle me-3"></i>
+            <div>
+              <strong>Connection Error:</strong> Unable to complete recalculation.
+            </div>
+          </div>
+        `;
+      });
+    });
+    
+    // Reset modal when hidden
+    modal.addEventListener('hidden.bs.modal', function () {
+      // Reset to confirmation view
+      resultSection.classList.add('d-none');
+      resultButtons.classList.add('d-none');
+      progressSection.classList.add('d-none');
+      progressButtons.classList.add('d-none');
+      confirmationSection.classList.remove('d-none');
+      confirmationButtons.classList.remove('d-none');
+    });
+  });

@@ -206,26 +206,26 @@ def test():
         "fields": field_names if field_names else [],
         "groups": groups if groups else []
     })
-
-
-# @api_bp.route('/recalculate_similarities', methods=['POST'])
-# def recalculate_similarities():
-#     """Recalculate similarities for all fields."""
-#     nested_data, _ = data_service.load_data()
+@api_bp.route('/recalculate_similarities', methods=['POST'])
+def recalculate_similarities():
+    """Recalculate similarities for all fields."""
+    # Load current data
+    nested_data, _ = data_service.load_data()
     
-#     # Recalculate similarities
-#     try:
-#         updated_similarities = field_similarity_service.calculate_all_similarities(nested_data)
-#     except Exception as e:
-#         logger.error(f"Error recalculating similarities: {e}")
-#         return jsonify({"error": "Error recalculating similarities"}), 500
+    # Recalculate similarities
+    try:
+        updated_similarities = field_similarity_service.calculate_all_similarities(nested_data)
+    except Exception as e:
+        logger.error(f"Error recalculating similarities: {e}")
+        return jsonify({"error": f"Error recalculating similarities: {str(e)}"}), 500
     
-#     # Save updated data
-#     if data_service.save_data(nested_data, updated_similarities):
-#         return jsonify({
-#             "success": True,
-#             "message": "Similarities recalculated and saved",
-#             "download_ready": True
-#         })
-#     else:
-#         return jsonify({"error": "Error saving data"}), 500
+    # Save updated data
+    if data_service.save_data(nested_data, updated_similarities):
+        return jsonify({
+            "success": True,
+            "message": "Similarities recalculated and saved",
+            "count": len(updated_similarities),
+            "download_ready": True
+        })
+    else:
+        return jsonify({"error": "Error saving data"}), 500

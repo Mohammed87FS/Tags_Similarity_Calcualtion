@@ -276,40 +276,47 @@ class FieldSimilarityService:
         return updated_similarities
     
     
-    
-    # def calculate_all_similarities(self, nested_data: Dict[str, Any]):
-    #     """
-    #     Calculate all pairwise similarities between fields in the nested data.
+    def calculate_all_similarities(self, nested_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """
+        Calculate all pairwise similarities between fields in the nested data.
         
-    #     Returns:
-    #         List of all similarity records
-    #     """
-    #     # Load nested data and existing similarities
-    #     nested_data, existing_similarities = self.load_data()
+        Args:
+            nested_data: The hierarchical research field data
+            
+        Returns:
+            List of all similarity records
+        """
+        # Update field mappings for efficient group lookup
+        self.update_field_mappings(nested_data)
         
-    #     # Update field mappings for efficient group lookup
-    #     self.update_field_mappings(nested_data)
+        # Extract all fields from nested data
+        all_fields = []
+        for category in nested_data.get("categories", []):
+            for subgroup in category.get("subgroups", []):
+                for field in subgroup.get("fields", []):
+                    all_fields.append(field)
         
-    #     # Extract all fields from nested data
-    #     all_fields = []
-    #     for category in nested_data.get("categories", []):
-    #         for subgroup in category.get("subgroups", []):
-    #             for field in subgroup.get("fields", []):
-    #                 all_fields.append(field)
+        # Calculate pairwise similarities
+        all_similarities = []
+        total_pairs = len(all_fields) * (len(all_fields) - 1) // 2
+        logger.info(f"Calculating similarities for {total_pairs} field pairs")
         
-    #     # Calculate pairwise similarities
-    #     all_similarities = []
-    #     for i, field1 in enumerate(all_fields):
-    #         for j in range(i + 1, len(all_fields)):
-    #             field2 = all_fields[j]
+        for i, field1 in enumerate(all_fields):
+            for j in range(i + 1, len(all_fields)):
+                field2 = all_fields[j]
                 
-    #             # Skip if pair already exists in existing similarities
-    #             pair_exists = False
-    #             for sim in existing_similarities:
-    #                 if ((sim.get("field1") == field1["name"] and sim.get("field2") == field2["name"]) or
-    #                     (sim.get("field1") == field2["name"] and sim.get("field2") == field1["name"])):
-    #                     pair_exists = True
-    #                     break
+                # Calculate similarity
+                similarity = self.compare_fields(field1, field2)
                 
-    #             if pair_exists:
-    #                 continue
+                # Add to results
+                all_similarities.append({
+                    "field1": field1["name"],
+                    "field2": field2["name"],
+                    "similarity_score": float(similarity)  # Convert numpy float to Python float
+                })
+                
+                if (i * len(all_fields) + j) % 50 == 0:
+                    logger.info(f"Processed {len(all_similarities)} of {total_pairs} pairs")
+        
+        logger.info(f"Calculated {len(all_similarities)} similarity scores")
+        return all_similarities
