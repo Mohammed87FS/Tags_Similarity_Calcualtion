@@ -14,6 +14,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
+    <!-- Add this inside the <head> section of your HTML file -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
@@ -306,13 +310,13 @@
                                                 <div class="col-md-6">
                                                     <div class="field-card">
                                                         <h5 class="field-name" id="modal-field1-name">Field 1</h5>
-                                                        <p class="field-group mb-0" id="modal-field1-group">Group › Subgroup</p>
+                                                        <!-- <p class="field-group mb-0" id="modal-field1-group">Group › Subgroup</p> -->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="field-card">
                                                         <h5 class="field-name" id="modal-field2-name">Field 2</h5>
-                                                        <p class="field-group mb-0" id="modal-field2-group">Group › Subgroup</p>
+                                                        <!-- <p class="field-group mb-0" id="modal-field2-group">Group › Subgroup</p> -->
                                                     </div>
                                                 </div>
                                             </div>

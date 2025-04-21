@@ -1,80 +1,110 @@
 /**
  * Research Field Similarity Tool - Main JavaScript
+ * Wrapped in IIFE to prevent global namespace pollution
  */
 
-$(document).ready(function() {
-    // Define colors as RGB values for CSS variables
-    document.documentElement.style.setProperty('--primary-color-rgb', '48, 80, 224');
-    
-    // Enable Bootstrap tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl, {
-            boundary: document.body
+(function() {
+    // Wait for DOM to be fully loaded
+    $(document).ready(function() {
+        // Define colors as RGB values for CSS variables
+        document.documentElement.style.setProperty('--primary-color-rgb', '48, 80, 224');
+        
+        // Enable Bootstrap tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, {
+                boundary: document.body
+            });
         });
+        
+        // Theme toggle functionality
+        initThemeToggle();
+        
+        // Setup event handlers
+        setupEventHandlers();
     });
     
-    // Theme toggle functionality
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
+    // Variables to store source field data for later use
+    let currentSourceFieldData = null;
+    let currentSourceFieldGroup = '';
+    let currentSourceFieldSubgroup = '';
     
-    // Check if user has a saved preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-bs-theme', 'dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    }
-    
-    themeToggleBtn.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    function initThemeToggle() {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        if (!themeToggleBtn) return;
         
-        document.documentElement.setAttribute('data-bs-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+        const themeIcon = themeToggleBtn.querySelector('i');
         
-        if (newTheme === 'dark') {
+        // Check if user has a saved preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
             themeIcon.classList.remove('fa-moon');
             themeIcon.classList.add('fa-sun');
-        } else {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
         }
-    });
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        // Only process if Alt key is pressed
-        if (e.altKey) {
-            switch (e.key.toLowerCase()) {
-                case 'a':
-                    e.preventDefault();
-                    document.querySelector('a[href="#add-field-section"]')?.click();
-                    break;
-                case 'v':
-                    e.preventDefault();
-                    document.querySelector('a[href="#view-similarity-section"]')?.click();
-                    break;
-                case 'h':
-                    e.preventDefault();
-                    new bootstrap.Modal(document.getElementById('helpModal')).show();
-                    break;
-                case 'd':
-                    e.preventDefault();
-                    themeToggleBtn.click();
-                    break;
-                case 's':
-                    e.preventDefault();
-                    // Submit the active form
-                    if (document.activeElement.closest('form')) {
-                        document.activeElement.closest('form').requestSubmit();
-                    }
-                    break;
+        
+        themeToggleBtn.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
             }
-        }
-    });
+        });
+    }
     
-    // Form validation
+    function setupEventHandlers() {
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Only process if Alt key is pressed
+            if (e.altKey) {
+                switch (e.key.toLowerCase()) {
+                    case 'a':
+                        e.preventDefault();
+                        document.querySelector('a[href="#add-field-section"]')?.click();
+                        break;
+                    case 'v':
+                        e.preventDefault();
+                        document.querySelector('a[href="#view-similarity-section"]')?.click();
+                        break;
+                    case 'h':
+                        e.preventDefault();
+                        const helpModal = document.getElementById('helpModal');
+                        if (helpModal) new bootstrap.Modal(helpModal).show();
+                        break;
+                    case 'd':
+                        e.preventDefault();
+                        document.getElementById('theme-toggle')?.click();
+                        break;
+                    case 's':
+                        e.preventDefault();
+                        // Submit the active form
+                        if (document.activeElement.closest('form')) {
+                            document.activeElement.closest('form').requestSubmit();
+                        }
+                        break;
+                }
+            }
+        });
+        
+        // Handle group selection change
+        $('#field-group').change(handleGroupChange);
+        
+        // Handle subgroup selection change
+        $('#field-subgroup').change(handleSubgroupChange);
+        
+        // Handle form submissions
+        $('#add-field-form').submit(handleAddFieldSubmit);
+        $('#view-similarity-form').submit(handleViewSimilaritySubmit);
+    }
+    
     function validateForm(formElement) {
         let isValid = true;
         
@@ -112,8 +142,7 @@ $(document).ready(function() {
         return isValid;
     }
     
-    // Handle group selection change
-    $('#field-group').change(function() {
+    function handleGroupChange() {
         const selectedGroup = $(this).val();
         
         if (selectedGroup === 'new') {
@@ -125,38 +154,38 @@ $(document).ready(function() {
             $('#field-subgroup').html('<option value="">Loading subgroups...</option>');
             
             // Fetch subgroups for selected group
-            $.getJSON('/get_subgroups', { group: selectedGroup }, function(data) {
-                if (data.success) {
-                    let options = '<option value="">Select a subgroup</option>';
-                    data.subgroups.forEach(function(subgroup) {
-                        options += `<option value="${subgroup}">${subgroup}</option>`;
-                    });
-                    options += '<option value="new">+ Add New Subgroup</option>';
-                    $('#field-subgroup').html(options);
-                } else {
-                    showAlert('error', 'Error loading subgroups');
-                }
-            }).fail(function() {
-                showAlert('error', 'Failed to load subgroups');
-                $('#field-subgroup').html('<option value="">Select a subgroup</option><option value="new">+ Add New Subgroup</option>');
-            });
+            $.getJSON('/get_subgroups', { group: selectedGroup })
+                .done(function(data) {
+                    if (data.success) {
+                        let options = '<option value="">Select a subgroup</option>';
+                        data.subgroups.forEach(function(subgroup) {
+                            options += `<option value="${subgroup}">${subgroup}</option>`;
+                        });
+                        options += '<option value="new">+ Add New Subgroup</option>';
+                        $('#field-subgroup').html(options);
+                    } else {
+                        showAlert('error', 'Error loading subgroups');
+                    }
+                })
+                .fail(function() {
+                    showAlert('error', 'Failed to load subgroups');
+                    $('#field-subgroup').html('<option value="">Select a subgroup</option><option value="new">+ Add New Subgroup</option>');
+                });
         } else {
             $('#new-group').hide();
             $('#field-subgroup').html('<option value="">Select a group first</option>');
         }
-    });
+    }
     
-    // Handle subgroup selection change
-    $('#field-subgroup').change(function() {
+    function handleSubgroupChange() {
         if ($(this).val() === 'new') {
             $('#new-subgroup').show().focus();
         } else {
             $('#new-subgroup').hide();
         }
-    });
+    }
     
-    // Handle add field form submission
-    $('#add-field-form').submit(function(e) {
+    function handleAddFieldSubmit(e) {
         e.preventDefault();
         
         // Validate form
@@ -247,10 +276,9 @@ $(document).ready(function() {
                 showAlert('error', errorMessage);
             }
         });
-    });
+    }
     
-    // Handle view similarity form submission
-    $('#view-similarity-form').submit(function(e) {
+    function handleViewSimilaritySubmit(e) {
         e.preventDefault();
         
         // Validate form
@@ -275,51 +303,67 @@ $(document).ready(function() {
         $('#accordion-field1-name').text(selectedField);
         
         // Get all similarities for this field in a single request
-        $.getJSON('/get_all_similarities_for_field', { field: selectedField }, function(data) {
-            if (data.success) {
-                // Populate field details for the selected field
-                const sourceFieldData = data.source_field_data;
-                
-                let fieldDetails = '<dl class="row">';
-                if (sourceFieldData.description) {
-                    Object.entries(sourceFieldData.description).forEach(([key, value]) => {
-                        if (value) {
-                            fieldDetails += `<dt class="col-sm-3 text-capitalize">${key}:</dt><dd class="col-sm-9">${value}</dd>`;
+        $.getJSON('/get_all_similarities_for_field', { field: selectedField })
+            .done(function(data) {
+                if (data.success) {
+                    // Store source field data for later use in modal
+                    currentSourceFieldData = data.source_field_data;
+                    
+                    // IMPORTANT: Save the group info from the response
+                    if (data.source_field_data && typeof data.source_field_data === 'object') {
+                        currentSourceFieldGroup = data.source_field_data.group || '';
+                        currentSourceFieldSubgroup = data.source_field_data.subgroup || '';
+                        
+                        // Double-check if group might be in different location
+                        if (!currentSourceFieldGroup && data.source_field_group) {
+                            currentSourceFieldGroup = data.source_field_group;
                         }
-                    });
+                        if (!currentSourceFieldSubgroup && data.source_field_subgroup) {
+                            currentSourceFieldSubgroup = data.source_field_subgroup;
+                        }
+                    }
+                    
+                    // Populate field details for the selected field
+                    let fieldDetails = '<dl class="row">';
+                    if (currentSourceFieldData.description) {
+                        Object.entries(currentSourceFieldData.description).forEach(([key, value]) => {
+                            if (value) {
+                                fieldDetails += `<dt class="col-sm-3 text-capitalize">${key}:</dt><dd class="col-sm-9">${value}</dd>`;
+                            }
+                        });
+                    }
+                    fieldDetails += '</dl>';
+                    $('#field1-details-content').html(fieldDetails);
+                    
+                    // Show similarities
+                    displaySimilarityResults(selectedField, data.similarities);
+                } else {
+                    // Show form again
+                    $('#view-similarity-loading').hide();
+                    $('#view-similarity-form').show();
+                    
+                    // Show error message
+                    showAlert('error', data.error || 'Error retrieving field data');
                 }
-                fieldDetails += '</dl>';
-                $('#field1-details-content').html(fieldDetails);
-                
-                // Show similarities
-                displaySimilarityResults(selectedField, data.similarities);
-            } else {
-                // Show form again
+            })
+            .fail(function(xhr) {
+                // Hide loading indicator
                 $('#view-similarity-loading').hide();
+                
+                // Show form again
                 $('#view-similarity-form').show();
                 
                 // Show error message
-                showAlert('error', data.error || 'Error retrieving field data');
-            }
-        }).fail(function(xhr) {
-            // Hide loading indicator
-            $('#view-similarity-loading').hide();
-            
-            // Show form again
-            $('#view-similarity-form').show();
-            
-            // Show error message
-            let errorMessage = 'Error retrieving field data';
-            
-            if (xhr.responseJSON && xhr.responseJSON.error) {
-                errorMessage = xhr.responseJSON.error;
-            }
-            
-            showAlert('error', errorMessage);
-        });
-    });
+                let errorMessage = 'Error retrieving field data';
+                
+                if (xhr.responseJSON && xhr.responseJSON.error) {
+                    errorMessage = xhr.responseJSON.error;
+                }
+                
+                showAlert('error', errorMessage);
+            });
+    }
 
-    // Function to display similarity results
     function displaySimilarityResults(selectedField, similarities) {
         // Set up sorting toggle
         $('#sort-by-similarity').change(function() {
@@ -347,7 +391,6 @@ $(document).ready(function() {
         $('#view-similarity-form').show();
     }
 
-    // Function to populate similarity table
     function populateSimilarityTable(similarities) {
         let tableHtml = '';
         
@@ -407,7 +450,6 @@ $(document).ready(function() {
         });
     }
 
-    // Function to open comparison modal with preloaded data
     function openComparisonModal(field1, field2, similarityScore, allSimilarities) {
         // Find the details for field2 from the similarities array
         const field2Data = allSimilarities.find(item => item.field === field2);
@@ -422,9 +464,17 @@ $(document).ready(function() {
         $('#modal-field2-name').text(field2);
         $('#modal-accordion-field2-name').text(field2);
         
-        // Set group/subgroup
+        // Set group/subgroup for both fields
         let field1Group = '';
         let field2Group = '';
+        
+        // Field1 group info from the stored source field data
+        if (currentSourceFieldGroup) {
+            field1Group = currentSourceFieldGroup;
+            if (currentSourceFieldSubgroup) {
+                field1Group += ' › ' + currentSourceFieldSubgroup;
+            }
+        }
         
         // Field2 group info comes from the API response
         if (field2Data.group) {
@@ -468,7 +518,6 @@ $(document).ready(function() {
         modal.show();
     }
     
-    // Function to get similarity interpretation text
     function getInterpretationText(similarityScore) {
         let interpretation = '';
         let interpretationClass = '';
@@ -493,7 +542,6 @@ $(document).ready(function() {
         return `<p class="${interpretationClass} mb-0">${interpretation}</p>`;
     }
     
-    // Function to show alerts
     function showAlert(type, message) {
         const alertClass = type === 'error' ? 'alert-danger' : 'alert-success';
         const icon = type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle';
@@ -509,7 +557,11 @@ $(document).ready(function() {
         
         // Auto-dismiss alert after 5 seconds
         setTimeout(function() {
-            $('#alert-container .alert').first().alert('close');
+            const firstAlert = $('#alert-container .alert').first();
+            if (firstAlert.length) {
+                const bsAlert = bootstrap.Alert.getInstance(firstAlert[0]) || new bootstrap.Alert(firstAlert[0]);
+                bsAlert.close();
+            }
         }, 5000);
     }
-});
+})();
