@@ -113,28 +113,6 @@
                 "challenges": "Data sovereignty, privacy regulations, unauthorized data exfiltration, shadow IT, growing data volumes, balancing security with usability, cross-border data transfers, retention requirements",
                 "future_directions": "Privacy-enhancing technologies, zero-knowledge proofs, homomorphic encryption, automated compliance, confidential computing, data-centric security approaches, self-sovereign identity"
               }
-            },
-            {
-              "name": "g",
-              "description": {
-                "definition": "g",
-                "methodologies": "g",
-                "applications": "g",
-                "technologies": "g",
-                "challenges": "g",
-                "future_directions": "g"
-              }
-            },
-            {
-              "name": "Gilgamoosh",
-              "description": {
-                "definition": "f",
-                "methodologies": "f",
-                "applications": "f",
-                "technologies": "f",
-                "challenges": "f",
-                "future_directions": "f"
-              }
             }
           ]
         },
