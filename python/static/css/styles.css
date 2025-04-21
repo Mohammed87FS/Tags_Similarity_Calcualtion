@@ -42,7 +42,8 @@ body {
 
 #add-field-section, 
 #view-similarity-section,
-#recalculate-similarity-section {
+#recalculate-similarity-section,
+#delete-field-section {
     scroll-margin-top: 80px;
 }
 
