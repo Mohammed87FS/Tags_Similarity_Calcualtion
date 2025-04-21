@@ -19,9 +19,6 @@ The application follows a modular, service-oriented architecture:
 python/
 ├── app.py                  # Application factory and entry point
 ├── config.py               # Centralized configuration parameters
-├── models/                 # Domain models
-│   ├── __init__.py
-│   └── field.py            # Field entity with hierarchical relationships
 ├── data/                   # Data persistence
 │   ├── nested_descriptions_research_groups.json    # Field hierarchies
 │   └── final_outputs_enhanced_multi/field_similarities.json               # Calculated similarities
