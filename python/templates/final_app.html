@@ -374,6 +374,104 @@
             outline-offset: 2px;
         }
 
+        /* Similarity table styles */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table th {
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom-width: 1px;
+        }
+
+        .table td {
+            vertical-align: middle;
+            padding: 0.75rem 1rem;
+        }
+
+        .view-details-btn {
+            padding: 0.25rem 0.5rem;
+            margin: 0;
+            font-size: 0.875rem;
+        }
+
+        /* Toggle switch styling */
+        .form-switch .form-check-input {
+            width: 2.5em;
+            height: 1.25em;
+            cursor: pointer;
+        }
+
+        .form-switch .form-check-input:focus {
+            border-color: rgba(0, 0, 0, 0.25);
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);
+        }
+
+        .form-switch .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Modal gauge styles */
+        #comparisonModal .similarity-gauge {
+            margin-top: 1rem;
+        }
+
+        #modal-similarity-score {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        /* Smooth animation for table rows */
+        #similarity-table-body tr {
+            transition: background-color 0.2s;
+        }
+
+        #similarity-table-body tr:hover {
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+        }
+
+        /* Add a subtle border to field cards in the modal */
+        #comparisonModal .field-card {
+            border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+            border-radius: var(--border-radius);
+            transition: box-shadow 0.2s;
+        }
+
+        #comparisonModal .field-card:hover {
+            box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+        }
+
+        /* Custom styles for dark theme support */
+        [data-bs-theme="dark"] .table {
+            color: var(--text-primary);
+        }
+
+        [data-bs-theme="dark"] .table-hover tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-bs-theme="dark"] .modal-content {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+        }
+
+        [data-bs-theme="dark"] .modal-header {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .modal-footer {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .similarity-gauge-inner {
+            background-color: var(--card-bg);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .container {
@@ -403,6 +501,35 @@
             .similarity-score {
                 font-size: 2.5rem;
             }
+            
+            #comparisonModal .field-card {
+                margin-bottom: 1rem;
+            }
+
+            #comparisonModal .similarity-gauge {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 1.5rem;
+            }
+
+            #modal-gauge-circle {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            #comparisonModal .similarity-gauge-inner {
+                width: 90px;
+                height: 90px;
+                top: 15px;
+                left: 15px;
+            }
+
+            .table td:nth-child(2) {
+                max-width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
         }
 
         @media (max-width: 576px) {
@@ -414,6 +541,18 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
                 margin-top: 1.5rem;
+            }
+            
+            .form-switch label {
+                font-size: 0.875rem;
+            }
+            
+            #comparisonModal .modal-dialog {
+                margin: 0.5rem;
+            }
+            
+            .table th, .table td {
+                padding: 0.5rem;
             }
         }
     </style>
@@ -598,38 +737,25 @@
                     </div>
                     <div class="card-body">
                         <form id="view-similarity-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="field1" class="form-label">First Field:</label>
-                                        <select class="form-select" id="field1" name="field1" required>
-                                            <option value="">Select a field</option>
-                                            {% for field in field_names %}
-                                            <option value="{{ field }}">{{ field }}</option>
-                                            {% endfor %}
-                                        </select>
-                                        <div class="invalid-feedback">Please select a field</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="field2" class="form-label">Second Field:</label>
-                                        <select class="form-select" id="field2" name="field2" required>
-                                            <option value="">Select a field</option>
-                                            {% for field in field_names %}
-                                            <option value="{{ field }}">{{ field }}</option>
-                                            {% endfor %}
-                                        </select>
-                                        <div class="invalid-feedback">Please select a different field</div>
-                                    </div>
+                            <div class="form-group">
+                                <label for="field1" class="form-label">Select a Field:</label>
+                                <select class="form-select" id="field1" name="field1" required>
+                                    <option value="">Select a field</option>
+                                    {% for field in field_names %}
+                                    <option value="{{ field }}">{{ field }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">Please select a field</div>
+                                <div class="help-text mt-2">
+                                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                                    This will show similarities between the selected field and all other fields.
                                 </div>
                             </div>
                             
                             <div class="d-flex justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fas fa-search me-2" aria-hidden="true"></i>
-                                    View Similarity
+                                    View Similarities
                                 </button>
                             </div>
                         </form>
@@ -644,84 +770,128 @@
                         <div id="similarity-results" class="mt-4">
                             <h3 class="h5 mb-4 text-center">
                                 <i class="fas fa-chart-line me-2 text-primary" aria-hidden="true"></i>
-                                Similarity Results
+                                Similarity Results for <span id="selected-field-name">Field</span>
                             </h3>
                             
                             <div class="card mb-4">
                                 <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-4 text-center mb-3 mb-md-0">
-                                            <div class="field-card">
-                                              
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-4 text-center">
-                                            <div class="similarity-gauge mb-2">
-                                                <div class="similarity-gauge-circle" id="gauge-circle">
-                                                    <div class="similarity-gauge-inner">
-                                                        <h5 class="similarity-score mb-0" id="result-similarity">0</h5>
-                                                        <small class="text-muted">Similarity</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-4 text-center mb-3 mb-md-0">
-                                            <div class="field-card">
-                                        
-                                            </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="h6 mb-0">All Field Similarities</h4>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="sort-by-similarity" checked>
+                                            <label class="form-check-label" for="sort-by-similarity">Sort by similarity</label>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h4 class="h6 mb-3">Similarity Interpretation</h4>
-                                    <div id="interpretation-text" class="mb-2">
-                                        <!-- Will be populated by JS -->
-                                    </div>
-                                    <div class="progress similarity-progress">
-                                        <div class="progress-bar" id="similarity-progress-bar" role="progressbar" style="width: 0%" 
-                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Field</th>
+                                                    <th>Group</th>
+                                                    <th class="text-end">Similarity</th>
+                                                    <th>Details</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="similarity-table-body">
+                                                <!-- Will be populated by JS -->
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="h6 mb-3">Field Details</h4>
+                                    <h4 class="h6 mb-3">Selected Field Details</h4>
                                     <div class="accordion" id="field-details-accordion">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                                                        data-bs-target="#field1-details" aria-expanded="false" aria-controls="field1-details">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                                        data-bs-target="#field1-details" aria-expanded="true" aria-controls="field1-details">
                                                     <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
-                                                    <span id="accordion-field1-name">Field 1</span> Details
+                                                    <span id="accordion-field1-name">Field</span> Details
                                                 </button>
                                             </h2>
-                                            <div id="field1-details" class="accordion-collapse collapse" 
+                                            <div id="field1-details" class="accordion-collapse collapse show" 
                                                  data-bs-parent="#field-details-accordion">
                                                 <div class="accordion-body" id="field1-details-content">
                                                     <!-- Details will be populated by JS -->
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                                                        data-bs-target="#field2-details" aria-expanded="false" aria-controls="field2-details">
-                                                    <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
-                                                    <span id="accordion-field2-name">Field 2</span> Details
-                                                </button>
-                                            </h2>
-                                            <div id="field2-details" class="accordion-collapse collapse" 
-                                                 data-bs-parent="#field-details-accordion">
-                                                <div class="accordion-body" id="field2-details-content">
-                                                    <!-- Details will be populated by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Field Comparison Modal -->
+                            <div class="modal fade" id="comparisonModal" tabindex="-1" aria-labelledby="comparisonModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-primary text-white">
+                                            <h5 class="modal-title" id="comparisonModalLabel">Field Comparison</h5>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="d-flex justify-content-center mb-4">
+                                                <div class="similarity-gauge mb-2">
+                                                    <div class="similarity-gauge-circle" id="modal-gauge-circle">
+                                                        <div class="similarity-gauge-inner">
+                                                            <h5 class="similarity-score mb-0" id="modal-similarity-score">0</h5>
+                                                            <small class="text-muted">Similarity</small>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
+                                            <div class="row mb-4">
+                                                <div class="col-md-6">
+                                                    <div class="field-card">
+                                                        <h5 class="field-name" id="modal-field1-name">Field 1</h5>
+                                                        <p class="field-group mb-0" id="modal-field1-group">Group › Subgroup</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="field-card">
+                                                        <h5 class="field-name" id="modal-field2-name">Field 2</h5>
+                                                        <p class="field-group mb-0" id="modal-field2-group">Group › Subgroup</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="card mb-4">
+                                                <div class="card-body">
+                                                    <h6 class="mb-2">Similarity Interpretation</h6>
+                                                    <div id="modal-interpretation-text" class="mb-2">
+                                                        <!-- Will be populated by JS -->
+                                                    </div>
+                                                    <div class="progress similarity-progress">
+                                                        <div class="progress-bar" id="modal-similarity-progress-bar" role="progressbar" style="width: 0%" 
+                                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="accordion" id="modal-field-details-accordion">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                                                data-bs-target="#modal-field2-details" aria-expanded="false" aria-controls="modal-field2-details">
+                                                            <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
+                                                            <span id="modal-accordion-field2-name">Compared Field</span>  Details
+                                                        </button>
+                                                    </h2>
+                                                    <div id="modal-field2-details" class="accordion-collapse collapse" 
+                                                         data-bs-parent="#modal-field-details-accordion">
+                                                        <div class="accordion-body" id="modal-field2-details-content">
+                                                            <!-- Details will be populated by JS -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>
@@ -757,9 +927,10 @@
                         <div class="card-body">
                             <h6><i class="fas fa-search me-2 text-primary" aria-hidden="true"></i> View Field Similarities</h6>
                             <ol>
-                                <li>Select two different fields from the dropdown menus</li>
-                                <li>Click "View Similarity" to calculate and display the similarity score</li>
-                                <li>Explore detailed information about each field in the expandable sections</li>
+                                <li>Select a field from the dropdown menu</li>
+                                <li>Click "View Similarities" to see how similar this field is to all other fields</li>
+                                <li>Sort the results by similarity score or alphabetically</li>
+                                <li>Click the "Eye" icon to view detailed comparison with any specific field</li>
                             </ol>
                         </div>
                     </div>
@@ -1101,11 +1272,10 @@
                     return;
                 }
                 
-                const field1 = $('#field1').val();
-                const field2 = $('#field2').val();
+                const selectedField = $('#field1').val();
                 
-                if (field1 === field2) {
-                    showAlert('error', 'Please select two different fields');
+                if (!selectedField) {
+                    showAlert('error', 'Please select a field');
                     return;
                 }
                 
@@ -1114,93 +1284,36 @@
                 $('#similarity-results').hide();
                 $('#view-similarity-loading').show();
                 
-                // Fetch similarity data
-                $.getJSON('/get_similarity', { field1: field1, field2: field2 }, function(data) {
-                    // Hide loading indicator
-                    $('#view-similarity-loading').hide();
-                    
+                // Set selected field name in the results section
+                $('#selected-field-name').text(selectedField);
+                $('#accordion-field1-name').text(selectedField);
+                
+                // Get all similarities for this field in a single request
+                $.getJSON('/get_all_similarities_for_field', { field: selectedField }, function(data) {
                     if (data.success) {
-                        // Reset gauge and progress for animation
-                        document.documentElement.style.setProperty('--gauge-percent', '0%');
-                        $('#similarity-progress-bar').css('width', '0%');
+                        // Populate field details for the selected field
+                        const sourceFieldData = data.source_field_data;
                         
-                        // Populate results
-                        $('#result-field1').text(data.field1);
-                        $('#result-field2').text(data.field2);
-                        
-                        // Set field groups
-                        try {
-                            const field1Group = data.field1_data.group || "";
-                            const field1Subgroup = data.field1_data.subgroup || "";
-                            const field2Group = data.field2_data.group || "";
-                            const field2Subgroup = data.field2_data.subgroup || "";
-                            
-                            $('#result-field1-group').text(field1Group + (field1Subgroup ? ' › ' + field1Subgroup : ''));
-                            $('#result-field2-group').text(field2Group + (field2Subgroup ? ' › ' + field2Subgroup : ''));
-                        } catch (e) {
-                            // If group info is not available
-                            $('#result-field1-group').text('');
-                            $('#result-field2-group').text('');
-                        }
-                        
-                        // Format and display similarity score
-                        const similarityScore = data.similarity;
-                        const formattedScore = similarityScore.toFixed(4);
-                        $('#result-similarity').text(formattedScore);
-                        
-                        // Animate gauge
-                        setTimeout(() => {
-                            const gaugePercent = (similarityScore * 100) + '%';
-                            document.documentElement.style.setProperty('--gauge-percent', gaugePercent);
-                            $('#similarity-progress-bar').css('width', gaugePercent);
-                            $('#similarity-progress-bar').attr('aria-valuenow', Math.round(similarityScore * 100));
-                        }, 100);
-                        
-                        // Display interpretation text
-                        const interpretationText = getInterpretationText(similarityScore);
-                        $('#interpretation-text').html(interpretationText);
-                        
-                        // Update accordion headers
-                        $('#accordion-field1-name').text(data.field1);
-                        $('#accordion-field2-name').text(data.field2);
-                        
-                        // Populate field details
-                        const field1Data = data.field1_data;
-                        const field2Data = data.field2_data;
-                        
-                        // Field 1 details
-                        let field1Details = '<dl class="row">';
-                        if (field1Data.description) {
-                            Object.entries(field1Data.description).forEach(([key, value]) => {
+                        let fieldDetails = '<dl class="row">';
+                        if (sourceFieldData.description) {
+                            Object.entries(sourceFieldData.description).forEach(([key, value]) => {
                                 if (value) {
-                                    field1Details += `<dt class="col-sm-3 text-capitalize">${key}:</dt><dd class="col-sm-9">${value}</dd>`;
+                                    fieldDetails += `<dt class="col-sm-3 text-capitalize">${key}:</dt><dd class="col-sm-9">${value}</dd>`;
                                 }
                             });
                         }
-                        field1Details += '</dl>';
-                        $('#field1-details-content').html(field1Details);
+                        fieldDetails += '</dl>';
+                        $('#field1-details-content').html(fieldDetails);
                         
-                        // Field 2 details
-                        let field2Details = '<dl class="row">';
-                        if (field2Data.description) {
-                            Object.entries(field2Data.description).forEach(([key, value]) => {
-                                if (value) {
-                                    field2Details += `<dt class="col-sm-3 text-capitalize">${key}:</dt><dd class="col-sm-9">${value}</dd>`;
-                                }
-                            });
-                        }
-                        field2Details += '</dl>';
-                        $('#field2-details-content').html(field2Details);
-                        
-                        // Show results
-                        $('#similarity-results').show();
-                        $('#view-similarity-form').show();
+                        // Show similarities
+                        displaySimilarityResults(selectedField, data.similarities);
                     } else {
                         // Show form again
+                        $('#view-similarity-loading').hide();
                         $('#view-similarity-form').show();
                         
                         // Show error message
-                        showAlert('error', data.error || 'Error retrieving similarity data');
+                        showAlert('error', data.error || 'Error retrieving field data');
                     }
                 }).fail(function(xhr) {
                     // Hide loading indicator
@@ -1210,7 +1323,7 @@
                     $('#view-similarity-form').show();
                     
                     // Show error message
-                    let errorMessage = 'Error retrieving similarity data';
+                    let errorMessage = 'Error retrieving field data';
                     
                     if (xhr.responseJSON && xhr.responseJSON.error) {
                         errorMessage = xhr.responseJSON.error;
@@ -1219,6 +1332,155 @@
                     showAlert('error', errorMessage);
                 });
             });
+
+            // Function to display similarity results
+            function displaySimilarityResults(selectedField, similarities) {
+                // Set up sorting toggle
+                $('#sort-by-similarity').change(function() {
+                    if ($(this).is(':checked')) {
+                        // Sort by similarity (highest to lowest)
+                        similarities.sort((a, b) => b.similarity - a.similarity);
+                    } else {
+                        // Sort alphabetically
+                        similarities.sort((a, b) => a.field.localeCompare(b.field));
+                    }
+                    
+                    // Update table
+                    populateSimilarityTable(similarities);
+                });
+                
+                // Initial population (sorted by similarity by default)
+                similarities.sort((a, b) => b.similarity - a.similarity);
+                populateSimilarityTable(similarities);
+                
+                // Hide loading indicator
+                $('#view-similarity-loading').hide();
+                
+                // Show results and form
+                $('#similarity-results').show();
+                $('#view-similarity-form').show();
+            }
+
+            // Function to populate similarity table
+            function populateSimilarityTable(similarities) {
+                let tableHtml = '';
+                
+                if (similarities.length === 0) {
+                    tableHtml = '<tr><td colspan="4" class="text-center">No other fields available for comparison</td></tr>';
+                } else {
+                    similarities.forEach(function(item) {
+                        // Get group/subgroup if available
+                        let groupText = '';
+                        if (item.group) {
+                            groupText = item.group + (item.subgroup ? ' › ' + item.subgroup : '');
+                        } else {
+                            groupText = 'N/A';
+                        }
+                        
+                        // Format similarity score
+                        const similarityScore = item.similarity;
+                        const formattedScore = similarityScore.toFixed(4);
+                        
+                        // Determine color class based on similarity
+                        let colorClass = '';
+                        if (similarityScore >= 0.7) {
+                            colorClass = 'text-success';
+                        } else if (similarityScore >= 0.5) {
+                            colorClass = 'text-primary';
+                        } else if (similarityScore >= 0.3) {
+                            colorClass = 'text-secondary';
+                        } else {
+                            colorClass = 'text-muted';
+                        }
+                        
+                        // Add table row
+                        tableHtml += `
+                            <tr>
+                                <td>${item.field}</td>
+                                <td><small>${groupText}</small></td>
+                                <td class="text-end ${colorClass} fw-bold">${formattedScore}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary view-details-btn" 
+                                            data-field="${item.field}" data-similarity="${similarityScore}">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                // Update table
+                $('#similarity-table-body').html(tableHtml);
+                
+                // Attach click handlers to view details buttons
+                $('.view-details-btn').click(function() {
+                    const comparedField = $(this).data('field');
+                    const similarityScore = $(this).data('similarity');
+                    openComparisonModal($('#field1').val(), comparedField, similarityScore, similarities);
+                });
+            }
+
+            // Function to open comparison modal with preloaded data
+            function openComparisonModal(field1, field2, similarityScore, allSimilarities) {
+                // Find the details for field2 from the similarities array
+                const field2Data = allSimilarities.find(item => item.field === field2);
+                
+                if (!field2Data) {
+                    showAlert('error', 'Field data not found');
+                    return;
+                }
+                
+                // Set field names
+                $('#modal-field1-name').text(field1);
+                $('#modal-field2-name').text(field2);
+                $('#modal-accordion-field2-name').text(field2);
+                
+                // Set group/subgroup
+                let field1Group = '';
+                let field2Group = '';
+                
+                // Field2 group info comes from the API response
+                if (field2Data.group) {
+                    field2Group = field2Data.group + (field2Data.subgroup ? ' › ' + field2Data.subgroup : '');
+                }
+                
+                // Set modal content
+                $('#modal-field1-group').text(field1Group);
+                $('#modal-field2-group').text(field2Group);
+                
+                // Set similarity score
+                const formattedScore = similarityScore.toFixed(4);
+                $('#modal-similarity-score').text(formattedScore);
+                
+                // Animate gauge
+                setTimeout(() => {
+                    const gaugePercent = (similarityScore * 100) + '%';
+                    document.documentElement.style.setProperty('--gauge-percent', gaugePercent);
+                    $('#modal-similarity-progress-bar').css('width', gaugePercent);
+                    $('#modal-similarity-progress-bar').attr('aria-valuenow', Math.round(similarityScore * 100));
+                }, 100);
+                
+                // Set interpretation text
+                const interpretationText = getInterpretationText(similarityScore);
+                $('#modal-interpretation-text').html(interpretationText);
+                
+                // Set field2 details
+                let field2Details = '<dl class="row">';
+                if (field2Data.field_data && field2Data.field_data.description) {
+                    Object.entries(field2Data.field_data.description).forEach(([key, value]) => {
+                        if (value) {
+                            field2Details += `<dt class="col-sm-3 text-capitalize">${key}:</dt><dd class="col-sm-9">${value}</dd>`;
+                        }
+                    });
+                }
+                field2Details += '</dl>';
+                $('#modal-field2-details-content').html(field2Details);
+                
+                // Show modal
+                const modal = new bootstrap.Modal(document.getElementById('comparisonModal'));
+                modal.show();
+            }
             
             // Function to get similarity interpretation text
             function getInterpretationText(similarityScore) {
@@ -1244,6 +1506,19 @@
                 
                 return `<p class="${interpretationClass} mb-0">${interpretation}</p>`;
             }
+            
+            // Add modal gauge styling
+            $('head').append(`
+                <style>
+                    #modal-gauge-circle {
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                        background: conic-gradient(var(--primary-color) 0% var(--gauge-percent), rgba(var(--primary-color-rgb), 0.1) var(--gauge-percent) 100%);
+                        position: relative;
+                    }
+                </style>
+            `);
             
             // Function to show alerts
             function showAlert(type, message) {

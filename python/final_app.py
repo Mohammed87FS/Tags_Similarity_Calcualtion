@@ -1061,6 +1061,67 @@ def get_similarity():
         "field2_data": field2_data
     })
 
+@app.route('/get_all_similarities_for_field', methods=['GET'])
+def get_all_similarities_for_field():
+    """Get similarities between one field and all other fields"""
+    field_name = request.args.get('field')
+    
+    if not field_name:
+        return jsonify({"error": "Field parameter is required"}), 400
+    
+    nested_data, similarities = load_data()
+    
+    # Get the source field data
+    source_field_data = get_field_data(nested_data, field_name)
+    
+    if not source_field_data:
+        return jsonify({"error": f"Field '{field_name}' not found"}), 404
+    
+    # Extract all other field names
+    all_field_names = get_all_field_names(nested_data)
+    
+    # Find all similarities involving this field
+    field_similarities = []
+    for other_field in all_field_names:
+        if other_field == field_name:
+            continue  # Skip self-comparison
+            
+        # Find similarity between these fields
+        similarity_score = find_similarity(similarities, field_name, other_field)
+        
+        if similarity_score is not None:
+            # Get the other field's data
+            other_field_data = get_field_data(nested_data, other_field)
+            
+            # Add group/subgroup info if available
+            group = ""
+            subgroup = ""
+            for category in nested_data.get("categories", []):
+                for sg in category.get("subgroups", []):
+                    for field in sg.get("fields", []):
+                        if field["name"] == other_field:
+                            group = category["name"]
+                            subgroup = sg["name"]
+                            break
+            
+            # Add to results
+            field_similarities.append({
+                "field": other_field,
+                "similarity": similarity_score,
+                "group": group,
+                "subgroup": subgroup,
+                "field_data": other_field_data
+            })
+    
+    # Sort by similarity (highest first)
+    field_similarities.sort(key=lambda x: x["similarity"], reverse=True)
+    
+    return jsonify({
+        "success": True,
+        "field": field_name,
+        "source_field_data": source_field_data,
+        "similarities": field_similarities
+    })
 
 @app.route('/download_similarities')
 def download_similarities():
@@ -1084,6 +1145,7 @@ def test():
         "fields": field_names[:5] if field_names else [],
         "groups": groups if groups else []
     })
+
 
 
 if __name__ == '__main__':

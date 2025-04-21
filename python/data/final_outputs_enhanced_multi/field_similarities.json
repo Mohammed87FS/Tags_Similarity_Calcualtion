@@ -2973,5 +2973,180 @@
     "field1": "Film Production",
     "field2": "Mobile Development",
     "similarity_score": 0.12328553635581666
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Artificial Intelligence",
+    "similarity_score": 0.645573739988659
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Machine Learning",
+    "similarity_score": 0.6705003106871272
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Computer Vision",
+    "similarity_score": 0.5375600159279152
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Robotics",
+    "similarity_score": 0.5601801627255419
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Data Science",
+    "similarity_score": 0.38082141103461903
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Cybersecurity",
+    "similarity_score": 0.16063071272325113
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Information Security",
+    "similarity_score": 0.129761968528259
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Ethical Hacking",
+    "similarity_score": 0.2282792438706739
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Cryptography",
+    "similarity_score": 0.12069296411271979
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Human-Computer Interaction",
+    "similarity_score": 0.1111177302903148
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Interface Design",
+    "similarity_score": 0.11440853220667833
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Usability Evaluation",
+    "similarity_score": 0.12415607287882963
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "User Research",
+    "similarity_score": 0.11860918579779689
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Immersive Technologies",
+    "similarity_score": 0.1307478848972779
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Data Visualization",
+    "similarity_score": 0.2470823828706518
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Game Development",
+    "similarity_score": 0.27090543262177535
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Game Design",
+    "similarity_score": 0.24386420488678698
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Digital Animation",
+    "similarity_score": 0.16808103156350274
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "3D Modeling",
+    "similarity_score": 0.16973950001867216
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "3D Animation",
+    "similarity_score": 0.17006233342127478
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Computer Graphics",
+    "similarity_score": 0.18740359918343205
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Digital Art",
+    "similarity_score": 0.12839659241372367
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Film Production",
+    "similarity_score": 0.12022727984319631
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Sound Design",
+    "similarity_score": 0.06552788068554433
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Interactive Media",
+    "similarity_score": 0.15692649049581903
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Media Production",
+    "similarity_score": 0.07471519376810082
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Health",
+    "similarity_score": 0.09822885752408655
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Digital Healthcare",
+    "similarity_score": 0.119848673002278
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Neuroscience",
+    "similarity_score": 0.3709852122581756
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Cognitive Psychology",
+    "similarity_score": 0.12681055232694843
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Physical Computing",
+    "similarity_score": 0.23172593645426057
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Smart Engineering",
+    "similarity_score": 0.3069490197656209
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Software Engineering",
+    "similarity_score": 0.198308565302891
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Web Technologies",
+    "similarity_score": 0.1333447735394134
+  },
+  {
+    "field1": "Reinforcement Learning",
+    "field2": "Mobile Development",
+    "similarity_score": 0.14798977950464798
   }
 ]
