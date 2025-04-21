@@ -13,7 +13,7 @@ from typing import Dict, List, Tuple, Union
 # Configuration
 DATA_DIR = 'data'
 NESTED_DESCRIPTIONS_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
-SIMILARITY_FILE = os.path.join(DATA_DIR, 'field_similarities.json')
+SIMILARITY_FILE = os.path.join(DATA_DIR, 'final_outputs_enhanced_multi/field_similarities.json')
 
 # Group-based similarity parameters
 SAME_GROUP_BASELINE = 0.7        # Baseline similarity for fields in same general group

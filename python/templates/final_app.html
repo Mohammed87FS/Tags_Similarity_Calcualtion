@@ -3,146 +3,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Field Similarity</title>
+    <meta name="description" content="Research Field Similarity Tool - Compare and analyze research fields">
+    <title>Research Field Similarity Tool</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3050e0;
+            --primary-hover: #2040c0;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --body-bg: #f5f7fb;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --text-primary: #343a40;
+            --text-secondary: #6c757d;
+            --border-radius: 0.5rem;
+            --transition-speed: 0.3s;
+        }
+
+        /* Dark mode variables */
+        [data-bs-theme="dark"] {
+            --primary-color: #4d6ef5;
+            --primary-hover: #3a5be5;
+            --body-bg: #1e2337;
+            --card-bg: #2a3042;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --text-primary: #e9ecef;
+            --text-secondary: #adb5bd;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-primary);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            padding-bottom: 2rem;
+        }
+
+        .navbar {
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 1rem;
+        }
+
         .container {
-            max-width: 1200px;
-            margin-top: 30px;
+            max-width: 1320px;
+            margin-top: 2rem;
         }
+
         .card {
-            margin-bottom: 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            background-color: var(--card-bg);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            border-top-left-radius: var(--border-radius) !important;
+            border-top-right-radius: var(--border-radius) !important;
+            padding: 1rem 1.25rem;
+            background-color: var(--primary-color) !important;
+            border-bottom: none;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 1.25rem;
         }
-        #similarity-results {
-            display: none;
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
+
+        .form-control, .form-select {
+            padding: 0.625rem 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #ced4da;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+        }
+
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: all var(--transition-speed);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .btn:focus, .btn:active {
+            box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);
+        }
+
         .loading {
             display: none;
             text-align: center;
-            margin: 20px 0;
+            margin: 2rem 0;
         }
+
         .spinner-border {
             width: 3rem;
             height: 3rem;
+            color: var(--primary-color);
         }
+
         #alert-container {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            width: 300px;
+            width: 320px;
+        }
+
+        .alert {
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .alert-dismissible .btn-close {
+            padding: 1rem;
+        }
+
+        /* Similarity results styling */
+        #similarity-results {
+            display: none;
+        }
+
+        .similarity-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .field-card {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+            margin-bottom: 1rem;
+        }
+
+        .field-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .field-group {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Accordion styling */
+        .accordion {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 0.5rem;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius) !important;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            padding: 1.25rem;
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+            font-weight: 500;
+            color: var(--text-primary);
+            border-radius: var(--border-radius) !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--primary-color);
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(var(--primary-color-rgb), 0.5);
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+        }
+
+        /* Description list styling */
+        dl.row {
+            margin-bottom: 0;
+        }
+
+        dt {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        dd {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Theme toggle */
+        #theme-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        #theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .help-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            opacity: 1;
+        }
+
+        .tooltip .tooltip-inner {
+            max-width: 300px;
+            padding: 0.75rem;
+            background-color: var(--dark-color);
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Progress bar for similarity visualization */
+        .similarity-progress {
+            height: 0.5rem;
+            border-radius: 1rem;
+            margin-top: 0.5rem;
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+        }
+
+        .similarity-progress .progress-bar {
+            background-color: var(--primary-color);
+            border-radius: 1rem;
+            transition: width 1s ease-out;
+        }
+
+        /* Similarity gauge */
+        .similarity-gauge {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .similarity-gauge-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary-color) 0% var(--gauge-percent), rgba(var(--primary-color-rgb), 0.1) var(--gauge-percent) 100%);
+            position: relative;
+        }
+
+        .similarity-gauge-inner {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            padding: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Accessible focus styles */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 3px solid rgba(var(--primary-color-rgb), 0.5);
+            outline-offset: 2px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .similarity-gauge {
+                width: 120px;
+                height: 120px;
+            }
+
+            .similarity-gauge-circle {
+                width: 120px;
+                height: 120px;
+            }
+
+            .similarity-gauge-inner {
+                width: 90px;
+                height: 90px;
+                top: 15px;
+                left: 15px;
+            }
+
+            .similarity-score {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-body {
+                padding: 1.25rem;
+            }
+
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                margin-top: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Research Field Similarity</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="/" aria-label="Research Field Similarity Tool Home">
+                <i class="fas fa-project-diagram me-2" aria-hidden="true"></i>
+                Research Field Similarity
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#add-field-section">Add New Field</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#view-similarity-section">View Similarities</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#helpModal">
+                            <i class="fas fa-question-circle me-1" aria-hidden="true"></i> Help
+                        </a>
                     </li>
                 </ul>
+                <div class="d-flex">
+                    <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div id="alert-container"></div>
+    <div id="alert-container" role="alert" aria-live="polite"></div>
 
-    <div class="container">
-        <h1 class="mb-4">Research Field Similarity Tool</h1>
+    <div class="container" id="main-content">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-5 fw-bold">
+                    <i class="fas fa-project-diagram me-2 text-primary" aria-hidden="true"></i>
+                    Research Field Similarity Tool
+                </h1>
+                <p class="lead">Compare research fields and calculate similarity scores based on comprehensive analysis.</p>
+            </div>
+        </div>
         
         <div class="row">
             <!-- Add New Field Section -->
             <div class="col-lg-6">
                 <div class="card" id="add-field-section">
                     <div class="card-header bg-primary text-white">
-                        <h2 class="h5 mb-0">Add New Field</h2>
+                        <h2 class="h5 mb-0">
+                            <i class="fas fa-plus-circle me-2" aria-hidden="true"></i>
+                            Add New Field
+                        </h2>
                     </div>
                     <div class="card-body">
-                        <form id="add-field-form">
+                        <form id="add-field-form" novalidate>
                             <div class="form-group">
-                                <label for="field-name">Field Name:</label>
-                                <input type="text" class="form-control" id="field-name" name="name" required>
+                                <label for="field-name" class="form-label">Field Name:</label>
+                                <input type="text" class="form-control" id="field-name" name="name" required 
+                                       aria-describedby="field-name-help" placeholder="e.g., Quantum Computing">
+                                <div id="field-name-help" class="help-text">Enter a unique, descriptive name for the research field</div>
+                                <div class="invalid-feedback">Please provide a field name</div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="field-group">Group:</label>
-                                <select class="form-control" id="field-group" name="group" required>
+                                <label for="field-group" class="form-label">Group:</label>
+                                <select class="form-select" id="field-group" name="group" required aria-describedby="field-group-help">
                                     <option value="">Select a group</option>
                                     {% for group in groups %}
                                     <option value="{{ group }}">{{ group }}</option>
                                     {% endfor %}
                                     <option value="new">+ Add New Group</option>
                                 </select>
-                                <input type="text" class="form-control mt-2" id="new-group" placeholder="Enter new group name" style="display: none;">
+                                <div id="field-group-help" class="help-text">The high-level category this field belongs to</div>
+                                <input type="text" class="form-control mt-2" id="new-group" placeholder="Enter new group name" 
+                                       aria-label="New group name" style="display: none;">
+                                <div class="invalid-feedback">Please select or create a group</div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="field-subgroup">Subgroup:</label>
-                                <select class="form-control" id="field-subgroup" name="subgroup" required>
+                                <label for="field-subgroup" class="form-label">Subgroup:</label>
+                                <select class="form-select" id="field-subgroup" name="subgroup" required aria-describedby="field-subgroup-help">
                                     <option value="">Select a group first</option>
                                 </select>
-                                <input type="text" class="form-control mt-2" id="new-subgroup" placeholder="Enter new subgroup name" style="display: none;">
+                                <div id="field-subgroup-help" class="help-text">The specific subcategory within the selected group</div>
+                                <input type="text" class="form-control mt-2" id="new-subgroup" placeholder="Enter new subgroup name" 
+                                       aria-label="New subgroup name" style="display: none;">
+                                <div class="invalid-feedback">Please select or create a subgroup</div>
                             </div>
                             
-                            <h5 class="mt-4">Description Sections</h5>
-                            
-                            <div class="form-group">
-                                <label for="field-definition">Definition:</label>
-                                <textarea class="form-control" id="field-definition" name="definition" rows="3"></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="field-methodologies">Methodologies:</label>
-                                <textarea class="form-control" id="field-methodologies" name="methodologies" rows="3"></textarea>
+                            <div class="alert alert-info mt-4 mb-3" role="alert">
+                                <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
+                                <span>Complete the sections below to describe the field in detail. More comprehensive descriptions lead to more accurate similarity calculations.</span>
                             </div>
                             
                             <div class="form-group">
-                                <label for="field-applications">Applications:</label>
-                                <textarea class="form-control" id="field-applications" name="applications" rows="3"></textarea>
+                                <label for="field-definition" class="form-label">Definition:</label>
+                                <textarea class="form-control" id="field-definition" name="definition" rows="3" 
+                                          placeholder="Provide a concise definition of the field" aria-describedby="definition-help"></textarea>
+                                <div id="definition-help" class="help-text">What is this field about? What are its core principles?</div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="field-technologies">Technologies:</label>
-                                <textarea class="form-control" id="field-technologies" name="technologies" rows="3"></textarea>
+                                <label for="field-methodologies" class="form-label">Methodologies:</label>
+                                <textarea class="form-control" id="field-methodologies" name="methodologies" rows="3" 
+                                          placeholder="Describe key methodologies used in this field" aria-describedby="methodologies-help"></textarea>
+                                <div id="methodologies-help" class="help-text">What approaches, techniques, and methods are used in this field?</div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="field-challenges">Challenges:</label>
-                                <textarea class="form-control" id="field-challenges" name="challenges" rows="3"></textarea>
+                                <label for="field-applications" class="form-label">Applications:</label>
+                                <textarea class="form-control" id="field-applications" name="applications" rows="3" 
+                                          placeholder="List practical applications of this field" aria-describedby="applications-help"></textarea>
+                                <div id="applications-help" class="help-text">How is this field applied in real-world contexts?</div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="field-future">Future Directions:</label>
-                                <textarea class="form-control" id="field-future" name="future_directions" rows="3"></textarea>
+                                <label for="field-technologies" class="form-label">Technologies:</label>
+                                <textarea class="form-control" id="field-technologies" name="technologies" rows="3" 
+                                          placeholder="Describe technologies associated with this field" aria-describedby="technologies-help"></textarea>
+                                <div id="technologies-help" class="help-text">What tools, platforms, or technical systems are used?</div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary mt-3">Add Field & Calculate Similarities</button>
+                            <div class="form-group">
+                                <label for="field-challenges" class="form-label">Challenges:</label>
+                                <textarea class="form-control" id="field-challenges" name="challenges" rows="3" 
+                                          placeholder="Describe key challenges in this field" aria-describedby="challenges-help"></textarea>
+                                <div id="challenges-help" class="help-text">What are the current limitations or difficulties in this field?</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="field-future" class="form-label">Future Directions:</label>
+                                <textarea class="form-control" id="field-future" name="future_directions" rows="3" 
+                                          placeholder="Describe potential future developments" aria-describedby="future-help"></textarea>
+                                <div id="future-help" class="help-text">Where is this field heading? What new developments are emerging?</div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary mt-3" id="add-field-btn">
+                                <i class="fas fa-plus-circle me-2" aria-hidden="true"></i>
+                                Add Field & Calculate Similarities
+                            </button>
                         </form>
                         
                         <div class="loading" id="add-field-loading">
-                            <div class="spinner-border text-primary" role="status">
+                            <div class="spinner-border" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <p class="mt-2">Adding field and calculating similarities...</p>
+                            <p class="mt-3 text-center">Adding field and calculating similarities...</p>
+                            <p class="small text-muted text-center">This may take a few moments, especially for detailed descriptions.</p>
                         </div>
                         
-                        <div class="mt-3" id="download-section" style="display: none;">
-                            <div class="alert alert-success">
-                                <p>Field added successfully! Similarities have been calculated.</p>
-                                <a href="/download_similarities" class="btn btn-success">Download Updated Similarities</a>
+                        <div class="mt-4" id="download-section" style="display: none;">
+                            <div class="alert alert-success" role="alert">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle fs-3 me-3" aria-hidden="true"></i>
+                                    <div>
+                                        <h4 class="alert-heading h5 mb-1">Success!</h4>
+                                        <p class="mb-2">Field added successfully! Similarities have been calculated.</p>
+                                        <a href="/download_similarities" class="btn btn-success">
+                                            <i class="fas fa-download me-2" aria-hidden="true"></i>
+                                            Download Updated Similarities
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -153,85 +591,136 @@
             <div class="col-lg-6">
                 <div class="card" id="view-similarity-section">
                     <div class="card-header bg-primary text-white">
-                        <h2 class="h5 mb-0">View Field Similarities</h2>
+                        <h2 class="h5 mb-0">
+                            <i class="fas fa-chart-bar me-2" aria-hidden="true"></i>
+                            View Field Similarities
+                        </h2>
                     </div>
                     <div class="card-body">
                         <form id="view-similarity-form">
-                            <div class="form-group">
-                                <label for="field1">First Field:</label>
-                                <select class="form-control" id="field1" name="field1" required>
-                                    <option value="">Select a field</option>
-                                    {% for field in field_names %}
-                                    <option value="{{ field }}">{{ field }}</option>
-                                    {% endfor %}
-                                </select>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field1" class="form-label">First Field:</label>
+                                        <select class="form-select" id="field1" name="field1" required>
+                                            <option value="">Select a field</option>
+                                            {% for field in field_names %}
+                                            <option value="{{ field }}">{{ field }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="invalid-feedback">Please select a field</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field2" class="form-label">Second Field:</label>
+                                        <select class="form-select" id="field2" name="field2" required>
+                                            <option value="">Select a field</option>
+                                            {% for field in field_names %}
+                                            <option value="{{ field }}">{{ field }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="invalid-feedback">Please select a different field</div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="field2">Second Field:</label>
-                                <select class="form-control" id="field2" name="field2" required>
-                                    <option value="">Select a field</option>
-                                    {% for field in field_names %}
-                                    <option value="{{ field }}">{{ field }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary mt-3">View Similarity</button>
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <i class="fas fa-search me-2" aria-hidden="true"></i>
+                                View Similarity
+                            </button>
                         </form>
                         
                         <div class="loading" id="view-similarity-loading">
-                            <div class="spinner-border text-primary" role="status">
+                            <div class="spinner-border" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <p class="mt-2">Retrieving similarity data...</p>
+                            <p class="mt-3 text-center">Retrieving similarity data...</p>
                         </div>
                         
                         <div id="similarity-results" class="mt-4">
-                            <h3 class="h5">Similarity Results</h3>
-                            <div class="card">
+                            <h3 class="h5 mb-4 text-center">
+                                <i class="fas fa-chart-line me-2 text-primary" aria-hidden="true"></i>
+                                Similarity Results
+                            </h3>
+                            
+                            <div class="card mb-4">
                                 <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <h4 class="h6" id="result-field1"></h4>
-                                            <p class="mb-0 text-muted small" id="result-field1-group"></p>
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                                            <div class="field-card">
+                                                <h4 class="field-name" id="result-field1"></h4>
+                                                <p class="field-group" id="result-field1-group"></p>
+                                            </div>
                                         </div>
-                                        <div class="text-center">
-                                            <h5 class="display-6" id="result-similarity"></h5>
-                                            <p class="mb-0 text-muted">Similarity Score</p>
+                                        
+                                        <div class="col-md-4 text-center">
+                                            <div class="similarity-gauge mb-2">
+                                                <div class="similarity-gauge-circle" id="gauge-circle">
+                                                    <div class="similarity-gauge-inner">
+                                                        <h5 class="similarity-score mb-0" id="result-similarity">0</h5>
+                                                        <small class="text-muted">Similarity</small>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 class="h6" id="result-field2"></h4>
-                                            <p class="mb-0 text-muted small" id="result-field2-group"></p>
+                                        
+                                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                                            <div class="field-card">
+                                                <h4 class="field-name" id="result-field2"></h4>
+                                                <p class="field-group" id="result-field2-group"></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="mt-3">
-                                <h4 class="h6">Field Details</h4>
-                                <div class="accordion" id="field-details-accordion">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#field1-details">
-                                                <span id="accordion-field1-name">Field 1</span> Details
-                                            </button>
-                                        </h2>
-                                        <div id="field1-details" class="accordion-collapse collapse" data-bs-parent="#field-details-accordion">
-                                            <div class="accordion-body" id="field1-details-content">
-                                                <!-- Details will be populated by JS -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="h6 mb-3">Similarity Interpretation</h4>
+                                    <div id="interpretation-text" class="mb-2">
+                                        <!-- Will be populated by JS -->
+                                    </div>
+                                    <div class="progress similarity-progress">
+                                        <div class="progress-bar" id="similarity-progress-bar" role="progressbar" style="width: 0%" 
+                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="h6 mb-3">Field Details</h4>
+                                    <div class="accordion" id="field-details-accordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                                        data-bs-target="#field1-details" aria-expanded="false" aria-controls="field1-details">
+                                                    <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
+                                                    <span id="accordion-field1-name">Field 1</span> Details
+                                                </button>
+                                            </h2>
+                                            <div id="field1-details" class="accordion-collapse collapse" 
+                                                 data-bs-parent="#field-details-accordion">
+                                                <div class="accordion-body" id="field1-details-content">
+                                                    <!-- Details will be populated by JS -->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#field2-details">
-                                                <span id="accordion-field2-name">Field 2</span> Details
-                                            </button>
-                                        </h2>
-                                        <div id="field2-details" class="accordion-collapse collapse" data-bs-parent="#field-details-accordion">
-                                            <div class="accordion-body" id="field2-details-content">
-                                                <!-- Details will be populated by JS -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                                        data-bs-target="#field2-details" aria-expanded="false" aria-controls="field2-details">
+                                                    <i class="fas fa-info-circle me-2" aria-hidden="true"></i>
+                                                    <span id="accordion-field2-name">Field 2</span> Details
+                                                </button>
+                                            </h2>
+                                            <div id="field2-details" class="accordion-collapse collapse" 
+                                                 data-bs-parent="#field-details-accordion">
+                                                <div class="accordion-body" id="field2-details-content">
+                                                    <!-- Details will be populated by JS -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -244,18 +733,234 @@
         </div>
     </div>
 
-    <!-- Bootstrap and jQuery JS -->
+    <!-- Help Modal -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="helpModalLabel">
+                        <i class="fas fa-question-circle me-2" aria-hidden="true"></i>
+                        Help & Information
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="mb-3">About This Tool</h5>
+                    <p>
+                        The Research Field Similarity Tool allows you to compare research fields and calculate 
+                        similarity scores based on comprehensive analysis of their descriptions, methodologies, 
+                        applications, and other characteristics.
+                    </p>
+                    
+                    <h5 class="mb-3 mt-4">How to Use</h5>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6><i class="fas fa-search me-2 text-primary" aria-hidden="true"></i> View Field Similarities</h6>
+                            <ol>
+                                <li>Select two different fields from the dropdown menus</li>
+                                <li>Click "View Similarity" to calculate and display the similarity score</li>
+                                <li>Explore detailed information about each field in the expandable sections</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6><i class="fas fa-plus-circle me-2 text-primary" aria-hidden="true"></i> Add a New Field</h6>
+                            <ol>
+                                <li>Enter a unique name for the field</li>
+                                <li>Select or create a group and subgroup for organizational purposes</li>
+                                <li>Fill in the description sections with detailed information</li>
+                                <li>Click "Add Field & Calculate Similarities" to save the field and compute similarities with existing fields</li>
+                                <li>Download the updated similarities file if needed</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <h5 class="mb-3 mt-4">Similarity Calculation</h5>
+                    <p>
+                        Similarities are calculated using a sophisticated algorithm that considers multiple factors:
+                    </p>
+                    <ul>
+                        <li><strong>Semantic Similarity:</strong> Analyzes the meaning and context of descriptions</li>
+                        <li><strong>Term-Based Analysis:</strong> Examines key terminology and technical concepts</li>
+                        <li><strong>Domain Relationships:</strong> Considers connections between different research domains</li>
+                        <li><strong>Organizational Structure:</strong> Takes into account group and subgroup relationships</li>
+                    </ul>
+                    
+                    <h5 class="mb-3 mt-4">Interpreting Similarity Scores</h5>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="text-success">High Similarity (0.7-1.0)</h6>
+                                    <p class="small mb-0">Fields are closely related with substantial overlap in concepts, methodologies, and applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="text-primary">Medium Similarity (0.4-0.7)</h6>
+                                    <p class="small mb-0">Fields have notable connections with some shared characteristics or approaches.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="text-secondary">Low Similarity (0.0-0.4)</h6>
+                                    <p class="small mb-0">Fields are mostly distinct with limited conceptual or methodological overlap.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="mb-3 mt-4">Keyboard Shortcuts</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><strong>Alt + A:</strong> Jump to Add Field section</li>
+                                <li><strong>Alt + V:</strong> Jump to View Similarities section</li>
+                                <li><strong>Alt + H:</strong> Open this help dialog</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li><strong>Alt + D:</strong> Toggle dark/light mode</li>
+                                <li><strong>Alt + S:</strong> Submit current form</li>
+                                <li><strong>Esc:</strong> Close dialogs or clear selections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap, jQuery and Popper JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
         $(document).ready(function() {
+            // Define colors as RGB values for CSS variables
+            document.documentElement.style.setProperty('--primary-color-rgb', '48, 80, 224');
+            
+            // Enable Bootstrap tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl, {
+                    boundary: document.body
+                });
+            });
+            
+            // Theme toggle functionality
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = themeToggleBtn.querySelector('i');
+            
+            // Check if user has a saved preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+            
+            themeToggleBtn.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                document.documentElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                if (newTheme === 'dark') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Only process if Alt key is pressed
+                if (e.altKey) {
+                    switch (e.key.toLowerCase()) {
+                        case 'a':
+                            e.preventDefault();
+                            document.querySelector('a[href="#add-field-section"]').click();
+                            break;
+                        case 'v':
+                            e.preventDefault();
+                            document.querySelector('a[href="#view-similarity-section"]').click();
+                            break;
+                        case 'h':
+                            e.preventDefault();
+                            new bootstrap.Modal(document.getElementById('helpModal')).show();
+                            break;
+                        case 'd':
+                            e.preventDefault();
+                            themeToggleBtn.click();
+                            break;
+                        case 's':
+                            e.preventDefault();
+                            // Submit the active form
+                            if (document.activeElement.closest('form')) {
+                                document.activeElement.closest('form').requestSubmit();
+                            }
+                            break;
+                    }
+                }
+            });
+            
+            // Form validation
+            function validateForm(formElement) {
+                let isValid = true;
+                
+                // Remove all existing validation classes
+                formElement.querySelectorAll('.is-invalid').forEach(el => {
+                    el.classList.remove('is-invalid');
+                });
+                
+                // Check required fields
+                formElement.querySelectorAll('[required]').forEach(el => {
+                    if (!el.value.trim()) {
+                        el.classList.add('is-invalid');
+                        isValid = false;
+                    } else if (el.id === 'field2' && el.value === formElement.querySelector('#field1').value) {
+                        el.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                });
+                
+                // Check new group/subgroup fields if they're visible
+                if (formElement.querySelector('#field-group') && 
+                    formElement.querySelector('#field-group').value === 'new' &&
+                    (!formElement.querySelector('#new-group').value.trim())) {
+                    formElement.querySelector('#new-group').classList.add('is-invalid');
+                    isValid = false;
+                }
+                
+                if (formElement.querySelector('#field-subgroup') && 
+                    formElement.querySelector('#field-subgroup').value === 'new' &&
+                    (!formElement.querySelector('#new-subgroup').value.trim())) {
+                    formElement.querySelector('#new-subgroup').classList.add('is-invalid');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
             // Handle group selection change
             $('#field-group').change(function() {
                 const selectedGroup = $(this).val();
                 
                 if (selectedGroup === 'new') {
-                    $('#new-group').show();
+                    $('#new-group').show().focus();
                     $('#field-subgroup').html('<option value="new">+ Add New Subgroup</option>');
                     $('#new-subgroup').show();
                 } else if (selectedGroup) {
@@ -287,7 +992,7 @@
             // Handle subgroup selection change
             $('#field-subgroup').change(function() {
                 if ($(this).val() === 'new') {
-                    $('#new-subgroup').show();
+                    $('#new-subgroup').show().focus();
                 } else {
                     $('#new-subgroup').hide();
                 }
@@ -296,6 +1001,12 @@
             // Handle add field form submission
             $('#add-field-form').submit(function(e) {
                 e.preventDefault();
+                
+                // Validate form
+                if (!validateForm(this)) {
+                    showAlert('error', 'Please fill in all required fields');
+                    return;
+                }
                 
                 // Get form data
                 const formData = new FormData();
@@ -385,6 +1096,11 @@
             $('#view-similarity-form').submit(function(e) {
                 e.preventDefault();
                 
+                // Validate form
+                if (!validateForm(this)) {
+                    return;
+                }
+                
                 const field1 = $('#field1').val();
                 const field2 = $('#field2').val();
                 
@@ -404,10 +1120,45 @@
                     $('#view-similarity-loading').hide();
                     
                     if (data.success) {
+                        // Reset gauge and progress for animation
+                        document.documentElement.style.setProperty('--gauge-percent', '0%');
+                        $('#similarity-progress-bar').css('width', '0%');
+                        
                         // Populate results
                         $('#result-field1').text(data.field1);
                         $('#result-field2').text(data.field2);
-                        $('#result-similarity').text(data.similarity.toFixed(4));
+                        
+                        // Set field groups
+                        try {
+                            const field1Group = data.field1_data.group || "";
+                            const field1Subgroup = data.field1_data.subgroup || "";
+                            const field2Group = data.field2_data.group || "";
+                            const field2Subgroup = data.field2_data.subgroup || "";
+                            
+                            $('#result-field1-group').text(field1Group + (field1Subgroup ? ' › ' + field1Subgroup : ''));
+                            $('#result-field2-group').text(field2Group + (field2Subgroup ? ' › ' + field2Subgroup : ''));
+                        } catch (e) {
+                            // If group info is not available
+                            $('#result-field1-group').text('');
+                            $('#result-field2-group').text('');
+                        }
+                        
+                        // Format and display similarity score
+                        const similarityScore = data.similarity;
+                        const formattedScore = similarityScore.toFixed(4);
+                        $('#result-similarity').text(formattedScore);
+                        
+                        // Animate gauge
+                        setTimeout(() => {
+                            const gaugePercent = (similarityScore * 100) + '%';
+                            document.documentElement.style.setProperty('--gauge-percent', gaugePercent);
+                            $('#similarity-progress-bar').css('width', gaugePercent);
+                            $('#similarity-progress-bar').attr('aria-valuenow', Math.round(similarityScore * 100));
+                        }, 100);
+                        
+                        // Display interpretation text
+                        const interpretationText = getInterpretationText(similarityScore);
+                        $('#interpretation-text').html(interpretationText);
                         
                         // Update accordion headers
                         $('#accordion-field1-name').text(data.field1);
@@ -469,13 +1220,40 @@
                 });
             });
             
+            // Function to get similarity interpretation text
+            function getInterpretationText(similarityScore) {
+                let interpretation = '';
+                let interpretationClass = '';
+                
+                if (similarityScore >= 0.9) {
+                    interpretation = '<strong>Very High Similarity:</strong> These fields are extremely closely related, likely with significant overlap in their core concepts, methodologies, and applications.';
+                    interpretationClass = 'text-success';
+                } else if (similarityScore >= 0.7) {
+                    interpretation = '<strong>High Similarity:</strong> These fields are closely related with substantial overlap in their domain concepts, approaches, and applications.';
+                    interpretationClass = 'text-success';
+                } else if (similarityScore >= 0.5) {
+                    interpretation = '<strong>Moderate Similarity:</strong> These fields have noticeable connections and share some important concepts or methodological approaches.';
+                    interpretationClass = 'text-primary';
+                } else if (similarityScore >= 0.3) {
+                    interpretation = '<strong>Low Similarity:</strong> These fields have some limited connections but are generally distinct in their approaches and focus areas.';
+                    interpretationClass = 'text-secondary';
+                } else {
+                    interpretation = '<strong>Very Low Similarity:</strong> These fields appear to be substantially different with minimal overlap in concepts, methodologies, or applications.';
+                    interpretationClass = 'text-muted';
+                }
+                
+                return `<p class="${interpretationClass} mb-0">${interpretation}</p>`;
+            }
+            
             // Function to show alerts
             function showAlert(type, message) {
                 const alertClass = type === 'error' ? 'alert-danger' : 'alert-success';
+                const icon = type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle';
                 const alertHtml = `
                     <div class="alert ${alertClass} alert-dismissible fade show">
+                        <i class="fas ${icon} me-2" aria-hidden="true"></i>
                         ${message}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 `;
                 
