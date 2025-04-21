@@ -274,6 +274,9 @@
                         } else {
                             showAlert('error', 'Error loading subgroups');
                         }
+                    }).fail(function() {
+                        showAlert('error', 'Failed to load subgroups');
+                        $('#field-subgroup').html('<option value="">Select a subgroup</option><option value="new">+ Add New Subgroup</option>');
                     });
                 } else {
                     $('#new-group').hide();

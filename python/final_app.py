@@ -5,14 +5,15 @@ from werkzeug.utils import secure_filename
 import tempfile
 import numpy as np
 from sentence_transformers import SentenceTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
 import spacy
 import re
 from typing import Dict, List, Tuple, Union
 
 # Configuration
 DATA_DIR = 'data'
-NESTED_DESCRIPTIONS_FILE = os.path.join(DATA_DIR, '../nested_descriptions_research_groups.json')
-SIMILARITY_FILE = os.path.join(DATA_DIR, 'final_outputs_enhanced_multi/field_similarities.json')
+NESTED_DESCRIPTIONS_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
+SIMILARITY_FILE = os.path.join(DATA_DIR, 'field_similarities.json')
 
 # Group-based similarity parameters
 SAME_GROUP_BASELINE = 0.7        # Baseline similarity for fields in same general group
@@ -43,8 +44,6 @@ COMPONENT_WEIGHTS = {
 ENABLE_DOMAIN_BOOSTING = True    # Whether to apply domain-based score boosting
 MAX_BOOST_FACTOR = 0.15          # Maximum boost to apply (0.15 = up to 15% boost)
 DOMAIN_BOOST_THRESHOLD = 0.7     # Minimum domain similarity to trigger boost
-
-
 
 # ENHANCED: Extended domain-specific term groups with more technical terminology
 DOMAIN_TERM_GROUPS = {
@@ -166,14 +165,14 @@ DOMAIN_TERM_GROUPS = {
     ]
 }
 
-# UPDATED: Enhanced domain group similarity matrix with more precise relationships
+# Domain group similarity matrix with precise relationships
 DOMAIN_GROUP_SIMILARITY = {
     'ai_ml': {
         'ai_ml': 1.0, 
-        'data_analytics': 0.85,   # Increased from 0.7
-        'security': 0.35,         # Slightly increased
-        'hci': 0.45,              # Slightly increased
-        'graphics_media': 0.45,   # Slightly increased
+        'data_analytics': 0.85,
+        'security': 0.35,
+        'hci': 0.45,
+        'graphics_media': 0.45,
         'software_development': 0.55, 
         'hardware_systems': 0.35, 
         'healthcare': 0.35
@@ -184,12 +183,12 @@ DOMAIN_GROUP_SIMILARITY = {
         'data_analytics': 0.35, 
         'hci': 0.25, 
         'graphics_media': 0.15, 
-        'software_development': 0.60,  # Increased from 0.5
+        'software_development': 0.60,
         'hardware_systems': 0.45, 
         'healthcare': 0.35
     },
     'data_analytics': {
-        'ai_ml': 0.85,            # Increased from 0.7
+        'ai_ml': 0.85,
         'security': 0.35, 
         'data_analytics': 1.0, 
         'hci': 0.35, 
@@ -203,7 +202,7 @@ DOMAIN_GROUP_SIMILARITY = {
         'security': 0.25, 
         'data_analytics': 0.35, 
         'hci': 1.0, 
-        'graphics_media': 0.65,   # Increased from 0.6
+        'graphics_media': 0.65,
         'software_development': 0.55, 
         'hardware_systems': 0.35, 
         'healthcare': 0.45
@@ -212,7 +211,7 @@ DOMAIN_GROUP_SIMILARITY = {
         'ai_ml': 0.45, 
         'security': 0.15, 
         'data_analytics': 0.30, 
-        'hci': 0.65,              # Increased from 0.6
+        'hci': 0.65,
         'graphics_media': 1.0, 
         'software_development': 0.35, 
         'hardware_systems': 0.35, 
@@ -220,7 +219,7 @@ DOMAIN_GROUP_SIMILARITY = {
     },
     'software_development': {
         'ai_ml': 0.55, 
-        'security': 0.60,         # Increased from 0.5
+        'security': 0.60,
         'data_analytics': 0.45, 
         'hci': 0.55, 
         'graphics_media': 0.35, 
@@ -249,6 +248,7 @@ DOMAIN_GROUP_SIMILARITY = {
         'healthcare': 1.0
     }
 }
+
 # Initialize Flask application
 app = Flask(__name__)
 
@@ -257,7 +257,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 # Similarity calculation class
 class FieldComparator:
-    """Simplified version of the EnhancedFieldComparator for the web app"""
+    """Complete implementation of the EnhancedFieldComparator for the web app"""
     
     def __init__(self):
         # Load model
@@ -273,7 +273,7 @@ class FieldComparator:
             self.use_spacy = False
             self.nlp = None
 
-        # Cache for embeddings
+        # Caches for efficiency
         self.embedding_cache = {}
         self.domain_concept_cache = {}
         self.tfidf_similarity_cache = {}
@@ -368,6 +368,71 @@ class FieldComparator:
         
         return scaled_normalized
     
+    def calculate_tfidf_similarity(self, text1, text2):
+        """Calculate TF-IDF similarity between texts"""
+        if not text1.strip() or not text2.strip():
+            return 0.0
+        
+        # Check cache for this pair
+        cache_key = f"{hash(text1)}_{hash(text2)}"
+        if cache_key in self.tfidf_similarity_cache:
+            return self.tfidf_similarity_cache[cache_key]
+            
+        # Pre-process to emphasize technical terms
+        def preprocess(text):
+            # Extract potential technical terms using regex patterns
+            technical_terms = []
+            for pattern in self.technical_patterns:
+                terms = re.findall(pattern, text)
+                technical_terms.extend(terms)
+            
+            # Add domain-specific terms found in the text
+            if self.use_spacy and self.nlp:
+                doc = self.nlp(text.lower())
+                for chunk in doc.noun_chunks:
+                    if len(chunk.text.split()) > 1:  # Multi-word terms
+                        technical_terms.append(chunk.text)
+            
+            # Add these terms back to the text with repetition to increase weight
+            enhanced = text + " "
+            if technical_terms:
+                enhanced += " ".join(technical_terms) + " " + " ".join(technical_terms)
+            
+            return enhanced
+        
+        # Create corpus with enhanced texts
+        corpus = [preprocess(text1), preprocess(text2)]
+        
+        # Use TF-IDF vectorizer with ngrams
+        vectorizer = TfidfVectorizer(
+            analyzer='word',
+            ngram_range=(1, 3),  # Use unigrams, bigrams, and trigrams
+            stop_words='english',
+            max_features=10000
+        )
+        
+        # Calculate TF-IDF matrix
+        try:
+            tfidf_matrix = vectorizer.fit_transform(corpus)
+            
+            # Calculate cosine similarity
+            dot_product = tfidf_matrix[0].dot(tfidf_matrix[1].T).toarray()[0][0]
+            norm1 = np.sqrt(tfidf_matrix[0].dot(tfidf_matrix[0].T).toarray()[0][0])
+            norm2 = np.sqrt(tfidf_matrix[1].dot(tfidf_matrix[1].T).toarray()[0][0])
+            
+            if norm1 * norm2 == 0:
+                return 0.0
+                
+            similarity = dot_product / (norm1 * norm2)
+            
+            # Cache the result
+            self.tfidf_similarity_cache[cache_key] = similarity
+            
+            return similarity
+        except:
+            # If vectorization fails (e.g., with very short texts)
+            return 0.0
+    
     def extract_domain_concepts(self, text):
         """Extract domain-specific concepts from text"""
         if not text.strip():
@@ -398,6 +463,13 @@ class FieldComparator:
                     head = token.head.text
                     compound_term = f"{token.text} {head}".lower()
                     domain_concepts['general'].append(compound_term)
+                
+                # Extract specialized technical terms
+                if token.pos_ == "NOUN" and any(mod.pos_ == "ADJ" for mod in token.children):
+                    adj_mods = [mod.text for mod in token.children if mod.pos_ == "ADJ"]
+                    if adj_mods:
+                        tech_term = f"{' '.join(adj_mods)} {token.text}".lower()
+                        domain_concepts['general'].append(tech_term)
         
         # Extract technical terms using regex patterns
         for pattern in self.technical_patterns:
@@ -434,11 +506,15 @@ class FieldComparator:
                 if domain2 == 'general' or not concepts2:
                     continue
                 
-                # Simple domain similarity (could be expanded with a similarity matrix)
-                group_similarity = 1.0 if domain1 == domain2 else 0.3
+                # Look up similarity between these domain groups
+                group_similarity = DOMAIN_GROUP_SIMILARITY.get(domain1, {}).get(domain2, 0.1)
                 
                 # Calculate weight based on concept counts
                 weight = len(concepts1) * len(concepts2)
+                
+                # Apply higher weight for exact same domain
+                if domain1 == domain2 and len(concepts1) >= 2 and len(concepts2) >= 2:
+                    weight *= 2.0  # Double the weight for same-domain matches
                 
                 domain_similarities.append(group_similarity)
                 domain_weights.append(weight)
@@ -465,6 +541,29 @@ class FieldComparator:
         
         return 0.0
     
+    def _detect_primary_domains(self, field):
+        """Detect the primary domains of a field based on its terminology"""
+        full_text = self._get_full_text(field)
+        domain_concepts = self.extract_domain_concepts(full_text)
+        
+        # Count concepts in each domain
+        domain_counts = {domain: len(concepts) for domain, concepts in domain_concepts.items() 
+                        if domain != 'general'}
+        
+        # Find domains with significant concept counts
+        if not domain_counts:
+            return []
+            
+        max_count = max(domain_counts.values())
+        if max_count == 0:
+            return []
+            
+        # Consider domains with at least 50% as many concepts as the top domain
+        primary_domains = [domain for domain, count in domain_counts.items() 
+                          if count >= max_count * 0.5]
+        
+        return primary_domains
+    
     def calculate_faceted_similarity(self, field1, field2):
         """Calculate similarities for each facet"""
         facet_similarities = {}
@@ -488,13 +587,15 @@ class FieldComparator:
                 facet_similarities[facet] = 0.0
                 continue
             
-            # Calculate embedding and domain similarity
+            # Calculate all component similarities
             embedding_sim = self.calculate_embedding_similarity(text1, text2)
+            tfidf_sim = self.calculate_tfidf_similarity(text1, text2)
             domain_sim = self.calculate_domain_similarity(text1, text2)
             
-            # Weight the components for this facet (simplified for web app)
+            # Weight the components for this facet
             facet_sim = (
                 COMPONENT_WEIGHTS['embedding'] * embedding_sim +
+                COMPONENT_WEIGHTS['tfidf'] * tfidf_sim +
                 COMPONENT_WEIGHTS['domain'] * domain_sim
             )
             
@@ -557,17 +658,38 @@ class FieldComparator:
         
         # Calculate component similarities
         embedding_sim = self.calculate_embedding_similarity(full_text1, full_text2)
+        tfidf_sim = self.calculate_tfidf_similarity(full_text1, full_text2)
         domain_sim = self.calculate_domain_similarity(full_text1, full_text2)
         
-        # Calculate overall similarity (simplified for web app)
+        # Calculate overall similarity
         overall_similarity = (
             COMPONENT_WEIGHTS['embedding'] * embedding_sim +
+            COMPONENT_WEIGHTS['tfidf'] * tfidf_sim +
             COMPONENT_WEIGHTS['domain'] * domain_sim +
             COMPONENT_WEIGHTS['facet'] * weighted_facet_sim
         )
         
+        # Apply domain boosting if enabled
+        boosted_similarity = overall_similarity
+        
+        if ENABLE_DOMAIN_BOOSTING:
+            field1_domains = self._detect_primary_domains(field1)
+            field2_domains = self._detect_primary_domains(field2)
+            
+            # Calculate max domain relatedness
+            max_domain_sim = 0.0
+            for d1 in field1_domains:
+                for d2 in field2_domains:
+                    domain_sim = DOMAIN_GROUP_SIMILARITY.get(d1, {}).get(d2, 0.0)
+                    max_domain_sim = max(max_domain_sim, domain_sim)
+            
+            # Apply boosting for highly related domains
+            if max_domain_sim > DOMAIN_BOOST_THRESHOLD:
+                boost_factor = MAX_BOOST_FACTOR * (max_domain_sim - DOMAIN_BOOST_THRESHOLD) / (1.0 - DOMAIN_BOOST_THRESHOLD)
+                boosted_similarity = min(1.0, overall_similarity + boost_factor)
+        
         # Apply sigmoid calibration
-        calibrated_similarity = self._calibrate_final_score(overall_similarity)
+        calibrated_similarity = self._calibrate_final_score(boosted_similarity)
         
         # FINAL STEP: Apply group-based adjustments
         field1_name = field1['name']
@@ -607,31 +729,54 @@ def load_data():
     nested_data = {"categories": []}
     similarities = []
     
+    # Print file paths for debugging
+    print(f"Looking for nested descriptions at: {NESTED_DESCRIPTIONS_FILE}")
+    print(f"Looking for similarities at: {SIMILARITY_FILE}")
+    
     # Load nested descriptions if file exists
     if os.path.exists(NESTED_DESCRIPTIONS_FILE):
         try:
             with open(NESTED_DESCRIPTIONS_FILE, 'r', encoding='utf-8') as f:
                 nested_data = json.load(f)
+            print(f"Successfully loaded nested data with {len(nested_data.get('categories', []))} categories")
         except Exception as e:
             print(f"Error loading nested descriptions: {e}")
+    else:
+        print(f"Warning: Nested descriptions file not found at {NESTED_DESCRIPTIONS_FILE}")
+        # Create an empty structure if file doesn't exist
+        nested_data = {"categories": []}
     
     # Load similarities if file exists
     if os.path.exists(SIMILARITY_FILE):
         try:
             with open(SIMILARITY_FILE, 'r', encoding='utf-8') as f:
                 similarities = json.load(f)
+            print(f"Successfully loaded {len(similarities)} similarity records")
         except Exception as e:
             print(f"Error loading similarities: {e}")
+    else:
+        print(f"Warning: Similarities file not found at {SIMILARITY_FILE}")
+        # Create an empty list if file doesn't exist
+        similarities = []
+    
+    # Extract field names for debugging
+    field_names = get_all_field_names(nested_data)
+    print(f"Extracted {len(field_names)} field names: {field_names[:5] if field_names else 'None'}")
     
     return nested_data, similarities
 
 
 def save_data(nested_data, similarities):
     """Save data to JSON files"""
+    # Create output directories if they don't exist
+    os.makedirs(os.path.dirname(NESTED_DESCRIPTIONS_FILE), exist_ok=True)
+    os.makedirs(os.path.dirname(SIMILARITY_FILE), exist_ok=True)
+    
     # Save nested descriptions
     try:
         with open(NESTED_DESCRIPTIONS_FILE, 'w', encoding='utf-8') as f:
             json.dump(nested_data, f, indent=2)
+        print(f"Successfully saved nested descriptions to {NESTED_DESCRIPTIONS_FILE}")
     except Exception as e:
         print(f"Error saving nested descriptions: {e}")
         return False
@@ -640,6 +785,7 @@ def save_data(nested_data, similarities):
     try:
         with open(SIMILARITY_FILE, 'w', encoding='utf-8') as f:
             json.dump(similarities, f, indent=2)
+        print(f"Successfully saved {len(similarities)} similarity records to {SIMILARITY_FILE}")
     except Exception as e:
         print(f"Error saving similarities: {e}")
         return False
@@ -745,6 +891,7 @@ def calculate_new_similarities(nested_data, similarities, new_field):
     
     # Combine existing and new similarities
     updated_similarities = similarities + new_similarities
+    print(f"Calculated {len(new_similarities)} new similarity scores for {new_field['name']}")
     
     return updated_similarities
 
@@ -799,11 +946,21 @@ def get_field_data(nested_data, field_name):
 @app.route('/')
 def index():
     """Home page"""
+    # Check if data files exist and create sample data if not
+    if not os.path.exists(NESTED_DESCRIPTIONS_FILE) or not os.path.exists(SIMILARITY_FILE):
+        print("Data files not found")
+     
+    
+    # Load data
     nested_data, similarities = load_data()
     field_names = get_all_field_names(nested_data)
     groups, subgroups = get_all_groups_and_subgroups(nested_data)
     
-    return render_template('index.html', 
+    # Debug information
+    print(f"Rendering template with {len(field_names)} fields and {len(groups)} groups")
+    
+    # Use index.html (not final_app.html)
+    return render_template('final_app.html', 
                           field_names=field_names,
                           groups=groups,
                           subgroups=subgroups)
@@ -911,5 +1068,27 @@ def download_similarities():
     return send_file(SIMILARITY_FILE, as_attachment=True)
 
 
+@app.route('/test')
+def test():
+    """Test route to check if data is loading correctly"""
+    nested_data, similarities = load_data()
+    field_names = get_all_field_names(nested_data)
+    groups, subgroups = get_all_groups_and_subgroups(nested_data)
+    
+    return jsonify({
+        "success": True,
+        "data_loaded": True,
+        "field_count": len(field_names),
+        "group_count": len(groups),
+        "similarity_count": len(similarities),
+        "fields": field_names[:5] if field_names else [],
+        "groups": groups if groups else []
+    })
+
+
 if __name__ == '__main__':
+    # Check if data directory exists and create it if not
+    os.makedirs(DATA_DIR, exist_ok=True)
+    
+    # Run the application in debug mode
     app.run(debug=True)
