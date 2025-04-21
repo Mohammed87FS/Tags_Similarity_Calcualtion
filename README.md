@@ -40,6 +40,11 @@ python/
 ├── utils/                  # Shared utilities
 │   ├── __init__.py
 │   └── text_processing.py  # Text normalization and scaling functions
+├── static/                 # Static assets
+│   ├── css/                # Stylesheets
+│   │   └── styles.css
+│   └── js/                 # JavaScript files
+│       └── app.js
 └── templates/              # UI templates
     └── final_app.html      # Web interface
 ```
@@ -280,4 +285,3 @@ The modular design allows for several extension points:
 3. **Custom Facets**: Modify the `DESCRIPTION_WEIGHTS` in `config.py` to change or add description facets
 
 4. **Alternative Embedding Models**: Replace the sentence transformer model in `embedding.py` with newer versions
-

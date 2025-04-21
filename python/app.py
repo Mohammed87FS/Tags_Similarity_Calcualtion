@@ -4,7 +4,8 @@ Main application entry point for research field similarity app.
 
 import os
 import logging
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
+from config import DATA_DIR
 
 # Set up logging
 logging.basicConfig(
@@ -13,21 +14,21 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Import from routes module
+from routes.api import (
+    api_bp, add_field, get_subgroups, get_similarity, 
+    get_all_similarities_for_field, download_similarities, test
+)
+
 def create_app():
     """Create and configure the Flask application."""
     # Initialize Flask application
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static', template_folder='templates')
     
-    # Import from routes module
-    from routes.api import (
-        api_bp, add_field, get_subgroups, get_similarity, 
-        get_all_similarities_for_field, download_similarities, test
-    )
-    
-    # Register the blueprint with /api prefix
+    # Register the API blueprint with /api prefix for new code
     app.register_blueprint(api_bp, url_prefix='/api')
     
-    # Register the same routes without prefix for backward compatibility
+    # Register non-prefixed routes for backward compatibility
     app.add_url_rule('/add_field', view_func=add_field, methods=['POST'])
     app.add_url_rule('/get_subgroups', view_func=get_subgroups)
     app.add_url_rule('/get_similarity', view_func=get_similarity)
@@ -60,6 +61,10 @@ def create_app():
     # Ensure data directory exists
     from config import DATA_DIR
     os.makedirs(DATA_DIR, exist_ok=True)
+    
+    # Ensure static directories exist
+    for dir_path in ['static/css', 'static/js']:
+        os.makedirs(dir_path, exist_ok=True)
     
     return app
 
