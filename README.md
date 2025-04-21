@@ -76,10 +76,9 @@ The system then computes similarity based on domain overlap, using a pre-defined
 Individual facets of field descriptions are compared separately with specific weights:
 - Definition (35%)
 - Methodologies (30%)
-- Applications (15%)
-- Technologies (10%)
-- Challenges (5%)
-- Future Directions (5%)
+- Applications (20%)
+- Technologies (15%)
+
 
 ### 5. Group-based Calibration
 The raw similarity score is calibrated based on hierarchical relationships:
@@ -94,8 +93,8 @@ Fields with significant domain overlap receive similarity boosts of up to 15%, e
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/research-similarity.git
-   cd research-similarity
+   git clone https://github.com/Mohammed87FS/Tags_Similarity_Calcualtion
+   cd python
    ```
 
 2. Create and activate a virtual environment:
@@ -114,12 +113,7 @@ Fields with significant domain overlap receive similarity boosts of up to 15%, e
    python -m spacy download en_core_web_sm
    ```
 
-5. Create data directories:
-   ```bash
-   mkdir -p data/final_outputs_enhanced_multi
-   ```
-
-6. (Optional) Configure application parameters in `config.py` to adjust:
+5. (Optional) Configure application parameters in `config.py` to adjust:
    - Similarity component weights
    - Group baseline similarities
    - Domain boosting factors
@@ -155,8 +149,6 @@ The web interface allows you to:
    - Methodologies: Research approaches and methods
    - Applications: How the field is applied
    - Technologies: Tools and technologies used
-   - Challenges: Current research challenges
-   - Future Directions: Emerging research areas
 5. Submit the form to add the field and calculate similarities
 
 ### Comparing Fields
@@ -218,8 +210,7 @@ DESCRIPTION_WEIGHTS = {
     "methodologies": 0.30,
     "applications": 0.15,
     "technologies": 0.10,
-      0.05,
-    "future_directions": 0.05
+ 
 }
 
 # Similarity component weights
@@ -259,8 +250,7 @@ Each field contains:
   - Methodologies
   - Applications
   - Technologies
-  - Challenges
-  - Future Directions
+ 
 
 Similarities are stored as field pairs with calculated scores:
 ```json
@@ -270,15 +260,3 @@ Similarities are stored as field pairs with calculated scores:
   "similarity_score": 0.85
 }
 ```
-
-## Extension Points
-
-The modular design allows for several extension points:
-
-1. **New Similarity Components**: Add new similarity calculation methods in the `services/similarity/` directory and adjust weights in `config.py`
-
-2. **Additional Domains**: Extend domain terminology in `config.py` by adding new domain groups
-
-3. **Custom Facets**: Modify the `DESCRIPTION_WEIGHTS` in `config.py` to change or add description facets
-
-4. **Alternative Embedding Models**: Replace the sentence transformer model in `embedding.py` with newer versions
