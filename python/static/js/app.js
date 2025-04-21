@@ -401,8 +401,7 @@
         formData.append('methodologies', $('#field-methodologies').val());
         formData.append('applications', $('#field-applications').val());
         formData.append('technologies', $('#field-technologies').val());
-        formData.append('challenges', $('#field-challenges').val());
-        formData.append('future_directions', $('#field-future').val());
+
 
         // Submit form data
         $.ajax({

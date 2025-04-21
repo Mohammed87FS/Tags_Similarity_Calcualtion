@@ -33,10 +33,9 @@ MAX_CROSS_GROUP_SIMILARITY = 0.7  # Maximum similarity for fields not in same gr
 DESCRIPTION_WEIGHTS = {
     "definition": 0.35,
     "methodologies": 0.30,
-    "applications": 0.15,
-    "technologies": 0.10,
-    "challenges": 0.05,
-    "future_directions": 0.05
+    "applications": 0.20,
+    "technologies": 0.15,
+
 }
 
 # Component weights

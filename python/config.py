@@ -22,8 +22,7 @@ DESCRIPTION_WEIGHTS = {
     "methodologies": 0.30,
     "applications": 0.20,
     "technologies": 0.15,
-    "challenges": 0.00,
-    "future_directions": 0.00
+
 }
 
 # Component weights

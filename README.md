@@ -221,7 +221,7 @@ DESCRIPTION_WEIGHTS = {
     "methodologies": 0.30,
     "applications": 0.15,
     "technologies": 0.10,
-    "challenges": 0.05,
+      0.05,
     "future_directions": 0.05
 }
 
