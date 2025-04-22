@@ -37,8 +37,7 @@ COMPONENT_WEIGHTS = {
 ENABLE_DOMAIN_BOOSTING = True    # Whether to apply domain-based score boosting
 MAX_BOOST_FACTOR = 0.15          # Maximum boost to apply (0.15 = up to 15% boost)
 DOMAIN_BOOST_THRESHOLD = 0.7     # Minimum domain similarity to trigger boost
-
-# Domain-specific term groups
+# Domain-specific term groups - EXPANDED VERSION
 DOMAIN_TERM_GROUPS = {
     'ai_ml': [
         'artificial intelligence', 'machine learning', 'neural networks', 'deep learning', 
@@ -51,7 +50,12 @@ DOMAIN_TERM_GROUPS = {
         'ensemble methods', 'decision trees', 'random forest', 'boosting', 'bagging', 'support vector',
         'nlp', 'tokenization', 'embedding', 'word2vec', 'bert', 'gpt', 'transformer', 'autoencoder',
         'gan', 'generative adversarial', 'self-supervised', 'semi-supervised', 'federated learning',
-        'inference', 'prediction', 'algorithm', 'pytorch', 'tensorflow', 'keras', 'scikit-learn'
+        'inference', 'prediction', 'algorithm', 'pytorch', 'tensorflow', 'keras', 'scikit-learn',
+        'diffusion models', 'multimodal learning', 'zero-shot learning', 'few-shot learning', 
+        'explainable ai', 'interpretable ml', 'neural architecture search', 'quantization',
+        'knowledge distillation', 'model compression', 'adversarial training', 'contrastive learning',
+        'representation learning', 'foundation models', 'large language models', 'stable diffusion',
+        'neuro-symbolic ai', 'graph neural networks', 'transformers', 'self-attention', 'mixture of experts'
     ],
     
     'security': [
@@ -65,7 +69,12 @@ DOMAIN_TERM_GROUPS = {
         'pki', 'hash function', 'sha', 'aes', 'rsa', 'elliptic curve', 'key management',
         'network security', 'endpoint security', 'security operations', 'siem', 'incident response',
         'forensics', 'threat intelligence', 'security framework', 'vpn', 'ips', 'ids', 'dlp',
-        'waf', 'antivirus', 'patch management', 'vulnerability scanning', 'penetration testing'
+        'waf', 'antivirus', 'patch management', 'vulnerability scanning', 'penetration testing',
+        'zero trust', 'security posture', 'supply chain security', 'devsecops', 'secure coding',
+        'security by design', 'threat hunting', 'red team', 'blue team', 'purple team',
+        'offensive security', 'defensive security', 'security compliance', 'gdpr', 'hipaa',
+        'security orchestration', 'soar', 'security automation', 'threat emulation',
+        'sandboxing', 'security analytics', 'secure boot', 'trusted execution', 'tee'
     ],
     
     'data_analytics': [
@@ -80,7 +89,12 @@ DOMAIN_TERM_GROUPS = {
         'data quality', 'master data', 'metadata', 'data catalog', 'data dictionary',
         'tableau', 'power bi', 'looker', 'data studio', 'jupyter', 'r studio',
         'pandas', 'numpy', 'scipy', 'matplotlib', 'data preprocessing', 'feature selection',
-        'cross-validation', 'time series', 'anomaly detection', 'segmentation'
+        'cross-validation', 'time series', 'anomaly detection', 'segmentation',
+        'data observability', 'data lineage', 'data mesh', 'data fabric', 'data ops',
+        'data democratization', 'feature store', 'data versioning', 'experiment tracking',
+        'A/B testing', 'multivariate testing', 'cohort analysis', 'funnel analysis',
+        'retention analysis', 'churn prediction', 'customer segmentation', 'recommender systems',
+        'natural language analytics', 'text analytics', 'sentiment analysis', 'entity extraction'
     ],
     
     'hci': [
@@ -95,7 +109,12 @@ DOMAIN_TERM_GROUPS = {
         'user needs', 'user goals', 'user feedback', 'user behavior', 'user satisfaction',
         'ui components', 'navigation', 'information hierarchy', 'visual hierarchy',
         'interaction model', 'design critique', 'contextual inquiry', 'ethnography',
-        'participatory design', 'accessibility guidelines', 'wcag', 'inclusive design'
+        'participatory design', 'accessibility guidelines', 'wcag', 'inclusive design',
+        'assistive technology', 'screen readers', 'voice recognition', 'haptic feedback',
+        'tangible interfaces', 'spatial interfaces', 'embodied interaction', 'proxemics',
+        'microinteractions', 'dark patterns', 'ethical design', 'service design',
+        'experience design', 'customer experience', 'conversational interfaces', 'chatbots',
+        'voice assistants', 'natural language interfaces', 'gesture controls'
     ],
     
     'graphics_media': [
@@ -110,7 +129,12 @@ DOMAIN_TERM_GROUPS = {
         'procedural animation', 'particle system', 'vfx', 'compositing', 'modeling',
         'sculpting', 'texturing', 'uv mapping', 'normal mapping', 'bump mapping',
         'displacement mapping', 'volumetric rendering', 'subsurface scattering',
-        'opengl', 'directx', 'vulkan', 'unity', 'unreal engine', 'blender', 'maya'
+        'opengl', 'directx', 'vulkan', 'unity', 'unreal engine', 'blender', 'maya',
+        'real-time rendering', 'light field rendering', 'neural rendering', 'stylized rendering',
+        'non-photorealistic rendering', 'photogrammetry', 'virtual production', 'digital twins',
+        'procedural generation', 'computational geometry', 'spatial computing', 'mixed reality',
+        'xr', 'extended reality', 'immersive media', 'holography', 'light field displays',
+        'metaverse', 'digital human', 'performance capture', 'facial animation'
     ],
     
     'software_development': [
@@ -126,7 +150,12 @@ DOMAIN_TERM_GROUPS = {
         'pair programming', 'scrum', 'kanban', 'waterfall', 'git', 'github',
         'bitbucket', 'jira', 'jenkins', 'docker', 'kubernetes', 'terraform',
         'infrastructure as code', 'technical debt', 'refactoring', 'code quality',
-        'scalability', 'performance optimization', 'caching', 'load balancing'
+        'scalability', 'performance optimization', 'caching', 'load balancing',
+        'serverless', 'event-driven architecture', 'domain-driven design', 'clean architecture',
+        'hexagonal architecture', 'microservices', 'service mesh', 'api gateway',
+        'orchestration', 'configuration management', 'feature flags', 'chaos engineering',
+        'observability', 'logging', 'monitoring', 'tracing', 'debugging', 'profiling',
+        'static analysis', 'dynamic analysis', 'code coverage', 'dependency management'
     ],
     
     'hardware_systems': [
@@ -140,7 +169,12 @@ DOMAIN_TERM_GROUPS = {
         'speculative execution', 'register', 'alu', 'interrupt', 'dma', 'i/o',
         'peripheral', 'bus', 'motherboard', 'firmware', 'bios', 'uefi',
         'hardware acceleration', 'parallel computing', 'distributed systems',
-        'fault tolerance', 'redundancy', 'high availability', 'raid'
+        'fault tolerance', 'redundancy', 'high availability', 'raid',
+        'quantum computing', 'neuromorphic computing', 'optical computing',
+        'silicon photonics', 'non-volatile memory', 'memristor', 'spintronics',
+        'semiconductor', 'integrated circuit', 'analog circuit', 'digital circuit',
+        'mixed-signal', 'signal processing', 'vlsi', 'chip design', 'system design',
+        'hardware security', 'trusted platform module', 'secure element', 'hardware trojan'
     ],
     
     'healthcare': [
@@ -154,11 +188,154 @@ DOMAIN_TERM_GROUPS = {
         'anesthesia', 'mental health', 'psychiatry', 'psychology', 'chronic disease',
         'acute care', 'primary care', 'secondary care', 'tertiary care',
         'patient-centered', 'health equity', 'health disparities', 'health literacy',
-        'health promotion', 'health education', 'health screening', 'vaccination'
+        'health promotion', 'health education', 'health screening', 'vaccination',
+        'remote patient monitoring', 'digital therapeutics', 'virtual care',
+        'population health', 'value-based care', 'social determinants of health',
+        'healthcare analytics', 'medical robotics', 'prosthetics', 'implantable devices',
+        'wearable health tech', 'point-of-care diagnostics', 'drug discovery',
+        'pharmacogenomics', 'immunotherapy', 'gene therapy', 'regenerative medicine'
+    ],
+
+    # NEW DOMAINS
+    'quantum_computing': [
+        'quantum computing', 'qubit', 'quantum gate', 'quantum circuit', 'quantum algorithm',
+        'quantum supremacy', 'quantum advantage', 'quantum entanglement', 'quantum teleportation',
+        'quantum cryptography', 'quantum key distribution', 'quantum annealing',
+        'quantum error correction', 'quantum fault tolerance', 'quantum volume',
+        'shor\'s algorithm', 'grover\'s algorithm', 'quantum fourier transform',
+        'variational quantum eigensolver', 'quantum approximate optimization algorithm',
+        'quantum machine learning', 'quantum neural network', 'quantum simulation',
+        'quantum sensing', 'quantum metrology', 'quantum chemistry', 'quantum biology',
+        'superconducting qubits', 'ion trap', 'topological qubits', 'photonic qubits',
+        'neutral atom qubits', 'quantum dots', 'quantum processor', 'quantum computer',
+        'quantum software', 'quantum programming', 'quantum development kit',
+        'quantum compiler', 'quantum cloud', 'quantum supremacy', 'quantum coherence',
+        'quantum decoherence', 'quantum noise', 'quantum error', 'post-quantum cryptography'
+    ],
+
+    'blockchain': [
+        'blockchain', 'distributed ledger', 'cryptocurrency', 'bitcoin', 'ethereum',
+        'smart contract', 'consensus algorithm', 'proof of work', 'proof of stake',
+        'mining', 'hash function', 'merkle tree', 'public key cryptography',
+        'private key', 'wallet', 'node', 'decentralized finance', 'defi',
+        'non-fungible token', 'nft', 'tokenization', 'initial coin offering',
+        'stablecoin', 'digital asset', 'decentralized autonomous organization',
+        'dao', 'decentralized application', 'dapp', 'oracle', 'interoperability',
+        'sidechain', 'layer 2', 'scaling solution', 'sharding', 'rollup',
+        'zero-knowledge proof', 'zk-snark', 'digital identity', 'self-sovereign identity',
+        'supply chain tracking', 'blockchain governance', 'token economics',
+        'cryptoeconomics', 'permissioned blockchain', 'permissionless blockchain',
+        'public blockchain', 'private blockchain', 'consortium blockchain'
+    ],
+
+    'bioinformatics': [
+        'bioinformatics', 'computational biology', 'genomics', 'proteomics',
+        'transcriptomics', 'metabolomics', 'sequence alignment', 'gene expression',
+        'phylogenetics', 'phylogenomics', 'structural bioinformatics', 'systems biology',
+        'biostatistics', 'genome assembly', 'gene prediction', 'protein structure prediction',
+        'motif discovery', 'functional annotation', 'variant calling', 'genome-wide association',
+        'gwas', 'gene ontology', 'pathway analysis', 'network biology', 'biomarker discovery',
+        'single-cell analysis', 'epigenetics', 'metagenomics', 'dna sequencing',
+        'rna sequencing', 'next-generation sequencing', 'variant annotation',
+        'comparative genomics', 'evolutionary biology', 'protein-protein interaction',
+        'molecular docking', 'molecular dynamics', 'biomedical text mining',
+        'biological database', 'gene regulatory network', 'protein folding',
+        'sequence homology', 'multiple sequence alignment', 'hidden markov model'
+    ],
+
+    'environmental_science': [
+        'environmental science', 'ecology', 'sustainability', 'climate change',
+        'global warming', 'carbon footprint', 'greenhouse gas', 'renewable energy',
+        'solar energy', 'wind energy', 'hydro energy', 'geothermal energy',
+        'biomass', 'biodiversity', 'conservation', 'ecosystem', 'habitat',
+        'pollution', 'waste management', 'recycling', 'circular economy',
+        'environmental impact', 'environmental assessment', 'life cycle assessment',
+        'natural resources', 'water quality', 'air quality', 'soil quality',
+        'deforestation', 'reforestation', 'carbon sequestration', 'carbon capture',
+        'sustainable development', 'environmental policy', 'environmental regulation',
+        'climate modeling', 'environmental monitoring', 'remote sensing',
+        'geographic information system', 'gis', 'earth observation',
+        'environmental remediation', 'green technology', 'clean technology',
+        'resilience', 'adaptation', 'mitigation', 'environmental justice'
+    ],
+
+    'cloud_computing': [
+        'cloud computing', 'infrastructure as a service', 'iaas', 'platform as a service',
+        'paas', 'software as a service', 'saas', 'public cloud', 'private cloud',
+        'hybrid cloud', 'multi-cloud', 'cloud native', 'cloud migration', 'serverless',
+        'function as a service', 'faas', 'container', 'containerization', 'docker',
+        'kubernetes', 'orchestration', 'auto-scaling', 'elasticity', 'virtualization',
+        'virtual machine', 'hypervisor', 'cloud storage', 'object storage',
+        'block storage', 'file storage', 'content delivery network', 'cdn',
+        'edge computing', 'fog computing', 'service mesh', 'microservices',
+        'service-oriented architecture', 'distributed systems', 'high availability',
+        'fault tolerance', 'disaster recovery', 'cloud security', 'identity and access management',
+        'iam', 'service level agreement', 'sla', 'cloud provider', 'aws', 'azure',
+        'gcp', 'devops', 'gitops', 'infrastructure as code'
+    ],
+
+    'nlp': [
+        'natural language processing', 'computational linguistics', 'text mining',
+        'sentiment analysis', 'named entity recognition', 'part-of-speech tagging',
+        'syntactic parsing', 'semantic parsing', 'coreference resolution',
+        'word embeddings', 'word2vec', 'glove', 'fasttext', 'language model',
+        'transformer', 'bert', 'gpt', 't5', 'llama', 'mistral', 'tokenization',
+        'lemmatization', 'stemming', 'text classification', 'topic modeling',
+        'document similarity', 'question answering', 'machine translation',
+        'speech recognition', 'speech synthesis', 'text-to-speech', 'speech-to-text',
+        'dialogue system', 'chatbot', 'information extraction', 'information retrieval',
+        'text summarization', 'text generation', 'paraphrasing', 'grammar checking',
+        'spell checking', 'language understanding', 'pragmatics', 'discourse analysis',
+        'natural language understanding', 'natural language generation'
+    ],
+
+    'fintech': [
+        'financial technology', 'fintech', 'digital banking', 'online banking',
+        'mobile banking', 'digital payment', 'electronic payment', 'mobile payment',
+        'peer-to-peer payment', 'cryptocurrency', 'digital currency', 'central bank digital currency',
+        'cbdc', 'digital wallet', 'mobile wallet', 'payment processing', 'payment gateway',
+        'payment card', 'credit card', 'debit card', 'prepaid card', 'online lending',
+        'peer-to-peer lending', 'crowdfunding', 'robo-advisor', 'algorithmic trading',
+        'high-frequency trading', 'quantitative finance', 'financial modeling',
+        'risk management', 'fraud detection', 'anti-money laundering', 'aml',
+        'know your customer', 'kyc', 'regtech', 'insurtech', 'proptech',
+        'wealthtech', 'personal finance management', 'financial inclusion',
+        'open banking', 'banking as a service', 'embedded finance',
+        'buy now pay later', 'bnpl', 'distributed ledger technology', 'blockchain'
+    ],
+
+    'ar_vr': [
+        'augmented reality', 'virtual reality', 'mixed reality', 'extended reality',
+        'xr', 'ar', 'vr', 'mr', 'spatial computing', 'immersive technology',
+        'head-mounted display', 'hmd', 'vr headset', 'ar glasses', 'smart glasses',
+        'holographic display', 'light field display', 'volumetric display',
+        '3d tracking', '6dof', 'inside-out tracking', 'outside-in tracking',
+        'motion capture', 'hand tracking', 'eye tracking', 'gaze tracking',
+        'gesture recognition', 'spatial mapping', 'depth sensing', 'lidar',
+        'slam', 'simultaneous localization and mapping', 'virtual environment',
+        'virtual world', 'metaverse', 'telepresence', 'teleportation', 'avatar',
+        'digital human', 'virtual human', 'immersive analytics', 'spatial user interface',
+        'spatial audio', '3d audio', 'binaural audio', 'haptic feedback',
+        'force feedback', 'tactile feedback', 'motion sickness', 'simulator sickness'
+    ],
+
+    'robotics': [
+        'robotics', 'robot', 'automation', 'autonomous systems', 'robotic system',
+        'manipulator', 'robotic arm', 'robotic hand', 'end effector', 'gripper',
+        'mobile robot', 'wheeled robot', 'legged robot', 'humanoid robot',
+        'industrial robot', 'collaborative robot', 'cobot', 'service robot',
+        'social robot', 'swarm robotics', 'micro-robotics', 'nano-robotics',
+        'soft robotics', 'bio-inspired robotics', 'robot kinematics', 'inverse kinematics',
+        'forward kinematics', 'robot dynamics', 'motion planning', 'path planning',
+        'trajectory planning', 'collision avoidance', 'obstacle avoidance',
+        'simultaneous localization and mapping', 'slam', 'robot vision',
+        'robotic perception', 'sensor fusion', 'robot control', 'robotic manipulation',
+        'grasping', 'robot learning', 'reinforcement learning for robotics',
+        'imitation learning', 'human-robot interaction', 'robot operating system', 'ros'
     ]
 }
 
-# Domain group similarity matrix
+# EXPANDED Domain group similarity matrix
 DOMAIN_GROUP_SIMILARITY = {
     'ai_ml': {
         'ai_ml': 1.0, 
@@ -168,7 +345,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.45,
         'software_development': 0.55, 
         'hardware_systems': 0.35, 
-        'healthcare': 0.35
+        'healthcare': 0.35,
+        'quantum_computing': 0.65,
+        'blockchain': 0.30,
+        'bioinformatics': 0.50,
+        'environmental_science': 0.25,
+        'cloud_computing': 0.45,
+        'nlp': 0.90,
+        'fintech': 0.40,
+        'ar_vr': 0.55,
+        'robotics': 0.75
     },
     'security': {
         'ai_ml': 0.35, 
@@ -178,7 +364,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.15, 
         'software_development': 0.60,
         'hardware_systems': 0.45, 
-        'healthcare': 0.35
+        'healthcare': 0.35,
+        'quantum_computing': 0.50,
+        'blockchain': 0.80,
+        'bioinformatics': 0.25,
+        'environmental_science': 0.15,
+        'cloud_computing': 0.70,
+        'nlp': 0.30,
+        'fintech': 0.75,
+        'ar_vr': 0.20,
+        'robotics': 0.35
     },
     'data_analytics': {
         'ai_ml': 0.85,
@@ -188,7 +383,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.30, 
         'software_development': 0.45, 
         'hardware_systems': 0.25, 
-        'healthcare': 0.55
+        'healthcare': 0.55,
+        'quantum_computing': 0.30,
+        'blockchain': 0.40,
+        'bioinformatics': 0.65,
+        'environmental_science': 0.60,
+        'cloud_computing': 0.50,
+        'nlp': 0.70,
+        'fintech': 0.80,
+        'ar_vr': 0.25,
+        'robotics': 0.30
     },
     'hci': {
         'ai_ml': 0.45, 
@@ -198,7 +402,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.65,
         'software_development': 0.55, 
         'hardware_systems': 0.35, 
-        'healthcare': 0.45
+        'healthcare': 0.45,
+        'quantum_computing': 0.15,
+        'blockchain': 0.20,
+        'bioinformatics': 0.25,
+        'environmental_science': 0.30,
+        'cloud_computing': 0.30,
+        'nlp': 0.60,
+        'fintech': 0.35,
+        'ar_vr': 0.85,
+        'robotics': 0.55
     },
     'graphics_media': {
         'ai_ml': 0.45, 
@@ -208,7 +421,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 1.0, 
         'software_development': 0.35, 
         'hardware_systems': 0.35, 
-        'healthcare': 0.20
+        'healthcare': 0.20,
+        'quantum_computing': 0.15,
+        'blockchain': 0.10,
+        'bioinformatics': 0.15,
+        'environmental_science': 0.25,
+        'cloud_computing': 0.20,
+        'nlp': 0.30,
+        'fintech': 0.15,
+        'ar_vr': 0.90,
+        'robotics': 0.25
     },
     'software_development': {
         'ai_ml': 0.55, 
@@ -218,7 +440,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.35, 
         'software_development': 1.0, 
         'hardware_systems': 0.65, 
-        'healthcare': 0.30
+        'healthcare': 0.30,
+        'quantum_computing': 0.45,
+        'blockchain': 0.55,
+        'bioinformatics': 0.35,
+        'environmental_science': 0.25,
+        'cloud_computing': 0.85,
+        'nlp': 0.50,
+        'fintech': 0.55,
+        'ar_vr': 0.45,
+        'robotics': 0.60
     },
     'hardware_systems': {
         'ai_ml': 0.35, 
@@ -228,7 +459,16 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.35, 
         'software_development': 0.65, 
         'hardware_systems': 1.0, 
-        'healthcare': 0.35
+        'healthcare': 0.35,
+        'quantum_computing': 0.75,
+        'blockchain': 0.30,
+        'bioinformatics': 0.20,
+        'environmental_science': 0.35,
+        'cloud_computing': 0.60,
+        'nlp': 0.15,
+        'fintech': 0.25,
+        'ar_vr': 0.50,
+        'robotics': 0.85
     },
     'healthcare': {
         'ai_ml': 0.35, 
@@ -238,6 +478,186 @@ DOMAIN_GROUP_SIMILARITY = {
         'graphics_media': 0.20, 
         'software_development': 0.30, 
         'hardware_systems': 0.35, 
-        'healthcare': 1.0
+        'healthcare': 1.0,
+        'quantum_computing': 0.15,
+        'blockchain': 0.25,
+        'bioinformatics': 0.85,
+        'environmental_science': 0.40,
+        'cloud_computing': 0.25,
+        'nlp': 0.45,
+        'fintech': 0.30,
+        'ar_vr': 0.40,
+        'robotics': 0.45
+    },
+    'quantum_computing': {
+        'ai_ml': 0.65,
+        'security': 0.50,
+        'data_analytics': 0.30,
+        'hci': 0.15,
+        'graphics_media': 0.15,
+        'software_development': 0.45,
+        'hardware_systems': 0.75,
+        'healthcare': 0.15,
+        'quantum_computing': 1.0,
+        'blockchain': 0.35,
+        'bioinformatics': 0.30,
+        'environmental_science': 0.20,
+        'cloud_computing': 0.40,
+        'nlp': 0.25,
+        'fintech': 0.25,
+        'ar_vr': 0.10,
+        'robotics': 0.35
+    },
+    'blockchain': {
+        'ai_ml': 0.30,
+        'security': 0.80,
+        'data_analytics': 0.40,
+        'hci': 0.20,
+        'graphics_media': 0.10,
+        'software_development': 0.55,
+        'hardware_systems': 0.30,
+        'healthcare': 0.25,
+        'quantum_computing': 0.35,
+        'blockchain': 1.0,
+        'bioinformatics': 0.15,
+        'environmental_science': 0.35,
+        'cloud_computing': 0.55,
+        'nlp': 0.20,
+        'fintech': 0.90,
+        'ar_vr': 0.25,
+        'robotics': 0.15
+    },
+    'bioinformatics': {
+        'ai_ml': 0.50,
+        'security': 0.25,
+        'data_analytics': 0.65,
+        'hci': 0.25,
+        'graphics_media': 0.15,
+        'software_development': 0.35,
+        'hardware_systems': 0.20,
+        'healthcare': 0.85,
+        'quantum_computing': 0.30,
+        'blockchain': 0.15,
+        'bioinformatics': 1.0,
+        'environmental_science': 0.55,
+        'cloud_computing': 0.25,
+        'nlp': 0.45,
+        'fintech': 0.15,
+        'ar_vr': 0.10,
+        'robotics': 0.25
+    },
+    'environmental_science': {
+        'ai_ml': 0.25,
+        'security': 0.15,
+        'data_analytics': 0.60,
+        'hci': 0.30,
+        'graphics_media': 0.25,
+        'software_development': 0.25,
+        'hardware_systems': 0.35,
+        'healthcare': 0.40,
+        'quantum_computing': 0.20,
+        'blockchain': 0.35,
+        'bioinformatics': 0.55,
+        'environmental_science': 1.0,
+        'cloud_computing': 0.30,
+        'nlp': 0.25,
+        'fintech': 0.25,
+        'ar_vr': 0.35,
+        'robotics': 0.45
+    },
+    'cloud_computing': {
+        'ai_ml': 0.45,
+        'security': 0.70,
+        'data_analytics': 0.50,
+        'hci': 0.30,
+        'graphics_media': 0.20,
+        'software_development': 0.85,
+        'hardware_systems': 0.60,
+        'healthcare': 0.25,
+        'quantum_computing': 0.40,
+        'blockchain': 0.55,
+        'bioinformatics': 0.25,
+        'environmental_science': 0.30,
+        'cloud_computing': 1.0,
+        'nlp': 0.35,
+        'fintech': 0.55,
+        'ar_vr': 0.30,
+        'robotics': 0.40
+    },
+    'nlp': {
+        'ai_ml': 0.90,
+        'security': 0.30,
+        'data_analytics': 0.70,
+        'hci': 0.60,
+        'graphics_media': 0.30,
+        'software_development': 0.50,
+        'hardware_systems': 0.15,
+        'healthcare': 0.45,
+        'quantum_computing': 0.25,
+        'blockchain': 0.20,
+        'bioinformatics': 0.45,
+        'environmental_science': 0.25,
+        'cloud_computing': 0.35,
+        'nlp': 1.0,
+        'fintech': 0.25,
+        'ar_vr': 0.35,
+        'robotics': 0.25
+    },
+    'fintech': {
+        'ai_ml': 0.40,
+        'security': 0.75,
+        'data_analytics': 0.80,
+        'hci': 0.35,
+        'graphics_media': 0.15,
+        'software_development': 0.55,
+        'hardware_systems': 0.25,
+        'healthcare': 0.30,
+        'quantum_computing': 0.25,
+        'blockchain': 0.90,
+        'bioinformatics': 0.15,
+        'environmental_science': 0.25,
+        'cloud_computing': 0.55,
+        'nlp': 0.25,
+        'fintech': 1.0,
+        'ar_vr': 0.20,
+        'robotics': 0.15
+    },
+    'ar_vr': {
+        'ai_ml': 0.55,
+        'security': 0.20,
+        'data_analytics': 0.25,
+        'hci': 0.85,
+        'graphics_media': 0.90,
+        'software_development': 0.45,
+        'hardware_systems': 0.50,
+        'healthcare': 0.40,
+        'quantum_computing': 0.10,
+        'blockchain': 0.25,
+        'bioinformatics': 0.10,
+        'environmental_science': 0.35,
+        'cloud_computing': 0.30,
+        'nlp': 0.35,
+        'fintech': 0.20,
+        'ar_vr': 1.0,
+        'robotics': 0.45
+    },
+    'robotics': {
+        'ai_ml': 0.75,
+        'security': 0.35,
+        'data_analytics': 0.30,
+        'hci': 0.55,
+        'graphics_media': 0.25,
+        'software_development': 0.60,
+        'hardware_systems': 0.85,
+        'healthcare': 0.45,
+        'quantum_computing': 0.35,
+        'blockchain': 0.15,
+        'bioinformatics': 0.25,
+        'environmental_science': 0.45,
+        'cloud_computing': 0.40,
+        'nlp': 0.25,
+        'fintech': 0.15,
+        'ar_vr': 0.45,
+        'robotics': 1.0
     }
 }

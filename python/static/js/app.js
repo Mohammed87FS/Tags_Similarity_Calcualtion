@@ -1375,18 +1375,7 @@ function deleteFieldAndRecalculate(fieldName, resultModal, progressModal, result
                     <h6 class="alert-heading">Field Deleted Successfully</h6>
                     <p>The field "${fieldName}" has been deleted and all similarities recalculated.</p>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="mb-0">Deletion Summary</h6>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mb-0">
-                            <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Fields remaining:</strong> ${data.fieldCount || 'N/A'}</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Similarities calculated:</strong> ${data.comparisonCount || 'N/A'}</li>
-                            <li><i class="fas fa-clock text-muted me-2"></i> <strong>Completed at:</strong> ${timestamp}</li>
-                        </ul>
-                    </div>
-                </div>
+              
             `;
             
             // Remove the option from the select
