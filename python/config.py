@@ -18,18 +18,18 @@ MAX_CROSS_GROUP_SIMILARITY = 0.7 # Maximum similarity for fields not in same gro
 
 # Field description property weights
 DESCRIPTION_WEIGHTS = {
-    "definition": 0.35,
-    "methodologies": 0.30,
+    "definition": 0.6,
+    "methodologies": 0.20,
     "applications": 0.20,
-    "technologies": 0.15,
+ 
 
 }
 
 # Component weights
 COMPONENT_WEIGHTS = {
     "embedding": 0.4,
-    "tfidf": 0.10,
-    "domain": 0.4,
+    "tfidf": 0.20,
+    "domain": 0.3,
     "facet": 0.10
 }
 

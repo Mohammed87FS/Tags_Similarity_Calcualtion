@@ -7,7 +7,7 @@ This application uses advanced natural language processing techniques to quantif
 - **Multidimensional Field Comparisons**: Calculate similarity between research fields using a composite approach that incorporates semantic, lexical, and domain-specific measures
 - **Hierarchical Research Taxonomy**: Organize fields in a structured hierarchy of groups and subgroups with relationship-aware similarity scoring
 - **Domain-Specific Boosting**: Dynamically adjust similarity scores based on shared domain terminology
-- **Faceted Field Descriptions**: Capture different aspects of research fields (definitions, methodologies, applications, technologies, challenges, and future directions)
+- **Faceted Field Descriptions**: Capture different aspects of research fields (definitions, methodologies, applications)
 - **Interactive Exploration**: Browse, compare, and visualize field similarities through a web interface
 - **Extensible Architecture**: Modular design allowing new similarity measures or domain taxonomies to be incorporated
 
@@ -74,10 +74,10 @@ The system then computes similarity based on domain overlap, using a pre-defined
 
 ### 4. Faceted Comparison (10% weight)
 Individual facets of field descriptions are compared separately with specific weights:
-- Definition (35%)
-- Methodologies (30%)
+- Definition (60%)
+- Methodologies (20%)
 - Applications (20%)
-- Technologies (15%)
+
 
 
 ### 5. Group-based Calibration
@@ -148,7 +148,7 @@ The web interface allows you to:
    - Definition: Core description of the field
    - Methodologies: Research approaches and methods
    - Applications: How the field is applied
-   - Technologies: Tools and technologies used
+
 5. Submit the form to add the field and calculate similarities
 
 ### Comparing Fields
@@ -164,7 +164,7 @@ The system provides a RESTful API for integration with other tools:
 
 ### Field Management
 - `POST /api/add_field`: Add a new research field
-  - Form data: name, group, subgroup, definition, methodologies, applications, technologies, challenges, future_directions
+  - Form data: name, group, subgroup, definition, methodologies, applications, challenges, future_directions
   - Returns: Success status and operation result
 
 ### Taxonomy Navigation
@@ -206,10 +206,10 @@ MAX_CROSS_GROUP_SIMILARITY = 0.7 # Max similarity for fields in different groups
 
 # Description facet weights
 DESCRIPTION_WEIGHTS = {
-    "definition": 0.35,
-    "methodologies": 0.30,
-    "applications": 0.15,
-    "technologies": 0.10,
+    "definition": 0.6,
+    "methodologies": 0.2,
+    "applications": 0.2,
+  
  
 }
 
@@ -249,7 +249,7 @@ Each field contains:
   - Definition
   - Methodologies
   - Applications
-  - Technologies
+
  
 
 Similarities are stored as field pairs with calculated scores:

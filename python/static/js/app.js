@@ -400,7 +400,7 @@
         formData.append('definition', $('#field-definition').val());
         formData.append('methodologies', $('#field-methodologies').val());
         formData.append('applications', $('#field-applications').val());
-        formData.append('technologies', $('#field-technologies').val());
+     
 
 
         // Submit form data

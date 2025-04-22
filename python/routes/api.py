@@ -38,7 +38,7 @@ def add_field():
         "definition": request.form.get('definition'),
         "methodologies": request.form.get('methodologies'),
         "applications": request.form.get('applications'),
-        "technologies": request.form.get('technologies'),
+
     }
     
     # Validate required fields

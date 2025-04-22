@@ -108,7 +108,7 @@ class DataService:
                 "definition": field_data.get("definition", ""),
                 "methodologies": field_data.get("methodologies", ""),
                 "applications": field_data.get("applications", ""),
-                "technologies": field_data.get("technologies", ""),
+              
                 
             }
         }
