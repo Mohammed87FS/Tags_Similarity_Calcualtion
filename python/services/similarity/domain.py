@@ -66,7 +66,7 @@ class DomainService:
         domain_concepts = {domain: [] for domain in DOMAIN_TERM_GROUPS}
         domain_concepts['general'] = []
         
-        # Process with spaCy if available
+
         if self.use_spacy and self.nlp:
             doc = self.nlp(text)
             

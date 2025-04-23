@@ -28,9 +28,8 @@ python/
 │   └── similarity/         # Similarity calculation modules
 │       ├── __init__.py
 │       ├── embedding.py    # Neural embedding (Sentence Transformers)
-│       ├── tfidf.py        # Term frequency-inverse document frequency
 │       ├── domain.py       # Domain-specific terminology detection
-│       └── field.py        # Composite similarity orchestration
+│       └── final_calculation.py        # Composite similarity orchestration
 ├── routes/                 # API endpoints
 │   ├── __init__.py
 │   └── api.py              # RESTful interfaces
@@ -53,13 +52,9 @@ The system employs a sophisticated multi-component similarity calculation approa
 ### 1. Embedding-based Similarity (40% weight)
 Uses the `all-mpnet-base-v2` sentence transformer model to compute embedding vectors for field descriptions and measures their cosine similarity. This captures deep semantic relationships even when different terminology is used.
 
-### 2. TF-IDF Similarity (10% weight)
-Employs n-gram (1-3) TF-IDF vectorization with customized term weighting to identify shared technical vocabulary, with special emphasis on:
-- Technical patterns (CamelCase, hyphenated terms, acronyms)
-- Multi-word technical terms
-- Domain-specific terminology
 
-### 3. Domain Concept Similarity (40% weight)
+
+### 2. Domain Concept Similarity (40% weight)
 Identifies research domains present in each field by matching against specialized vocabulary across 8 technical domains:
 - AI/ML
 - Security
@@ -72,7 +67,7 @@ Identifies research domains present in each field by matching against specialize
 
 The system then computes similarity based on domain overlap, using a pre-defined domain relationship matrix to capture cross-domain relationships.
 
-### 4. Faceted Comparison (10% weight)
+### 3. Faceted Comparison (10% weight)
 Individual facets of field descriptions are compared separately with specific weights:
 - Definition (60%)
 - Methodologies (20%)
@@ -80,13 +75,13 @@ Individual facets of field descriptions are compared separately with specific we
 
 
 
-### 5. Group-based Calibration
+### 4. Group-based Calibration
 The raw similarity score is calibrated based on hierarchical relationships:
 - Fields in the same subgroup receive a baseline similarity of 0.75 plus weighted calculated similarity
 - Fields in the same general group receive a baseline similarity of 0.7 plus weighted calculated similarity
 - Cross-group similarities are capped at 0.7 to preserve taxonomic structure
 
-### 6. Domain Boosting
+### 5. Domain Boosting
 Fields with significant domain overlap receive similarity boosts of up to 15%, especially when specialized terminology from the same domain is heavily present in both fields.
 
 ## Detailed Installation

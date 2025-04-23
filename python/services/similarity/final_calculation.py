@@ -14,7 +14,6 @@ from config import (
 )
 from utils.text_processing import TextProcessor
 from services.similarity.embedding import EmbeddingService
-from services.similarity.tfidf import TfidfService
 from services.similarity.domain import DomainService
 
 logger = logging.getLogger(__name__)
@@ -25,7 +24,6 @@ class FieldSimilarityService:
     def __init__(self):
         """Initialize the field similarity service."""
         self.embedding_service = EmbeddingService()
-        self.tfidf_service = TfidfService()
         self.domain_service = DomainService()
         
         # Mappings for efficient group lookup
@@ -91,13 +89,11 @@ class FieldSimilarityService:
             
             # Calculate all component similarities
             embedding_sim = self.embedding_service.calculate_similarity(text1, text2)
-            tfidf_sim = self.tfidf_service.calculate_similarity(text1, text2)
             domain_sim = self.domain_service.calculate_similarity(text1, text2)
             
             # Weight the components for this facet
             facet_sim = (
                 COMPONENT_WEIGHTS['embedding'] * embedding_sim +
-                COMPONENT_WEIGHTS['tfidf'] * tfidf_sim +
                 COMPONENT_WEIGHTS['domain'] * domain_sim
             )
             
@@ -158,13 +154,11 @@ class FieldSimilarityService:
         
         # Calculate component similarities
         embedding_sim = self.embedding_service.calculate_similarity(full_text1, full_text2)
-        tfidf_sim = self.tfidf_service.calculate_similarity(full_text1, full_text2)
         domain_sim = self.domain_service.calculate_similarity(full_text1, full_text2)
         
         # Calculate overall similarity
         overall_similarity = (
             COMPONENT_WEIGHTS['embedding'] * embedding_sim +
-            COMPONENT_WEIGHTS['tfidf'] * tfidf_sim +
             COMPONENT_WEIGHTS['domain'] * domain_sim +
             COMPONENT_WEIGHTS['facet'] * weighted_facet_sim
         )
