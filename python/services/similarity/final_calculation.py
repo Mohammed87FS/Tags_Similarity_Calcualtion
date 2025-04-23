@@ -189,7 +189,7 @@ class FieldSimilarityService:
                 boosted_similarity = min(1.0, overall_similarity + boost_factor)
         
         # Apply sigmoid calibration
-        calibrated_similarity = TextProcessor.calibrate_final_score(boosted_similarity)
+        calibrated_similarity = TextProcessor.calibrate_similarity_score(boosted_similarity)
         
         # FINAL STEP: Apply group-based adjustments
         field1_name = field1['name']

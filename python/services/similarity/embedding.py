@@ -56,4 +56,4 @@ class EmbeddingService:
         similarity = np.dot(emb1, emb2) / (np.linalg.norm(emb1) * np.linalg.norm(emb2))
         
         # Scale similarity
-        return TextProcessor.scale_similarity(similarity)
+        return TextProcessor.calibrate_similarity_score(similarity)

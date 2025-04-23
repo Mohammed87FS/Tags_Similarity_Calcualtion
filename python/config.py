@@ -28,8 +28,8 @@ DESCRIPTION_WEIGHTS = {
 # Component weights
 COMPONENT_WEIGHTS = {
     "embedding": 0.4,
-    "tfidf": 0.20,
-    "domain": 0.3,
+    "tfidf": 0.10,
+    "domain": 0.4,
     "facet": 0.10
 }
 
