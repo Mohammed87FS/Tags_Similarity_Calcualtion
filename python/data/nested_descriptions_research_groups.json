@@ -246,7 +246,7 @@
               "name": "Film Production",
               "description": {
                 "definition": "Film Production encompasses the comprehensive process of creating audiovisual content through sequential phases of development, pre-production, production, and post-production, integrating creative vision with technical execution to craft narrative or documentary stories for entertainment, educational, or artistic purposes.",
-                "methodologies": "Script development, storyboarding, shot listing, location scouting, casting, production design, cinematography techniques (shot composition, camera movement, lighting setups), directing methodologies (actor blocking, performance direction), sound recording, production management, scheduling, budgeting, single-camera and multi-camera setups, continuity tracking, mise-en-sc\u00e8ne arrangement, collaborative team hierarchies, dailies review, sound design principles, color grading approaches, editing techniques (continuity editing, montage, non-linear editing), visual effects integration, test screening protocols.",
+                "methodologies": "Script development, storyboarding, shot listing, location scouting, casting, production design, cinematography techniques (shot composition, camera movement, lighting setups), directing methodologies (actor blocking, performance direction), sound recording, production management, scheduling, budgeting, single-camera and multi-camera setups, continuity tracking, mise-en-scène arrangement, collaborative team hierarchies, dailies review, sound design principles, color grading approaches, editing techniques (continuity editing, montage, non-linear editing), visual effects integration, test screening protocols.",
                 "applications": "Feature films, documentaries, short films, television production, streaming content, music videos, corporate videos, educational content, experimental cinema, film festival submissions, advertising and commercial production, social media content, virtual reality experiences, transmedia storytelling, brand storytelling, cultural heritage preservation, public service announcements, independent filmmaking, studio productions, promotional content."
               }
             }
@@ -287,6 +287,14 @@
                 "definition": "Digital Healthcare applies computing and information technology to medicine and healthcare delivery, creating systems and tools that enhance diagnosis, treatment, monitoring, and healthcare management",
                 "methodologies": "User-centered design for healthcare, clinical validation studies, healthcare workflow analysis, interoperability engineering, health data analytics, privacy by design, remote monitoring",
                 "applications": "Telemedicine, electronic health records, remote patient monitoring, clinical decision support, healthcare analytics, patient engagement platforms, predictive healthcare, virtual care"
+              }
+            },
+            {
+              "name": "Biomedical Engineering ",
+              "description": {
+                "definition": "Biomedical Engineering is the application of engineering principles and design concepts to medicine and biology for healthcare purposes, including diagnostics, monitoring, and therapy.\r\n",
+                "methodologies": "Biomedical engineers use methods such as medical imaging, biomaterials development, biomechanics, bioinstrumentation, and systems modeling to solve clinical problems and improve patient care.\r\n",
+                "applications": "Design and development of medical devices such as pacemakers and prosthetics.Creation of imaging systems like MRI and CT scanners. Development of biocompatible implants and tissue engineering. Rehabilitation engineering and wearable health monitoring technologies."
               }
             }
           ]

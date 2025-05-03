@@ -59,6 +59,7 @@ def create_app():
             subgroups=subgroups
         )
     
+    
     # Ensure data directory exists
     from config import DATA_DIR
     os.makedirs(DATA_DIR, exist_ok=True)

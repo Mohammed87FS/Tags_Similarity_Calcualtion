@@ -204,6 +204,8 @@ def test():
         "fields": field_names if field_names else [],
         "groups": groups if groups else []
     })
+
+
 @api_bp.route('/recalculate_similarities', methods=['POST'])
 def recalculate_similarities():
     """Recalculate similarities for all fields."""
@@ -212,7 +214,19 @@ def recalculate_similarities():
     
     # Recalculate similarities
     try:
-        updated_similarities = field_similarity_service.calculate_all_similarities(nested_data)
+        similarities_list = field_similarity_service.calculate_all_similarities(nested_data)
+        
+        # Extract all unique field names for the tags array
+        unique_tags = set()
+        for sim in similarities_list:
+            unique_tags.add(sim["field1"])
+            unique_tags.add(sim["field2"])
+        
+        # Create result with tags and similarities
+        updated_similarities = {
+            "tags": sorted(list(unique_tags)),
+            "similarities": similarities_list
+        }
     except Exception as e:
         logger.error(f"Error recalculating similarities: {e}")
         return jsonify({"error": f"Error recalculating similarities: {str(e)}"}), 500
@@ -222,16 +236,13 @@ def recalculate_similarities():
         return jsonify({
             "success": True,
             "message": "Similarities recalculated and saved",
-            "count": len(updated_similarities),
+            "count": len(similarities_list),
+            "tagCount": len(unique_tags),
             "download_ready": True
         })
     else:
         return jsonify({"error": "Error saving data"}), 500
-    
-    """
-API route for deleting a field and recalculating similarities.
-This should be added to the api.py file.
-"""
+
 
 @api_bp.route('/delete_field', methods=['POST'])
 def delete_field():
@@ -288,11 +299,7 @@ def delete_field():
     except Exception as e:
         logger.error(f"Error deleting field: {e}")
         return jsonify({"error": f"Error deleting field: {str(e)}"}), 500
-    
-    """
-API route for deleting a field and recalculating similarities.
-This should be added to the api.py file.
-"""
+
 
 @api_bp.route('/delete_field_all', methods=['POST'])
 def delete_field_all():

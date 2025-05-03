@@ -7,6 +7,7 @@ import os
 # Data paths
 DATA_DIR = 'data'
 NESTED_DESCRIPTIONS_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
+NESTED_DATA_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
 SIMILARITY_FILE = os.path.join(DATA_DIR, 'final_outputs_enhanced_multi/field_similarities.json')
 
 # Group-based similarity parameters

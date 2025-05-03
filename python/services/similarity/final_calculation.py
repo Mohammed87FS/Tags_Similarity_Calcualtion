@@ -218,7 +218,7 @@ class FieldSimilarityService:
     
     def calculate_new_similarities(self, nested_data: Dict[str, Any], 
                                    similarities: List[Dict[str, Any]], 
-                                   new_field: Dict[str, Any]) -> List[Dict[str, Any]]:
+                                   new_field: Dict[str, Any]) -> Dict[str, Any]:
         """
         Calculate similarities between new field and existing fields.
         
@@ -228,7 +228,7 @@ class FieldSimilarityService:
             new_field: Newly added field data
             
         Returns:
-            Updated list of similarity records
+            Dictionary with 'tags' array of all unique field names and 'similarities' array of similarity records
         """
         # Extract all existing fields
         all_fields = []
@@ -266,9 +266,18 @@ class FieldSimilarityService:
         # Combine existing and new similarities
         updated_similarities = similarities + new_similarities
         logger.info(f"Calculated {len(new_similarities)} new similarity scores for {new_field['name']}")
+   
+        unique_tags = set()
+        for sim in updated_similarities:
+            unique_tags.add(sim["field1"])
+            unique_tags.add(sim["field2"])
+     
+        result = {
+            "tags": sorted(list(unique_tags)),
+            "similarities": updated_similarities
+        }
         
-        return updated_similarities
-    
+        return result
     
     def calculate_all_similarities(self, nested_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """

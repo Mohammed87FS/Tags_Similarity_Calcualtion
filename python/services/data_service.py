@@ -5,9 +5,9 @@ Service for loading and saving data to JSON files.
 import os
 import json
 import logging
-from typing import Dict, List, Tuple, Any, Optional
+from typing import Dict, List, Tuple, Any, Optional, Union
 
-from config import DATA_DIR, NESTED_DESCRIPTIONS_FILE, SIMILARITY_FILE
+from config import DATA_DIR, NESTED_DESCRIPTIONS_FILE, SIMILARITY_FILE, NESTED_DATA_FILE
 
 logger = logging.getLogger(__name__)
 
@@ -41,8 +41,16 @@ class DataService:
         if os.path.exists(SIMILARITY_FILE):
             try:
                 with open(SIMILARITY_FILE, 'r', encoding='utf-8') as f:
-                    similarities = json.load(f)
-                logger.info(f"Successfully loaded {len(similarities)} similarity records")
+                    data = json.load(f)
+                    
+                    # Check if the loaded data is in the new format with 'tags' and 'similarities' keys
+                    if isinstance(data, dict) and 'similarities' in data:
+                        similarities = data['similarities']
+                        logger.info(f"Successfully loaded {len(similarities)} similarity records with {len(data.get('tags', []))} tags")
+                    else:
+                        # Old format - just a list of similarities
+                        similarities = data
+                        logger.info(f"Successfully loaded {len(similarities)} similarity records (old format)")
             except Exception as e:
                 logger.error(f"Error loading similarities: {e}")
         else:
@@ -50,41 +58,51 @@ class DataService:
         
         return nested_data, similarities
     
-    @staticmethod
-    def save_data(nested_data: Dict[str, Any], similarities: List[Dict[str, Any]]) -> bool:
+    def save_data(self, nested_data: Dict[str, Any], similarities_or_data: Union[List[Dict[str, Any]], Dict[str, Any]]) -> bool:
         """
-        Save data to JSON files.
+        Save data to the appropriate files.
         
         Args:
-            nested_data: The hierarchical research field data
-            similarities: List of similarity records
+            nested_data: Hierarchical research field data
+            similarities_or_data: Either a list of similarity records or a dictionary with 'tags' and 'similarities'
             
         Returns:
-            True if saving was successful, False otherwise
+            True if successful, False otherwise
         """
-        # Create output directories if they don't exist
-        os.makedirs(os.path.dirname(NESTED_DESCRIPTIONS_FILE), exist_ok=True)
-        os.makedirs(os.path.dirname(SIMILARITY_FILE), exist_ok=True)
-        
-        # Save nested descriptions
         try:
-            with open(NESTED_DESCRIPTIONS_FILE, 'w', encoding='utf-8') as f:
-                json.dump(nested_data, f, indent=2)
-            logger.info(f"Successfully saved nested descriptions to {NESTED_DESCRIPTIONS_FILE}")
+            # Save nested data
+            with open(NESTED_DATA_FILE, 'w', encoding='utf-8') as f:
+                json.dump(nested_data, f, indent=2, ensure_ascii=False)
+                
+            # Handle similarities data - could be a list or dict with 'similarities' key
+            if isinstance(similarities_or_data, dict) and 'similarities' in similarities_or_data:
+                # This is the new format with tags array
+                with open(SIMILARITY_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(similarities_or_data, f, indent=2, ensure_ascii=False)
+            else:
+                # This is the old format with just similarities list
+                # Add a tags array with all unique field names
+                unique_tags = set()
+                for sim in similarities_or_data:
+                    unique_tags.add(sim.get("field1", ""))
+                    unique_tags.add(sim.get("field2", ""))
+                
+                # Remove any empty strings that might have been added
+                if "" in unique_tags:
+                    unique_tags.remove("")
+                    
+                data_to_save = {
+                    "tags": sorted(list(unique_tags)),
+                    "similarities": similarities_or_data
+                }
+                
+                with open(SIMILARITY_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(data_to_save, f, indent=2, ensure_ascii=False)
+                
+            return True
         except Exception as e:
-            logger.error(f"Error saving nested descriptions: {e}")
+            logger.error(f"Error saving data: {e}")
             return False
-        
-        # Save similarities
-        try:
-            with open(SIMILARITY_FILE, 'w', encoding='utf-8') as f:
-                json.dump(similarities, f, indent=2)
-            logger.info(f"Successfully saved {len(similarities)} similarity records to {SIMILARITY_FILE}")
-        except Exception as e:
-            logger.error(f"Error saving similarities: {e}")
-            return False
-        
-        return True
     
     @staticmethod
     def add_field_to_data(nested_data: Dict[str, Any], field_data: Dict[str, str]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
