@@ -1,0 +1,18 @@
+services:
+  # A web service
+  - type: web
+    name: tags-similarity-calculation
+    runtime: python
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: ./render_startup.sh
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "0"
+      - key: DATA_DIR
+        value: /app/python/data
+      - key: PYTHONPATH
+        value: /app
+      - key: GUNICORN_WORKERS
+        value: "2"
