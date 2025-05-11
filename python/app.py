@@ -4,7 +4,12 @@ Main application entry point for research field similarity app.
 
 import os
 import logging
+import sys
 from flask import Flask, render_template, redirect, url_for, request
+
+# Ensure the current directory is in the path for imports
+sys.path.insert(0, os.path.dirname(__file__))
+
 from config import DATA_DIR
 
 # Set up logging
@@ -74,5 +79,9 @@ def create_app():
 app = create_app()
 
 if __name__ == '__main__':
-    # Run the application in debug mode
-    app.run(debug=True)
+    # Get port and debug settings from environment variables
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', '1') == '1'
+    
+    # Run the application
+    app.run(host='0.0.0.0', port=port, debug=debug)

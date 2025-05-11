@@ -3,9 +3,13 @@ Configuration settings for the research field similarity application.
 """
 
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file (if present)
+load_dotenv()
 
 # Data paths
-DATA_DIR = 'data'
+DATA_DIR = os.environ.get('DATA_DIR', 'data')
 NESTED_DESCRIPTIONS_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
 NESTED_DATA_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
 SIMILARITY_FILE = os.path.join(DATA_DIR, 'final_outputs_enhanced_multi/field_similarities.json')
