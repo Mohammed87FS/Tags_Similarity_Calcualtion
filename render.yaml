@@ -6,7 +6,7 @@ services:
     repo: https://github.com/Mohammed87FS/Tags_Similarity_Calcualtion.git
     branch: render
     rootDir: .
-    buildCommand: pip install -r requirements.txt && python -m spacy download en_core_web_sm && chmod +x render_startup.sh
+    buildCommand: poetry install && python -m spacy download en_core_web_sm && chmod +x render_startup.sh
     startCommand: ./render_startup.sh
     envVars:
       - key: FLASK_ENV
