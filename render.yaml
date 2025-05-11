@@ -1,9 +1,12 @@
 services:
-  # A web service
+  # Web service configuration
   - type: web
     name: tags-similarity-calculation
     runtime: python
-    buildCommand: chmod +x build.sh && ./build.sh
+    repo: https://github.com/Mohammed87FS/Tags_Similarity_Calcualtion.git
+    branch: render
+    rootDir: .
+    buildCommand: chmod +x build.sh render_startup.sh && ./build.sh
     startCommand: ./render_startup.sh
     envVars:
       - key: FLASK_ENV
@@ -11,8 +14,8 @@ services:
       - key: FLASK_DEBUG
         value: "0"
       - key: DATA_DIR
-        value: /app/python/data
+        value: /opt/render/project/src/python/data
       - key: PYTHONPATH
-        value: /app
+        value: /opt/render/project/src
       - key: GUNICORN_WORKERS
         value: "2"
