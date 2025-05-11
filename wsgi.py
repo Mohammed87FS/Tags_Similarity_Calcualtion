@@ -10,9 +10,10 @@ import os
 # Add the python directory to the path so we can import modules from it
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'python')))
 
-# Now import the app
-from app import app
+# Import the Flask app instance from your main application file
+# The Gunicorn command will look for an object named 'application' in this file.
+from python.app import app as application
 
-# This allows the app to be run by any WSGI server
+# If you want to be able to run this file directly for development (optional)
 if __name__ == "__main__":
-    app.run()
+    application.run()
