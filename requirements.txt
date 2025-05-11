@@ -5,6 +5,7 @@ spacy==3.5.1
 sentence-transformers==2.2.2
 werkzeug==2.2.3
 typing-extensions==4.5.0
+gunicorn==20.1.0
 
 # Additional commands:
 # python -m spacy download en_core_web_sm
