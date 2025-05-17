@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: research-field-similarity
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt 
+      python -m spacy download en_core_web_sm
+    startCommand: cd python && gunicorn --pythonpath python app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.8.0
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHONPATH
+        value: .
+    disk:
+      name: data
+      mountPath: /opt/render/project/src/python/data
+      sizeGB: 1

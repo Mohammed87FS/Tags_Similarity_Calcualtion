@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 # Import from routes module
 from routes.api import (
     api_bp, add_field, get_subgroups, get_similarity, 
-    get_all_similarities_for_field, download_similarities, test ,recalculate_similarities
+    get_all_similarities_for_field, download_similarities, test, recalculate_similarities
 )
 
 def create_app():
@@ -59,9 +59,7 @@ def create_app():
             subgroups=subgroups
         )
     
-    
     # Ensure data directory exists
-    from config import DATA_DIR
     os.makedirs(DATA_DIR, exist_ok=True)
     
     # Ensure static directories exist
@@ -74,5 +72,11 @@ def create_app():
 app = create_app()
 
 if __name__ == '__main__':
-    # Run the application in debug mode
-    app.run(debug=True)
+    # Check if running on Render
+    if os.environ.get('RENDER'):
+        # Use production server settings
+        port = int(os.environ.get('PORT', 10000))
+        app.run(host='0.0.0.0', port=port)
+    else:
+        # Run the application in debug mode
+        app.run(debug=True)
