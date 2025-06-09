@@ -1,6 +1,660 @@
 {
   "categories": [
     {
+      "name": "Media Studies & Communication",
+      "subgroups": [
+        {
+          "name": "Media Technology",
+          "fields": [
+            {
+              "name": "Media Technology Engineering",
+              "description": {
+                "definition": "Media Technology Engineering develops technical systems for creating, processing, and distributing multimedia content through advanced hardware and software solutions",
+                "methodologies": "Broadcast engineering, signal processing, media server architecture, streaming protocols, audio/video compression, media workflow automation, quality control systems",
+                "applications": "Television production, radio broadcasting, streaming platforms, content delivery networks, multimedia installations, live event production"
+              }
+            },
+            {
+              "name": "Digital Media Production",
+              "description": {
+                "definition": "Digital Media Production creates professional multimedia content using digital tools and workflows for various platforms and audiences",
+                "methodologies": "Digital cinematography, post-production workflows, color grading, sound design, motion graphics, virtual production, multi-camera production",
+                "applications": "Film production, television programming, web content, advertising campaigns, corporate communications, documentary filmmaking"
+              }
+            },
+            {
+              "name": "Interactive Media Design",
+              "description": {
+                "definition": "Interactive Media Design creates engaging digital experiences that respond to user input through innovative interface and interaction design",
+                "methodologies": "User interface design, experience prototyping, interactive storytelling, multimedia integration, responsive design, accessibility design",
+                "applications": "Interactive installations, digital exhibitions, educational media, web applications, mobile interfaces, virtual reality experiences"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rail & Transportation Technology",
+      "subgroups": [
+        {
+          "name": "Rail Systems",
+          "fields": [
+            {
+              "name": "Railway Signal Engineering",
+              "description": {
+                "definition": "Railway Signal Engineering designs and implements train control and signaling systems to ensure safe and efficient rail operations",
+                "methodologies": "Signal system design, interlocking systems, automatic train protection, train detection systems, communication-based train control, safety integrity levels",
+                "applications": "Metro systems, high-speed rail, freight railways, tramway systems, automated people movers, railway crossing protection"
+              }
+            },
+            {
+              "name": "Rolling Stock Technology",
+              "description": {
+                "definition": "Rolling Stock Technology develops and maintains railway vehicles including locomotives, passenger cars, and freight wagons with focus on performance and safety",
+                "methodologies": "Vehicle dynamics, traction systems, braking systems, bogies design, crashworthiness, energy efficiency, condition monitoring, maintenance optimization",
+                "applications": "Electric trains, diesel locomotives, high-speed trains, urban transit vehicles, freight wagons, maintenance vehicles"
+              }
+            },
+            {
+              "name": "Railway Operations Research",
+              "description": {
+                "definition": "Railway Operations Research applies mathematical and analytical methods to optimize railway system performance, capacity, and efficiency",
+                "methodologies": "Train scheduling algorithms, capacity analysis, delay management, crew scheduling, maintenance planning, simulation modeling, optimization techniques",
+                "applications": "Timetable optimization, capacity planning, delay recovery, resource allocation, maintenance scheduling, network analysis"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Digital Health & Biomedical Sciences",
+      "subgroups": [
+        {
+          "name": "Health Informatics",
+          "fields": [
+            {
+              "name": "Medical Information Systems",
+              "description": {
+                "definition": "Medical Information Systems develops integrated technology solutions for healthcare data management, clinical workflows, and patient care coordination",
+                "methodologies": "Health information exchange, clinical data integration, medical imaging informatics, clinical decision support, interoperability standards, health data analytics",
+                "applications": "Hospital information systems, electronic medical records, radiology information systems, laboratory information systems, pharmacy systems"
+              }
+            },
+            {
+              "name": "Biomedical Data Science",
+              "description": {
+                "definition": "Biomedical Data Science applies computational methods to biological and medical data to extract insights for healthcare improvement and medical research",
+                "methodologies": "Bioinformatics, genomic data analysis, medical image analysis, clinical data mining, population health analytics, precision medicine algorithms",
+                "applications": "Genomic medicine, personalized treatment, drug discovery, epidemiological studies, medical imaging diagnostics, clinical research"
+              }
+            },
+            {
+              "name": "Digital Health Solutions",
+              "description": {
+                "definition": "Digital Health Solutions creates technology-enabled healthcare services and tools that improve patient outcomes and healthcare delivery efficiency",
+                "methodologies": "Mobile health app development, remote monitoring systems, patient engagement platforms, health behavior tracking, clinical workflow integration",
+                "applications": "Chronic disease management, preventive healthcare, patient monitoring, health coaching, medication adherence, wellness programs"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Information Security & IT",
+      "subgroups": [
+        {
+          "name": "IT Security Management",
+          "fields": [
+            {
+              "name": "Enterprise Security Architecture",
+              "description": {
+                "definition": "Enterprise Security Architecture designs comprehensive security frameworks for organizations, integrating technical controls with business processes and governance structures",
+                "methodologies": "Security architecture frameworks, risk-based design, security control selection, threat modeling for enterprises, security governance integration, compliance mapping",
+                "applications": "Corporate security programs, multi-site security architecture, cloud security design, regulatory compliance systems, security transformation projects"
+              }
+            },
+            {
+              "name": "IT Risk Management",
+              "description": {
+                "definition": "IT Risk Management identifies, assesses, and mitigates technology-related risks that could impact business operations, data security, and organizational objectives",
+                "methodologies": "Risk assessment frameworks, vulnerability management, business impact analysis, risk quantification, control effectiveness measurement, third-party risk assessment",
+                "applications": "Corporate risk management, vendor risk assessment, regulatory compliance, business continuity planning, security investment planning"
+              }
+            },
+            {
+              "name": "Security Operations Management",
+              "description": {
+                "definition": "Security Operations Management establishes and manages security monitoring, incident response, and threat detection capabilities for continuous protection of organizational assets",
+                "methodologies": "Security operations center design, incident response procedures, threat hunting methodologies, security monitoring tools, forensic investigation, security metrics",
+                "applications": "24/7 security monitoring, incident response teams, threat intelligence programs, security service delivery, compliance monitoring"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Applied Social Sciences & Social Work",
+      "subgroups": [
+        {
+          "name": "Social Care",
+          "fields": [
+            {
+              "name": "Geriatric Care Management",
+              "description": {
+                "definition": "Geriatric Care Management coordinates comprehensive care services for older adults, addressing their complex health, social, and functional needs through interdisciplinary approaches",
+                "methodologies": "Comprehensive geriatric assessment, care coordination, aging-in-place strategies, family involvement techniques, interdisciplinary team collaboration, quality of life measurement",
+                "applications": "Senior care facilities, community-based aging services, geriatric healthcare, family support programs, dementia care, elder abuse prevention"
+              }
+            },
+            {
+              "name": "Youth and Family Services",
+              "description": {
+                "definition": "Youth and Family Services provides support and intervention programs for children, adolescents, and families facing various challenges and life transitions",
+                "methodologies": "Family systems therapy, youth development approaches, crisis intervention, strength-based practice, trauma-informed care, resiliency building techniques",
+                "applications": "Child welfare services, family counseling, youth mentoring programs, foster care, adoption services, juvenile justice programs"
+              }
+            },
+            {
+              "name": "Community Mental Health",
+              "description": {
+                "definition": "Community Mental Health delivers accessible mental health services within community settings, emphasizing prevention, early intervention, and recovery-oriented care",
+                "methodologies": "Community-based treatment models, peer support integration, crisis intervention, recovery-oriented practices, population mental health approaches, community engagement",
+                "applications": "Outpatient mental health centers, crisis response teams, peer support programs, community integration services, prevention programs"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Digital Business & Innovation",
+      "subgroups": [
+        {
+          "name": "Innovation Management",
+          "fields": [
+            {
+              "name": "Digital Innovation Strategy",
+              "description": {
+                "definition": "Digital Innovation Strategy develops systematic approaches to leverage digital technologies for creating competitive advantages and new value propositions",
+                "methodologies": "Digital opportunity assessment, innovation portfolio management, technology scouting, digital experimentation, innovation metrics, ecosystem collaboration",
+                "applications": "Digital transformation initiatives, new product development, business model innovation, technology adoption, innovation labs, startup partnerships"
+              }
+            },
+            {
+              "name": "Technology Transfer",
+              "description": {
+                "definition": "Technology Transfer facilitates the movement of scientific discoveries and technological innovations from research institutions to commercial applications and market deployment",
+                "methodologies": "IP commercialization, licensing strategies, spin-off creation, industry partnerships, market analysis, technology valuation, collaborative research management",
+                "applications": "University-industry collaboration, startup incubation, research commercialization, licensing agreements, joint ventures, innovation ecosystems"
+              }
+            },
+            {
+              "name": "Digital Entrepreneurship",
+              "description": {
+                "definition": "Digital Entrepreneurship focuses on creating and scaling technology-based ventures, leveraging digital platforms and tools to build innovative businesses",
+                "methodologies": "Lean startup methodology, digital product development, platform business models, growth hacking, digital marketing, venture capital preparation, scaling strategies",
+                "applications": "Tech startups, digital platforms, e-commerce ventures, software as a service, mobile app businesses, digital marketplaces"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Creative Industries & Design",
+      "subgroups": [
+        {
+          "name": "Creative Technology",
+          "fields": [
+            {
+              "name": "Creative Computing",
+              "description": {
+                "definition": "Creative Computing applies computational thinking and programming skills to artistic and creative practices, developing new forms of digital expression and interactive art",
+                "methodologies": "Generative art algorithms, interactive installation programming, creative coding frameworks, procedural content generation, real-time graphics programming",
+                "applications": "Digital art installations, interactive exhibitions, generative music, visual arts, creative applications, artistic performances"
+              }
+            },
+            {
+              "name": "Design Research",
+              "description": {
+                "definition": "Design Research investigates design processes, methods, and impacts through systematic inquiry, informing evidence-based design practice and innovation",
+                "methodologies": "Design ethnography, participatory design research, design thinking evaluation, cultural probe techniques, co-design methodologies, design impact assessment",
+                "applications": "Product design research, service design studies, social design projects, design policy development, design education, innovation research"
+              }
+            },
+            {
+              "name": "Sustainable Design",
+              "description": {
+                "definition": "Sustainable Design creates products, services, and systems that minimize environmental impact while meeting human needs through responsible material choices and circular design principles",
+                "methodologies": "Life cycle assessment, cradle-to-cradle design, biomimicry, eco-design principles, circular design strategies, sustainable material selection",
+                "applications": "Eco-friendly product design, sustainable packaging, green building design, renewable energy systems, sustainable fashion, circular economy solutions"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smart City & Urban Technology",
+      "subgroups": [
+        {
+          "name": "Urban Systems",
+          "fields": [
+            {
+              "name": "Smart City Infrastructure",
+              "description": {
+                "definition": "Smart City Infrastructure integrates IoT sensors, data analytics, and automated systems into urban environments to optimize city services and improve quality of life",
+                "methodologies": "Urban IoT deployment, smart grid integration, intelligent transportation systems, environmental monitoring networks, citizen engagement platforms, data-driven city planning",
+                "applications": "Smart traffic management, energy-efficient buildings, waste management optimization, air quality monitoring, smart street lighting, digital city services"
+              }
+            },
+            {
+              "name": "Urban Data Analytics",
+              "description": {
+                "definition": "Urban Data Analytics processes and analyzes city-generated data to optimize urban services, predict trends, and support evidence-based municipal decision-making",
+                "methodologies": "Urban big data processing, predictive modeling for cities, spatial analytics, real-time urban monitoring, citizen behavior analysis, urban performance metrics",
+                "applications": "Traffic flow optimization, crime prevention, utility management, urban planning support, emergency response, public service optimization"
+              }
+            },
+            {
+              "name": "Digital Governance",
+              "description": {
+                "definition": "Digital Governance implements technology solutions to improve government services, citizen engagement, and administrative processes through digital transformation of public sector operations",
+                "methodologies": "E-government platform development, digital service design, citizen portal creation, open data initiatives, digital identity systems, blockchain for governance",
+                "applications": "Online government services, digital voting systems, citizen participation platforms, transparent governance tools, digital identity management, public service automation"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sports & Exercise Science",
+      "subgroups": [
+        {
+          "name": "Sports Technology",
+          "fields": [
+            {
+              "name": "Sports Performance Analysis",
+              "description": {
+                "definition": "Sports Performance Analysis uses technology and data analytics to evaluate athletic performance, providing insights for training optimization and competitive advantage",
+                "methodologies": "Motion analysis, biomechanical assessment, performance metrics, video analysis, statistical modeling, wearable technology integration, data visualization",
+                "applications": "Athlete performance monitoring, training optimization, injury prevention, tactical analysis, talent identification, rehabilitation monitoring, sports analytics"
+              }
+            },
+            {
+              "name": "Exercise Physiology Technology",
+              "description": {
+                "definition": "Exercise Physiology Technology applies digital tools to measure and analyze physiological responses to exercise, supporting health and performance optimization",
+                "methodologies": "Physiological monitoring, metabolic analysis, heart rate variability analysis, fitness testing protocols, exercise prescription, health monitoring systems",
+                "applications": "Fitness assessment, training monitoring, health promotion, rehabilitation programs, wellness tracking, performance optimization, preventive healthcare"
+              }
+            },
+            {
+              "name": "Sports Equipment Technology",
+              "description": {
+                "definition": "Sports Equipment Technology develops and enhances sporting goods through advanced materials, sensors, and design innovations to improve performance and safety",
+                "methodologies": "Materials engineering, sensor integration, ergonomic design, performance testing, biomechanical analysis, smart equipment development, safety testing",
+                "applications": "Smart equipment design, performance enhancement tools, safety equipment, training aids, wearable sports technology, equipment optimization"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Education & Learning Sciences",
+      "subgroups": [
+        {
+          "name": "Educational Technology",
+          "fields": [
+            {
+              "name": "Educational Technology",
+              "description": {
+                "definition": "Educational Technology designs and implements technology-enhanced learning environments, developing tools and systems that improve educational outcomes through digital innovation",
+                "methodologies": "Instructional design, learning analytics, adaptive learning systems, educational content development, learning management systems, assessment technologies",
+                "applications": "E-learning platforms, mobile learning, virtual classrooms, educational games, learning analytics, adaptive learning, MOOCs, educational software"
+              }
+            },
+            {
+              "name": "Learning Analytics",
+              "description": {
+                "definition": "Learning Analytics measures, collects, analyzes, and reports data about learners and their contexts to understand and optimize learning and learning environments",
+                "methodologies": "Data mining for education, predictive modeling, learning outcome analysis, behavior analytics, dashboard development, personalization algorithms, assessment analytics",
+                "applications": "Student performance prediction, personalized learning, dropout prevention, curriculum optimization, learning pathway analysis, educational intervention design"
+              }
+            },
+            {
+              "name": "Digital Learning Design",
+              "description": {
+                "definition": "Digital Learning Design creates engaging educational experiences using digital technologies, applying pedagogical principles to design effective online and blended learning environments",
+                "methodologies": "Instructional design models, multimedia learning principles, user experience design for education, accessibility design, assessment design, learning pathway design",
+                "applications": "Online courses, educational apps, virtual reality training, simulation-based learning, interactive learning materials, digital assessment tools"
+              }
+            },
+            {
+              "name": "Educational Assessment Technology",
+              "description": {
+                "definition": "Educational Assessment Technology develops digital tools and systems for measuring learning outcomes, providing feedback, and supporting evidence-based educational decisions",
+                "methodologies": "Computer-based testing, automated scoring, formative assessment, adaptive testing, analytics dashboard design, feedback systems, psychometric modeling",
+                "applications": "Online testing platforms, automated essay scoring, competency-based assessment, learning progress tracking, certification systems, educational measurement"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Legal & Compliance",
+      "subgroups": [
+        {
+          "name": "Legal Technology",
+          "fields": [
+            {
+              "name": "Legal Informatics",
+              "description": {
+                "definition": "Legal Informatics applies information technology to legal practice and administration, developing systems that enhance legal research, case management, and compliance monitoring",
+                "methodologies": "Legal data modeling, case law analysis, document automation, contract analysis, compliance frameworks, legal process automation, knowledge management systems",
+                "applications": "Legal research systems, case management software, contract management, compliance monitoring, legal analytics, e-discovery, court administration systems"
+              }
+            },
+            {
+              "name": "Data Protection Law",
+              "description": {
+                "definition": "Data Protection Law examines legal frameworks governing personal data processing, developing compliance strategies and privacy-enhancing technologies to protect individual rights",
+                "methodologies": "Privacy impact assessment, data mapping, consent management, rights management, breach response, regulatory compliance, privacy by design, legal risk assessment",
+                "applications": "GDPR compliance, privacy policy development, data subject rights, international data transfers, privacy technology, regulatory compliance, data governance"
+              }
+            },
+            {
+              "name": "Intellectual Property Management",
+              "description": {
+                "definition": "Intellectual Property Management protects and commercializes intangible assets including patents, trademarks, copyrights, and trade secrets through strategic legal and business approaches",
+                "methodologies": "IP portfolio management, patent analysis, trademark protection, licensing strategies, technology transfer, IP valuation, infringement analysis, prior art research",
+                "applications": "Patent prosecution, trademark registration, copyright protection, licensing agreements, technology commercialization, IP litigation support, innovation protection"
+              }
+            },
+            {
+              "name": "Regulatory Technology",
+              "description": {
+                "definition": "Regulatory Technology develops technological solutions to help organizations comply with regulations efficiently and effectively through automated monitoring and reporting systems",
+                "methodologies": "Automated compliance monitoring, regulatory reporting, risk assessment, policy management, audit trails, regulatory change management, compliance analytics",
+                "applications": "Financial services compliance, healthcare regulation, environmental compliance, data protection compliance, audit automation, regulatory reporting systems"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Automotive & Mobility Engineering",
+      "subgroups": [
+        {
+          "name": "Vehicle Engineering",
+          "fields": [
+            {
+              "name": "Automotive Engineering",
+              "description": {
+                "definition": "Automotive Engineering designs and develops vehicles and automotive systems, integrating mechanical, electrical, and software engineering for transportation solutions",
+                "methodologies": "Vehicle dynamics, powertrain engineering, automotive electronics, safety system design, autonomous vehicle technology, electric vehicle systems, testing and validation",
+                "applications": "Vehicle design, autonomous driving systems, electric mobility, connected vehicles, automotive safety systems, mobility services, automotive manufacturing"
+              }
+            },
+            {
+              "name": "Electric Vehicle Technology",
+              "description": {
+                "definition": "Electric Vehicle Technology develops battery-powered transportation systems, focusing on energy storage, power electronics, and charging infrastructure for sustainable mobility",
+                "methodologies": "Battery management systems, electric motor design, power electronics, charging system design, energy management, thermal management, vehicle integration",
+                "applications": "Electric cars, electric buses, e-bikes, charging infrastructure, battery technology, energy management systems, smart charging, vehicle-to-grid systems"
+              }
+            },
+            {
+              "name": "Autonomous Vehicle Systems",
+              "description": {
+                "definition": "Autonomous Vehicle Systems develops technologies for self-driving vehicles, integrating sensors, artificial intelligence, and control systems for safe autonomous navigation",
+                "methodologies": "Sensor fusion, machine learning for perception, path planning, control systems, safety validation, testing methodologies, human-machine interaction, regulatory compliance",
+                "applications": "Self-driving cars, autonomous trucks, autonomous public transport, delivery robots, agricultural automation, mining vehicles, autonomous parking systems"
+              }
+            },
+            {
+              "name": "Connected Vehicle Technology",
+              "description": {
+                "definition": "Connected Vehicle Technology enables vehicles to communicate with infrastructure, other vehicles, and cloud services to enhance safety, efficiency, and user experience",
+                "methodologies": "V2X communication, telematics, IoT integration, cybersecurity, data analytics, cloud connectivity, edge computing, communication protocols",
+                "applications": "Traffic management, fleet management, emergency services, infotainment systems, remote diagnostics, over-the-air updates, mobility services, smart cities"
+              }
+            },
+            {
+              "name": "Mobility Services",
+              "description": {
+                "definition": "Mobility Services develops integrated transportation solutions that combine multiple transport modes through digital platforms to provide seamless user experiences",
+                "methodologies": "Service design, platform development, user experience design, business model innovation, data analytics, optimization algorithms, integration strategies",
+                "applications": "Mobility as a Service, ride sharing, car sharing, multimodal transport, smart parking, demand-responsive transport, urban mobility planning"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Environmental Sciences",
+      "subgroups": [
+        {
+          "name": "Environmental Management",
+          "fields": [
+            {
+              "name": "Environmental Science",
+              "description": {
+                "definition": "Environmental Science integrates physical, biological, and social sciences to study environmental problems and develop solutions for environmental protection and sustainability",
+                "methodologies": "Environmental monitoring, impact assessment, risk analysis, ecosystem modeling, pollution control, remediation techniques, sustainability assessment, life cycle analysis",
+                "applications": "Environmental protection, pollution control, conservation programs, climate change mitigation, sustainable development, environmental remediation, policy development"
+              }
+            },
+            {
+              "name": "Sustainability Management",
+              "description": {
+                "definition": "Sustainability Management integrates environmental, social, and economic considerations into organizational decision-making to achieve long-term viability and positive impact",
+                "methodologies": "Triple bottom line approach, sustainability reporting, environmental management systems, carbon footprinting, sustainable supply chain management, stakeholder engagement",
+                "applications": "Corporate sustainability, sustainable operations, green building, renewable energy projects, circular economy initiatives, sustainable finance, ESG reporting"
+              }
+            },
+            {
+              "name": "Climate Change Studies",
+              "description": {
+                "definition": "Climate Change Studies examines causes, impacts, and responses to global climate change, developing strategies for mitigation and adaptation across various scales and sectors",
+                "methodologies": "Climate modeling, greenhouse gas accounting, vulnerability assessment, adaptation planning, mitigation strategies, climate risk assessment, policy analysis",
+                "applications": "Climate policy development, carbon management, adaptation planning, renewable energy development, climate finance, disaster risk reduction, sustainable development"
+              }
+            },
+            {
+              "name": "Renewable Energy Systems",
+              "description": {
+                "definition": "Renewable Energy Systems designs and implements technologies that harness sustainable energy sources, developing solutions for clean energy generation and distribution",
+                "methodologies": "Energy system modeling, feasibility analysis, technology assessment, grid integration, energy storage, life cycle assessment, economic analysis, policy evaluation",
+                "applications": "Solar energy systems, wind power, hydroelectric systems, biomass energy, geothermal systems, energy storage, smart grids, distributed energy systems"
+              }
+            },
+            {
+              "name": "Environmental Monitoring",
+              "description": {
+                "definition": "Environmental Monitoring collects and analyzes data on environmental conditions to assess ecosystem health, track changes, and inform management decisions",
+                "methodologies": "Sensor networks, remote sensing, data collection protocols, statistical analysis, quality assurance, trend analysis, reporting systems, real-time monitoring",
+                "applications": "Air quality monitoring, water quality assessment, biodiversity monitoring, pollution tracking, climate monitoring, ecosystem health assessment, compliance monitoring"
+              }
+            },
+            {
+              "name": "Circular Economy",
+              "description": {
+                "definition": "Circular Economy develops economic models that eliminate waste through design, keeping materials in use, and regenerating natural systems through closed-loop processes",
+                "methodologies": "Material flow analysis, life cycle thinking, design for circularity, industrial symbiosis, waste-to-resource strategies, circular business models, systems thinking",
+                "applications": "Waste management, product design, industrial ecology, resource recovery, sharing economy, product-service systems, urban metabolism, sustainable consumption"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tourism & Hospitality",
+      "subgroups": [
+        {
+          "name": "Tourism Management",
+          "fields": [
+            {
+              "name": "Tourism Economics",
+              "description": {
+                "definition": "Tourism Economics analyzes the economic impact of tourism activities on destinations, examining demand patterns, pricing strategies, and economic multiplier effects of tourism development",
+                "methodologies": "Economic impact analysis, tourism demand modeling, cost-benefit analysis, multiplier effect calculation, tourism satellite accounts, regional economic analysis, market research",
+                "applications": "Destination economic planning, tourism policy development, investment analysis, regional development, tourism taxation, economic impact assessment, sustainable tourism economics"
+              }
+            },
+            {
+              "name": "Destination Management",
+              "description": {
+                "definition": "Destination Management coordinates tourism stakeholders and resources to enhance visitor experience while preserving local assets and community wellbeing through integrated planning and marketing",
+                "methodologies": "Stakeholder engagement, tourism planning, brand development, visitor experience design, carrying capacity assessment, community-based tourism, marketing mix strategies",
+                "applications": "Tourism destination development, marketing campaigns, visitor management, community tourism, heritage tourism, eco-tourism, urban tourism, rural tourism development"
+              }
+            },
+            {
+              "name": "Hospitality Operations",
+              "description": {
+                "definition": "Hospitality Operations manages service delivery in accommodation, food service, and entertainment sectors, optimizing guest satisfaction through efficient processes and quality management",
+                "methodologies": "Service quality management, revenue management, operations optimization, guest experience design, staff training programs, technology integration, performance measurement",
+                "applications": "Hotel management, restaurant operations, event management, cruise operations, resort management, food service management, hospitality technology systems"
+              }
+            },
+            {
+              "name": "Event Management",
+              "description": {
+                "definition": "Event Management plans, organizes, and executes special events from conception to completion, coordinating resources, stakeholders, and logistics to achieve event objectives",
+                "methodologies": "Event planning frameworks, stakeholder management, risk management, logistics coordination, vendor management, marketing and promotion, evaluation and assessment",
+                "applications": "Corporate events, conferences, festivals, weddings, sports events, cultural events, trade shows, product launches, fundraising events"
+              }
+            },
+            {
+              "name": "Cultural Tourism",
+              "description": {
+                "definition": "Cultural Tourism develops and manages tourism experiences based on cultural heritage, arts, and traditions, creating authentic visitor experiences while preserving cultural assets",
+                "methodologies": "Heritage interpretation, cultural asset management, authentic experience design, community involvement, cultural impact assessment, storytelling techniques, preservation planning",
+                "applications": "Heritage site management, cultural festivals, museum tourism, art tourism, indigenous tourism, religious tourism, cultural route development, creative tourism"
+              }
+            },
+            {
+              "name": "Sustainable Tourism",
+              "description": {
+                "definition": "Sustainable Tourism develops tourism practices that meet present visitor needs while preserving environmental and cultural resources for future generations through responsible planning and management",
+                "methodologies": "Sustainability assessment, carrying capacity analysis, community-based tourism, environmental impact assessment, certification systems, stakeholder engagement, monitoring systems",
+                "applications": "Eco-tourism development, community tourism, responsible travel, conservation tourism, sustainable destination planning, green hospitality, climate change adaptation"
+              }
+            },
+            {
+              "name": "Digital Tourism Marketing",
+              "description": {
+                "definition": "Digital Tourism Marketing leverages online platforms and technologies to promote destinations and tourism services, creating engaging digital experiences that influence travel decisions",
+                "methodologies": "Social media marketing, content marketing, influencer marketing, search engine optimization, online reputation management, digital advertising, analytics and measurement",
+                "applications": "Destination marketing, hotel marketing, tour operator marketing, travel blogging, virtual tourism experiences, mobile tourism apps, online booking platforms"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Business & Management",
+      "subgroups": [
+        {
+          "name": "Business Administration",
+          "fields": [
+            {
+              "name": "Project Management",
+              "description": {
+                "definition": "Project Management applies systematic approaches to planning, executing, and controlling projects to achieve specific goals within defined constraints of time, budget, and scope",
+                "methodologies": "Agile methodologies, waterfall approach, risk management, stakeholder management, resource planning, quality management, communication planning, project scheduling, budget control, earned value management",
+                "applications": "IT projects, construction management, product development, organizational change, event management, research projects, digital transformation initiatives, international development projects"
+              }
+            },
+            {
+              "name": "Strategic Management",
+              "description": {
+                "definition": "Strategic Management formulates and implements long-term organizational direction through environmental analysis, competitive positioning, and resource allocation to achieve sustainable competitive advantage",
+                "methodologies": "SWOT analysis, Porter's five forces, balanced scorecard, scenario planning, competitive analysis, strategic planning frameworks, blue ocean strategy, resource-based view",
+                "applications": "Corporate strategy development, business transformation, market entry strategies, competitive positioning, strategic partnerships, innovation management, organizational restructuring"
+              }
+            },
+            {
+              "name": "Innovation Management",
+              "description": {
+                "definition": "Innovation Management develops systematic approaches to creating, implementing, and scaling new ideas within organizations, managing innovation processes from ideation to commercialization",
+                "methodologies": "Design thinking, lean startup methodology, innovation funnels, stage-gate processes, open innovation frameworks, technology roadmapping, innovation portfolio management",
+                "applications": "Product innovation, service innovation, process improvement, digital innovation, sustainable innovation, social innovation, organizational innovation, technology transfer"
+              }
+            },
+            {
+              "name": "Entrepreneurship",
+              "description": {
+                "definition": "Entrepreneurship studies the creation and development of new ventures, examining opportunity recognition, resource mobilization, and value creation in uncertain environments",
+                "methodologies": "Business model canvas, lean startup, customer development, venture capital funding, pitch development, market validation, scaling strategies, entrepreneurial finance",
+                "applications": "Startup creation, venture development, social entrepreneurship, corporate entrepreneurship, technology commercialization, small business development, innovation ecosystems"
+              }
+            },
+            {
+              "name": "Supply Chain Management",
+              "description": {
+                "definition": "Supply Chain Management coordinates the flow of goods, services, and information from suppliers to customers, optimizing efficiency, cost, and customer satisfaction across interconnected networks",
+                "methodologies": "Demand forecasting, inventory optimization, logistics planning, supplier relationship management, lean supply chain, agile supply chain, risk management, performance measurement",
+                "applications": "Manufacturing supply chains, retail logistics, global supply networks, e-commerce fulfillment, sustainable supply chains, humanitarian logistics, reverse logistics"
+              }
+            },
+            {
+              "name": "Digital Business Strategy",
+              "description": {
+                "definition": "Digital Business Strategy develops approaches for leveraging digital technologies to create competitive advantage, designing organizational capabilities for the digital economy",
+                "methodologies": "Digital maturity assessment, platform strategies, ecosystem thinking, digital value propositions, omnichannel strategies, data-driven business models, digital transformation frameworks",
+                "applications": "Digital transformation, platform businesses, e-commerce strategies, digital customer experience, data monetization, technology-enabled services, digital ecosystems"
+              }
+            },
+            {
+              "name": "Operations Management",
+              "description": {
+                "definition": "Operations Management designs and controls production processes and service delivery systems to efficiently transform inputs into outputs while maintaining quality and customer satisfaction",
+                "methodologies": "Process optimization, quality management systems, lean manufacturing, six sigma, capacity planning, workflow design, performance measurement, continuous improvement",
+                "applications": "Manufacturing operations, service delivery, healthcare operations, logistics management, quality control, process improvement, resource optimization, operational excellence"
+              }
+            },
+            {
+              "name": "Financial Management",
+              "description": {
+                "definition": "Financial Management plans, organizes, and controls financial resources to achieve organizational objectives, making decisions about investment, financing, and dividend policies",
+                "methodologies": "Financial analysis, capital budgeting, risk assessment, portfolio management, cash flow management, financial forecasting, valuation techniques, financial modeling",
+                "applications": "Corporate finance, investment decisions, risk management, financial planning, capital structure optimization, performance evaluation, mergers and acquisitions"
+              }
+            },
+            {
+              "name": "Human Resource Management",
+              "description": {
+                "definition": "Human Resource Management develops policies and practices for attracting, developing, and retaining talent while ensuring legal compliance and organizational effectiveness",
+                "methodologies": "Talent acquisition, performance management, compensation design, training and development, succession planning, employee engagement, organizational culture development",
+                "applications": "Recruitment strategies, employee development, performance evaluation, compensation planning, organizational development, change management, workplace diversity initiatives"
+              }
+            },
+            {
+              "name": "International Business",
+              "description": {
+                "definition": "International Business examines commercial activities that cross national boundaries, analyzing global markets, cultural differences, and regulatory environments affecting multinational operations",
+                "methodologies": "Market entry strategies, cultural analysis, international trade theory, global value chain analysis, political risk assessment, cross-cultural management, international finance",
+                "applications": "Export development, foreign market entry, multinational corporation management, global supply chains, international joint ventures, cross-border mergers, global marketing"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Computational Sciences & AI",
       "subgroups": [
         {
@@ -31,14 +685,6 @@
               }
             },
             {
-              "name": "Applied Artificial Intelligence",
-              "description": {
-                "definition": "Applied Artificial Intelligence focuses on developing and implementing practical AI solutions for industry and societal challenges, emphasizing the design of systems that can solve specific problems through adaptive learning, reasoning and decision-making capabilities",
-                "methodologies": "Transfer learning, domain adaptation, explainable AI, machine learning operations (MLOps), data-centric AI, edge computing for AI, hybrid AI systems, human-AI collaboration frameworks, real-time decision systems, responsible AI implementation",
-                "applications": "Smart manufacturing, personalized healthcare, intelligent transportation systems, energy optimization, financial forecasting, security threat detection, precision agriculture, automated quality control, personalized recommendation engines"
-              }
-            },
-            {
               "name": "AI Ethics & Governance",
               "description": {
                 "definition": "AI Ethics & Governance establishes frameworks, principles, and mechanisms for ensuring artificial intelligence systems operate in ways that are beneficial, fair, transparent, and accountable to society, while minimizing potential harms",
@@ -60,14 +706,6 @@
                 "definition": "Natural Language Understanding develops computational systems that comprehend human language by extracting meaning, intent, and contextual relevance from text or speech, enabling machines to interpret and reason about human communication",
                 "methodologies": "Semantic parsing, contextual embeddings, knowledge graph integration, transfer learning for language models, neuro-symbolic approaches, multi-task learning, cross-lingual transfer, pragmatic reasoning, discourse analysis",
                 "applications": "Conversational agents, sentiment analysis, information extraction, machine translation, text summarization, content moderation, legal document analysis, healthcare documentation, cultural text analysis"
-              }
-            },
-            {
-              "name": "Deep Learning Systems",
-              "description": {
-                "definition": "Deep Learning Systems creates and optimizes neural network architectures with multiple processing layers for automatically discovering patterns in large datasets, supporting the development of AI applications through complex representation learning",
-                "methodologies": "Neural architecture search, transfer learning, generative modeling, self-supervised learning, federated learning, quantization, pruning, knowledge distillation, adversarial training, continual learning",
-                "applications": "Computer vision, natural language processing, speech recognition, drug discovery, anomaly detection, autonomous systems, medical image analysis, financial modeling, creative content generation"
               }
             }
           ]
@@ -105,14 +743,6 @@
                 "definition": "Virtual Reality Development creates immersive digital environments that users can interact with through specialized hardware, designing three-dimensional spaces and interaction paradigms that provide convincing sensory experiences",
                 "methodologies": "3D modeling and optimization, real-time rendering, spatial audio design, physics simulation, haptic feedback systems, locomotion techniques, stereoscopic rendering, performance optimization, interaction design for immersion",
                 "applications": "Training simulations, therapeutic applications, architectural visualization, entertainment experiences, social platforms, educational environments, virtual prototyping, exposure therapy, cultural heritage preservation"
-              }
-            },
-            {
-              "name": "Computer Vision for Media",
-              "description": {
-                "definition": "Computer Vision for Media applies image and video analysis algorithms to recognize, understand, and manipulate visual content in creative, entertainment, and communication contexts, enabling new media forms and interaction capabilities",
-                "methodologies": "Feature detection, visual content classification, object tracking, motion analysis, scene understanding, color grading algorithms, style transfer, gesture recognition, emotion detection, generative visual models",
-                "applications": "Interactive installations, content moderation, automated video editing, visual effects, real-time broadcast analysis, performance capture, audience analytics, responsive media, social media filters, personalized visual content"
               }
             },
             {
@@ -174,14 +804,6 @@
                 "definition": "Data Visualization creates visual representations of data that enhance understanding and discovery through graphical means, developing techniques that leverage human perceptual capabilities to identify patterns, trends, and outliers",
                 "methodologies": "Visual encoding selection, interaction design, cognitive load optimization, color theory application, dashboard layout, animation techniques, narrative visualization, perceptual scaling, multidimensional visualization, information hierarchy",
                 "applications": "Executive reporting, scientific communication, public data exploration, performance monitoring, anomaly detection, trend analysis, comparative studies, geographic information systems, network relationship mapping"
-              }
-            },
-            {
-              "name": "Applied Statistics",
-              "description": {
-                "definition": "Applied Statistics implements statistical methods to collect, analyze, interpret and present empirical data in real-world contexts, developing models to quantify uncertainty, detect patterns, and support evidence-based decisions",
-                "methodologies": "Experimental design, sampling methods, hypothesis testing, multivariate analysis, non-parametric techniques, bootstrapping, longitudinal data analysis, statistical process control, Bayesian inference, meta-analysis",
-                "applications": "Quality control, medical research, social science studies, market research, environmental monitoring, product testing, financial modeling, operations research, demographic analysis, policy evaluation"
               }
             }
           ]
@@ -288,14 +910,6 @@
           "name": "Offensive Security",
           "fields": [
             {
-              "name": "Ethical Hacking",
-              "description": {
-                "definition": "Ethical Hacking systematically probes computer systems with authorization to identify security vulnerabilities before malicious exploitation, employing the same methods and tools as adversaries but with defensive intent",
-                "methodologies": "Reconnaissance, scanning, vulnerability assessment, exploitation, post-exploitation, privilege escalation, lateral movement, persistence testing, reporting, remediation guidance",
-                "applications": "Penetration testing, red teaming, vulnerability assessment, bug bounty programs, compliance verification, secure development lifecycle, security training, breach simulation"
-              }
-            },
-            {
               "name": "Penetration Testing",
               "description": {
                 "definition": "Penetration Testing conducts simulated attacks on computer systems, networks, and applications to identify and validate security vulnerabilities, employing the same techniques as malicious actors but in a controlled, authorized manner",
@@ -309,14 +923,6 @@
                 "definition": "Red Team Operations simulates sophisticated attack scenarios against an organization's people, processes, and technology to test defensive capabilities under realistic conditions, providing holistic security assessments beyond isolated testing",
                 "methodologies": "Advanced persistent threat simulation, operational security practices, custom malware development, attack chain modeling, covert communication techniques, stealth operations, multi-vector attacks, objective-based testing",
                 "applications": "Defense validation, security control assessment, detection capability testing, incident response evaluation, security awareness measurement, adversary emulation, security program maturity assessment"
-              }
-            },
-            {
-              "name": "Adversarial Machine Learning",
-              "description": {
-                "definition": "Adversarial Machine Learning studies vulnerabilities in AI systems and develops techniques to make them robust against manipulation, investigating both how to attack machine learning models and how to defend them from exploitation",
-                "methodologies": "Evasion attacks, poisoning attacks, model inversion, membership inference, gradient masking detection, adversarial training, robust optimization, certified defenses, generative adversarial networks, feature squeezing",
-                "applications": "Secure AI deployment, computer vision security, NLP model hardening, autonomous system security, fraud detection resilience, malware classification security, biometric system protection"
               }
             },
             {
@@ -378,22 +984,6 @@
               }
             },
             {
-              "name": "Inclusive Design",
-              "description": {
-                "definition": "Inclusive Design creates products and services that are accessible to, and usable by, as many people as reasonably possible without specialized adaptation, ensuring diverse user populations can successfully engage with interfaces",
-                "methodologies": "Accessibility guidelines implementation, universal design principles, assistive technology compatibility, user diversity research, disability simulation, simplified interaction models, multi-sensory feedback, plain language usage",
-                "applications": "Accessible websites, inclusive productivity tools, assistive technologies, public service interfaces, educational platforms, banking applications, transportation systems, government digital services, healthcare interfaces"
-              }
-            },
-            {
-              "name": "Service Design",
-              "description": {
-                "definition": "Service Design orchestrates people, infrastructure, communication, and material components to improve the quality of interactions between service providers and customers, creating cohesive user journeys across touchpoints",
-                "methodologies": "Journey mapping, service blueprinting, stakeholder mapping, touchpoint design, service prototyping, value stream mapping, co-creation workshops, multi-channel integration, backstage/frontstage alignment",
-                "applications": "Healthcare service improvement, financial service experiences, public transportation systems, hospitality design, telecommunication services, retail experiences, government services, educational programs"
-              }
-            },
-            {
               "name": "Game UX Design",
               "description": {
                 "definition": "Game UX Design creates engaging, intuitive, and meaningful player experiences in interactive entertainment, focusing on interface design, information architecture, interaction patterns, and emotional progression that support gameplay goals",
@@ -441,14 +1031,6 @@
                 "definition": "Immersive Technologies create experiences blending digital content with physical reality or generating fully simulated environments that engage multiple senses for enhanced presence and interaction",
                 "methodologies": "3D modeling, spatial mapping, sensory design, interaction design for 3D spaces, motion tracking, environmental design, narrative design, immersive audio design, haptic feedback systems",
                 "applications": "Virtual reality training, augmented reality for industrial maintenance, mixed reality medical visualization, architectural visualization, immersive entertainment, therapeutic applications, remote collaboration"
-              }
-            },
-            {
-              "name": "Data Visualization",
-              "description": {
-                "definition": "Data Visualization transforms abstract information into intuitive visual representations revealing patterns and relationships through graphics, charts, and interactive displays",
-                "methodologies": "Visual encoding principles, exploratory visualization, explanatory visualization, interaction design, perception principles, information design, visualization grammar, dashboard design",
-                "applications": "Business intelligence, scientific research, financial analysis, healthcare monitoring, network analysis, geographic information systems, public data communication, process monitoring"
               }
             },
             {
@@ -587,14 +1169,6 @@
               }
             },
             {
-              "name": "Digital Cinematography",
-              "description": {
-                "definition": "Digital Cinematography applies principles of visual storytelling through camera operation, lighting, and composition in digital video formats, combining technical expertise with artistic vision to capture compelling moving images",
-                "methodologies": "Camera movement techniques, digital lighting approaches, composition theory application, sensor technology utilization, color science, lens selection, depth of field control, exposure management, visual continuity",
-                "applications": "Film production, television production, documentary filming, commercial videography, music videos, corporate video, live event coverage, streaming content, narrative web series"
-              }
-            },
-            {
               "name": "Motion Design",
               "description": {
                 "definition": "Motion Design creates visual communication that combines graphic design principles with animation techniques, developing kinetic typography, animated logos, UI animations, and other dynamic visual elements that convey messages through movement",
@@ -672,14 +1246,6 @@
               }
             },
             {
-              "name": "Interactive Sound Design",
-              "description": {
-                "definition": "Interactive Sound Design creates audio experiences that respond dynamically to user actions and environmental conditions in digital systems, developing sonic feedback that enhances usability and emotional engagement",
-                "methodologies": "Procedural audio generation, adaptive music systems, interactive mixing architectures, parameter mapping sonification, gesture-to-sound mapping, audio middleware implementation, audio scripting",
-                "applications": "Video games, interactive installations, mobile applications, augmented reality, virtual reality, web experiences, smart products, museum exhibitions, interactive performances"
-              }
-            },
-            {
               "name": "Transmedia Storytelling",
               "description": {
                 "definition": "Transmedia Storytelling distributes narrative elements across multiple media platforms to create a coordinated entertainment experience, designing interconnected stories where each channel contributes uniquely to audience understanding",
@@ -746,22 +1312,6 @@
               }
             },
             {
-              "name": "Digital Healthcare Systems",
-              "description": {
-                "definition": "Digital Healthcare Systems develops integrated computing solutions that enhance healthcare delivery, patient management, and medical information access, creating infrastructure that improves clinical workflows and decision-making",
-                "methodologies": "Electronic health record design, clinical decision support systems, interoperability standards implementation, healthcare data exchange protocols, workflow automation, clinical terminology standardization",
-                "applications": "Hospital information systems, practice management software, clinical documentation, medication management, order entry systems, healthcare analytics platforms, patient registration systems"
-              }
-            },
-            {
-              "name": "Medical Imaging Informatics",
-              "description": {
-                "definition": "Medical Imaging Informatics develops systems for acquiring, analyzing, storing, and distributing medical images in clinical contexts, creating computing infrastructure that supports diagnostic processes and treatment planning",
-                "methodologies": "DICOM standard implementation, PACS architecture, imaging workflow optimization, radiological information systems, 3D visualization, imaging AI integration, image compression techniques",
-                "applications": "Radiology information systems, pathology imaging, surgical planning, teaching file systems, teleradiology platforms, multimodality integration, radiation therapy planning systems"
-              }
-            },
-            {
               "name": "Clinical Data Analytics",
               "description": {
                 "definition": "Clinical Data Analytics applies statistical and computational methods to healthcare data to improve patient outcomes, optimize clinical operations, and advance medical knowledge through pattern discovery and predictive modeling",
@@ -799,14 +1349,6 @@
                 "definition": "Digital Health Innovation develops and implements novel technology solutions to healthcare challenges, creating new approaches to prevention, diagnosis, treatment, and health management through digital tools and platforms",
                 "methodologies": "Health technology assessment, rapid prototyping for healthcare, lean startup for health innovation, design thinking for healthcare, clinical validation protocols, behavior change frameworks, user-centered design",
                 "applications": "Mobile health applications, wearable health technologies, digital therapeutics, remote monitoring solutions, personalized medicine platforms, preventive health technologies, digital mental health tools"
-              }
-            },
-            {
-              "name": "Patient Experience Design",
-              "description": {
-                "definition": "Patient Experience Design creates systems, environments, and interactions that optimize the subjective experience of healthcare from the patient's perspective, focusing on accessibility, comfort, empowerment, and satisfaction",
-                "methodologies": "Patient journey mapping, experience-based co-design, human factors analysis in healthcare, patient feedback systems, healthcare service blueprinting, empathic design, accessibility evaluation",
-                "applications": "Clinical environment design, patient portal development, appointment scheduling systems, health communication tools, wayfinding systems, patient education materials, discharge planning processes"
               }
             },
             {
@@ -1075,14 +1617,6 @@
                 "methodologies": "RESTful design, GraphQL implementation, API security patterns, versioning strategies, API gateway architecture, documentation automation, rate limiting, authentication frameworks",
                 "applications": "Web service integration, mobile backend services, microservice communication, third-party integrations, platform ecosystems, data exchange services, payment processing, cloud service interfaces"
               }
-            },
-            {
-              "name": "User Interface Programming",
-              "description": {
-                "definition": "User Interface Programming implements the visual and interactive aspects of software applications, coding the components through which users interact with systems while ensuring responsiveness, accessibility, and usability",
-                "methodologies": "Component-based architecture, state management, event handling, responsive design implementation, accessibility compliance coding, cross-browser compatibility, animation programming",
-                "applications": "Web applications, mobile interfaces, desktop software, kiosk systems, embedded device displays, information dashboards, administrative interfaces, consumer applications"
-              }
             }
           ]
         },
@@ -1269,14 +1803,6 @@
                 "definition": "Public Relations Strategy develops planned communication approaches to build mutually beneficial relationships between organizations and their publics, creating programs that shape perception and manage reputation",
                 "methodologies": "Stakeholder analysis, message development, media relations planning, crisis communication protocols, reputation measurement, narrative development, influencer engagement strategies",
                 "applications": "Corporate communications, brand reputation management, public affairs, issue management, investor relations, community relations, crisis response, internal communications"
-              }
-            },
-            {
-              "name": "Digital Publishing Systems",
-              "description": {
-                "definition": "Digital Publishing Systems develops technologies and workflows for creating, managing, and distributing electronic content, establishing platforms that enable efficient production and delivery of digital publications",
-                "methodologies": "Content management system design, editorial workflow automation, digital asset management, metadata frameworks, cross-platform publishing architectures, subscription management systems",
-                "applications": "E-books, digital magazines, online news platforms, academic publishing, corporate publishing, content marketing platforms, knowledge management systems, digital archives"
               }
             }
           ]
