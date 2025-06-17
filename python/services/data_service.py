@@ -22,11 +22,11 @@ class DataService:
         Returns:
             Tuple containing (nested_data, similarities)
         """
-        # Initialize with empty structures if files don't exist
+        
         nested_data = {"categories": []}
         similarities = []
         
-        # Load nested descriptions if file exists
+        
         if os.path.exists(NESTED_DESCRIPTIONS_FILE):
             try:
                 with open(NESTED_DESCRIPTIONS_FILE, 'r', encoding='utf-8') as f:
@@ -37,18 +37,18 @@ class DataService:
         else:
             logger.warning(f"Nested descriptions file not found at {NESTED_DESCRIPTIONS_FILE}")
         
-        # Load similarities if file exists
+        
         if os.path.exists(SIMILARITY_FILE):
             try:
                 with open(SIMILARITY_FILE, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     
-                    # Check if the loaded data is in the new format with 'tags' and 'similarities' keys
+                    
                     if isinstance(data, dict) and 'similarities' in data:
                         similarities = data['similarities']
                         logger.info(f"Successfully loaded {len(similarities)} similarity records with {len(data.get('tags', []))} tags")
                     else:
-                        # Old format - just a list of similarities
+                        
                         similarities = data
                         logger.info(f"Successfully loaded {len(similarities)} similarity records (old format)")
             except Exception as e:
@@ -70,24 +70,24 @@ class DataService:
             True if successful, False otherwise
         """
         try:
-            # Save nested data
+            
             with open(NESTED_DATA_FILE, 'w', encoding='utf-8') as f:
                 json.dump(nested_data, f, indent=2, ensure_ascii=False)
                 
-            # Handle similarities data - could be a list or dict with 'similarities' key
+            
             if isinstance(similarities_or_data, dict) and 'similarities' in similarities_or_data:
-                # This is the new format with tags array
+                
                 with open(SIMILARITY_FILE, 'w', encoding='utf-8') as f:
                     json.dump(similarities_or_data, f, indent=2, ensure_ascii=False)
             else:
-                # This is the old format with just similarities list
-                # Add a tags array with all unique field names
+                
+                
                 unique_tags = set()
                 for sim in similarities_or_data:
                     unique_tags.add(sim.get("field1", ""))
                     unique_tags.add(sim.get("field2", ""))
                 
-                # Remove any empty strings that might have been added
+                
                 if "" in unique_tags:
                     unique_tags.remove("")
                     
@@ -119,7 +119,7 @@ class DataService:
         group_name = field_data.get("group")
         subgroup_name = field_data.get("subgroup")
         
-        # Extract field information
+        
         new_field = {
             "name": field_data.get("name"),
             "description": {
@@ -131,23 +131,23 @@ class DataService:
             }
         }
         
-        # Find the specified group
+        
         group_found = False
         for category in nested_data.get("categories", []):
             if category["name"] == group_name:
                 group_found = True
                 
-                # Find the specified subgroup
+                
                 subgroup_found = False
                 for subgroup in category.get("subgroups", []):
                     if subgroup["name"] == subgroup_name:
                         subgroup_found = True
                         
-                        # Add the field to the subgroup
+                        
                         subgroup.setdefault("fields", []).append(new_field)
                         break
                 
-                # If subgroup not found, create it
+                
                 if not subgroup_found:
                     new_subgroup = {
                         "name": subgroup_name,
@@ -157,7 +157,7 @@ class DataService:
                 
                 break
         
-        # If group not found, create it
+        
         if not group_found:
             new_category = {
                 "name": group_name,

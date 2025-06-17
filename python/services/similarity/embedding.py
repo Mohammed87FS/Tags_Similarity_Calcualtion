@@ -13,7 +13,7 @@ class EmbeddingService:
     
     def __init__(self):
         """Initialize the embedding service with a pre-trained model."""
-        # Load model
+        
         print("Loading sentence transformer model...")
         self.model = SentenceTransformer('all-mpnet-base-v2')
         self.embedding_cache = {}
@@ -29,7 +29,7 @@ class EmbeddingService:
             NumPy array containing the text embedding
         """
         if not text.strip():
-            # Return zero vector for empty text
+            
             return np.zeros(self.model.get_sentence_embedding_dimension())
             
         if text not in self.embedding_cache:
@@ -55,5 +55,5 @@ class EmbeddingService:
         
         similarity = np.dot(emb1, emb2) / (np.linalg.norm(emb1) * np.linalg.norm(emb2))
         
-        # Scale similarity
+        
         return TextProcessor.calibrate_similarity_score(similarity)

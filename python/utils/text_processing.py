@@ -21,7 +21,7 @@ class TextProcessor:
      
         if score <= 0.05: return 0.0
             
-        # Apply sigmoid function and normalize
+        #  sigmoid function and normalize
         calibrated = 1.0 / (1.0 + np.exp(-steepness * (score - midpoint)))
         min_val = 1.0 / (1.0 + np.exp(-steepness * (0.0 - midpoint)))
         max_val = 1.0 / (1.0 + np.exp(-steepness * (1.0 - midpoint)))

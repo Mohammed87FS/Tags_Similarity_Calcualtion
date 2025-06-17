@@ -17,7 +17,7 @@
     --transition-speed: 0.3s;
 }
 
-/* Dark mode variables */
+
 [data-bs-theme="dark"] {
     --primary-color: #004fa4;
     --primary-hover: #003772;
@@ -28,7 +28,7 @@
     --text-secondary: #adb5bd;
 }
 
-/* Base styles */
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--body-bg);
@@ -47,7 +47,7 @@ body {
     scroll-margin-top: 80px;
 }
 
-/* Smooth scrolling for navigation */
+
 html {
     scroll-behavior: smooth;
 }
@@ -183,7 +183,7 @@ textarea.form-control {
     padding: 1rem;
 }
 
-/* Similarity results styling */
+
 #similarity-results {
     display: none;
 }
@@ -218,7 +218,7 @@ textarea.form-control {
     color: var(--text-secondary);
 }
 
-/* Accordion styling */
+
 .accordion {
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -256,7 +256,7 @@ textarea.form-control {
     background-color: var(--card-bg);
 }
 
-/* Description list styling */
+
 dl.row {
     margin-bottom: 0;
 }
@@ -271,7 +271,7 @@ dd {
     color: var(--text-secondary);
 }
 
-/* Theme toggle */
+
 #theme-toggle {
     cursor: pointer;
     padding: 0.5rem;
@@ -295,7 +295,7 @@ dd {
     margin-top: 0.25rem;
 }
 
-/* Tooltip styling */
+
 .tooltip {
     opacity: 1;
 }
@@ -309,7 +309,7 @@ dd {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Progress bar for similarity visualization */
+
 .similarity-progress {
     height: 0.5rem;
     border-radius: 1rem;
@@ -323,7 +323,7 @@ dd {
     transition: width 1s ease-out;
 }
 
-/* Similarity gauge */
+
 .similarity-gauge {
     position: relative;
     width: 150px;
@@ -353,7 +353,7 @@ dd {
     flex-direction: column;
 }
 
-/* Skip link for accessibility */
+
 .skip-link {
     position: absolute;
     top: -40px;
@@ -369,13 +369,13 @@ dd {
     top: 0;
 }
 
-/* Accessible focus styles */
+
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
     outline: 3px solid rgba(var(--primary-color-rgb), 0.5);
     outline-offset: 2px;
 }
 
-/* Similarity table styles */
+
 .table {
     margin-bottom: 0;
 }
@@ -397,7 +397,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     font-size: 0.875rem;
 }
 
-/* Toggle switch styling */
+
 .form-switch .form-check-input {
     width: 2.5em;
     height: 1.25em;
@@ -415,7 +415,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     border-color: var(--primary-color);
 }
 
-/* Modal gauge styles */
+
 #comparisonModal .similarity-gauge {
     margin-top: 1rem;
 }
@@ -427,7 +427,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     margin-bottom: 0;
 }
 
-/* Smooth animation for table rows */
+
 #similarity-table-body tr {
     transition: background-color 0.2s;
 }
@@ -436,7 +436,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     background-color: rgba(var(--primary-color-rgb), 0.05);
 }
 
-/* Add a subtle border to field cards in the modal */
+
 #comparisonModal .field-card {
     border: 1px solid rgba(var(--primary-color-rgb), 0.2);
     border-radius: var(--border-radius);
@@ -447,7 +447,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
 }
 
-/* Custom styles for dark theme support */
+
 [data-bs-theme="dark"] .table {
     color: var(--text-primary);
 }
@@ -473,7 +473,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     background-color: var(--card-bg);
 }
 
-/* Modal gauge specific style */
+
 #modal-gauge-circle {
     width: 150px;
     height: 150px;
@@ -482,7 +482,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     position: relative;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 992px) {
     .container {
         padding-left: 1.5rem;

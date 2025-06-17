@@ -7,14 +7,14 @@ import logging
 from flask import Flask, render_template, redirect, url_for, request
 from config import DATA_DIR
 
-# Set up logging
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# Import from routes module
+
 from routes.api import (
     api_bp, add_field, get_subgroups, get_similarity, 
     get_all_similarities_for_field, download_similarities, test ,recalculate_similarities
@@ -22,13 +22,13 @@ from routes.api import (
 
 def create_app():
     """Create and configure the Flask application."""
-    # Initialize Flask application
+    
     app = Flask(__name__, static_folder='static', template_folder='templates')
     
-    # Register the API blueprint with /api prefix for new code
+    
     app.register_blueprint(api_bp, url_prefix='/api')
     
-    # Register non-prefixed routes for backward compatibility
+  
     app.add_url_rule('/add_field', view_func=add_field, methods=['POST'])
     app.add_url_rule('/get_subgroups', view_func=get_subgroups)
     app.add_url_rule('/get_similarity', view_func=get_similarity)
@@ -37,19 +37,19 @@ def create_app():
     app.add_url_rule('/test', view_func=test)
     app.add_url_rule('/recalculate_similarities', view_func=recalculate_similarities)
     
-    # Home route
+   
     @app.route('/')
     def index():
         """Home page."""
         from services.data_service import DataService
         
-        # Load data
+        
         data_service = DataService()
         nested_data, similarities = data_service.load_data()
         field_names = data_service.get_all_field_names(nested_data)
         groups, subgroups = data_service.get_all_groups_and_subgroups(nested_data)
         
-        # Debug information
+        
         logger.info(f"Rendering template with {len(field_names)} fields and {len(groups)} groups")
         
         return render_template(
@@ -60,19 +60,17 @@ def create_app():
         )
     
     
-    # Ensure data directory exists
+
     from config import DATA_DIR
     os.makedirs(DATA_DIR, exist_ok=True)
     
-    # Ensure static directories exist
+   
     for dir_path in ['static/css', 'static/js']:
         os.makedirs(dir_path, exist_ok=True)
     
     return app
 
-# Application factory pattern
 app = create_app()
 
 if __name__ == '__main__':
-    # Run the application in debug mode
     app.run(debug=True)

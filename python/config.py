@@ -4,20 +4,20 @@ Configuration settings for the research field similarity application.
 
 import os
 
-# Data paths
+
 DATA_DIR = 'data'
 NESTED_DESCRIPTIONS_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
 NESTED_DATA_FILE = os.path.join(DATA_DIR, 'nested_descriptions_research_groups.json')
 SIMILARITY_FILE = os.path.join(DATA_DIR, 'final_outputs_enhanced_multi/field_similarities.json')
 
-# Group-based similarity parameters
-SAME_GROUP_BASELINE = 0.7        # Baseline similarity for fields in same general group
-SAME_SUBGROUP_BASELINE = 0.75    # Baseline similarity for fields in same subgroup
-SIMILARITY_WEIGHT_SUB = 0.2      # Weight of calculated similarity to add to baseline for subgroup
-SIMILARITY_WEIGHT_GENERAL = 0.15 # Weight of calculated similarity to add to baseline for general group
-MAX_CROSS_GROUP_SIMILARITY = 0.7 # Maximum similarity for fields not in same group/subgroup
 
-# Field description property weights
+SAME_GROUP_BASELINE = 0.7        
+SAME_SUBGROUP_BASELINE = 0.75    
+SIMILARITY_WEIGHT_SUB = 0.2      
+SIMILARITY_WEIGHT_GENERAL = 0.15 
+MAX_CROSS_GROUP_SIMILARITY = 0.7 
+
+
 DESCRIPTION_WEIGHTS = {
     "definition": 0.6,
     "methodologies": 0.20,
@@ -26,18 +26,18 @@ DESCRIPTION_WEIGHTS = {
 
 }
 
-# Component weights
+
 COMPONENT_WEIGHTS = {
     "embedding": 0.4,
     "domain": 0.4,
     "facet": 0.2
 }
 
-# Domain boosting configuration
-ENABLE_DOMAIN_BOOSTING = True    # Whether to apply domain-based score boosting
-MAX_BOOST_FACTOR = 0.15          # Maximum boost to apply (0.15 = up to 15% boost)
-DOMAIN_BOOST_THRESHOLD = 0.7     # Minimum domain similarity to trigger boost
-# Domain-specific term groups - EXPANDED VERSION
+
+ENABLE_DOMAIN_BOOSTING = True    
+MAX_BOOST_FACTOR = 0.15          
+DOMAIN_BOOST_THRESHOLD = 0.7     
+
 DOMAIN_TERM_GROUPS = {
     'ai_ml': [
         'artificial intelligence', 'machine learning', 'neural networks', 'deep learning', 
@@ -196,7 +196,7 @@ DOMAIN_TERM_GROUPS = {
         'pharmacogenomics', 'immunotherapy', 'gene therapy', 'regenerative medicine'
     ],
 
-    # NEW DOMAINS
+    
     'quantum_computing': [
         'quantum computing', 'qubit', 'quantum gate', 'quantum circuit', 'quantum algorithm',
         'quantum supremacy', 'quantum advantage', 'quantum entanglement', 'quantum teleportation',
@@ -335,7 +335,7 @@ DOMAIN_TERM_GROUPS = {
     ]
 }
 
-# EXPANDED Domain group similarity matrix
+
 DOMAIN_GROUP_SIMILARITY = {
     'ai_ml': {
         'ai_ml': 1.0, 
